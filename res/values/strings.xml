@@ -4727,6 +4727,7 @@
     <string name="volume_key_cursor_control_off">Disabled</string>
     <string name="volume_key_cursor_control_on">Volume up/down moves cursor left/right</string>
     <string name="volume_key_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
-=======
->>>>>>> 89a2df8... Feat: Allow users to disable safe headset volume warning (2/2)
+
+    <!-- Hostname setting -->
+    <string name="device_hostname">Device hostname</string>
 </resources>
