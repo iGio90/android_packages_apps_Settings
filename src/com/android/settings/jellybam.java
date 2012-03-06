@@ -40,6 +40,13 @@ public class jellybam extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "jellybam";
 
+<<<<<<< HEAD:src/com/android/settings/jellybam.java
+=======
+    private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
+    private static final String KEY_BATTERY_LIGHT = "battery_light";
+    private static final String KEY_HARDWARE_KEYS = "hardware_keys";
+    private static final String KEY_NAVIGATION_BAR = "navigation_bar";
+>>>>>>> 356ed10... Settings : NavigationBar Customization:src/com/android/settings/cyanogenmod/SystemSettings.java
     private static final String KEY_LOCK_CLOCK = "lock_clock";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
     private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
@@ -80,14 +87,27 @@ public class jellybam extends SettingsPreferenceFragment implements
         removePreferenceIfPackageNotInstalled(findPreference(KEY_LOCK_CLOCK));
 
         // Only show the hardware keys config on a device that does not have a navbar
+        // Only show the navigation bar config on phones that has a navigation bar
+        boolean removeKeys = false;
+        boolean removeNavbar = false;
         IWindowManager windowManager = IWindowManager.Stub.asInterface(
                 ServiceManager.getService(Context.WINDOW_SERVICE));
         try {
             if (windowManager.hasNavigationBar()) {
-                getPreferenceScreen().removePreference(findPreference(KEY_HARDWARE_KEYS));
+                removeKeys = true;
+            } else {
+                removeNavbar = true;
             }
         } catch (RemoteException e) {
             // Do nothing
+        }
+
+        // Act on the above
+        if (removeKeys) {
+            getPreferenceScreen().removePreference(findPreference(KEY_HARDWARE_KEYS));
+        }
+        if (removeNavbar) {
+            getPreferenceScreen().removePreference(findPreference(KEY_NAVIGATION_BAR));
         }
     }
     
