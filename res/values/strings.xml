@@ -4359,6 +4359,34 @@
     <!-- ROM Control -->
     <string name="rom_control_title">ROM Control</string>
 
+    <!-- Statusbar Toggles -->
+    <string name="notification_drawer_toggles_title">Notification toggles</string>
+    <string name="enable_toggles_title">Enable toggles</string>
+    <string name="enable_toggles_summary">Shows toggles on notification drawer</string>
+    <string name="toggle_style_title">Toggle style</string>
+    <string name="toggle_style_summary">Whether to show icon or text on toggles</string>
+    <string name="toggle_only_icon">Icon only</string>
+    <string name="toggle_only_text">Text only</string>
+    <string name="toggles_layout_title">Toggle layout</string>
+    <string name="toggle_layout_switch">On/off switch</string>
+    <string name="toggle_layout_toggle">Toggle button</string>
+    <string name="toggle_layout_button">Holo button</string>
+    <string name="toggle_layout_multirow">Multi-row toggles</string>
+    <string name="toggles_color_title">Color scheme</string>
+    <string name="toggles_color_summary">Defines the color to be used by toggles. Off state will be slightly darker than the selected color</string>
+    <string name="enabled_toggles_title">Enabled toggles</string>
+    <string name="enabled_toggles_summary">Choose toggles to display</string>
+    <string name="toggles_display_dialog">Choose which toggles to use</string>
+    <string name="toggles_display_close">Close</string>
+    <string name="toggles_order_title">Toggle order</string>
+    <string name="toggles_order_summary">Choose the order in which your toggles are displayed</string>
+    <string name="toggles_disable_scrolling_title">Disable scrolling</string>
+    <string name="toggles_disable_scrolling_summary">Adjusts toggle size depending on the amount of enabled elements</string>
+    <string name="show_brightness_title">Show brightness slider</string>
+    <string name="show_brightness_summary">Shows a brightness slider on notificaion drawer</string>
+    <string name="show_settings_title">Show settings</string>
+    <string name="show_settings_summary">Shows a button to open settings</string>
+
     <!-- Notification Drawer  -->
     <string name="notification_drawer_title">Notification drawer</string>
 
