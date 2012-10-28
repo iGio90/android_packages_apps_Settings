@@ -38,16 +38,17 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class NavigationBar extends SettingsPreferenceFragment implements OnPreferenceChangeListener, Preference.OnPreferenceClickListener  {
 
+
     private static final String NAV_BAR_CATEGORY = "nav_bar_category";
     private static final String PREF_NAV_BAR_COLOR = "navbar_color";
     private static final String PREF_NAV_BAR_COLOR_DEF = "navbar_color_default";
     private static final String NAV_BAR_STATUS = "nav_bar_status";
-    private static final String NAV_BAR_EDITOR = "navigation_bar_editor";
+//    private static final String NAV_BAR_EDITOR = "navigation_bar_editor";
     private static final String NAV_BAR_TABUI_MENU = "nav_bar_tabui_menu";
 
     private CheckBoxPreference mNavigationBarShow;
     private ColorPickerPreference mNavigationBarColor;
-    private PreferenceScreen mNavigationBarEditor;
+//    private PreferenceScreen mNavigationBarEditor;
     private CheckBoxPreference mMenuButtonShow;
     private PreferenceCategory mPrefCategory;
     private Preference mResetColor;
@@ -63,7 +64,7 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
         mNavigationBarColor = (ColorPickerPreference) findPreference(PREF_NAV_BAR_COLOR);
         mNavigationBarColor.setOnPreferenceChangeListener(this);
         mNavigationBarShow = (CheckBoxPreference) prefSet.findPreference(NAV_BAR_STATUS);
-        mNavigationBarEditor = (PreferenceScreen) prefSet.findPreference(NAV_BAR_EDITOR);
+//        mNavigationBarEditor = (PreferenceScreen) prefSet.findPreference(NAV_BAR_EDITOR);
         mMenuButtonShow = (CheckBoxPreference) prefSet.findPreference(NAV_BAR_TABUI_MENU);
         mResetColor = (Preference) findPreference(PREF_NAV_BAR_COLOR_DEF);
         mResetColor.setOnPreferenceClickListener(this);
@@ -78,15 +79,15 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
         mMenuButtonShow.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.NAV_BAR_TABUI_MENU, 0) == 1));
 
-        mNavigationBarEditor.setEnabled(mNavigationBarShow.isChecked());
+//        mNavigationBarEditor.setEnabled(mNavigationBarShow.isChecked());
         mMenuButtonShow.setEnabled(mNavigationBarShow.isChecked());
 
         mPrefCategory = (PreferenceCategory) findPreference(NAV_BAR_CATEGORY);
 
         if (!Utils.isTablet()) {
             mPrefCategory.removePreference(mMenuButtonShow);
-        } else {
-            mPrefCategory.removePreference(mNavigationBarEditor);
+//        } else {
+//            mPrefCategory.removePreference(mNavigationBarEditor);
         }
     }
 
@@ -94,6 +95,7 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
         if (preference == mNavigationBarColor) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
+//            preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAV_BAR_COLOR, intHex);
@@ -118,10 +120,11 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
         boolean value;
         if (preference == mNavigationBarShow) {
             value = mNavigationBarShow.isChecked();
+            mMenuButtonShow.setEnabled(value);
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.NAV_BAR_STATUS, value ? 1 : 0);
-            mNavigationBarEditor.setEnabled(value);
-            mMenuButtonShow.setEnabled(value);
+//            mNavigationBarEditor.setEnabled(value);
+//            mMenuButtonShow.setEnabled(value);
             return true;
         }
         else if (preference == mMenuButtonShow) {
@@ -130,6 +133,7 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
                     Settings.System.NAV_BAR_TABUI_MENU, value ? 1 : 0);
             return true;
         }
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
+        return false;
+//        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 }

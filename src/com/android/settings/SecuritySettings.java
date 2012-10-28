@@ -235,11 +235,11 @@ public class SecuritySettings extends SettingsPreferenceFragment
             mQuickUnlockScreen.setChecked(Settings.System.getInt(resolver,
                     Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, 0) == 1);
 
-            // Menu Unlock
+/*            // Menu Unlock
             mMenuUnlock = (CheckBoxPreference) root.findPreference(MENU_UNLOCK_PREF);
             mMenuUnlock.setChecked(Settings.System.getInt(resolver,
                     Settings.System.MENU_UNLOCK_SCREEN, 0) == 1);
-
+*/
             // Vibrate on unlock
             mVibratePref = (CheckBoxPreference) findPreference(KEY_VIBRATE_PREF);
             mVibratePref.setChecked(Settings.System.getInt(resolver,
@@ -251,14 +251,14 @@ public class SecuritySettings extends SettingsPreferenceFragment
             if ((!mLockPatternUtils.isSecure() && mLockPatternUtils.isLockScreenDisabled())
                     || (mLockPatternUtils.isLockPatternEnabled())) {
                 mQuickUnlockScreen.setEnabled(false);
-                mMenuUnlock.setEnabled(false);
+//                mMenuUnlock.setEnabled(false);
                 mVibratePref.setEnabled(false);
             // disable menu unlock and vibrate on unlock options if
             // using PIN/password as primary lock screen or as
             // backup to biometric
             } else if (mLockPatternUtils.isLockPasswordEnabled()) {
                 mQuickUnlockScreen.setEnabled(true);
-                mMenuUnlock.setEnabled(false);
+//                mMenuUnlock.setEnabled(false);
                 mVibratePref.setEnabled(false);
             // Disable the quick unlock if its not using PIN/password
             // as a primary lock screen or as a backup to biometric
@@ -613,9 +613,9 @@ public class SecuritySettings extends SettingsPreferenceFragment
         } if (preference == mQuickUnlockScreen) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, isToggled(preference) ? 1 : 0);
-        } else if (preference == mMenuUnlock) {
+/*        } else if (preference == mMenuUnlock) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.MENU_UNLOCK_SCREEN, isToggled(preference) ? 1 : 0);
+                    Settings.System.MENU_UNLOCK_SCREEN, isToggled(preference) ? 1 : 0);*/
         }  else if (preference == mVibratePref) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.LOCKSCREEN_VIBRATE_ENABLED, isToggled(preference) ? 1 : 0);
