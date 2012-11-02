@@ -77,6 +77,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String SLIDE_LOCK_TIMEOUT_DELAY = "slide_lock_timeout_delay";
     private static final String SLIDE_LOCK_SCREENOFF_DELAY = "slide_lock_screenoff_delay";
     private static final String MENU_UNLOCK_PREF = "menu_unlock";
+    private static final String HOME_UNLOCK_PREF = "home_unlock";
     private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
     private static final String KEY_LOCK_BEFORE_UNLOCK = "lock_before_unlock";
     private static final String LOCK_SYNC_ENCRYPTION_PASSWORD = "lock_sync_encryption_password";
@@ -101,6 +102,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private CheckBoxPreference mTactileFeedback;
 
     private CheckBoxPreference mMenuUnlock;
+    private CheckBoxPreference mHomeUnlock;
     private CheckBoxPreference mQuickUnlockScreen;
     private CheckBoxPreference mShowPassword;
 
@@ -240,6 +242,11 @@ public class SecuritySettings extends SettingsPreferenceFragment
             mMenuUnlock.setChecked(Settings.System.getInt(resolver,
                     Settings.System.MENU_UNLOCK_SCREEN, 0) == 1);
 */
+            // Home Unlock
+            mHomeUnlock = (CheckBoxPreference) root.findPreference(HOME_UNLOCK_PREF);
+            mHomeUnlock.setChecked(Settings.System.getInt(resolver,
+                    Settings.System.HOME_UNLOCK_SCREEN, 0) == 1);
+
             // Vibrate on unlock
             mVibratePref = (CheckBoxPreference) findPreference(KEY_VIBRATE_PREF);
             mVibratePref.setChecked(Settings.System.getInt(resolver,
@@ -252,6 +259,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
                     || (mLockPatternUtils.isLockPatternEnabled())) {
                 mQuickUnlockScreen.setEnabled(false);
 //                mMenuUnlock.setEnabled(false);
+                mHomeUnlock.setEnabled(false);
                 mVibratePref.setEnabled(false);
             // disable menu unlock and vibrate on unlock options if
             // using PIN/password as primary lock screen or as
@@ -259,6 +267,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
             } else if (mLockPatternUtils.isLockPasswordEnabled()) {
                 mQuickUnlockScreen.setEnabled(true);
 //                mMenuUnlock.setEnabled(false);
+                mHomeUnlock.setEnabled(false);
                 mVibratePref.setEnabled(false);
             // Disable the quick unlock if its not using PIN/password
             // as a primary lock screen or as a backup to biometric
@@ -270,6 +279,11 @@ public class SecuritySettings extends SettingsPreferenceFragment
             if (getActivity().getApplicationContext().getResources()
                     .getBoolean(com.android.internal.R.bool.config_showNavigationBar)) {
                 mMenuUnlock.setEnabled(false);
+            }
+            // Disable the HomeUnlock setting if no home button is available
+            if (getActivity().getApplicationContext().getResources()
+                    .getBoolean(com.android.internal.R.bool.config_disableHomeUnlockSetting)) {
+                mHomeUnlock.setEnabled(false);
             }
         }
 
@@ -616,6 +630,9 @@ public class SecuritySettings extends SettingsPreferenceFragment
 /*        } else if (preference == mMenuUnlock) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.MENU_UNLOCK_SCREEN, isToggled(preference) ? 1 : 0);*/
+        } else if (preference == mHomeUnlock) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.HOME_UNLOCK_SCREEN, isToggled(preference) ? 1 : 0);
         }  else if (preference == mVibratePref) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.LOCKSCREEN_VIBRATE_ENABLED, isToggled(preference) ? 1 : 0);
