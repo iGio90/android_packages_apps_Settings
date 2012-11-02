@@ -20,7 +20,7 @@
 
     <PreferenceCategory
         android:key="nav_bar_category"
-        android:title="@string/navigation_bar_button_cat">
+        android:title="@string/navigation_bar_button_category">
 
         <CheckBoxPreference
             android:key="nav_bar_status"
@@ -40,29 +40,29 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="nav_bar_category"
-        android:title="@string/navigation_bar_color_cat">
+        android:key="nav_bar_color_category"
+        android:title="@string/navigation_bar_color_category">
 
         <ColorPickerPreference
-            android:key="navbar_color"
+            android:key="nav_bar_color"
             android:title="@string/navigation_bar_color_title"
             android:summary="@string/navigation_bar_color_summary"
             android:defaultValue="#FF000000" />
 
         <ColorPickerPreference
-            android:key="nav_button_color"
-            android:title="@string/navigation_button_color_title"
-            android:summary="@string/navigation_button_color_summary"
+            android:key="nav_bar_button_color"
+            android:title="@string/navigation_bar_button_color_title"
+            android:summary="@string/navigation_bar_button_color_summary"
             android:defaultValue="#FFFFFFFF" />
 
         <ColorPickerPreference
-            android:key="nav_glow_color"
-            android:title="@string/navigation_glow_color_title"
-            android:summary="@string/navigation_glow_color_summary"
+            android:key="nav_bar_glow_color"
+            android:title="@string/navigation_bar_glow_color_title"
+            android:summary="@string/navigation_bar_glow_color_summary"
             android:defaultValue="#FFFFFFFF" />
 
         <Preference
-            android:key="navbar_color_default"
+            android:key="nav_bar_color_default"
             android:title="@string/navigation_bar_restore_stock_color"
             android:summary="@string/navigation_bar_restore_stock_color_summary" />
 

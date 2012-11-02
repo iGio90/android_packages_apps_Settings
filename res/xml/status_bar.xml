@@ -40,12 +40,11 @@
         android:key="status_bar_general"
         android:title="@string/status_bar_general_title">
 
-        <ListPreference
-            android:key="status_bar_transparency"
-            android:title="@string/status_bar_transparency_title"
-            android:summary="@string/status_bar_transparency_summary"
-            android:entries="@array/entries_transparency"
-            android:entryValues="@array/values_transparency"/>
+        <ColorPickerPreference
+            android:key="status_bar_color"
+            android:title="@string/status_bar_color_title"
+            android:summary="@string/status_bar_color_summary"
+            android:defaultValue="#FF000000" />
 
         <ListPreference
             android:key="status_bar_max_notifications"
