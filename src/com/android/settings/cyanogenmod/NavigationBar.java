@@ -42,7 +42,7 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
     private static final String PREF_NAV_BAR_COLOR = "navbar_color";
     private static final String PREF_NAV_BAR_COLOR_DEF = "navbar_color_default";
     private static final String NAV_BAR_STATUS = "nav_bar_status";
-//    private static final String NAV_BAR_EDITOR = "navigation_bar_editor";
+//    private static final String NAV_BAR_EDITOR = "nav_bar_editor";
     private static final String NAV_BAR_TABUI_MENU = "nav_bar_tabui_menu";
 
     private CheckBoxPreference mNavigationBarShow;
@@ -62,11 +62,13 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
 
         mNavigationBarColor = (ColorPickerPreference) findPreference(PREF_NAV_BAR_COLOR);
         mNavigationBarColor.setOnPreferenceChangeListener(this);
+        mNavigationBarColor.setAlphaSliderEnabled(true);
         mNavigationBarShow = (CheckBoxPreference) prefSet.findPreference(NAV_BAR_STATUS);
 //        mNavigationBarEditor = (PreferenceScreen) prefSet.findPreference(NAV_BAR_EDITOR);
         mMenuButtonShow = (CheckBoxPreference) prefSet.findPreference(NAV_BAR_TABUI_MENU);
         mResetColor = (Preference) findPreference(PREF_NAV_BAR_COLOR_DEF);
         mResetColor.setOnPreferenceClickListener(this);
+
         IWindowManager wm = IWindowManager.Stub.asInterface(ServiceManager.getService(Context.WINDOW_SERVICE));
         try {
             mNavigationBarShow.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
@@ -100,7 +102,6 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
                     Settings.System.NAV_BAR_COLOR, intHex);
             return true;
         }
-
         return false;
     }
 
