@@ -1832,10 +1832,10 @@
     <string name="navigation_bar_save_message">Configurações da barra de navegação foram salvas</string>
     <string name="navigation_bar_reset_toast">Barra de navegação foi restaurada para o padrão</string>
     <string name="status_bar_title">Barra de status</string>
+    <string name="status_bar_clock_small">Pequeno (padrão)</string>
     <string name="status_bar_clock_title">Relógio</string>
     <string name="status_bar_general_title">Geral</string>
     <string name="status_bar_show_clock_title">Mostrar relógio</string>
-    <string name="status_bar_am_pm_title">Estilo AM/PM</string>
     <string name="status_bar_am_pm_info">Modo 24-horas do relógio está ativado</string>
     <string name="status_bar_battery_title">Estilo do status da bateria</string>
     <string name="status_bar_toggle_brightness">Controle de brilho</string>
@@ -2225,4 +2225,9 @@
     <string name="sms_security_check_limit_title">Limite de mensagens SMS</string>
     <string name="sms_security_check_limit_summary">Alertar previnindo que aplicações enviem muitas mensagens SMS. Limite atual: Até %d mensagens durante 15 minutos</string>
     <string name="sms_security_check_limit_default">30 (Padrão)</string>
+    <string name="unlock_home_unlock_title">Destravar com home</string>
+    <string name="unlock_home_unlock_summary">Destrava o dispositivo ao pressionar botão home</string>
+    <string name="power_menu_airplane_title">Modo avião</string>
+    <string name="power_menu_silent_title">Modo silencioso</string>
+    <string name="power_menu_expanded_desktop">Desktop expandido</string>
 </resources>

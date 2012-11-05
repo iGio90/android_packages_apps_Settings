@@ -1861,10 +1861,12 @@ Schakel het scherm uit om de geselecteerde melding in actie te zien of annuleer 
 
     <!-- Status bar -->
     <string name="status_bar_title">Statusbalk</string>
+    <string name="status_bar_clock_normal">Normaal</string>
+    <string name="status_bar_clock_small">Klein (standaard)</string>
     <string name="status_bar_clock_title">Klok</string>
     <string name="status_bar_general_title">Algemeen</string>
     <string name="status_bar_show_clock_title">Klok tonen</string>
-    <string name="status_bar_am_pm_title">12-uurs formaat</string>
+    <string name="status_bar_category_am_pm_title">12-uurs formaat</string>
     <string name="status_bar_am_pm_info">24-uurs formaat ingeschakeld</string>
     <string name="status_bar_battery_title">Opmaak batterijstatus</string>
     <string name="status_bar_toggle_brightness">Helderheid beheren</string>
@@ -2074,6 +2076,8 @@ Schakel het scherm uit om de geselecteerde melding in actie te zien of annuleer 
     <string name="additional_options_title">Meer\u2026</string>
     <string name="unlock_menu_unlock_title">Menu-ontgrendeling</string>
     <string name="unlock_menu_unlock_summary">Druk op de menuknop om het apparaat te ontgrendelen</string>
+    <string name="unlock_home_unlock_title">Thuis-ontgrendeling</string>
+    <string name="unlock_home_unlock_summary">Druk op de thuisknop om het apparaat te ontgrendelen</string>
     <string name="unlock_quick_unlock_control_title">Snel ontgrendelen</string>
     <string name="unlock_quick_unlock_control_summary">Automatisch ontgrendelen als de pincode of het wachtwoord correct is</string>
 

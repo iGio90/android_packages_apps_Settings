@@ -1918,14 +1918,13 @@
     <string name="hardware_keys_action_voice_search">Голосовой поиск</string>
     <string name="hardware_keys_action_in_app_search">Поиск в приложении</string>
 
-    <!-- Power Widget #CM -->
-
     <!-- Status bar #CM -->
     <string name="status_bar_title">Строка состояния</string>
+    <string name="status_bar_clock_normal">Нормальный</string>
+    <string name="status_bar_clock_small">Маленький (по умолчанию)</string>
     <string name="status_bar_clock_title">Часы</string>
     <string name="status_bar_general_title">Основные</string>
     <string name="status_bar_show_clock_title">Показывать часы</string>
-    <string name="status_bar_am_pm_title">Стиль AM/PM</string>
     <string name="status_bar_am_pm_info">Включен 24-часовой формат</string>
     <string name="status_bar_battery_title">Стиль батареи</string>
     <string name="status_bar_toggle_brightness">Управление яркостью</string>
@@ -2032,6 +2031,18 @@
     <string name="lockscreen_clock_align_center">По центру</string>
     <string name="lockscreen_clock_align_right">Справа</string>
 
+    <string name="lockscreen_buttons_title">Действия кнопок</string>
+    <string name="lockscreen_buttons_summary">Просмотр или изменение действий кнопок экрана блокировки</string>
+    <string name="lockscreen_long_press_back_title">Долгое нажатие кнопки \"Назад\"</string>
+    <string name="lockscreen_long_press_home_title">Долгое нажатие кнопки \"Домой\"</string>
+    <string name="lockscreen_long_press_menu_title">Долгое нажатие кнопки \"Меню\"</string>
+    <string name="lockscreen_buttons_no_action">Нет действия</string>
+    <string name="lockscreen_buttons_flashlight">Фонарик</string>
+    <string name="lockscreen_buttons_next">Следующий трек</string>
+    <string name="lockscreen_buttons_previous">Предыдущий трек</string>
+    <string name="lockscreen_buttons_playpause">Воспр./Пауза</string>
+    <string name="lockscreen_buttons_toggle_sound">Режимы звука</string>
+
     <!-- Profiles settings -->
     <string name="profiles_settings_title">Профили</string>
     <string name="profiles_general_title">Основные</string>
@@ -2132,8 +2143,6 @@
     <string name="vibrator_type_ringer">Вызовы</string>
     <string name="vibrator_type_notification">Уведомления</string>
 
-    <!-- Connection override toggles (not all are used at this time ) -->
-
     <!-- Screen security - Screen security -->
     <string name="screen_security_category">Безопасность экрана</string>
     <string name="screen_security_title">Экран блокировки</string>
@@ -2141,6 +2150,8 @@
     <string name="additional_options_title">Дополнительные опции</string>
     <string name="unlock_menu_unlock_title">Разблок. по кнопке \"Меню\"</string>
     <string name="unlock_menu_unlock_summary">Нажатие кнопки \"Меню\" разблокирует устройство</string>
+    <string name="unlock_home_unlock_title">Разблок. по кнопке \"Домой\"</string>
+    <string name="unlock_home_unlock_summary">Нажатие кнопки \"Домой\" разблокирует устройство</string>
     <string name="unlock_quick_unlock_control_title">Быстрая разблокировка</string>
     <string name="unlock_quick_unlock_control_summary">Не требуется нажимать \"ОК\" после ввода пароля или PIN. Стирание засчитывается как неудачная попытка</string>
 
@@ -2377,11 +2388,14 @@
     <string name="stylus_icon_enabled_title">Значок стилуса</string>
     <string name="stylus_icon_enabled_summary">Показывать значок указателя при рисовании или управлении стилусом</string>
 
-    <!-- Power menu screenshot -->
+    <!-- Power menu enable disable -->
     <string name="power_menu_title">Меню \"Параметры устройства\"</string>
     <string name="power_menu_reboot_title">Перезагрузка</string>
     <string name="power_menu_screenshot_title">Скриншот</string>
+    <string name="power_menu_expanded_desktop">Расширенный рабочий стол</string>
     <string name="power_menu_profiles_title">Выбор профиля</string>
+    <string name="power_menu_airplane_title">Режим полёта</string>
+    <string name="power_menu_silent_title">Звуковая панель</string>
 
     <!-- Launches Dev Tools -->
     <string name="development_tools_title">Запуск утилиты разработчика</string>

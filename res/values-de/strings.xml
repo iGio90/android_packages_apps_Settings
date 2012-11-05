@@ -968,7 +968,7 @@
     <string name="lockpattern_settings_enable_summary" msgid="1165707416664252167">"Zum Entsperren muss ein Muster gezeichnet werden"</string>
     <string name="lockpattern_settings_enable_visible_pattern_title" msgid="2615606088906120711">"Muster sichtbar machen"</string>
     <!-- Security & location settings screen, setting check box title. This setting controls whether a visible red line will be drawn after the user has drawn the unlock pattern incorrectly.  If checked, this line is drawn.  If unchecked, there is nothing drawn so the user does not reveal his pattern while he unlocks the phone.-->
-    <string name="lockpattern_settings_enable_error_path_title">Fehlerhaftes Entsperrungsmuster anzeigen</string>
+    <string name="lockpattern_settings_enable_error_path_title">Fehler anzeigen</string>
     <!-- Security & location settings screen, setting check box title. This setting controls whether the dots will be drawn when using the lockscreen pattern.-->
     <string name="lockpattern_settings_enable_dots_title">Punktraster anzeigen</string>
     <string name="lockpattern_settings_enable_tactile_feedback_title" msgid="8898518337442601027">"Bei Berührung vibrieren"</string>
@@ -1751,7 +1751,7 @@
     <string name="end_time_title">Ende</string>
 
     <!-- Safe headset volume restore checkbox -->
-    <string name="safe_headset_restore_title">Begrenzte Kopfhörerlautstärke</string>
+    <string name="safe_headset_restore_title">Kopfhörerlautstärke</string>
     <string name="safe_headset_restore_summary">Schützt beim Einstecken des Kopfhörers vor zu hoher Lautstärke</string>
 
     <!-- Backlight -->
@@ -1886,23 +1886,24 @@
     <string name="hardware_keys_action_voice_search">Sprachsuche</string>
     <string name="hardware_keys_action_in_app_search">In-App Suche</string>
 
-    <!-- Power Widget -->
-
     <!-- Status bar -->
     <string name="status_bar_title">Statusleiste</string>
+    <string name="status_bar_clock_small">Klein (Standard)</string>
     <string name="status_bar_clock_title">Uhrzeit</string>
     <string name="status_bar_general_title">Allgemein</string>
     <string name="status_bar_show_clock_title">Zeige Uhr</string>
-    <string name="status_bar_am_pm_title">Tageszeitanzeige</string>
+    <string name="status_bar_category_am_pm_title">Tageszeitanzeige</string>
     <string name="status_bar_battery_title">Batteriestatus</string>
     <string name="status_bar_toggle_brightness">Helligkeitsregler</string>
     <string name="status_bar_toggle_brightness_summary">Änderung der Helligkeit durch Wischen über die Statusleiste</string>
     <string name="status_bar_toggle_info">Automatische Helligkeit ist aktiviert</string>
     <string name="status_bar_signal_text_title">Signalstärke in dBm</string>
-    <string name="status_bar_style_icon">Nur Balken</string>
+    <string name="status_bar_style_icon">Symbol</string>
     <string name="status_bar_style_hidden">Versteckt</string>
     <string name="status_bar_signal_text_show_text">Signalstärke (nur Wert)</string>
-    <string name="status_bar_battery_status_percentage">Prozent</string>
+    <string name="status_bar_battery_status_percentage">Symbol &amp; Prozent</string>
+    <string name="status_bar_battery_status_circle">Kreis</string>
+    <string name="status_bar_battery_status_circle_percentage">Kreis &amp; Prozent</string>
 
     <string name="lock_screen_title">Bildschirmsperre</string>
 
@@ -2107,9 +2108,11 @@
     <string name="screen_security_summary">Einstellungen zur Sicherheitssperre, Timeouts und Abschaltverzögerungen anzeigen und ändern.</string>
     <string name="additional_options_title">Weitere Optionen</string>
     <string name="unlock_menu_unlock_title">Mit Menü entsperren</string>
-    <string name="unlock_menu_unlock_summary">Entsperren des Geräts durch Drücken der Menütaste</string>
+    <string name="unlock_menu_unlock_summary">Entsperren durch Drücken der Menü-Taste</string>
+    <string name="unlock_home_unlock_title">Mit Home entsperren</string>
+    <string name="unlock_home_unlock_summary">Entsperren durch Drücken der Home-Taste</string>
     <string name="unlock_quick_unlock_control_title">Schnelles Entsperren</string>
-    <string name="unlock_quick_unlock_control_summary">Entsperrt, sobald PIN oder Passwort korrekt eingegeben wurden.</string>
+    <string name="unlock_quick_unlock_control_summary">Entsperren durch korrekte PIN- oder Passworteingabe.</string>
 
     <!-- Slide lock delay -->
     <string name="delay_and_timeout_title">Sperrverzögerung</string>
@@ -2164,7 +2167,7 @@
 
     <!-- Memory Management -->
     <string name="memory_management_title">Speicherverwaltung</string>
-    <string name="memory_management_summary">Speichernutzung anpassen, um Systemleitung zu modifizieren</string>
+    <string name="memory_management_summary">Speichernutzung anpassen, um Systemleistung zu modifizieren</string>
     <!-- zRam -->
     <string name="pref_zram_title">zRam</string>
     <string name="pref_zram_summary">Speicherinhalte für mehr virtuellen Speicher mit zRAM komprimieren (Neustart erforderlich)</string>
@@ -2183,7 +2186,7 @@
 
     <!-- Performance Settings : 16bpp Alpha -->
     <string name="pref_use_16bpp_alpha_title">16-Bit-Transparenz</string>
-    <string name="pref_use_16bpp_alpha_summary">Verwenden der 16-Bit-Transparenz kann die Performance beim Scrollen verbessern, aber Grafikfehler verursachen (Neustart erforderlich)</string>
+    <string name="pref_use_16bpp_alpha_summary">Kann die Performance beim Scrollen verbessern, aber Grafikfehler verursachen (Neustart erforderlich)</string>
 
     <!-- System Updates  -->
     <!-- About device screen, list item title. Takes the user to the screen for seeing and installing system updates. -->
@@ -2370,11 +2373,13 @@ ice shows the slider widgets before the unlock option [CHAR LIMIT=28]-->
     <string name="stylus_icon_enabled_title">Stift-Symbol</string>
     <string name="stylus_icon_enabled_summary">Zeiger einblenden, wenn ein Stift verwendet wird</string>
 
-    <!-- Power menu screenshot -->
+    <!-- Power menu enable disable -->
     <string name="power_menu_title">Ausschalten</string>
     <string name="power_menu_reboot_title">Reboot-Menü</string>
     <string name="power_menu_screenshot_title">Bildschirmfoto</string>
     <string name="power_menu_profiles_title">Profilwechsel</string>
+    <string name="power_menu_airplane_title">Flugmodus</string>
+    <string name="power_menu_silent_title">Lautlos</string>
 
     <!-- Launches Dev Tools -->
     <string name="development_tools_title">Entwickler-Werkzeuge</string>
@@ -2392,5 +2397,12 @@ ice shows the slider widgets before the unlock option [CHAR LIMIT=28]-->
     <!-- CM Updater -->
     <string name="cmupdate_settings_title">CyanogenMod Updates</string>
     <string name="cmupdate_settings_summary">Auf neue Versionen prüfen und diese installieren.</string>
+
+    <!--- Sms security limit -->
+    <string name="app_security_title">App-Sicherheit</string>
+    <string name="sms_security_check_limit_title">SMS-Begrenzung</string>
+    <string name="sms_security_check_limit_summary">Momentane Begrenzung: %d Nachrichten in 15 Minuten.\nZeigt einen Alarmdialog an, um Apps daran zu hindern, häufig SMS zu verschicken.</string>
+    <string name="sms_security_check_limit_default">30 (Standard)</string>
+
     <!-- **** CYANOGENMOD ADDITIONS END **** -->
 </resources>

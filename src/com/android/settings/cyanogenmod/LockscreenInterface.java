@@ -24,6 +24,7 @@ import android.app.AlertDialog;
 import android.app.ColorPickerDialog;
 import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -31,6 +32,8 @@ import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.preference.ColorPickerPreference;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
@@ -39,6 +42,7 @@ import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.view.Display;
+import android.view.IWindowManager;
 import android.view.Window;
 import android.widget.Toast;
 
@@ -58,6 +62,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 //    public static final String KEY_SEE_TRHOUGH_PREF = "lockscreen_see_through";
     private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
 //    private static final String KEY_CLOCK_ALIGN = "lockscreen_clock_align";
+    private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
 
     private ListPreference mCustomBackground;
 //    private CheckBoxPreference mSeeThrough;
@@ -65,6 +70,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 /*    private Preference mCalendarPref;*/
     private ListPreference mBatteryStatus;
 //    private ListPreference mClockAlign;
+    private PreferenceScreen mLockscreenButtons;
     private Activity mActivity;
     ContentResolver mResolver;
 
@@ -99,6 +105,16 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 
 //        mClockAlign = (ListPreference) findPreference(KEY_CLOCK_ALIGN);
 //        mClockAlign.setOnPreferenceChangeListener(this);
+
+        mLockscreenButtons = (PreferenceScreen) findPreference(KEY_LOCKSCREEN_BUTTONS);
+        IWindowManager wm = IWindowManager.Stub.asInterface(ServiceManager.getService(Context.WINDOW_SERVICE));
+        try {
+            if(!wm.hasHardwareKeys()){
+                getPreferenceScreen().removePreference(mLockscreenButtons);
+            }
+        } catch (RemoteException ex) {
+            // too bad, so sad, oh mom, oh dad
+        }
 
 //        updateCustomBackgroundSummary();
     }
