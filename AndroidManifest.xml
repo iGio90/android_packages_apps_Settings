@@ -1542,14 +1542,14 @@
         </activity>
         
         <!-- Based on CyanogenMod's CIDCircus, Android's easteregg -->
-        <activity android:name=".paranoid.PALogoActivity"
+        <activity android:name=".pac.PACLogoActivity"
                 android:theme="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen"
                 android:process=":ui">
         </activity>
         <activity
-            android:name=".paranoid.PACircus"
+            android:name=".pac.PACCircus"
             android:exported="true"
-            android:label="PACircus"
+            android:label="PACCircus"
             android:icon="@drawable/empty_icon"
             android:theme="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen"
             android:hardwareAccelerated="true"
@@ -1558,7 +1558,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <category android:name=".paranoid.PALOGO" />
+                <category android:name=".pac.PACLOGO" />
             </intent-filter>
         </activity>
 

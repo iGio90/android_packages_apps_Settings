@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.paranoid;
+package com.android.settings.pac;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
@@ -35,7 +35,7 @@ import android.widget.Toast;
 
 import com.android.settings.R;
 
-public class PALogoActivity extends Activity {
+public class PACLogoActivity extends Activity {
     Toast mToast;
     ImageView mContent;
     int mCount;
@@ -58,7 +58,7 @@ public class PALogoActivity extends Activity {
         Typeface light = Typeface.create("sans-serif-light", Typeface.NORMAL);
         Typeface normal = Typeface.create("sans-serif", Typeface.BOLD);
 
-        String paVersion = SystemProperties.get("ro.pa.version");
+        String pacVersion = SystemProperties.get("ro.pac.version");
 
         final float size = 14 * metrics.density;
         final LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
@@ -72,7 +72,7 @@ public class PALogoActivity extends Activity {
         tv.setTextSize(1.25f*size);
         tv.setTextColor(0xFFFFFFFF);
         tv.setShadowLayer(4*metrics.density, 0, 2*metrics.density, 0x66000000);
-        tv.setText("ParanoidAndroid");
+        tv.setText("PAC-man");
         view.addView(tv, lp);
    
         tv = new TextView(this);
@@ -80,7 +80,7 @@ public class PALogoActivity extends Activity {
         tv.setTextSize(size);
         tv.setTextColor(0xFFFFFFFF);
         tv.setShadowLayer(4*metrics.density, 0, 2*metrics.density, 0x66000000);
-        tv.setText(paVersion);
+        tv.setText(pacVersion);
         view.addView(tv, lp);
 
         return view;
@@ -97,7 +97,7 @@ public class PALogoActivity extends Activity {
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
 
         mContent = new ImageView(this);
-        mContent.setImageResource(R.drawable.palogo);
+        mContent.setImageResource(R.drawable.paclogo);
         mContent.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         
         final int p = (int)(32 * metrics.density);
@@ -118,9 +118,9 @@ public class PALogoActivity extends Activity {
                         .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
                             | Intent.FLAG_ACTIVITY_CLEAR_TASK
                             | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS)
-                        .setClassName("com.android.settings","com.android.settings.paranoid.PACircus"));
+                        .setClassName("com.android.settings","com.android.settings.pac.PACCircus"));
                 } catch (ActivityNotFoundException ex) {
-                    android.util.Log.e("PALogoActivity", "Couldn't find a circus of PA's.");
+                    android.util.Log.e("PACLogoActivity", "Couldn't find a circus of PAC's.");
                 }
                 finish();
                 return true;
