@@ -64,7 +64,7 @@
     <header
         android:id="@+id/rom_control"
 	android:icon="@drawable/ic_settings_rom_control"
-        android:title="@string/rom_control_title">
+        android:title="@string/st_aokp">
         <intent
             android:action="android.intent.action.MAIN"
             android:targetPackage="com.aokp.romcontrol"
@@ -75,7 +75,7 @@
     <header
         android:id="@+id/paranoid_settings"
         android:icon="@drawable/ic_settings_paranoid"
-        android:title="@string/paranoid_settings">
+        android:title="@string/st_paranoid">
         <intent
             android:action="android.intent.action.MAIN"
             android:targetPackage="com.paranoid.preferences"
@@ -87,20 +87,20 @@
         android:id="@+id/system_settings"
         android:icon="@drawable/ic_settings_system"
         android:fragment="com.android.settings.cyanogenmod.SystemSettings"
-        android:title="@string/system_settings_title" />
+        android:title="@string/st_cyanogenmod" />
+
+    <!-- Lock screen -->
+    <header
+        android:id="@+id/lock_screen_settings"
+        android:fragment="com.android.settings.cyanogenmod.LockscreenInterface"
+        android:title="@string/st_lockscreen"
+        android:icon="@drawable/ic_settings_lockscreen" />
 
     <!-- Launcher -->
     <header
         android:id="@+id/launcher_settings"
         android:title="@string/launcher_settings_title"
         android:icon="@drawable/ic_settings_cmlauncher" />
-
-    <!-- Lock screen -->
-    <header
-        android:id="@+id/lock_screen_settings"
-        android:fragment="com.android.settings.cyanogenmod.LockscreenInterface"
-        android:title="@string/lock_screen_title"
-        android:icon="@drawable/ic_settings_lockscreen" />
 
     <!-- Themes -->
     <header
@@ -112,6 +112,9 @@
             android:targetPackage="com.tmobile.themechooser"
             android:targetClass="com.tmobile.themechooser.ThemeChooser" />
     </header>
+
+    <!-- DEVICE -->
+    <header android:title="@string/header_category_jellybam" />
 
     <!-- Updates and mods -->
     <header

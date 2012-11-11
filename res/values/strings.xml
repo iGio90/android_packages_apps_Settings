@@ -5036,4 +5036,9 @@
     <string name="enable_alarm_icon">Enable alarm icon</string>
     <string name="enable_alarm_icon_summary">Allows you to enable alarm icon in statusbar (requires UI restart)</string>
     <string name="settings_update">Update center</string>
+    <string name="st_aokp">AOKP Settings</string>
+    <string name="st_cyanogenmod">CYANOGENMOD Settings</string>
+    <string name="st_paranoid">PARANOID Settings</string>
+    <string name="st_lockscreen">LOCKSCREEN Settings</string>
+    <string name="header_category_jellybam">JELLYBAM</string>
 </resources>
