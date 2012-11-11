@@ -1,0 +1,136 @@
+/*
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.android.settings;
+
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+import java.io.File;
+import java.io.IOException;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.ActivityNotFoundException;
+import android.content.ContentResolver;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.Rect;
+import android.net.Uri;
+import android.os.Bundle;
+import android.preference.CheckBoxPreference;
+import android.preference.ListPreference;
+import android.preference.Preference;
+import android.preference.PreferenceScreen;
+import android.provider.MediaStore;
+import android.provider.Settings;
+import android.view.Display;
+import android.view.Window;
+import android.widget.Toast;
+
+import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
+
+public class Lockscreen extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
+
+    private static final String TAG = "Lockscreen";
+    private static final String KEY_CLOCK_ALIGN = "lockscreen_clock_align";
+    private static final String PREF_ALT_LOCKSCREEN = "alt_lockscreen";
+    private static final String PREF_ALT_LOCKSCREEN_BG_COLOR = "alt_lock_bg_color";
+
+
+    private ListPreference mClockAlign;
+    private CheckBoxPreference mAltLockscreen;
+    private ColorPickerPreference mAltLockscreenBgColor;
+    private Activity mActivity;
+    ContentResolver mResolver;
+    Context mContext;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mActivity = getActivity();
+        mResolver = mActivity.getContentResolver();
+
+        addPreferencesFromResource(R.xml.interface_audio);
+        mClockAlign = (ListPreference) findPreference(KEY_CLOCK_ALIGN);
+        mClockAlign.setOnPreferenceChangeListener(this);
+
+        mAltLockscreen = (CheckBoxPreference) findPreference(PREF_ALT_LOCKSCREEN);
+        mAltLockscreen.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
+                Settings.System.USE_ALT_LOCKSCREEN, false));
+
+        mAltLockscreenBgColor = (ColorPickerPreference) findPreference(PREF_ALT_LOCKSCREEN_BG_COLOR);
+        mAltLockscreenBgColor.setOnPreferenceChangeListener(this);
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateState();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+
+    private void updateState() {
+        int resId;
+
+        // Set the clock align value
+        if (mClockAlign != null) {
+            int clockAlign = Settings.System.getInt(mResolver,
+                    Settings.System.LOCKSCREEN_CLOCK_ALIGN, 2);
+            mClockAlign.setValue(String.valueOf(clockAlign));
+            mClockAlign.setSummary(mClockAlign.getEntries()[clockAlign]);
+        }
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mAltLockscreen) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.USE_ALT_LOCKSCREEN,
+                    ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
+            return true;
+        }        
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        boolean handled = false;
+        if (preference == mAltLockscreenBgColor) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.ALT_LOCK_BG_COLOR, intHex);
+            return true;
+      } else if (preference == mClockAlign) {
+            int value = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.LOCKSCREEN_CLOCK_ALIGN, value);
+            mClockAlign.setSummary(mClockAlign.getEntries()[value]);
+            return true;
+        }
+        return false;
+    }
+}

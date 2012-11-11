@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="@string/about_jellybam"
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+	<PreferenceCategory
+		android:key="aokp"
+		android:title="@string/jellybam">
+
+		<Preference
+			android:key="jellybam_website"
+			android:title="@string/jellybam_website_title"
+			android:summary="@string/jellybam_website_summary" />
+
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:key="devs"
+		android:title="@string/devs">
+
+		<com.android.settings.about.DeveloperPreference
+			android:title="iGio90"
+			settings:nameDev="iGio90"
+			settings:twitterHandle="RoXpDa"
+			settings:donateLink="@string/donate_igio90" />
+	</PreferenceCategory>
+
+</PreferenceScreen>

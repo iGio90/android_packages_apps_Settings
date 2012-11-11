@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="@string/about_jb_settings_title"
+	xmlns:jb="http://schemas.android.com/apk/res/com.android.settings">
+
+	<PreferenceCategory
+		android:key="links"
+		android:title="@string/jellybam">
+
+		<Preference
+			android:key="jellybam_website"
+			android:title="@string/jellybam_website_title"
+			android:summary="@string/jellybam_website_summary" />
+
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:key="devs"
+		android:title="@string/devs">
+
+		<com.android.settings.widgets.DeveloperPreference
+            android:title="iGio90"
+            jb:nameDev="iGio90"
+            jb:twitterHandle="RoXpDa"
+            jb:donateLink="@string/donate_igio90" />
+
+                <com.android.settings.widgets.DeveloperPreference
+            android:title="Bliss"
+            jb:nameDev="Bliss"
+            jb:twitterHandle="_disca"
+            jb:donateLink="@string/donate_bliss" />
+
+        </PreferenceCategory>
+
+	<PreferenceCategory
+		android:key="contributors"
+		android:title="@string/contributors_title">
+
+		<com.android.settings.widgets.DeveloperPreference
+            android:title="CyanogenMod"
+            jb:nameDev="cyanogenmod"
+            jb:twitterHandle="cyanogenmod"
+            jb:donateLink="@string/donate_cyanogenmod" />
+
+		<com.android.settings.widgets.DeveloperPreference
+            android:title="AOKP"
+            jb:nameDev="aokp"
+            jb:twitterHandle="aokp_rom"
+            jb:donateLink="@string/donate_aokp" />
+
+	</PreferenceCategory>
+
+</PreferenceScreen>
