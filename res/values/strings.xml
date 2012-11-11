@@ -4949,8 +4949,10 @@
     <!-- About phone screen,  setting option name-->
     <string name="aokp_version">AOKP version</string>
     <string name="cm_version">CyanogenMod version</string>
-    <string name="pac_version">PAC version</string>
+    <string name="pac_version">JellyBam version</string>
     <string name="mod_version_default">Unknown</string>
+    <string name="mod_version">JellyBam version</string>
+
     <!-- About phone screen, build date of ROM -->
     <string name="build_date">Build date</string>
     <string name="build_date_default">2012-01-01-0000</string>
@@ -5005,4 +5007,28 @@
     <string name="sms_security_check_limit_default">30 (Default)</string>
 
     <!-- **** CYANOGENMOD ADDITIONS END **** -->
+    <!-- About JellyBam -->
+    <string name="about_jb_settings_title">About JellyBam</string>
+    <string name="about_jellybam">About JellyBam</string>
+    <string name="about_jellybam_summary">@null</string>
+    <string name="app_name">JellyBam</string>
+    <string name="devs">Developer</string>
+    <string name="grap">Graphic</string>
+    <string name="donate_bliss">http://forum.xda-developers.com/donatetome.php?u=4895461</string>
+    <string name="donate_igio90">http://forum.xda-developers.com/donatetome.php?u=4477162</string>
+    <string name="donate_cyanogenmod">http://forum.cyanogenmod.com/donate</string>
+    <string name="donate_aokp">http://aokp.co/</string>
+    <string name="jellybam">JellyBam</string>
+    <string name="jellybam_website_title">JellyBam WebSite</string>
+    <string name="jellybam_website_summary">Visit us and get the latest JellyBam release, mods, news and updates</string>
+    <string name="title_about">About JellyBam</string>
+
+    <!-- JellyBam Settings -->
+    <string name="interface_settings_title">JELLYBAM Settings</string>
+    <string name="interface_lockscreen_title">Lockscreen Options</string>
+    <string name="interface_audio_title">Sound Options</string>
+    <string name="interface_statusbar_title">Statusbar Options</string>
+    <string name="interface_powermenu_title">Power Menu Options</string>
+    <string name="header_category_additional">ADDITIONAL OPTIONS</string>
+    <string name="header_category_jellybam">JELLYBAM</string>
 </resources>

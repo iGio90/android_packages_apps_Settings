@@ -376,35 +376,6 @@
     <string name="lockpassword_password_requires_alpha" msgid="5203836082520634764">"Şifre en az bir harf içermelidir."</string>
     <string name="lockpassword_password_requires_digit" msgid="3958033271435659825">"Şifre en az bir rakam içermelidir."</string>
     <string name="lockpassword_password_requires_symbol" msgid="7226621405629726899">"Şifre en az bir sembol içermelidir."</string>
-  <plurals name="lockpassword_password_requires_letters">
-    <item quantity="one" msgid="3063853802158131458">"Şifre en az 1 harf içermelidir."</item>
-    <item quantity="other" msgid="8186027808415585970">"Şifre en az %d harf içermelidir."</item>
-  </plurals>
-  <plurals name="lockpassword_password_requires_lowercase">
-    <item quantity="one" msgid="5583986519662091001">"Şifre en az 1 küçük harf içermelidir."</item>
-    <item quantity="other" msgid="2693910942679679225">"Şifre en az %d küçük harf içermelidir."</item>
-  </plurals>
-  <plurals name="lockpassword_password_requires_uppercase">
-    <item quantity="one" msgid="2611909966725502768">"Şifre en az 1 büyük harf içermelidir."</item>
-    <item quantity="other" msgid="3030801209112209245">"Şifre en az %d büyük harf içermelidir."</item>
-  </plurals>
-  <plurals name="lockpassword_password_requires_numeric">
-    <item quantity="one" msgid="3820355568839621231">"Şifre en az 1 rakam içermelidir."</item>
-    <item quantity="other" msgid="4703982391407595924">"Şifre en az %d rakam içermelidir."</item>
-  </plurals>
-  <plurals name="lockpassword_password_requires_symbols">
-    <item quantity="one" msgid="8456579939292408631">"Şifre en az 1 özel sembol içermelidir."</item>
-    <item quantity="other" msgid="1221290525051187757">"Şifre en az %d özel sembol içermelidir."</item>
-  </plurals>
-  <plurals name="lockpassword_password_requires_nonletter">
-    <item quantity="one" msgid="4594051152085925921">"Şifre, harf olmayan en az 1 karakter içermelidir."</item>
-    <item quantity="other" msgid="3952508584649046404">"Şifre, harf olmayan en az %d karakter içermelidir."</item>
-  </plurals>
-    <string name="lockpassword_password_recently_used" msgid="6098087796784262081">"Cihaz yöneticisi yakın zamanda kullanılan bir şifreye izin vermiyor."</string>
-    <string name="lockpassword_ok_label" msgid="313822574062553672">"Tamam"</string>
-    <string name="lockpassword_cancel_label" msgid="8818529276331121899">"İptal"</string>
-    <string name="lockpattern_tutorial_cancel_label" msgid="6431583477570493261">"İptal"</string>
-    <string name="lockpattern_tutorial_continue_label" msgid="3559793618653400434">"İleri"</string>
     <string name="lock_setup" msgid="3355847066343753943">"Kurulum tamamlandı."</string>
     <string name="device_admin_title" msgid="3562216873644263804">"Cihaz yönetimi"</string>
     <string name="manage_device_admin" msgid="5059296715271077278">"Cihaz yöneticileri"</string>
