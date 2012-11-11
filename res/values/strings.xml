@@ -5031,4 +5031,9 @@
     <string name="interface_powermenu_title">Power Menu Options</string>
     <string name="header_category_additional">ADDITIONAL OPTIONS</string>
     <string name="header_category_jellybam">JELLYBAM</string>
+    <string name="header_category_tweaks">ROM CONTROL</string>
+    <string name="power_menu_expanded_desktop_summary">Adds option in power menu to hide the status bar and navigation bar.</string>
+    <string name="enable_alarm_icon">Enable alarm icon</string>
+    <string name="enable_alarm_icon_summary">Allows you to enable alarm icon in statusbar (requires UI restart)</string>
+    <string name="settings_update">Update center</string>
 </resources>

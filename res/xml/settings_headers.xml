@@ -57,23 +57,19 @@
         android:fragment="com.android.settings.WirelessSettings"
         android:icon="@drawable/empty_icon" />
 
-    <!-- Quick Links -->
+    <!-- INTERFACE -->
     <header android:title="@string/header_category_tweaks" />
 
-    <header android:icon="@drawable/ic_settings_rom_control"
-            android:title="@string/rom_control_title">
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetClass="com.aokp.romcontrol.ROMControlActivity"
-                android:targetPackage="com.aokp.romcontrol" />
-    </header>
-
-    <!-- System -->
+    <!-- ROMControl -->
     <header
-        android:id="@+id/system_settings"
-        android:icon="@drawable/ic_settings_system"
-        android:fragment="com.android.settings.cyanogenmod.SystemSettings"
-        android:title="@string/system_settings_title" />
+        android:id="@+id/rom_control"
+	android:icon="@drawable/ic_settings_rom_control"
+        android:title="@string/rom_control_title">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.aokp.romcontrol"
+            android:targetClass="com.aokp.romcontrol.ROMControlActivity" />
+    </header>
 
      <!-- ParanoidAndroid Header -->
     <header
@@ -84,8 +80,14 @@
             android:action="android.intent.action.MAIN"
             android:targetPackage="com.paranoid.preferences"
             android:targetClass="com.paranoid.preferences.PreferenceListActivity" />
+    </header>
 
-    <header android:title="@string/header_category_additional" />
+    <!-- System -->
+    <header
+        android:id="@+id/system_settings"
+        android:icon="@drawable/ic_settings_system"
+        android:fragment="com.android.settings.cyanogenmod.SystemSettings"
+        android:title="@string/system_settings_title" />
 
     <!-- Launcher -->
     <header
@@ -100,25 +102,21 @@
         android:title="@string/lock_screen_title"
         android:icon="@drawable/ic_settings_lockscreen" />
 
-    <!-- THEMING SECTION -->
-    <header android:title="@string/header_category_theming" />
-
     <!-- Themes -->
-    <header android:icon="@drawable/ic_settings_themes"
-            android:title="@string/themes_title">
+    <header
+        android:id="@+id/themes_settings"
+        android:icon="@drawable/ic_settings_themes"
+        android:title="@string/themes_settings_title">
         <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="com.tmobile.themechooser"
-                android:targetClass="com.tmobile.themechooser.ThemeChooser" />
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.tmobile.themechooser"
+            android:targetClass="com.tmobile.themechooser.ThemeChooser" />
     </header>
-
-    <!-- JellyBam SECTION -->
-    <header android:title="@string/header_category_jellybam" />
 
     <!-- Updates and mods -->
     <header
             android:icon="@drawable/ic_settings_update"
-            android:title="@string/update_settings_title">
+            android:title="@string/settings_update">
         <intent
                 android:action="android.intent.action.MAIN"
                 android:targetPackage="com.acquariusoft.UpdateMe"
@@ -131,6 +129,7 @@
         android:fragment="com.android.settings.jb.About"
         android:icon="@drawable/ic_settings_about_jb"
         android:title="@string/about_jb_settings_title" />
+
 
     <!-- DEVICE -->
     <header android:title="@string/header_category_device" />
@@ -290,4 +289,5 @@
         android:fragment="com.android.settings.DeviceInfoSettings"
         android:icon="@drawable/ic_settings_about"
         android:title="@string/about_settings" />
+
 </preference-headers>
