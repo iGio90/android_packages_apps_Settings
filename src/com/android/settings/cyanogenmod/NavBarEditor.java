@@ -106,6 +106,7 @@ public class NavBarEditor extends Fragment {
                 public void onClick(DialogInterface dialog, int id) {
                     if (mEditMode) {
                         toggleEditMode(false, false);
+                        mEditMenu.setIcon(R.drawable.stat_navbar_edit_off);
                     }
                     Settings.System.putString(getActivity().getContentResolver(),
                             Settings.System.NAV_BUTTONS, null);
