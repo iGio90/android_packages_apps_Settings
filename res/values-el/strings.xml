@@ -1562,7 +1562,6 @@
     <string name="track_frame_time_summary" msgid="447577515813970287">"Μέτρ. χρόνου απόδοσης σε adb shell dumpsys gfxinfo"</string>
     <string name="window_animation_scale_title" msgid="6162587588166114700">"Κλίμακα κίνησης παραθύρου"</string>
     <string name="transition_animation_scale_title" msgid="387527540523595875">"Κλίμακα κίνησης μετάβασης"</string>
-    <string name="animator_duration_scale_title" msgid="3406722410819934083">"Animator duration scale"</string>
     <string name="debug_applications_category" msgid="4206913653849771549">"Εφαρμογές"</string>
     <string name="immediately_destroy_activities" msgid="8366775083630234121">"Μη διατήρ. δραστηριοτήτων"</string>
     <string name="immediately_destroy_activities_summary" msgid="3592221124808773368">"Διαγραφή κάθε δραστηριότητας μετά τον τερματισμό"</string>
@@ -2511,6 +2510,9 @@
 
     <!-- setting Checkbox summary whether to allow mock SMS  -->
     <string name="allow_mock_sms">Να επιτρέπονται ψευδή SMS</string>
+
+    <!-- UI debug setting: scaling factor for all Animator-based animations [CHAR LIMIT=25] -->
+    <string name="animator_duration_scale_title">Κλίμακα διάρκ. animator</string>
 
     <!-- **** CYANOGENMOD ADDITIONS END **** -->
 </resources>
