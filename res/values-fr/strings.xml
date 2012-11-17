@@ -343,16 +343,9 @@
     <!-- Profile Config screen PreferenceGroup titles -->
     <string name="profile_connectionoverrides_title">Connexions</string>
     <string name="profile_volumeoverrides_title">Volume perso.</string>
-<<<<<<< HEAD
-    <string name="profile_vibratoroverrides_title">Vibrations</string>
-=======
     <string name="profile_vibratoroverrides_title">Vibreur</string>
     <string name="vibrator_type_ringer">Appels</string>
     <string name="vibrator_type_notification">Notifications</string>
-    <string name="vibrator_state_disabled">Désactivé</string>
-    <string name="vibrator_state_enabled">Actif</string>
-    <string name="vibrator_state_silent">Uniquement si silencieux</string>
->>>>>>> 0b40e9e... french: profile options update, input methods and CM Updates
     <string name="connection_state_disabled">Inactif</string>
     <string name="connection_state_enabled">Actif</string>
     <string name="volume_override_summary">Actuel</string>
@@ -389,7 +382,6 @@
     <string name="profile_new_appgroup">Nouveau groupe d\'applications</string>
     <string name="profile_delete_appgroup">Supprimer ce groupe d\'applications</string>
     <string name="profile_appgroup_name_prompt">Saisir le nom du nouveau groupe</string>
-    <string name="profile_appgroup_name_title">Nom</string>
     <string name="profile_add_app">Ajouter application</string>
     <string name="profile_delete_app">Retirer application</string>
 
@@ -415,16 +407,7 @@
     <string name="profile_airplanemode_disabled_summary">Le mode avion est desactivé</string>
     <string name="profile_disable_screen_lock_summary">Désactive l\'écran de verrouillage lorsque ce profil est actif</string>
 
-    <string name="vibrator_type_ringer">Appels</string>
-    <string name="vibrator_type_notification">Notifications</string>
-
     <!-- Connection override toggles (not all are used at this time ) -->
-
-    <!-- GPS Source selection -->
-    <string name="location_gps_source_title">Source GPS</string>
-    <string name="location_gps_source_summary">Définir l\'origine des informations GPS, si vous préférez utiliser un dispositif externe Bluetooth au lieu de celui de l\'appareil</string>
-    <string name="location_gps_source_notification_title">Attention</string>
-    <string name="location_gps_source_notification">La source GPS a été modifiée, le GPS va être temporairement désactivé. Veuillez le réactiver avant utilisation!</string>
 
     <!-- Screen security - Screen security   -->
     <string name="screen_security_category">Verrouillage de l\'écran</string>
@@ -452,9 +435,6 @@
     <string name="slide_lock_delay_10m">10 minutes</string>
     <string name="slide_lock_delay_30m">30 minutes</string>
 
-<<<<<<< HEAD
-    <!-- Performance settings  -->
-=======
     <!-- Location Services -->
     <string name="location_gps_source_title">Source GPS</string>
     <string name="location_gps_source_summary">Définir l\'origine des informations GPS, si vous préférez utiliser un dispositif externe Bluetooth au lieu de celui de l\'appareil</string>
@@ -483,7 +463,6 @@
     <string name="kill_app_longpress_back_summary">Permet de forcer la fermeture de l\'application en cours en appuyant longuement sur le bouton Retour</string>
 
     <!-- Performance Settings #CM -->
->>>>>>> 0b40e9e... french: profile options update, input methods and CM Updates
     <string name="performance_settings_title">Performances</string>
 
     <!-- Performance Settings : Warning dialog  -->
@@ -619,20 +598,6 @@
     <string name="link_volume_ringtones">Lier le volume des alertes à la sonnerie</string>
     <string name="link_volume_mutes">Silence commun pour alertes et sonnerie</string>
 
-    <string name="adb_over_network">ADB sur TCP/IP</string>
-    <string name="adb_over_network_summary">"Activer le débogage sur toutes les interfaces (réseaux USB, Wi-Fi et Bluetooth)"</string>
-    <!-- Warning for Adb over Network -->
-    <string name="adb_over_network_warning">"ATTENTION: Lorsque cette fonction est activée, votre appareil est ouvert aux intrusions sur toutes les interfaces, y compris via le réseau mobile !\n\nIl est fortement conseillé de désactiver le réseau mobile avant d\'activer cette fonction.\n\nContinuer ?"</string>
-    <string name="adb_notify">Notification débogage</string>
-    <string name="adb_notify_summary">Afficher une notification lorsque le débogage est actif</string>
-    <string name="root_access">Accès root</string>
-    <string name="root_access_warning_title">Autoriser l\'accès root ?</string>
-    <string name="root_access_warning_message">Autoriser l\'accès root aux applications peut être très dangereux et corrompre la sécurité et la stabilité de votre appareil !</string>
-    <string name="root_access_none">Désactivé</string>
-    <string name="root_access_apps">Appli. uniquement</string>
-    <string name="root_access_adb">ADB uniquement</string>
-    <string name="root_access_all">Applications et ADB</string>
-
     <!-- Security & location settings screen, setting check box title. This controls whether the device shows the slider widgets before the unlock option [CHAR LIMIT=28]-->
     <string name="lockpattern_settings_enable_lock_before_unlock">Afficher les widgets avant le déverrouillage</string>
 
@@ -652,12 +617,7 @@
     <string name="pref_volume_wake_title">Éveil par boutons Volume</string>
     <string name="pref_volume_wake_summary">Permet de rallumer l\'appareil à l\'aide des boutons de volume.</string>
 
-    <!-- Kill app long-press back -->
-    <string name="kill_app_longpress_back">Tuer avec bouton Retour</string>
-    <string name="kill_app_longpress_back_summary">Permet de forcer la fermeture de l\'application en cours en appuyant longuement sur le bouton Retour</string>
-
     <!-- Hostname setting -->
-    <string name="device_hostname">Nom d\'hôte de l\'appareil</string>
 
     <!-- About phone -->
     <string name="cm_version">Version CyanogenMod</string>
@@ -670,8 +630,6 @@
     <!-- Donate  -->
     <!-- About device screen, list item title. Takes the user to the screen about how to donate to the CyanogenMod Project. -->
     <string name="donate_settings_title">Donation</string>
-<<<<<<< HEAD
-=======
     <!-- About device screen, list item summary. Takes the user to the screen about how to donate to the CyanogenMod Project. -->
     <string name="donate_settings_summary">""</string>
 
@@ -716,16 +674,6 @@
     <string name="dock_force_undock_summary" product="tablet">Déconnecter la tablette</string>
     <string name="dock_force_undock_summary" product="default">Déconnecter le téléphone</string>
 
-    <string name="safe_headset_restore_title">Sécurité volume écouteurs</string>
-    <string name="safe_headset_restore_summary">Prévient d\'un volume trop élevé au branchement des écouteurs</string>
-
-<!-- End of CyanogenMod specific settings -->
->>>>>>> 0b40e9e... french: profile options update, input methods and CM Updates
-
-    <!-- Whether to display IME switcher notifcation -->
-    <string name="ime_switcher_notify">Icône méthode de saisie</string>
-    <string name="ime_switcher_notify_summary">Afficher l\'icône de la méthode de saisie dans la barre de notification</string>
-
     <!-- Change Log strings -->
     <string name="changelog_title">Voir changelog</string>
     <string name="changelog_dialog">Changelog</string>
@@ -733,10 +681,6 @@
     <string name="changelog_error">Impossible de charger le changelog</string>
     <string name="changelog_unknown">Inconnu</string>
     <string name="changelog_version">Version</string>
-
-    <!-- Stylus Icon -->
-    <string name="stylus_icon_enabled_title">Pointeur stylet</string>
-    <string name="stylus_icon_enabled_summary">Afficher l\'icône du pointeur lors de l\'utilisation d\'un stylet</string>
 
     <!-- Power menu screenshot -->
     <string name="power_menu_title">Menu marche/arrêt</string>
@@ -2439,7 +2383,4 @@
     <string name="cell_broadcast_settings" msgid="8415582011920085222">"Diffusions cellulaires"</string>
     <string name="cell_broadcast_settings_summary" msgid="3301339398950905913">"Sélectionnez les types d\'alertes d\'urgence à afficher."</string>
 
-    <!-- CM Updater -->
-    <string name="cmupdate_settings_title">Mises à jour CyanogenMod</string>
-    <string name="cmupdate_settings_summary">Vérifier, afficher ou installer les mises à jour disponibles</string>
 </resources>

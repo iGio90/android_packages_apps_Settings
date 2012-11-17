@@ -312,9 +312,7 @@
         <item>Utiliser GPS interne</item>
     </string-array>
 
-<<<<<<< HEAD
     <!-- Profile mode options. -->
-=======
     <string-array name="lockscreen_delay_entries">
         <item>Immédiatement</item>
         <item>1 seconde</item>
@@ -334,7 +332,6 @@
         <item>Par défaut</item>
     </string-array>
 
->>>>>>> 0b40e9e... french: profile options update, input methods and CM Updates
     <string-array name="profile_connection_entries">
         <item>Inactif</item>
         <item>Actif</item>
