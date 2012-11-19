@@ -108,7 +108,7 @@ public class PACCircus extends Activity {
             }
 
             public String toString() {
-                return String.format("<pac (%.1f, %.1f) (%d x %d)>",
+                return String.format("<JELLYBAM (%.1f, %.1f) (%d x %d)>",
                     getX(), getY(), getWidth(), getHeight());
             }
 

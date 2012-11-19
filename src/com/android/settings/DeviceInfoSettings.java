@@ -65,7 +65,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
     private static final String KEY_UPDATE_SETTING = "additional_system_update_settings";
     private static final String KEY_AOKP_VERSION = "aokp_version";
     private static final String KEY_CYANOGENMOD_VERSION = "cm_version";
-    private static final String KEY_PAC_VERSION = "pac_version";
+    private static final String KEY_JELLYBAM_VERSION = "jellybam_version";
     private static final String KEY_MOD_BUILD_DATE = "build_date";
     private static final String KEY_DEVICE_CPU = "device_cpu";
     private static final String KEY_DEVICE_MEMORY = "device_memory";
@@ -92,8 +92,8 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
         findPreference(KEY_AOKP_VERSION).setEnabled(true);
         setValueSummary(KEY_CYANOGENMOD_VERSION, "ro.cm.version");
         findPreference(KEY_CYANOGENMOD_VERSION).setEnabled(true);
-        setValueSummary(KEY_PAC_VERSION, "ro.pac.version");
-        findPreference(KEY_PAC_VERSION).setEnabled(true);
+        setValueSummary(KEY_JELLYBAM_VERSION, "ro.jellybam.version");
+        findPreference(KEY_JELLYBAM_VERSION).setEnabled(true);
         setValueSummary(KEY_MOD_BUILD_DATE, "ro.build.date");
 
         String cpuInfo = getCPUInfo();
@@ -200,7 +200,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
                 }
             }
         }
-        if (preference.getKey().equals(KEY_PAC_VERSION)) {
+        if (preference.getKey().equals(KEY_JELLYBAM_VERSION)) {
             System.arraycopy(mHits, 1, mHits, 0, mHits.length-1);
             mHits[mHits.length-1] = SystemClock.uptimeMillis();
             if (mHits[0] >= (SystemClock.uptimeMillis()-500)) {

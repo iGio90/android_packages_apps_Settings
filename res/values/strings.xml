@@ -4947,7 +4947,7 @@
     <!-- About phone screen,  setting option name-->
     <string name="aokp_version">AOKP version</string>
     <string name="cm_version">CyanogenMod version</string>
-    <string name="pac_version">JellyBam version</string>
+    <string name="jellybam_version">JELLYBAM version</string>
     <string name="mod_version_default">Unknown</string>
     <string name="mod_version">JellyBam version</string>
 
