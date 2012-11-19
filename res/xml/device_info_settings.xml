@@ -131,10 +131,10 @@
                 android:title="@string/mem_info"
                 android:summary="@string/device_info_default"/>
 
-        <!-- JELLYBAM version -->
-        <Preference android:key="jellybam_version"
+        <!-- PAC version -->
+        <Preference android:key="pac_version"
                 style="?android:preferenceInformationStyle"
-                android:title="@string/jellybam_version"
+                android:title="@string/pac_version"
                 android:summary="@string/mod_version_default" />
 
         <!-- AOKP version -->
@@ -149,11 +149,11 @@
                 android:title="@string/cm_version"
                 android:summary="@string/mod_version_default" />
 
-        <!-- JELLYBAM revision -->
-        <Preference android:key="jellybam_version"
+        <!-- Mod build date -->
+        <Preference android:key="build_date"
                 style="?android:preferenceInformationStyle"
-                android:title="@string/jellybam_revision"
-                android:summary="@string/mod_version_default" />
+                android:title="@string/build_date"
+                android:summary="@string/build_date_default" />
 
         <!-- Detailed build version -->
         <Preference android:key="build_number" 
