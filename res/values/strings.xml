@@ -5024,9 +5024,9 @@
     <string name="gestures_double_spen_title_head">Double tap</string>
     <string name="gestures_double_spen_summary_head">Allows to launch custom action on double tap</string>
     <string name="spen_removed_title_head">S-Pen removed</string>
-    <string name="spen_removed_summary_head">Allows to launch custom action on remove s pen</string>
+    <string name="spen_removed_summary_head">Allows to launch custom action on remove s-pen</string>
     <string name="spen_inserted_title_head">S-Pen inserted</string>
-    <string name="spen_inserted_summary_head">Allows to launch custom action on insert s pen</string>
+    <string name="spen_inserted_summary_head">Allows to launch custom action on insert s-pen</string>
     <string name="gestures_subcat_key">Gestures</string>
     <!-- Gestures Options -->
     <string name="gestures_action_empty">No action</string>
