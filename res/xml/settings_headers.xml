@@ -126,6 +126,16 @@
                 android:targetClass="com.acquariusoft.UpdateMe.UpdateMeActivity" />
     </header>
 
+    <!-- JellyBam Papers -->
+    <header
+            android:icon="@drawable/ic_settings_bampapers"
+            android:title="@string/settings_bampapers">
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.jellybam.bampapers"
+                android:targetClass="com.jellybam.bampapers.Wallpaper" />
+    </header>
+
     <!-- About jellybam -->
      <header
         android:id="@+id/about_rom"

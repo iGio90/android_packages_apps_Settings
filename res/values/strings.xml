@@ -5055,6 +5055,7 @@
 
     <!-- JellyBam Settings -->
     <string name="interface_settings_title">JELLYBAM Settings</string>
+    <string name="settings_bampapers">Wallpapers</string>
     <string name="interface_lockscreen_title">Lockscreen Options</string>
     <string name="interface_audio_title">Sound Options</string>
     <string name="interface_statusbar_title">Statusbar Options</string>
