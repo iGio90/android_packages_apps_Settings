@@ -308,6 +308,21 @@
     <string name="lockscreen_battery_status_title">État de la batterie</string>
     <string name="lockscreen_battery_status_charging">Lors du chargement</string>
     <string name="lockscreen_battery_status_alwayson">Toujours afficher</string>
+    <string name="lockscreen_clock_align_title">Alignement de l\'horloge</string>
+    <string name="lockscreen_clock_align_left">Gauche</string>
+    <string name="lockscreen_clock_align_center">Centrée</string>
+    <string name="lockscreen_clock_align_right">Droite</string>
+    <string name="lockscreen_buttons_title">Bouton d\'actions</string>
+    <string name="lockscreen_buttons_summary">Voir ou modifier les actions du bouton de verrouillage</string>
+    <string name="lockscreen_long_press_back_title">Appui long sur le bouton Retour</string>
+    <string name="lockscreen_long_press_home_title">Appui long sur le bouton Home</string>
+    <string name="lockscreen_long_press_menu_title">Appui long sur le bouton Menu</string>
+    <string name="lockscreen_buttons_no_action">Aucune action</string>
+    <string name="lockscreen_buttons_flashlight">Lampe de poche</string>
+    <string name="lockscreen_buttons_next">Chanson suivante</string>
+    <string name="lockscreen_buttons_previous">Chanson précédente</string>
+    <string name="lockscreen_buttons_playpause">Lecture/Pause</string>
+    <string name="lockscreen_buttons_toggle_sound">Basculer le son/vibreur</string>
 
     <!-- Profiles settings  -->
     <string name="profiles_settings_title">Profils</string>
