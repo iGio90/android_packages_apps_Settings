@@ -92,23 +92,19 @@
     <!-- OTA UPDATES -->
     <header android:title="@string/header_category_jellybam" />
 
+    <!-- CM Profiles -->
+    <header
+        android:id="@+id/profiles_settings"
+        android:icon="@drawable/ic_settings_profiles"
+        android:fragment="com.android.settings.profiles.ProfilesSettings"
+        android:title="@string/profiles_settings_title" />
+
     <!-- JellyBam Settings -->
     <header
         android:id="@+id/jb_settings"
         android:fragment="com.android.settings.jellybam"
         android:icon="@drawable/ic_settings_jellybam"
         android:title="@string/jellybam_settings_title" />
-
-     <!-- ParanoidAndroid Header -->
-    <header
-        android:id="@+id/paranoid_settings"
-        android:icon="@drawable/ic_settings_paranoid"
-        android:title="@string/st_paranoid">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="com.paranoid.preferences"
-            android:targetClass="com.paranoid.preferences.PreferenceListActivity" />
-    </header>
 
     <!-- DEVICE -->
     <header android:id="@+id/device_section"
@@ -167,13 +163,6 @@
     <!-- PERSONAL -->
     <header android:id="@+id/personal_section"
         android:title="@string/header_category_personal" />
-
-    <!-- Profiles -->
-    <header
-        android:id="@+id/profiles_settings"
-        android:icon="@drawable/ic_settings_profiles"
-        android:fragment="com.android.settings.profiles.ProfilesSettings"
-        android:title="@string/profiles_settings_title" />
 
     <!-- Location -->
     <header
