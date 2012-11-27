@@ -21,6 +21,7 @@ public class About extends SettingsPreferenceFragment {
     Preference mSiteUrl;
     Preference mForumUrl;
     Preference mSourceUrl;
+    Preference mFbPage;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class About extends SettingsPreferenceFragment {
         addPreferencesFromResource(R.xml.about_rom);
         mSiteUrl = findPreference("jellybam_website");
         mForumUrl = findPreference("jellybam_irc");
+	mFbPage = findPreference("jellybam_fb");
         mSourceUrl = findPreference("jellybam_source");
 
         PreferenceGroup devsGroup = (PreferenceGroup) findPreference("devs");
@@ -53,7 +55,9 @@ public class About extends SettingsPreferenceFragment {
         } else if (preference == mForumUrl) {
             launchUrl("http://www.google.com");
         } else if (preference == mSourceUrl) {
-            launchUrl("http://github.com/Root-Box");
+            launchUrl("http://github.com/iGio90");
+        } else if (preference == mFbPage) {
+            launchUrl("http://facebook.com/JellyBam");
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);

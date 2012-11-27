@@ -12,6 +12,14 @@
 			android:key="jellybam_website"
 			android:title="@string/jellybam_website_title"
 			android:summary="@string/jellybam_website_summary" />
+                <Preference
+                        android:key="jellybam_fb"
+                        android:title="@string/jellybam_fb_title"
+                        android:summary="@string/jellybam_fb_summary" />
+                <Preference
+                        android:key="jellybam_source"
+                        android:title="@string/jellybam_source_title"
+                        android:summary="@string/jellybam_source_summary" />
 
 	</PreferenceCategory>
 
