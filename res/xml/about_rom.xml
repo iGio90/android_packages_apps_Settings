@@ -30,7 +30,7 @@
 		<com.android.settings.widgets.DeveloperPreference
             android:title="iGio90"
             jb:nameDev="iGio90"
-            jb:twitterHandle="RoXpDa"
+            jb:twitterHandle="iGio90"
             jb:donateLink="@string/donate_igio90" />
 
                 <com.android.settings.widgets.DeveloperPreference
