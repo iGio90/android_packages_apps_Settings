@@ -116,16 +116,6 @@
     <!-- DEVICE -->
     <header android:title="@string/header_category_jellybam" />
 
-    <!-- Updates and mods -->
-    <header
-            android:icon="@drawable/ic_settings_update"
-            android:title="@string/settings_update">
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="com.acquariusoft.UpdateMe"
-                android:targetClass="com.acquariusoft.UpdateMe.UpdateMeActivity" />
-    </header>
-
     <!-- JellyBam Papers -->
     <header
             android:icon="@drawable/ic_settings_bampapers"
