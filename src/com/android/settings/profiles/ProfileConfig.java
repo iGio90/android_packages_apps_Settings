@@ -414,7 +414,6 @@ public class ProfileConfig extends SettingsPreferenceFragment
     }
 
     static class SilentModeItem {
-        String mLabel;
         SilentModeSettings mSettings;
         ProfileSilentModePreference mCheckbox;
 
@@ -424,7 +423,6 @@ public class ProfileConfig extends SettingsPreferenceFragment
     }
 
     static class AirplaneModeItem {
-        String mLabel;
         AirplaneModeSettings mSettings;
         ProfileAirplaneModePreference mCheckbox;
 
