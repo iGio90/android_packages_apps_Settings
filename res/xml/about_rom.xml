@@ -45,6 +45,18 @@
 		android:key="contributors"
 		android:title="@string/contributors_title">
 
+                <com.android.settings.widgets.DeveloperPreference
+            android:title="Infinite96"
+            jb:nameDev="Infinite96"
+            jb:twitterHandle="InfiniteLim1996"
+            jb:donateLink="@string/donate_igio90" />
+
+                <com.android.settings.widgets.DeveloperPreference
+            android:title="e7d_"
+            jb:nameDev="e7d_"
+            jb:twitterHandle="e7d_"
+            jb:donateLink="@string/donate_e7d" />
+
 		<com.android.settings.widgets.DeveloperPreference
             android:title="CyanogenMod"
             jb:nameDev="cyanogenmod"
