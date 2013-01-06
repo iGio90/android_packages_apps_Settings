@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/jellybam_settings_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+  <PreferenceScreen
+        android:key="lock_clock"
+        android:icon="@drawable/ic_settings_chronus"
+        android:title="@string/lock_clock_title"
+        android:summary="@string/lock_clock_summary">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.cyanogenmod.lockclock"
+                android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
+  </PreferenceScreen>
+
+  <PreferenceScreen
+        android:key="screen_security"
+        android:icon="@drawable/ic_settings_security"
+        android:fragment="com.android.settings.SecuritySettings"
+        android:title="@string/screen_security_category"
+        android:summary="@string/screen_security_summary">
+        <extra android:name="cm_security" android:value="true" />
+  </PreferenceScreen>
+
+  <CheckBoxPreference
+	android:key="power_menu_expanded_desktop"
+        android:icon="@drawable/ic_lock_expanded_desktop"
+	android:title="@string/power_menu_expanded_desktop"
+        android:summary="@string/power_menu_expanded_desktop_summary"
+	android:defaultValue="false" />
+
+  <PreferenceScreen
+        android:key="hardware_keys"
+        android:icon="@drawable/ic_settings_hardware_keys"
+        android:fragment="com.android.settings.cyanogenmod.HardwareKeys"
+        android:title="@string/hardware_keys_title" />
+
+  <PreferenceScreen
+        android:fragment="com.android.settings.cyanogenmod.LockscreenButtons"
+        android:icon="@drawable/ic_settings_lockscreen"
+        android:key="lockscreen_buttons"
+        android:title="@string/lockscreen_buttons_title"
+        android:summary="@string/lockscreen_buttons_summary" />
+
+</PreferenceScreen>
