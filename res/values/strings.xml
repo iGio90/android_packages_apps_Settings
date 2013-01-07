@@ -4432,6 +4432,8 @@
     <string name="update_settings_title">OTA Update</string>
     <string name="jellybam_settings_title">JELLYBAM Settings</string>
     <string name="st_paranoid">PARANOID Settings</string> 
+    <string name="jellybam_theme">THEME Settings</string>
+    <string name="settings_bampapers">Wallpapers</string>
 
     <!-- LockClock CyanogenMod -->
     <string name="lock_clock_title">Clock widget</string>
@@ -4444,7 +4446,7 @@
     <string name="sms_security_check_limit_default">30 (Default)</string>
 
     <string name="quick_links_title">Quick Links</string>
-    <string name="rom_control_title">ROM Control</string>
+    <string name="rom_control_title">AOKP Settings</string>
     <string name="themes_title">Themes</string>
 
     <string name="mod_version">JellyBam Version</string>
