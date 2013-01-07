@@ -2397,7 +2397,7 @@
 
     <!-- Lock Pattern settings -->
     <!-- Security & location settings screen, header -->
-    <string name="lock_settings_title">Screen security</string>
+    <string name="lock_settings_title">LockScreen</string>
     <!-- Security & location settings screen, setting option name -->
     <string name="lockpattern_change_lock_pattern_label">Change unlock pattern</string>
     <!-- Security & location settings screen, change unlock pattern screen instruction when the user chooses "Change unlock pattern".  We first ask the user toe nter the current pattern, and this is the message seen -->
@@ -4430,13 +4430,13 @@
     <!-- JellyBam -->
     <string name="header_category_jellybam">JELLYBAM</string>
     <string name="update_settings_title">OTA Update</string>
-    <string name="jellybam_settings_title">JELLYBAM Settings</string>
+    <string name="jellybam_settings_title">CyanogenMod Settings</string>
     <string name="st_paranoid">PARANOID Settings</string> 
     <string name="jellybam_theme">THEME Settings</string>
     <string name="settings_bampapers">Wallpapers</string>
 
     <!-- LockClock CyanogenMod -->
-    <string name="lock_clock_title">Clock widget</string>
+    <string name="lock_clock_title">Chronus Widget</string>
     <string name="lock_clock_summary">View or change how the \'Chronus\' Home and Lock screen widgets will display</string>
 
     <!--- Sms security limit -->
@@ -4492,7 +4492,8 @@
     <string name="quiet_hours_active_to">to</string>
 
     <!-- Hardware keys -->
-    <string name="hardware_keys_title">Hardware keys</string>
+    <string name="hardware_keys_title">Hardware Keys</string>
+    <string name="hardware_keys_summary">View or change hardware keys actions</string>
     <string name="hardware_keys_bindings_title">Key actions</string>
     <string name="hardware_keys_enable_custom_title">Enable custom actions</string>
     <string name="hardware_keys_home_long_press_title">Home key (long press)</string>
