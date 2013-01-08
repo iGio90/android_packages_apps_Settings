@@ -27,7 +27,6 @@
         <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="com.cyanogenmod.lockclock"
                 android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
-<<<<<<< HEAD:res/xml/jellybam_settings.xml
   </PreferenceScreen>
 
   <PreferenceScreen
@@ -47,26 +46,6 @@
         android:summary="@string/lockscreen_buttons_summary" />
 
   <PreferenceScreen
-=======
-    </PreferenceScreen>
-
-    <PreferenceScreen
-        android:key="navigation_bar"
-        android:fragment="com.android.settings.cyanogenmod.NavBar"
-        android:title="@string/navigation_bar_title" />
-
-    <PreferenceScreen
-        android:key="notification_pulse"
-        android:title="@string/notification_pulse_title"
-        android:fragment="com.android.settings.notificationlight.NotificationLightSettings" />
-
-    <PreferenceScreen
-        android:key="battery_light"
-        android:title="@string/battery_light_title"
-        android:fragment="com.android.settings.notificationlight.BatteryLightSettings" />
-
-    <PreferenceScreen
->>>>>>> 356ed10... Settings : NavigationBar Customization:res/xml/system_settings.xml
         android:key="hardware_keys"
         android:icon="@drawable/ic_settings_hardware_keys"
         android:fragment="com.android.settings.cyanogenmod.HardwareKeys"
