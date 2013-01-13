@@ -84,15 +84,6 @@
     <header android:id="@+id/device_section"
         android:title="@string/header_category_device" />
 
-    <header android:id="@+id/performance"
-            android:title="@string/performance_title"
-            android:icon="@drawable/ic_settings_performance" >
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="com.brewcrewfoo.performance"
-                android:targetClass="com.brewcrewfoo.performance.activities.MainActivity" />
-    </header>
-
     <header android:id="@+id/advanced_settings"
             android:title="@string/advanced_settings_title"
             android:icon="@drawable/ic_settings_advanced">
@@ -222,6 +213,30 @@
         android:fragment="com.android.settings.jellybam"
         android:icon="@drawable/ic_settings_jellybam"
         android:title="@string/jellybam_settings_title" />
+
+    <!-- PERFORMANCE -->
+    <header android:id="@+id/performance_section"
+        android:title="@string/header_category_performance" />
+
+    <!-- PERFORMANCE CONTROL -->
+    <header android:id="@+id/performance"
+            android:title="@string/performance_title"
+            android:icon="@drawable/ic_settings_performance" >
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.brewcrewfoo.performance"
+                android:targetClass="com.brewcrewfoo.performance.activities.MainActivity" />
+    </header>
+
+    <!-- MEDIASCANNER -->
+    <header android:id="@+id/performance"
+            android:title="@string/mediascanner_title"
+            android:icon="@drawable/ic_settings_battery" >
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.addz.mediascannerroot"
+                android:targetClass="com.addz.mediascannerroot.RescanMedia" />
+    </header>
 
     <!-- SYSTEM -->
     <header android:id="@+id/system_section"

@@ -4436,6 +4436,8 @@
     <string name="st_paranoid">PARANOID Settings</string> 
     <string name="jellybam_theme">THEME Settings</string>
     <string name="settings_bampapers">Wallpapers</string>
+    <string name="header_category_performance">PERFORMANCE</string>
+    <string name="mediascanner_title">Disable Media Scanner</string>
 
     <!-- LockClock CyanogenMod -->
     <string name="lock_clock_title">Chronus Widget</string>
