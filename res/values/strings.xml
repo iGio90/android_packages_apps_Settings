@@ -5078,4 +5078,7 @@
     <string name="st_cyanogenmod">CYANOGENMOD Settings</string>
     <string name="st_paranoid">PARANOID Settings</string>
     <string name="st_lockscreen">LOCKSCREEN Settings</string>
+    <string name="header_category_performance">PERFORMANCE</string>
+    <string name="performance_title">Performance Control</string>
+    <string name="mediascanner_title">Disable Media Scanner</string> 
 </resources>
