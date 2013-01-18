@@ -214,16 +214,6 @@
         android:icon="@drawable/ic_settings_jellybam"
         android:title="@string/jellybam_settings_title" />
 
-    <!-- DPI Settings -->
-    <header 
-         android:icon="@drawable/ic_settings_advanced"
-         android:title="@string/dpi_settings">
-    <intent
-         android:action="android.intent.action.MAIN"
-         android:targetPackage="de.robv.android.xposed.mods.appsettings"
-         android:targetClass="de.robv.android.xposed.mods.appsettings.XposedModActivity" />	
-    </header>
-
     <!-- PERFORMANCE -->
     <header android:id="@+id/performance_section"
         android:title="@string/header_category_performance" />
