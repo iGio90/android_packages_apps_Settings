@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.jb;
+package com.android.settings.rb;
 
 import android.app.Activity;
 import android.app.AlertDialog;
