@@ -30,13 +30,6 @@
   </PreferenceScreen>
 
   <PreferenceScreen
-        android:key="lock_screen_shortcuts"
-        android:icon="@drawable/ic_settings_lock_screen"
-        android:fragment="com.android.settings.jb.Shortcuts"
-        android:title="@string/lock_screen_shortcuts_title"
-        android:summary="@string/lock_screen_shortcuts_summary" />
-
-  <PreferenceScreen
         android:key="screen_security"
         android:icon="@drawable/ic_settings_jbsec"
         android:fragment="com.android.settings.SecuritySettings"
@@ -56,7 +49,7 @@
         android:key="hardware_keys"
         android:icon="@drawable/ic_settings_hardware_keys"
         android:fragment="com.android.settings.cyanogenmod.HardwareKeys"
-        android:title="@string/hardware_keys_title"
+        android:title="@string/hardware_keys_title" />
         android:summary="@string/hardware_keys_summary" />
 
   <CheckBoxPreference
