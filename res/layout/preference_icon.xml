@@ -27,13 +27,11 @@
     
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dip"
-        android:maxWidth="36dip"
-        android:maxHeight="36dip"
-        android:adjustViewBounds="true"
-        android:layout_gravity="center" />
+	android:layout_width="@android:dimen/app_icon_size"
+	android:layout_height="@android:dimen/app_icon_size"
+	android:layout_marginStart="6dip"
+	android:layout_marginEnd="6dip"
+	android:scaleType="fitCenter" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -49,17 +47,8 @@
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:ellipsize="marquee"
-            android:fadingEdge="horizontal" />
-
-        <TextView android:id="@+android:id/summary"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@android:id/title"
-            android:layout_alignStart="@android:id/title"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:maxLines="2" />
-
-    </RelativeLayout>
+            android:ellipsize="end" />
+    
+	</RelativeLayout>
 
 </LinearLayout>
