@@ -37,6 +37,13 @@
         android:summary="@string/pie_controls_summary" />
 
   <PreferenceScreen
+        android:key="lock_screen_shortcuts"
+        android:icon="@drawable/ic_settings_lock_screen"
+        android:fragment="com.android.settings.rb.Shortcuts"
+        android:title="@string/lock_screen_shortcuts_title"
+        android:summary="@string/lock_screen_shortcuts_summary" />
+
+  <PreferenceScreen
         android:key="screen_security"
         android:icon="@drawable/ic_settings_jbsec"
         android:fragment="com.android.settings.SecuritySettings"
@@ -44,6 +51,13 @@
         android:summary="@string/screen_security_summary">
         <extra android:name="cm_security" android:value="true" />
   </PreferenceScreen>
+
+  <PreferenceScreen
+        android:fragment="com.android.settings.cyanogenmod.LockscreenButtons"
+        android:icon="@drawable/ic_settings_jbls"
+        android:key="lockscreen_buttons"
+        android:title="@string/lockscreen_buttons_title"
+        android:summary="@string/lockscreen_buttons_summary" />
 
   <PreferenceScreen
         android:key="hardware_keys"

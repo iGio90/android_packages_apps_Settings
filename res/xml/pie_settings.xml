@@ -51,4 +51,6 @@
             android:entries="@array/entries_pie_mode"
             android:entryValues="@array/values_pie_mode" />
 
+    </PreferenceCategory>
+
 </PreferenceScreen>
