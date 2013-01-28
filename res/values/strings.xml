@@ -4672,28 +4672,6 @@
     <string name="choose_ringtone">Choose ringtone</string>
     <string name="silent_mode_title">Ring mode</string>
 
-    <!-- Pie controls -->
-    <string name="pie_controls_title">Pie controls</string>
-    <string name="pie_controls_summary">Allows navigation and status report on expanded desktop mode</string>
-    <string name="pie_gravity_title">Pie gravity</string>
-    <string name="pie_gravity_summary">Select the location where the pie will be placed at</string>
-    <string name="pie_gravity_top">Top</string>
-    <string name="pie_gravity_bottom">Bottom</string>
-    <string name="pie_gravity_right">Right</string>
-    <string name="pie_gravity_left">Left</string>
-    <string name="pie_mode_title">Pie style</string>
-    <string name="pie_mode_summary">Manage how animations and status additions will be handled</string>
-    <string name="pie_mode_bare">Bare</string>
-    <string name="pie_mode_quick">Quick</string>
-    <string name="pie_mode_default">Default</string>
-    <string name="pie_mode_slow">Slow</string>
-    <string name="pie_size_title">Pie size</string>
-    <string name="pie_size_summary">Define pie controls size</string>
-    <string name="pie_size_small">Small</string>
-    <string name="pie_size_default">@string/pie_mode_default</string>
-    <string name="pie_size_large">Large</string>
-    <string name="pie_size_gigantic">Gigantic</string>
-
     <!-- Sound settings screen, setting option name to pick ringtone (a list dialog comes up)-->
     <string name="soundtone_title">Notification tone</string>
     <string name="soundtone_summary">""</string>

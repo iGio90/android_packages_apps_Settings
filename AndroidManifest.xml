@@ -1477,7 +1477,6 @@
         <!-- JellyBam -->
         <activity android:name=".jb.About" />
         <activity android:name="jellybam" />
-        <activity android:name=".paranoid.Pie" />
         <activity android:name=".cyanogenmod.LockscreenButtons" />
 
         <!-- CyanogenMod activities Start -->
