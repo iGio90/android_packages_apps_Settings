@@ -42,18 +42,26 @@ public class Toolbar extends SettingsPreferenceFragment
     private static final String STATUS_BAR_DONOTDISTURB = "status_bar_donotdisturb";
     private static final String NAV_BAR_CATEGORY = "toolbar_navigation";
     private static final String NAV_BAR_CONTROLS = "navigation_bar_controls";
-    private static final String PIE_CONTROLS = "pie_controls";
     private static final String PIE_GRAVITY = "pie_gravity";
     private static final String PIE_MODE = "pie_mode";
     private static final String PIE_SIZE = "pie_size";
+    private static final String PIE_TRIGGER = "pie_trigger";	
+    private static final String PIE_GAP = "pie_gap";
+    private static final String PIE_MENU = "pie_menu";
+    private static final String PIE_SEARCH = "pie_search";
+    private static final String PIE_CENTER = "pie_center";
 
     private ListPreference mStatusBarMaxNotif;
     private ListPreference mPieMode;
     private ListPreference mPieSize;
     private ListPreference mPieGravity;
+    private ListPreference mPieTrigger;
+    private ListPreference mPieGap;
     private CheckBoxPreference mMenuButtonShow;
     private CheckBoxPreference mStatusBarDoNotDisturb;
-    private CheckBoxPreference mPieControls;
+    private CheckBoxPreference mPieMenu;
+    private CheckBoxPreference mPieSearch;
+    private CheckBoxPreference mPieCenter;
     private PreferenceScreen mNavigationBarControls;
     private PreferenceCategory mNavigationCategory;
 
@@ -67,6 +75,18 @@ public class Toolbar extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.tool_bar_settings);
         PreferenceScreen prefSet = getPreferenceScreen();
         mContext = getActivity();
+
+        mPieMenu = (CheckBoxPreference) prefSet.findPreference(PIE_MENU);
+        mPieMenu.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PIE_MENU, 0) == 1);
+
+        mPieSearch = (CheckBoxPreference) prefSet.findPreference(PIE_SEARCH);
+        mPieSearch.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PIE_SEARCH, 1) == 1);
+
+        mPieCenter = (CheckBoxPreference) prefSet.findPreference(PIE_CENTER);
+        mPieCenter.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PIE_CENTER, 1) == 1);
 
         mStatusBarMaxNotif = (ListPreference) prefSet.findPreference(STATUS_BAR_MAX_NOTIF);
         int maxNotIcons = Settings.System.getInt(mContext.getContentResolver(),
@@ -82,10 +102,6 @@ public class Toolbar extends SettingsPreferenceFragment
 
         mNavigationBarControls = (PreferenceScreen) prefSet.findPreference(NAV_BAR_CONTROLS);
 
-        mPieControls = (CheckBoxPreference) findPreference(PIE_CONTROLS);
-        mPieControls.setChecked((Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.PIE_CONTROLS, 0) == 1));
-
         mPieGravity = (ListPreference) prefSet.findPreference(PIE_GRAVITY);
         int pieGravity = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_GRAVITY, 3);
@@ -99,10 +115,28 @@ public class Toolbar extends SettingsPreferenceFragment
         mPieMode.setOnPreferenceChangeListener(this);
 
         mPieSize = (ListPreference) prefSet.findPreference(PIE_SIZE);
-        String pieSize = Settings.System.getString(mContext.getContentResolver(),
-                Settings.System.PIE_SIZE);
-        mPieSize.setValue(pieSize != null && !pieSize.isEmpty() ? pieSize : "1");
+        mPieTrigger = (ListPreference) prefSet.findPreference(PIE_TRIGGER);
+        try {
+            float pieSize = Settings.System.getFloat(mContext.getContentResolver(),
+                    Settings.System.PIE_SIZE);
+            mPieSize.setValue(String.valueOf(pieSize));
+
+            float pieTrigger = Settings.System.getFloat(mContext.getContentResolver(),
+                    Settings.System.PIE_TRIGGER);
+            mPieTrigger.setValue(String.valueOf(pieTrigger));
+        } catch(Settings.SettingNotFoundException ex) {
+            // So what
+        }
+
         mPieSize.setOnPreferenceChangeListener(this);
+        mPieTrigger.setOnPreferenceChangeListener(this);
+
+        mPieGap = (ListPreference) prefSet.findPreference(PIE_GAP);
+        int pieGap = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PIE_GAP, 1);
+        mPieGap.setValue(String.valueOf(pieGap));
+        mPieGap.setOnPreferenceChangeListener(this);
+
 
         mStatusBarDoNotDisturb = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_DONOTDISTURB);
         mStatusBarDoNotDisturb.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
@@ -119,15 +153,6 @@ public class Toolbar extends SettingsPreferenceFragment
         } else {
             mNavigationCategory.removePreference(mNavigationBarControls);
         }
-
-        checkControls();
-    }
-
-    private void checkControls() {
-        boolean pieCheck = mPieControls.isChecked();
-        mPieGravity.setEnabled(pieCheck);
-        mPieMode.setEnabled(pieCheck);
-        mPieSize.setEnabled(pieCheck);
     }
 
     @Override
@@ -141,11 +166,15 @@ public class Toolbar extends SettingsPreferenceFragment
                     Settings.System.STATUS_BAR_DONOTDISTURB,
                     mStatusBarDoNotDisturb.isChecked() ? 1 : 0);
             return true;
-        } else if (preference == mPieControls) {
-            Settings.System.putInt(mContext.getContentResolver(),
-                    Settings.System.PIE_CONTROLS,
-                    mPieControls.isChecked() ? 1 : 0);
-            checkControls();
+        } else if (preference == mPieMenu) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.PIE_MENU, mPieMenu.isChecked() ? 1 : 0);
+        } else if (preference == mPieSearch) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.PIE_SEARCH, mPieSearch.isChecked() ? 1 : 0);
+        } else if (preference == mPieCenter) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.PIE_CENTER, mPieCenter.isChecked() ? 1 : 0);
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -170,6 +199,16 @@ public class Toolbar extends SettingsPreferenceFragment
             int pieGravity = Integer.valueOf((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.PIE_GRAVITY, pieGravity);
+            return true;
+        } else if (preference == mPieGap) {
+            int pieGap = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.PIE_GAP, pieGap);
+            return true;
+        } else if (preference == mPieTrigger) {
+            float pieTrigger = Float.valueOf((String) newValue);
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.PIE_TRIGGER, pieTrigger);
             return true;
         }
         return false;
