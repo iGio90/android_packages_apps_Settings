@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012 ParanoidAndroid Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="@string/tool_bar_settings">
+
+    <PreferenceCategory
+        android:key="toolbar_status"
+        android:title="@string/tool_bar_status_header" />
+
+        <PreferenceScreen
+            android:key="custom_tiles"
+            android:fragment="com.android.settings.paranoid.CustomTiles"
+            android:title="@string/custom_tiles_title" />
+
+        <ListPreference
+            android:key="status_bar_max_notifications"
+            android:dialogTitle="@string/status_bar_max_notifications_title"
+            android:title="@string/status_bar_max_notifications_title"
+            android:summary="@string/status_bar_max_notifications_summary"
+            android:entries="@array/status_bar_max_notifications"
+            android:entryValues="@array/status_bar_max_notifications" />
+
+        <CheckBoxPreference
+            android:key="status_bar_donotdisturb"
+            android:title="@string/status_bar_donotdisturb_title"
+            android:summary="@string/status_bar_donotdisturb_summary"
+            android:defaultValue="false" />
+
+    <PreferenceCategory
+        android:key="toolbar_navigation"
+        android:title="@string/tool_bar_navigation_header">
+
+        <CheckBoxPreference
+            android:key="nav_bar_tabui_menu"
+            android:title="@string/navigation_bar_tabui_menu_title"
+            android:summary="@string/navigation_bar_tabui_menu_summary" />
+
+        <PreferenceScreen
+            android:key="navigation_bar_controls"
+            android:fragment="com.android.settings.cyanogenmod.NavBar"
+            android:title="@string/navigation_bar_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="toolbar_pie_controls"
+        android:title="@string/pie_controls_title" />
+
+        <CheckBoxPreference
+            android:key="pie_controls"
+            android:title="@string/pie_controls_title"
+            android:summary="@string/pie_controls_summary"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="pie_gravity"
+            android:dialogTitle="@string/pie_gravity_title"
+            android:title="@string/pie_gravity_title"
+            android:summary="@string/pie_gravity_summary"
+            android:entries="@array/entries_pie_gravity"
+            android:entryValues="@array/values_pie_gravity" />
+
+        <ListPreference
+            android:key="pie_size"
+            android:dialogTitle="@string/pie_size_title"
+            android:title="@string/pie_size_title"
+            android:summary="@string/pie_size_summary"
+            android:entries="@array/entries_pie_size"
+            android:entryValues="@array/values_pie_size" />
+
+        <ListPreference
+            android:key="pie_mode"
+            android:dialogTitle="@string/pie_mode_title"
+            android:title="@string/pie_mode_title"
+            android:summary="@string/pie_mode_summary"
+            android:entries="@array/entries_pie_mode"
+            android:entryValues="@array/values_pie_mode" />
+
+</PreferenceScreen>

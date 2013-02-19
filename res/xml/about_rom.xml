@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="@string/about_jb_settings_title"
+	xmlns:rb="http://schemas.android.com/apk/res/com.android.settings">
+
+	<PreferenceCategory
+		android:key="links"
+		android:title="@string/jellybam">
+
+		<Preference
+			android:key="jellybam_website"
+			android:title="@string/jellybam_website_title"
+			android:summary="@string/jellybam_website_summary" />
+
+		<Preference
+			android:key="jellybam_facebook"
+			android:title="@string/jellybam_facebook_title"
+			android:summary="@string/jellybam_facebook_summary" />
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:key="devs"
+		android:title="@string/devs">
+
+		<com.android.settings.widgets.DeveloperPreference
+            android:title="iGio90"
+            rb:nameDev="iGio90"
+            rb:twitterHandle="iGio90"
+            rb:donateLink="@string/donate_igio90" />
+
+		<com.android.settings.widgets.DeveloperPreference
+            android:title="Bliss"
+            rb:nameDev="Bliss"
+            rb:twitterHandle="_disca"
+            rb:donateLink="@string/donate_bliss" />
+
+	</PreferenceCategory>    
+
+	<PreferenceCategory
+		android:key="contributors"
+		android:title="@string/contributors_title">
+
+		<com.android.settings.widgets.DeveloperPreference
+            android:title="CyanogenMod"
+            rb:nameDev="CyanogenMod"
+            rb:twitterHandle="cyanogenmod"
+            rb:donateLink="@string/donate_cyanogenmod" />
+
+	</PreferenceCategory>
+
+</PreferenceScreen>
