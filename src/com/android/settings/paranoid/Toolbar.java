@@ -37,11 +37,6 @@ import com.android.settings.Utils;
 public class Toolbar extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
-    private static final String STATUS_BAR_MAX_NOTIF = "status_bar_max_notifications";
-    private static final String NAV_BAR_TABUI_MENU = "nav_bar_tabui_menu";
-    private static final String STATUS_BAR_DONOTDISTURB = "status_bar_donotdisturb";
-    private static final String NAV_BAR_CATEGORY = "toolbar_navigation";
-    private static final String NAV_BAR_CONTROLS = "navigation_bar_controls";
     private static final String PIE_GRAVITY = "pie_gravity";
     private static final String PIE_MODE = "pie_mode";
     private static final String PIE_SIZE = "pie_size";
@@ -51,19 +46,14 @@ public class Toolbar extends SettingsPreferenceFragment
     private static final String PIE_SEARCH = "pie_search";
     private static final String PIE_CENTER = "pie_center";
 
-    private ListPreference mStatusBarMaxNotif;
     private ListPreference mPieMode;
     private ListPreference mPieSize;
     private ListPreference mPieGravity;
     private ListPreference mPieTrigger;
     private ListPreference mPieGap;
-    private CheckBoxPreference mMenuButtonShow;
-    private CheckBoxPreference mStatusBarDoNotDisturb;
     private CheckBoxPreference mPieMenu;
     private CheckBoxPreference mPieSearch;
     private CheckBoxPreference mPieCenter;
-    private PreferenceScreen mNavigationBarControls;
-    private PreferenceCategory mNavigationCategory;
 
     private Context mContext;
     private int mAllowedLocations;
@@ -87,20 +77,6 @@ public class Toolbar extends SettingsPreferenceFragment
         mPieCenter = (CheckBoxPreference) prefSet.findPreference(PIE_CENTER);
         mPieCenter.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_CENTER, 1) == 1);
-
-        mStatusBarMaxNotif = (ListPreference) prefSet.findPreference(STATUS_BAR_MAX_NOTIF);
-        int maxNotIcons = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.MAX_NOTIFICATION_ICONS, 2);
-        mStatusBarMaxNotif.setValue(String.valueOf(maxNotIcons));
-        mStatusBarMaxNotif.setOnPreferenceChangeListener(this);
-
-        mNavigationCategory = (PreferenceCategory) prefSet.findPreference(NAV_BAR_CATEGORY);
-
-        mMenuButtonShow = (CheckBoxPreference) prefSet.findPreference(NAV_BAR_TABUI_MENU);
-        mMenuButtonShow.setChecked((Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.NAV_BAR_TABUI_MENU, 0) == 1));
-
-        mNavigationBarControls = (PreferenceScreen) prefSet.findPreference(NAV_BAR_CONTROLS);
 
         mPieGravity = (ListPreference) prefSet.findPreference(PIE_GRAVITY);
         int pieGravity = Settings.System.getInt(mContext.getContentResolver(),
@@ -137,36 +113,11 @@ public class Toolbar extends SettingsPreferenceFragment
         mPieGap.setValue(String.valueOf(pieGap));
         mPieGap.setOnPreferenceChangeListener(this);
 
-
-        mStatusBarDoNotDisturb = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_DONOTDISTURB);
-        mStatusBarDoNotDisturb.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.STATUS_BAR_DONOTDISTURB, 0) == 1));
-
-        if (!Utils.isTablet()) {
-            prefSet.removePreference(mStatusBarMaxNotif);
-            prefSet.removePreference(mMenuButtonShow);
-            prefSet.removePreference(mStatusBarDoNotDisturb);
-
-            if(!Utils.hasNavigationBar()) {
-                prefSet.removePreference(mNavigationCategory);
-            }
-        } else {
-            mNavigationCategory.removePreference(mNavigationBarControls);
-        }
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mMenuButtonShow) {
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.NAV_BAR_TABUI_MENU, mMenuButtonShow.isChecked() ? 1 : 0);
-            return true;
-        } else if (preference == mStatusBarDoNotDisturb) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUS_BAR_DONOTDISTURB,
-                    mStatusBarDoNotDisturb.isChecked() ? 1 : 0);
-            return true;
-        } else if (preference == mPieMenu) {
+        if (preference == mPieMenu) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.PIE_MENU, mPieMenu.isChecked() ? 1 : 0);
         } else if (preference == mPieSearch) {
@@ -180,12 +131,7 @@ public class Toolbar extends SettingsPreferenceFragment
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mStatusBarMaxNotif) {
-            int maxNotIcons = Integer.valueOf((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.MAX_NOTIFICATION_ICONS, maxNotIcons);
-            return true;
-        } else if (preference == mPieMode) {
+	if (preference == mPieMode) {
             int pieMode = Integer.valueOf((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.PIE_MODE, pieMode);

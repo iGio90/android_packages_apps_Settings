@@ -62,6 +62,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     /** If there is no setting in the provider, use this. */
     private static final int FALLBACK_EMERGENCY_TONE_VALUE = 0;
 
+    private static final String KEY_VOLUME_OVERLAY = "volume_overlay";
     private static final String KEY_NOTIFICATION_LIMITER_SOUND = "notification_sounds_limiter";
     private static final String KEY_RING_MODE = "ring_mode";
     private static final String KEY_VIBRATE = "vibrate_when_ringing";
@@ -160,6 +161,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             // device is not CDMA, do not display CDMA emergency_tone
             getPreferenceScreen().removePreference(findPreference(KEY_EMERGENCY_TONE));
         }
+
+        mNotifSoundLimiter = (ListPreference) findPreference(KEY_NOTIFICATION_LIMITER_SOUND);
+        mNotifSoundLimiter.setOnPreferenceChangeListener(this);
+        mNotifSoundLimiter.setValue(Integer.toString(Settings.System.getInt(resolver,
+                Settings.System.NOTIFICATION_SOUND_LIMITER_THRESHOLD, 0)));
 
         mNotifSoundLimiter = (ListPreference) findPreference(KEY_NOTIFICATION_LIMITER_SOUND);
         mNotifSoundLimiter.setOnPreferenceChangeListener(this);
@@ -453,6 +459,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             }
         } else if (preference == mRingMode) {
             setPhoneRingModeValue(objValue.toString());
+        } else if (preference == mNotifSoundLimiter) {
+            int value = Integer.parseInt((String) objValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.MODE_VOLUME_OVERLAY, value);
+            mVolumeOverlay.setSummary(mVolumeOverlay.getEntries()[index]);
         } else if (preference == mNotifSoundLimiter) {
             int value = Integer.parseInt((String) objValue);
             Settings.System.putInt(getContentResolver(),
