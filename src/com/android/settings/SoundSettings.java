@@ -172,6 +172,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mNotifSoundLimiter.setValue(Integer.toString(Settings.System.getInt(resolver,
                 Settings.System.NOTIFICATION_SOUND_LIMITER_THRESHOLD, 0)));
 
+        mNotifSoundLimiter = (ListPreference) findPreference(KEY_NOTIFICATION_LIMITER_SOUND);
+        mNotifSoundLimiter.setOnPreferenceChangeListener(this);
+        mNotifSoundLimiter.setValue(Integer.toString(Settings.System.getInt(resolver,
+                Settings.System.NOTIFICATION_SOUND_LIMITER_THRESHOLD, 0)));
+
         mRingMode = (ListPreference) findPreference(KEY_RING_MODE);
         if (!getResources().getBoolean(R.bool.has_silent_mode)) {
             getPreferenceScreen().removePreference(mRingMode);
