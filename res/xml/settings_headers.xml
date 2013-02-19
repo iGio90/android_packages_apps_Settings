@@ -236,12 +236,12 @@
     <header android:id="@+id/customization_section"
         android:title="@string/header_category_paranoid" />
 
-    <!-- Statusbar -->
+    <!-- PIE -->
     <header
         android:id="@+id/tool_bar_settings"
         android:fragment="com.android.settings.paranoid.Toolbar"
-        android:icon="@drawable/ic_settings_status_bar"
-        android:title="@string/tool_bar_settings" />
+        android:icon="@drawable/ic_settings_pie"
+        android:title="@string/pie_control" />
 
     <!-- Hybrid options -->
     <header

@@ -5230,4 +5230,5 @@
     <string name="performancec_title">Performance Control</string>
     <string name="atweaker_title">Android Tweaker</string>
     <string name="bampapers_title">BamPapers</string>
+    <string name="pie_control">PIE Settings</string>
 </resources>
