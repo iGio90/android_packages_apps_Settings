@@ -5231,4 +5231,5 @@
     <string name="atweaker_title">Android Tweaker</string>
     <string name="bampapers_title">BamPapers</string>
     <string name="pie_control">PIE Settings</string>
+    <string name="vibration_title">Phone vibration</string>
 </resources>
