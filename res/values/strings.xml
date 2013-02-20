@@ -5232,4 +5232,8 @@
     <string name="bampapers_title">BamPapers</string>
     <string name="pie_control">PIE Settings</string>
     <string name="vibration_title">Phone vibration</string>
+    <string name="volume_overlay_title">Volume panel style</string>
+    <string name="headset_connect_player_summary">Launch the default music app when headset is connected</string>
+    <string name="safe_headset_volume_title">Safe headset volume</string>
+    <string name="safe_headset_volume_summary">Prevent loud volume levels when headset is first plugged in</string>
 </resources>
