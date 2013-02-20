@@ -185,13 +185,6 @@
         android:fragment="com.android.settings.cyanogenmod.SystemSettings"
         android:title="@string/system_settings_title" />
 
-    <!-- Lockscreen -->
-    <header
-        android:id="@+id/lock_screen_settings"
-        android:fragment="com.android.settings.paranoid.Lockscreen"
-        android:icon="@drawable/ic_settings_lock_screen"
-        android:title="@string/lock_screen_settings" />
-
     <!-- Launcher -->
     <header
         android:id="@+id/launcher_settings"
@@ -253,6 +246,20 @@
             android:targetPackage="com.paranoid.preferences"
             android:targetClass="com.paranoid.preferences.MainActivity" />
     </header>    
+
+    <!-- Tiles -->
+    <header
+        android:id="@+id/custom_tiles"
+        android:fragment="com.android.settings.paranoid.CustomTiles"
+        android:icon="@drawable/ic_settings_status_bar" 
+        android:title="@string/custom_tiles_title" />
+
+    <!-- Lockscreen -->
+    <header
+        android:id="@+id/lock_screen_settings"
+        android:fragment="com.android.settings.paranoid.Lockscreen"
+        android:icon="@drawable/ic_settings_lock_screen"
+        android:title="@string/lock_screen_settings" />
 
     <!-- DPI Settings -->
     <header android:title="@string/dpi_settings" />

@@ -1446,6 +1446,10 @@
 
        <activity android:name=".paranoid.Toolbar" />
 
+       <activity android:name=".paranoid.CustomTiles" />
+
+       <activity android:name=".cyanogenmod.NavBar" />
+
         <!-- CyanogenMod activities Start -->
         <activity android:name=".cyanogenmod.PowerWidget" />
 
