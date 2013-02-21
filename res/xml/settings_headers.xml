@@ -207,7 +207,8 @@
         android:title="@string/header_category_aokp" />
 
     <!-- ROM Control -->
-    <header android:icon="@drawable/ic_settings_rom_control"
+    <header android:id="@+id/rom_control"
+	    android:icon="@drawable/ic_settings_rom_control"
             android:title="@string/rom_control_title">
         <intent
                 android:action="android.intent.action.MAIN"
@@ -253,6 +254,13 @@
         android:fragment="com.android.settings.paranoid.CustomTiles"
         android:icon="@drawable/ic_settings_status_bar" 
         android:title="@string/custom_tiles_title" />
+
+    <!-- NAVBAR -->
+    <header
+        android:id="@+id/nav_bar_settings"
+        android:fragment="com.android.settings.paranoid.Navbar"
+        android:icon="@drawable/ic_settings_status_bar"
+        android:title="@string/nav_bar_title" />
 
     <!-- Lockscreen -->
     <header

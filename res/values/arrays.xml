@@ -871,32 +871,6 @@
         <item>@*android:drawable/ic_lockscreen_twitter</item>
     </string-array>
 
-    <!-- Notification sound limter entires -->
-    <string-array name="notification_sound_limiter_entries">
-        <item>@string/notification_sound_default_time</item>
-        <item>3 seconds</item>
-        <item>5 seconds</item>
-        <item>10 seconds</item>
-        <item>15 seconds</item>
-        <item>30 seconds</item>
-        <item>45 seconds</item>
-        <item>1 minute</item>
-        <item>2 minutes</item>
-    </string-array>
-
-    <!-- Notification sound limter values -->
-    <string-array name="notification_sound_limiter_values" translatable="false">
-        <item>0</item>
-        <item>3000</item>
-        <item>5000</item>
-        <item>10000</item>
-        <item>15000</item>
-        <item>30000</item>
-        <item>45000</item>
-        <item>60000</item>
-        <item>120000</item>
-    </string-array>
-
     <!-- Entries and values for notification icons -->
     <string-array name="status_bar_max_notifications">
         <item>0</item>
@@ -966,12 +940,14 @@
     <string-array name="entries_pie_trigger">
         <item>@string/pie_trigger_none</item>
         <item>@string/pie_trigger_small</item>
+        <item>@string/pie_trigger_normal</item>
         <item>@string/pie_trigger_big</item>
         <item>@string/pie_trigger_huge</item>
     </string-array>
 
     <string-array name="values_pie_trigger" translatable="false">
         <item>0.0</item>
+        <item>0.5</item>
         <item>1.0</item>
         <item>2.0</item>
         <item>3.0</item>
@@ -1356,14 +1332,17 @@
         <item>2</item>
     </string-array>
 
-    <string-array name="lockscreen_battery_status_entries" translatable="false">
-        <item>@string/lockscreen_battery_status_charging</item>
-        <item>@string/lockscreen_battery_status_alwayson</item>
+    <!-- Expanded desktop -->
+    <string-array name="expanded_desktop_entries" translatable="false">
+        <item>@string/expanded_desktop_disabled</item>
+        <item>@string/expanded_desktop_status_bar</item>
+        <item>@string/expanded_desktop_no_status_bar</item>
     </string-array>
 
-    <string-array name="lockscreen_battery_status_values" translatable="false">
+    <string-array name="expanded_desktop_values" translatable="false">
         <item>0</item>
         <item>1</item>
+        <item>2</item>
     </string-array>
 
     <!-- Sms security limit -->

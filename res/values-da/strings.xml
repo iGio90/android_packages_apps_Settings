@@ -19,8 +19,13 @@
     <string name="yes" msgid="4676390750360727396">"Ja"</string>
     <string name="no" msgid="6731231425810196216">"Nej"</string>
     <string name="create" msgid="3578857613172647409">"Opret"</string>
+    <string name="allow" msgid="3349662621170855910">"Tillad"</string>
+    <string name="deny" msgid="6947806159746484865">"Afvis"</string>
     <string name="device_info_default" msgid="7847265875578739287">"Ukendt"</string>
-    <string name="show_dev_countdown" msgid="5521163114237004821">"Du er nu <xliff:g id="STEP_COUNT">%1$d</xliff:g> skridt væk fra at være udvikler."</string>
+  <plurals name="show_dev_countdown">
+    <item quantity="one" msgid="5295687242294085452">"Du er nu <xliff:g id="STEP_COUNT">%1$d</xliff:g> skridt væk fra at være udvikler."</item>
+    <item quantity="other" msgid="6722953419953594148">"Du er nu <xliff:g id="STEP_COUNT">%1$d</xliff:g> skridt væk fra at være udvikler."</item>
+  </plurals>
     <string name="show_dev_on" msgid="1110711554982716293">"Nu er du udvikler."</string>
     <string name="show_dev_already" msgid="2151632240145446227">"Det behøver du ikke. Du er allerede udvikler."</string>
     <string name="header_category_wireless_networks" msgid="4944823405420438623">"TRÅDLØST OG NETVÆRK"</string>
@@ -105,14 +110,11 @@
     <string name="battery_info_health_unspecified_failure" msgid="6347021103185471590">"Ukendt fejl"</string>
     <string name="battery_info_health_cold" msgid="3835692786176707318">"Kold"</string>
     <string name="bluetooth" msgid="5549625000628014477">"Bluetooth"</string>
-    <string name="bluetooth_visibility" msgid="2930835434091839916">"Søgbar"</string>
     <string name="bluetooth_is_discoverable" msgid="8373421452106840526">"Synlig for alle Bluetooth-enheder i nærheden (<xliff:g id="DISCOVERABLE_TIME_PERIOD">%1$s</xliff:g>)"</string>
     <string name="bluetooth_is_discoverable_always" msgid="2849387702249327748">"Synlig for alle Bluetooth-enheder i nærheden"</string>
     <string name="bluetooth_not_visible_to_other_devices" msgid="9120274591523391910">"Ikke synlig for andre Bluetooth-enheder"</string>
     <string name="bluetooth_only_visible_to_paired_devices" msgid="2049983392373296028">"Kun synlig for parrede enheder"</string>
-    <string name="bluetooth_not_discoverable" msgid="128269993123955177">"Gør enheden søgbar"</string>
     <string name="bluetooth_visibility_timeout" msgid="8002247464357005429">"Timeout for synlighed"</string>
-    <string name="bluetooth_visibility_timeout_summary" msgid="6483353842671501585">"Indstil i hvor lang tid enheden vil være søgbar"</string>
     <string name="bluetooth_lock_voice_dialing" msgid="3139322992062086225">"Lås stemmeopkald"</string>
     <string name="bluetooth_lock_voice_dialing_summary" msgid="4741338867496787042">"Bloker brug af Bluetooth-opkald, når skærmen er låst"</string>
     <string name="bluetooth_devices" msgid="1886018064039454227">"Bluetooth-enheder"</string>
@@ -146,15 +148,15 @@
     <string name="bluetooth_show_received_files" msgid="5164787486105868895">"Vis modtagne filer"</string>
     <string name="device_picker" msgid="8398232791303186677">"Valg af Bluetooth-enhed"</string>
     <string name="bluetooth_permission_request" msgid="1523129741266262748">"Anmodning om Bluetooth-tilladelse"</string>
-    <string name="bluetooth_ask_enablement" msgid="5279027758886569301">"En app ønsker at aktivere Bluetooth. Vil du tillade dette?"</string>
-    <string name="bluetooth_ask_discovery" product="tablet" msgid="4420151924834278808">"En app på din tablet ønsker at gøre din tablet søgbar for andre Bluetooth-enheder i <xliff:g id="TIMEOUT">%1$d</xliff:g> sekunder. Vil du tillade dette?"</string>
-    <string name="bluetooth_ask_discovery" product="default" msgid="4478906085771274647">"En app på telefonen ønsker at gøre telefonen søgbar for andre Bluetooth-enheder i <xliff:g id="TIMEOUT">%1$d</xliff:g> sekunder. Vil du tillade dette?"</string>
-    <string name="bluetooth_ask_lasting_discovery" product="tablet" msgid="8737516188038252313">"En app på din tablet ønsker at gøre din tablet \"altid søgbar\" for andre Bluetooth-enheder. Vil du tillade dette?"</string>
-    <string name="bluetooth_ask_lasting_discovery" product="default" msgid="7751530664834149084">"En app på telefonen ønsker at gøre din telefon \"altid søgbar\" for andre Bluetooth-enheder. Vil du tillade dette?"</string>
-    <string name="bluetooth_ask_enablement_and_discovery" product="tablet" msgid="8504403125440086020">"En app på din tablet ønsker at slå Bluetooth til og gøre din tablet søgbar for andre enheder i <xliff:g id="TIMEOUT">%1$d</xliff:g> sekunder. Vil du tillade dette?"</string>
-    <string name="bluetooth_ask_enablement_and_discovery" product="default" msgid="3040361003987241057">"En app på telefonen forsøger at aktivere Bluetooth og gøre telefonen søgbar for andre enheder i <xliff:g id="TIMEOUT">%1$d</xliff:g> sekunder. Vil du tillade dette?"</string>
-    <string name="bluetooth_ask_enablement_and_lasting_discovery" product="tablet" msgid="7254712987802497615">"En app på din tablet ønsker at aktivere Bluetooth og gøre din tablet søgbar for andre enheder. Vil du tillade dette?"</string>
-    <string name="bluetooth_ask_enablement_and_lasting_discovery" product="default" msgid="3947789545028519103">"En app på telefonen forsøger at aktivere Bluetooth og gøre telefonen søgbar for andre enheder. Vil du tillade dette?"</string>
+    <string name="bluetooth_ask_enablement" msgid="637355677176904990">"En app ønsker at aktivere Bluetooth."</string>
+    <string name="bluetooth_ask_discovery" product="tablet" msgid="786921566047356213">"En app ønsker at gøre din tablet synlig for andre Bluetooth-enheder i <xliff:g id="TIMEOUT">%1$d</xliff:g> sekunder."</string>
+    <string name="bluetooth_ask_discovery" product="default" msgid="5510358858113713272">"En app ønsker at gøre din telefon synlig for andre Bluetooth-enheder i <xliff:g id="TIMEOUT">%1$d</xliff:g> sekunder."</string>
+    <string name="bluetooth_ask_lasting_discovery" product="tablet" msgid="8863617309580598607">"En app ønsker at gøre din tablet synlig for andre Bluetooth-enheder. Du kan ændre dette senere i Bluetooth-indstillinger."</string>
+    <string name="bluetooth_ask_lasting_discovery" product="default" msgid="6487606808683607975">"En app ønsker at gøre din telefon synlig for andre Bluetooth-enheder. Du kan ændre dette senere i Bluetooth-indstillinger."</string>
+    <string name="bluetooth_ask_enablement_and_discovery" product="tablet" msgid="3346529092809011149">"En app ønsker at aktivere Bluetooth og gøre din tablet synlig for andre enheder i <xliff:g id="TIMEOUT">%1$d</xliff:g> sekunder."</string>
+    <string name="bluetooth_ask_enablement_and_discovery" product="default" msgid="4724094889807196118">"En app ønsker at aktivere Bluetooth og gøre din telefon synlig for andre enheder i <xliff:g id="TIMEOUT">%1$d</xliff:g> sekunder."</string>
+    <string name="bluetooth_ask_enablement_and_lasting_discovery" product="tablet" msgid="989613204829097159">"En app ønsker at aktivere Bluetooth og gøre din tablet synlig for andre enheder. Du kan ændre dette senere i Bluetooth-indstillinger."</string>
+    <string name="bluetooth_ask_enablement_and_lasting_discovery" product="default" msgid="6671615712909139801">"En app ønsker at aktivere Bluetooth og gøre din telefon synlig for andre enheder. Du kan ændre dette senere i Bluetooth-indstillinger."</string>
     <string name="bluetooth_turning_on" msgid="4850574877288036646">"Aktiverer Bluetooth..."</string>
     <string name="bluetooth_turning_off" msgid="2337747302892025192">"Bluetooth slukker??"</string>
     <string name="bluetooth_auto_connect" msgid="40711424456733571">"Opret automatisk forbindelse"</string>
@@ -663,11 +665,11 @@
     <string name="musicfx_title" msgid="3415566786340790345">"Musikeffekter"</string>
     <string name="ring_volume_title" msgid="7938706566797464165">"Lydstyrke for opkald"</string>
     <string name="vibrate_in_silent_title" msgid="3897968069156767036">"Vibrer ved lydløs"</string>
-    <string name="notification_sound_title" msgid="312032901303146002">"Standardunderretning"</string>
+    <string name="notification_sound_title" msgid="5137483249425507572">"Standardlyd for underretninger"</string>
     <string name="incoming_call_volume_title" msgid="8073714801365904099">"Ringetone"</string>
     <string name="notification_volume_title" msgid="2012640760341080408">"Meddelelse"</string>
     <string name="checkbox_notification_same_as_incoming_call" msgid="1073644356290338921">"Brug lydstyrke for indgående opkald til meddelelser"</string>
-    <string name="notification_sound_dialog_title" msgid="9052854168612951170">"Vælg ringetone ved meddelelser"</string>
+    <string name="notification_sound_dialog_title" msgid="3805140135741385667">"Standardlyd for underretninger"</string>
     <string name="media_volume_title" msgid="3576565767317118106">"Medier"</string>
     <string name="media_volume_summary" msgid="5363248930648849974">"Angiv lydstyrke for musik og videoer"</string>
     <string name="alarm_volume_title" msgid="2285597478377758706">"Alarm"</string>
@@ -719,7 +721,7 @@
     <string name="wallpaper_settings_fragment_title" msgid="519078346877860129">"Vælg baggrund fra"</string>
     <string name="screensaver_settings_title" msgid="3349790120327233241">"Dagdrøm"</string>
     <string name="screensaver_settings_summary_either_long" msgid="2458481525925378465">"Når enheden er tilsluttet en dockingstation eller i dvale og i færd med at oplade"</string>
-    <string name="screensaver_settings_summary_either_short" msgid="6140527286137331478">"Begge dele"</string>
+    <string name="screensaver_settings_summary_either_short" msgid="6140527286137331478">"Enten eller"</string>
     <string name="screensaver_settings_summary_sleep" msgid="9086186698140423493">"Under opladning"</string>
     <string name="screensaver_settings_summary_dock" msgid="2072657401664633283">"Når enheden er tilsluttet en dockingstation"</string>
     <string name="screensaver_settings_summary_off" msgid="2481581696365146473">"Fra"</string>
@@ -781,6 +783,7 @@
     <string name="status_meid_number" msgid="1751442889111731088">"MEID"</string>
     <string name="status_icc_id" msgid="943368755577172747">"ICCID"</string>
     <string name="status_network_type" msgid="3279383550222116235">"Mobilnetværk"</string>
+    <string name="status_latest_area_info" msgid="7222470836568238054">"Oplysninger om udbyder"</string>
     <string name="status_data_state" msgid="5503181397066522950">"Tilstand for mobilnetværk"</string>
     <string name="status_service_state" msgid="2323931627519429503">"Tjenestetilstand"</string>
     <string name="status_signal_strength" msgid="3732655254188304547">"Signalstyrke"</string>
@@ -998,7 +1001,7 @@
     <string name="lockpattern_change_lock_pin_label" msgid="266707138486731661">"Skift pinkode til at låse op"</string>
     <string name="lockpattern_need_to_unlock" msgid="757935356911054465">"Bekræft gemt mønster"</string>
     <string name="lockpattern_need_to_unlock_wrong" msgid="4694973540770105678">"Prøv igen:"</string>
-    <string name="lockpattern_recording_intro_header" msgid="308287052221942814">"Tegn et oplåsningsmønster"</string>
+    <string name="lockpattern_recording_intro_header" msgid="2063630508212535241">"Tegn et åbningsmønster:"</string>
     <string name="lockpattern_recording_intro_footer" msgid="1118579101409152113">"Tryk på Menu for at få hjælp."</string>
     <string name="lockpattern_recording_inprogress" msgid="4622772178078818425">"Slip med fingeren, når du er færdig."</string>
     <string name="lockpattern_recording_incorrect_too_short" msgid="3103250430366718996">"Forbind mindst <xliff:g id="NUMBER">%d</xliff:g> punkter. Prøv igen:"</string>
@@ -1021,12 +1024,6 @@
     <string name="lockpattern_too_many_failed_confirmation_attempts_header" msgid="819903817323783498">"For mange forkerte forsøg!"</string>
     <string name="lockpattern_too_many_failed_confirmation_attempts_footer" msgid="6759029360597122873">"Prøv igen om <xliff:g id="NUMBER">%d</xliff:g> sekunder."</string>
     <string name="activity_not_found" msgid="5551664692991605325">"Applikationen er ikke installeret på din telefon."</string>
-    <string name="skip_button_label" msgid="8680422740354436943">"Annuller"</string>
-    <string name="next_button_label" msgid="8890792540116568321">"Næste"</string>
-    <string name="lock_title" product="tablet" msgid="2909697418179419990">"Sådan beskytter du din tabletcomputer"</string>
-    <string name="lock_title" product="default" msgid="4059246467204273930">"Beskyt din telefon"</string>
-    <string name="lock_intro_message" product="tablet" msgid="8616353869251700776">"Beskyt din tablet mod uautoriseret brug ved at oprette et personligt mønster til at låse skærmen op. Brug din finger til at forbinde punkterne vilkårligt på den næste skærm. Du skal forbinde mindst fire punkter."\n\n"Er du klar? Tryk på Næste."</string>
-    <string name="lock_intro_message" product="default" msgid="8393155371327584659">"Beskyt din telefon mod uautoriseret brug ved at oprette et personligt mønster til at låse skærmen op. Brug fingeren til at forbinde mindst fire punkter i vilkårlig rækkefølge på næste skærmbillede. "\n\n"Når du er klar til at begynde, trykker du på Næste."</string>
     <string name="manageapplications_settings_title" msgid="7041951105633616745">"Administrer apps"</string>
     <string name="manageapplications_settings_summary" msgid="1794401500935451259">"Administrer og fjern installerede apps"</string>
     <string name="applications_settings" msgid="1721442176406964682">"Apps"</string>
@@ -1194,7 +1191,6 @@
     <string name="hardkeyboard_category" msgid="5957168411305769899">"Indstillinger for fysisk tastatur"</string>
     <string name="auto_punctuate_summary" msgid="4372126865670574837">"Tryk på mellemrumstasten to gange for at indsætte punktum"</string>
     <string name="show_password" msgid="3001113966880559611">"Gør adgangskoder synlige"</string>
-    <string name="show_password_summary" msgid="7345931695292850058"></string>
     <string name="ime_security_warning" msgid="4135828934735934248">"Denne inputmetode kan muligvis indsamle al indtastet tekst, f.eks. personlige data såsom adgangskoder og kreditkortnumre. Den kommer fra appen <xliff:g id="IME_APPLICATION_NAME">%1$s</xliff:g>. Vil du anvende denne inputmetode?"</string>
     <string name="spellchecker_security_warning" msgid="9060897418527708922">"Denne stavekontrol kan muligvis indsamle al den tekst, som du skriver, også personlige data som adgangskoder og kreditkortnumre. Den kommer fra appen <xliff:g id="SPELLCHECKER_APPLICATION_NAME">%1$s</xliff:g>. Vil du bruge denne stavekontrol?"</string>
     <string name="spellchecker_quick_settings" msgid="246728645150092058">"Indstillinger"</string>
@@ -2207,6 +2203,9 @@
     <string name="profile_add_nfc_text">Dette NFC-tag refererer til en ukendt profil. Fastgørelse af denne NFC-tag til en eksisterende profil, vil give mulighed for at vælge profilen i fremtiden.</string>
     <string name="profile_select">Vælg profil</string>
 
+    <string name="link_volume_ringtones">Forbind ringe- og meddelelseslydstyrke</string>
+    <string name="link_volume_mutes">Forbind lydløs ringe- og meddelelseslydstyrke</string>
+
     <!-- Display settings screen, notification light settings -->
     <string name="notification_light_general_title">Generelt</string>
     <string name="notification_light_applist_title">Applikationer</string>
@@ -2252,6 +2251,8 @@
     <string name="battery_light_full_color_title">Fuldt opladt</string>
 
     <!-- Sound settings screen -->
+    <string name="volume_overlay_title">Lydstyrkepanel</string>
+    <string name="headset_connect_player_title">Start musik-app ved tilslutning</string>
     <string name="volume_ring_only_description">Ringetoner</string>
     <string name="ring_mode_title">Lydtilstande</string>
     <string name="ring_mode_normal">Normal</string>
@@ -2344,6 +2345,9 @@
     <string name="power_menu_reboot_title">Genstartsmenu</string>
     <string name="power_menu_screenshot_title">Skærmbillede</string>
     <string name="power_menu_expanded_desktop">Udvidet skrivebord</string>
+    <string name="expanded_desktop_disabled">Slået fra</string>
+    <string name="expanded_desktop_status_bar">Statuslinje synlig</string>
+    <string name="expanded_desktop_no_status_bar">Statuslinje skjult</string>
     <string name="power_menu_profiles_title">Profilskifter</string>
     <string name="power_menu_airplane_title">Flytilstand</string>
     <string name="power_menu_user_title">Brugerskifter</string>
@@ -2429,9 +2433,10 @@
     <string name="title_tile_wimax">WiMAX</string>
     <string name="title_tile_user">Brugerskifter</string>
     <string name="title_tile_networkmode">2G/3G</string>
-
     <string name="title_tile_nfc">NFC</string>
     <string name="title_tile_screen_timeout">Skærm-timeout</string>
+    <string name="title_tile_usb_tether">Tethering via USB</string>
+    <string name="title_tile_quiet_hours">Stille timer</string>
 
     <string name="title_dynamic_tiles">Dynamiske felter</string>
     <string name="dynamic_tiles_note_title">NB:</string>
@@ -2439,6 +2444,7 @@
     <string name="title_dynamic_alarm">Vækkeur</string>
     <string name="title_dynamic_bugreport">Fejlrapport</string>
     <string name="title_dynamic_ime">IME-skifter</string>
+    <string name="title_dynamic_usbtether">Tethering via USB</string>
     <string name="title_dynamic_wifi">Wi-Fi-visning</string>
 
     <string name="title_general">Generelt</string>
@@ -2488,7 +2494,7 @@
     <!--- Sms security limit -->
     <string name="app_security_title">App-sikkerhed</string>
     <string name="sms_security_check_limit_title">SMS-grænse</string>
-    <string name="sms_security_check_limit_summary">Vis en advarselsdialog for at forhindre programmer i at sende SMS-beskeder for ofte. Aktuel grænse: %d beskeder på 15 minutter</string>
+    <string name="sms_security_check_limit_summary">Vis en advarselsdialog for at forhindre programmer i at sende SMS-beskeder for ofte. Aktuel grænse: %d beskeder på 30 minutter (kræver genstart)</string>
     <string name="sms_security_check_limit_default">30 (standard)</string>
 
     <!--- Lock clock -->
@@ -2509,5 +2515,65 @@
     <string name="navigation_bar_reset_toast">Indstillinger for navigationsbjælken er gendannet</string>
     <string name="navigation_bar_menu_editable">Redigerbar</string>
     <string name="navigation_bar_menu_locked">Låst</string>
+
+    <!-- Title for the accessibility preference to home button to answers a call. [CHAR LIMIT=35] -->
+    <string name="accessibility_home_button_answers_call_prerefence_title">Startknap besvarer opkald</string>
+
+    <string name="lockscreen_maximize_widgets_title">Maksimér widgets</string>
+    <string name="lockscreen_maximize_widgets_summary">Vis widgets maksimeret og låsen minimeret, når skærmen er tændt</string>
+
+    <!-- Category title for headset specific Settings.
+         [CHAR LIMIT=40] -->
+    <string name="headset_category_title">Håndfri</string>
+
+    <!-- Activity label of BluetoothMasPermissionActivity, also used as Strings in the permission dialog [CHAR LIMIT=none] -->
+    <string name="bluetooth_mas_request">"Anmodning om beskeder"</string>
+
+    <!-- Bluetooth MAS permission Alert Activity text [CHAR LIMIT=none] -->
+    <string name="bluetooth_mas_acceptance_dialog_text">%1$s vil gerne have adgang til dine beskeder. Vil du give %2$s adgang?</string>
+
+    <!-- Bluetooth MAS permission Alert Activity checkbox text [CHAR LIMIT=none] -->
+    <string name="bluetooth_mas_remember_choice">Spørg ikke igen</string>
+
+    <!-- Wi-Fi settings screen, advanced, title of the item to set the Wi-Fi priority. -->
+    <string name="wifi_setting_priority_title">Wi-Fi-prioritet</string>
+    <!-- Wi-Fi settings screen, setting summary for setting the Wi-Fi priority-->
+    <string name="wifi_setting_priority_summary">Angiv prioriteten af Wi-Fi-netværkene</string>
+
+    <!-- USB Mass Storage -->
+    <string name="usb_mass_storage_title">USB-lager</string>
+    <string name="usb_mass_storage_summary">Aktivér USB-lager</string>
+
+    <!-- Custom lock screen background -->
+    <string name="lockscreen_custom_background_title">Baggrund</string>
+    <string name="lockscreen_custom_background_dialog_title">Vælg farve</string>
+    <string name="lockscreen_background_result_successful">Baggrund blev skiftet</string>
+    <string name="lockscreen_background_result_not_successful">Baggrund kunne ikke skiftes</string>
+    <string name="lockscreen_background_color_fill">Fyldfarve</string>
+    <string name="lockscreen_background_custom_image">Brugerdefineret billede</string>
+    <string name="lockscreen_background_default_wallpaper">Standardtapet</string>
+
+    <!-- convert sound to vibration toggle -->
+    <string name="notification_convert_sound_to_vibration_title">Vibrér ved notifikation</string>
+    <string name="notification_convert_sound_to_vibration_summary">I vibreringstilstand vil alle notifikationer vibrere, uanset individuelle app-indstillinger.</string>
+
+    <!-- Safe headset volume restore checkbox -->
+    <string name="safe_headset_volume_title">Sikker lydstyrke for håndfri</string>
+    <string name="safe_headset_volume_summary">Undgå høje lydstyrkeniveauer, når håndfri tilsluttes først</string>
+
+    <!-- Waiver -->
+    <string name="cyanogenmod_waiver_title">Ophævelse</string>
+    <string name="cyanogenmod_waiver_body">At ændre denne indstilling kan være imod loven.\n\nVed at vælge \'OK\' herunder anerkender du denne advarsel og ophæver, sikrer og holder CyanogenMod og dens bidragydere skadesløse fra alle juridiske forpligtelser.</string>
+
    <!-- **** CYANOGENMOD ADDITIONS END **** -->
+
+    <!-- ======================================================================================= -->
+    <!-- AOKP -->
+    <!-- ======================================================================================= -->
+
+    <string name="rom_control_title">ROM Kontrol</string>
+
+    <string name="aokp_version">AOKP version</string>
+    <string name="aokp_version_default">Ukendt</string>
+
 </resources>

@@ -345,16 +345,15 @@ public class InstalledAppDetails extends Fragment
     private void initUninstallButtons() {
         mUpdatedSysApp = (mAppEntry.info.flags & ApplicationInfo.FLAG_UPDATED_SYSTEM_APP) != 0;
         boolean enabled = true;
+        boolean specialDisable = false;
         if (mUpdatedSysApp) {
             mUninstallButton.setText(R.string.app_factory_reset);
-            boolean specialDisable = false;
             if ((mAppEntry.info.flags & ApplicationInfo.FLAG_SYSTEM) != 0) {
+                specialDisable = true;
                 specialDisable = handleDisableable(mSpecialDisableButton);
                 mSpecialDisableButton.setOnClickListener(this);
             }
-            mMoreControlButtons.setVisibility(specialDisable ? View.VISIBLE : View.GONE);
         } else {
-            mMoreControlButtons.setVisibility(View.GONE);
             if ((mAppEntry.info.flags & ApplicationInfo.FLAG_SYSTEM) != 0) {
                 enabled = handleDisableable(mUninstallButton);
             } else if ((mPackageInfo.applicationInfo.flags
@@ -366,8 +365,16 @@ public class InstalledAppDetails extends Fragment
                 enabled = false;
             } else {
                 mUninstallButton.setText(R.string.uninstall_text);
+                // regular app
+                if(enabled = handleDisableable(mSpecialDisableButton)) {
+                    // enabled will be false if its a launcher or signed with system cert, for safety.
+                    specialDisable = true;
+                    mSpecialDisableButton.setOnClickListener(this);
+                }
             }
         }
+        mMoreControlButtons.setVisibility(specialDisable ? View.VISIBLE : View.GONE);
+
         // If this is a device admin, it can't be uninstall or disabled.
         // We do this here so the text of the button is still set correctly.
         if (mDpm.packageHasActiveAdmins(mPackageInfo.packageName)) {
@@ -424,9 +431,12 @@ public class InstalledAppDetails extends Fragment
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = mRootView = inflater.inflate(R.layout.installed_app_details, null);
-        
+    public View onCreateView(
+            LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        final View view = inflater.inflate(R.layout.installed_app_details, container, false);
+        Utils.prepareCustomPreferencesList(container, view, view, false);
+
+        mRootView = view;
         mComputingStr = getActivity().getText(R.string.computing_size);
         
         // Set default values on sizes
@@ -536,7 +546,9 @@ public class InstalledAppDetails extends Fragment
 
     // Utility method to set applicaiton label and icon.
     private void setAppLabelAndIcon(PackageInfo pkgInfo) {
-        View appSnippet = mRootView.findViewById(R.id.app_snippet);
+        final View appSnippet = mRootView.findViewById(R.id.app_snippet);
+        appSnippet.setPadding(0, appSnippet.getPaddingTop(), 0, appSnippet.getPaddingBottom());
+
         ImageView icon = (ImageView) appSnippet.findViewById(R.id.app_icon);
         mState.ensureIcon(mAppEntry);
         icon.setImageDrawable(mAppEntry.icon);
@@ -1132,7 +1144,9 @@ public class InstalledAppDetails extends Fragment
                     .setPositiveButton(R.string.dlg_ok,
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                            // Disable the app
+                            // Force stop, why keep it around if we're disabling it?
+                            getOwner().forceStopPackage(getOwner().mAppEntry.info.packageName);
+                            // Then disable the app
                             new DisableChanger(getOwner(), getOwner().mAppEntry.info,
                                     PackageManager.COMPONENT_ENABLED_STATE_DISABLED_USER)
                             .execute((Object)null);
@@ -1300,7 +1314,13 @@ public class InstalledAppDetails extends Fragment
                 }
             }
         } else if(v == mSpecialDisableButton) {
-            showDialogInner(DLG_SPECIAL_DISABLE, 0);
+            if((mAppEntry.info.flags & ApplicationInfo.FLAG_INSTALLED) != 0 && mAppEntry.info.enabled) {
+                showDialogInner(DLG_DISABLE, 0);
+            } else {
+                new DisableChanger(this, mAppEntry.info,
+                        PackageManager.COMPONENT_ENABLED_STATE_DEFAULT)
+                .execute((Object)null);
+            }
         } else if(v == mActivitiesButton) {
             mPm.clearPackagePreferredActivities(packageName);
             try {

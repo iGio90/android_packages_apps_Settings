@@ -123,7 +123,16 @@ public class Settings extends PreferenceActivity
             R.id.date_time_settings,
             R.id.about_settings,
             R.id.accessibility_settings,
-            R.id.launcher_settings
+            R.id.customization_section,
+            R.id.launcher_settings,
+            R.id.lock_screen_settings,
+            R.id.themes_settings,
+            R.id.tool_bar_settings,
+            R.id.system_settings,
+            R.id.rom_control,
+            R.id.hybrid_settings,
+            R.id.performance,
+            R.id.advanced_settings
     };
 
     private SharedPreferences mDevelopmentPreferences;
@@ -396,7 +405,11 @@ public class Settings extends PreferenceActivity
                 VpnSettings.class.getName().equals(fragmentName) ||
                 SecuritySettings.class.getName().equals(fragmentName) ||
                 InstalledAppDetails.class.getName().equals(fragmentName) ||
-                ChooseLockGenericFragment.class.getName().equals(fragmentName)) {
+                ChooseLockGenericFragment.class.getName().equals(fragmentName) ||
+                TetherSettings.class.getName().equals(fragmentName) ||
+                ApnSettings.class.getName().equals(fragmentName) ||
+                LocationSettings.class.getName().equals(fragmentName) ||
+                ZonePicker.class.getName().equals(fragmentName)) {
             intent.putExtra(EXTRA_CLEAR_UI_OPTIONS, true);
         }
 
@@ -417,7 +430,7 @@ public class Settings extends PreferenceActivity
     private void updateHeaderList(List<Header> target) {
         final boolean showDev = mDevelopmentPreferences.getBoolean(
                 DevelopmentSettings.PREF_SHOW,
-                android.os.Build.TYPE.equals("eng"));
+                android.os.Build.TYPE.equals("eng") || android.os.Build.TYPE.equals("userdebug"));
         int i = 0;
 
         mHeaderIndexMap.clear();
@@ -866,5 +879,6 @@ public class Settings extends PreferenceActivity
     public static class WifiDisplaySettingsActivity extends Settings { /* empty */ }
     public static class ApnSettingsActivity extends Settings { /* empty */ }
     public static class ApnEditorActivity extends Settings { /* empty */ }
+    public static class DreamSettingsActivity extends Settings { /* empty */ }
     public static class AboutActivity extends Settings { /* empty */ }
 }

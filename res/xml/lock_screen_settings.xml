@@ -33,20 +33,6 @@
         android:entries="@array/lockscreen_background_entries"
         android:entryValues="@array/lockscreen_background_values" />
 
-     <ListPreference
-        android:key="lockscreen_battery_status"
-        android:persistent="false"
-        android:dialogTitle="@string/lockscreen_battery_status_title"
-        android:title="@string/lockscreen_battery_status_title"
-        android:entries="@array/lockscreen_battery_status_entries"
-        android:entryValues="@array/lockscreen_battery_status_values"
-        android:defaultValue="0" />
-
-    <CheckBoxPreference
-        android:key="allow_rotation"
-        android:title="@string/allow_rotate_title"
-        android:summary="@string/allow_rotate_summary" />
-
     <CheckBoxPreference
         android:key="see_through"
         android:title="@string/see_through_title"
@@ -56,12 +42,6 @@
         android:key="home_screen_widgets"
         android:title="@string/home_screen_widgets_title"
         android:summary="@string/home_screen_widgets_summary" />
-
-     <CheckBoxPreference
-        android:key="lockscreen_maximize_widgets"
-        android:persistent="false"
-        android:title="@string/lockscreen_maximize_widgets_title"
-        android:summary="@string/lockscreen_maximize_widgets_summary" />
 
     <PreferenceScreen
         android:key="lock_screen_shortcuts"
