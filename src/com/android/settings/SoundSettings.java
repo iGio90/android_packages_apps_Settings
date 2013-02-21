@@ -219,7 +219,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         boolean safeMediaVolumeEnabled = getResources().getBoolean(
                 com.android.internal.R.bool.config_safe_media_volume_enabled);
         mSafeHeadsetVolume.setChecked(Settings.System.getInt(resolver,
-                Settings.System.SAFE_HEADSET_VOLUME, safeMediaVolumeEnabled ? 1 : 0) != 0);
+                Settings.System.SAFE_HEADSET_VOLUME, safeMediaVolumeEnabled ? 0 : 0) != 0);
 
         mVibrateWhenRinging = (CheckBoxPreference) findPreference(KEY_VIBRATE);
         mVibrateWhenRinging.setPersistent(false);
