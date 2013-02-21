@@ -5252,4 +5252,12 @@
     <string name="general_ui_header">User Interface Settings</string>
     <string name="jellybam_ui_settings_title">UI Settings</string>
     <string name="pie_settings">Pie Settings</string>
+
+    <!-- JELLYBAM CHANGELOG -->
+    <string name="changelog_title">View changelog</string>
+    <string name="changelog_dialog">Changelog</string>
+    <string name="changelog_loading">Loading changelog...</string>
+    <string name="changelog_error">Unable to load changelog</string>
+    <string name="changelog_unknown">Unknown</string>
+    <string name="changelog_version">Version</string>
 </resources>

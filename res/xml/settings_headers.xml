@@ -180,8 +180,8 @@
 
     <!-- UI Settings -->
     <header
-        android:id="@+id/bamsettings"
-        android:fragment="com.android.settings.Bamsettings"
+        android:id="@+id/bamuisettings"
+        android:fragment="com.android.settings.Bamuisettings"
         android:icon="@drawable/ic_rom_control_general_ui"
         android:title="@string/jellybam_ui_settings_title" />
 
@@ -352,6 +352,16 @@
         android:icon="@drawable/ic_settings_performance"
         android:title="@string/performance_settings_title" />
 
+    <!-- Change Log -->
+    <header
+         android:icon="@drawable/ic_settings_changelog"
+         android:title="@string/changelog_title">
+
+              <intent android:action="android.intent.action.MAIN"
+                      android:targetPackage="com.android.settings"
+                      android:targetClass="com.android.settings.jellybam.ChangeLog" />
+    </header>
+
     <!-- About JELLYBAM -->
     <header
         android:id="@+id/about_rom"
@@ -365,4 +375,5 @@
         android:fragment="com.android.settings.DeviceInfoSettings"
         android:icon="@drawable/ic_settings_about"
         android:title="@string/about_settings" />
+
 </preference-headers>

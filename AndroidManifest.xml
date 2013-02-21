@@ -1623,7 +1623,13 @@
         <!-- JELLYBAM -->
         <activity android:name=".jellybam.About" />
 
-        <activity android:name="Bamsettings" />
+        <activity android:name="Bamuisettings" />
+
+      <activity android:name=".jellybam.ChangeLog" android:label="@string/changelog_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
 
     </application>
 </manifest>
