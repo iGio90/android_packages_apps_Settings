@@ -1449,6 +1449,8 @@
 
        <activity android:name=".paranoid.Toolbar" />
 
+       <activity android:name=".paranoid.Pie" />
+
         <!-- CyanogenMod activities Start -->
         <activity android:name=".cyanogenmod.PowerWidget" />
 
@@ -1620,6 +1622,8 @@
 
         <!-- JELLYBAM -->
         <activity android:name=".jellybam.About" />
+
+        <activity android:name="Bamsettings" />
 
     </application>
 </manifest>

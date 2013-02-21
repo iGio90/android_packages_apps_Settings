@@ -881,4 +881,5 @@ public class Settings extends PreferenceActivity
     public static class ApnEditorActivity extends Settings { /* empty */ }
     public static class DreamSettingsActivity extends Settings { /* empty */ }
     public static class AboutActivity extends Settings { /* empty */ }
+    public static class BamsettingsActivity extends Settings { /* empty */ }
 }

@@ -174,6 +174,36 @@
             android:action="android.settings.ADD_ACCOUNT_SETTINGS"/>
     </header>
 
+    <!-- JELLYBAM -->
+    <header android:id="@+id/customization_section"
+        android:title="@string/header_category_jellybam" />
+
+    <!-- UI Settings -->
+    <header
+        android:id="@+id/bamsettings"
+        android:fragment="com.android.settings.Bamsettings"
+        android:icon="@drawable/ic_romcontrol_general_ui"
+        android:title="@string/jellybam_ui_settings_title" />
+
+    <!-- AT -->
+    <header android:icon="@drawable/ic_settings_at"
+            android:title="@string/atweaker_title">
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="net.igio90.androidtweaker.ATweakerFree"
+                android:targetPackage="net.igio90.androidtweaker.free" />
+    </header>
+
+    <!-- BAM Papers -->
+    <header android:icon="@drawable/ic_settings_bampapers"
+            android:title="@string/bampapers_title">
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.jellybam.bampapers"
+                android:targetClass="com.jellybam.bampapers.Wallpaper" />
+    </header>
+
+
     <!-- CYANOGENMOD -->
     <header android:id="@+id/customization_section"
         android:title="@string/header_category_cyanogenmod" />
@@ -232,10 +262,10 @@
 
     <!-- PIE -->
     <header
-        android:id="@+id/tool_bar_settings"
-        android:fragment="com.android.settings.paranoid.Toolbar"
+        android:id="@+id/pie_settings"
+        android:fragment="com.android.settings.paranoid.Pie"
         android:icon="@drawable/ic_settings_pie"
-        android:title="@string/pie_control" />
+        android:title="@string/pie_settings" />
 
     <!-- Hybrid options -->
     <header
@@ -248,19 +278,19 @@
             android:targetClass="com.paranoid.preferences.MainActivity" />
     </header>    
 
+    <!-- Toolbar -->
+    <header
+        android:id="@+id/tool_bar_settings"
+        android:fragment="com.android.settings.paranoid.Toolbar"
+        android:icon="@drawable/ic_settings_status_bar"
+        android:title="@string/tool_bar_settings" />
+
     <!-- Tiles -->
     <header
         android:id="@+id/custom_tiles"
         android:fragment="com.android.settings.paranoid.CustomTiles"
-        android:icon="@drawable/ic_settings_status_bar" 
+        android:icon="@drawable/ic_settings_multiuser" 
         android:title="@string/custom_tiles_title" />
-
-    <!-- NAVBAR -->
-    <header
-        android:id="@+id/nav_bar_settings"
-        android:fragment="com.android.settings.paranoid.Navbar"
-        android:icon="@drawable/ic_settings_status_bar"
-        android:title="@string/nav_bar_title" />
 
     <!-- Lockscreen -->
     <header
@@ -282,35 +312,12 @@
    </header>
 
    <header
-            android:icon="@drawable/ic_settings_multiuser"
+            android:icon="@drawable/ic_settings_display"
             android:title="@string/xposed_dpi_settings">
         <intent
                 android:action="android.intent.action.MAIN"
                 android:targetPackage="de.robv.android.xposed.mods.appsettings"
                 android:targetClass="de.robv.android.xposed.mods.appsettings.XposedModActivity" />
-    </header>
-
-
-    <!-- JELLYBAM -->
-    <header android:id="@+id/customization_section"
-        android:title="@string/header_category_jellybam" />
-
-    <!-- AT -->
-    <header android:icon="@drawable/ic_settings_at"
-            android:title="@string/atweaker_title">
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetClass="net.igio90.androidtweaker.ATweakerFree"
-                android:targetPackage="net.igio90.androidtweaker.free" />
-    </header>
-
-    <!-- BAM Papers -->
-    <header android:icon="@drawable/ic_settings_bampapers"
-            android:title="@string/bampapers_title">
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="com.jellybam.bampapers"
-                android:targetClass="com.jellybam.bampapers.Wallpaper" />
     </header>
 
     <!-- SYSTEM -->
