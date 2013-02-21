@@ -38,16 +38,10 @@ public class Toolbar extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String STATUS_BAR_MAX_NOTIF = "status_bar_max_notifications";
-    private static final String NAV_BAR_TABUI_MENU = "nav_bar_tabui_menu";
     private static final String STATUS_BAR_DONOTDISTURB = "status_bar_donotdisturb";
-    private static final String NAV_BAR_CATEGORY = "toolbar_navigation";
-    private static final String NAV_BAR_CONTROLS = "navigation_bar_controls";
 
     private ListPreference mStatusBarMaxNotif;
-    private CheckBoxPreference mMenuButtonShow;
     private CheckBoxPreference mStatusBarDoNotDisturb;
-    private PreferenceScreen mNavigationBarControls;
-    private PreferenceCategory mNavigationCategory;
 
     private Context mContext;
     private int mAllowedLocations;
@@ -66,38 +60,15 @@ public class Toolbar extends SettingsPreferenceFragment
         mStatusBarMaxNotif.setValue(String.valueOf(maxNotIcons));
         mStatusBarMaxNotif.setOnPreferenceChangeListener(this);
 
-        mNavigationCategory = (PreferenceCategory) prefSet.findPreference(NAV_BAR_CATEGORY);
-
-        mMenuButtonShow = (CheckBoxPreference) prefSet.findPreference(NAV_BAR_TABUI_MENU);
-        mMenuButtonShow.setChecked((Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.NAV_BAR_TABUI_MENU, 0) == 1));
-
-        mNavigationBarControls = (PreferenceScreen) prefSet.findPreference(NAV_BAR_CONTROLS);
-
         mStatusBarDoNotDisturb = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_DONOTDISTURB);
         mStatusBarDoNotDisturb.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.STATUS_BAR_DONOTDISTURB, 0) == 1));
 
-        if (!Utils.isTablet()) {
-            prefSet.removePreference(mStatusBarMaxNotif);
-            prefSet.removePreference(mMenuButtonShow);
-            prefSet.removePreference(mStatusBarDoNotDisturb);
-
-            if(!Utils.hasNavigationBar()) {
-                prefSet.removePreference(mNavigationCategory);
-            }
-        } else {
-            mNavigationCategory.removePreference(mNavigationBarControls);
-        }
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mMenuButtonShow) {
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.NAV_BAR_TABUI_MENU, mMenuButtonShow.isChecked() ? 1 : 0);
-            return true;
-        } else if (preference == mStatusBarDoNotDisturb) {
+	if (preference == mStatusBarDoNotDisturb) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_DONOTDISTURB,
                     mStatusBarDoNotDisturb.isChecked() ? 1 : 0);

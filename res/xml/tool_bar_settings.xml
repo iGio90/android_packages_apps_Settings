@@ -37,22 +37,6 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="toolbar_navigation"
-        android:title="@string/tool_bar_navigation_header">
-
-        <CheckBoxPreference
-            android:key="nav_bar_tabui_menu"
-            android:title="@string/navigation_bar_tabui_menu_title"
-            android:summary="@string/navigation_bar_tabui_menu_summary" />
-
-        <PreferenceScreen
-            android:key="navigation_bar_controls"
-            android:fragment="com.android.settings.cyanogenmod.NavBar"
-            android:title="@string/navigation_bar_title" />
-
-    </PreferenceCategory>
-
 </PreferenceScreen>
 
 
