@@ -4509,7 +4509,7 @@
     <string name="icon_picker_nav">Navigation</string>
 
     <!-- Bars sub menu [CHAR LIMIT=30] -->
-    <string name="tool_bar_settings">Toolbars</string>
+    <string name="tool_bar_settings">Statusbar</string>
     <string name="tool_bar_status_header">Status bar</string>
     <string name="tool_bar_navigation_header">Navigation bar</string>
 
@@ -4629,7 +4629,7 @@
     <string name="navigation_bar_menu_locked">Locked</string>
     
     <!-- Hybrid sub menu [CHAR LIMIT=30] -->
-    <string name="hybrid_settings">Hybrid properties</string>
+    <string name="hybrid_settings">Paranoid Preferences</string>
 
     <string name="pa_version">ParanoidAndroid version</string>
     <string name="pa_version_default">Unknown</string>
@@ -5251,10 +5251,12 @@
     <string name="system_power_crt_screen_on_summary">Screen will animate an Electron Beam when turned on</string>
     <string name="general_ui_header">User Interface Settings</string>
     <string name="jellybam_ui_settings_title">UI Settings</string>
-    <string name="pie_settings">Pie Settings</string>
+    <string name="pie_settings">Pie Controls</string>
+    <string name="header_category_graphics">GRAPHICS PREFERENCES</string>
+    <string name="header_category_tuning">TUNING PREFERENCES</string>
 
     <!-- JELLYBAM CHANGELOG -->
-    <string name="changelog_title">View changelog</string>
+    <string name="bam_changelog_title">Release changelog</string>
     <string name="changelog_dialog">Changelog</string>
     <string name="changelog_loading">Loading changelog...</string>
     <string name="changelog_error">Unable to load changelog</string>

@@ -185,25 +185,6 @@
         android:icon="@drawable/ic_rom_control_general_ui"
         android:title="@string/jellybam_ui_settings_title" />
 
-    <!-- AT -->
-    <header android:icon="@drawable/ic_settings_at"
-            android:title="@string/atweaker_title">
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetClass="net.igio90.androidtweaker.ATweakerFree"
-                android:targetPackage="net.igio90.androidtweaker.free" />
-    </header>
-
-    <!-- BAM Papers -->
-    <header android:icon="@drawable/ic_settings_bampapers"
-            android:title="@string/bampapers_title">
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="com.jellybam.bampapers"
-                android:targetClass="com.jellybam.bampapers.Wallpaper" />
-    </header>
-
-
     <!-- CYANOGENMOD -->
     <header android:id="@+id/customization_section"
         android:title="@string/header_category_cyanogenmod" />
@@ -221,17 +202,6 @@
         android:title="@string/launcher_settings_title"
         android:icon="@drawable/ic_settings_cmlauncher" />
 
-    <!-- Themes -->
-    <header
-        android:id="@+id/themes_settings"
-        android:icon="@drawable/ic_settings_themes"
-        android:title="@string/themes_settings_title">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="com.tmobile.themechooser"
-            android:targetClass="com.tmobile.themechooser.ThemeChooser" />
-    </header>
-
     <!-- AOKP -->
     <header android:id="@+id/customization_section"
         android:title="@string/header_category_aokp" />
@@ -244,16 +214,6 @@
                 android:action="android.intent.action.MAIN"
                 android:targetClass="com.aokp.romcontrol.ROMControlActivity"
                 android:targetPackage="com.aokp.romcontrol" />
-    </header>
-
-    <!-- PERFORMANCE CONTROL -->
-    <header android:id="@+id/performance"
-            android:title="@string/performancec_title"
-            android:icon="@drawable/ic_settings_performance" >
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="com.brewcrewfoo.performance"
-                android:targetClass="com.brewcrewfoo.performance.activities.MainActivity" />
     </header>
 
     <!-- PARANOID -->
@@ -320,6 +280,53 @@
                 android:targetClass="de.robv.android.xposed.mods.appsettings.XposedModActivity" />
     </header>
 
+    <!-- TUNING -->
+    <header android:id="@+id/tuning_section"
+        android:title="@string/header_category_tuning" />
+
+    <!-- AT -->
+    <header android:icon="@drawable/ic_settings_at"
+            android:title="@string/atweaker_title">
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="net.igio90.androidtweaker.ATweakerFree"
+                android:targetPackage="net.igio90.androidtweaker.free" />
+    </header>
+
+    <!-- PERFORMANCE CONTROL -->
+    <header android:id="@+id/performance"
+            android:title="@string/performancec_title"
+            android:icon="@drawable/ic_settings_performance" >
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.brewcrewfoo.performance"
+                android:targetClass="com.brewcrewfoo.performance.activities.MainActivity" />
+    </header>
+
+    <!-- GRAPHICS -->
+    <header android:id="@+id/graphics_section"
+        android:title="@string/header_category_graphics" />
+
+    <!-- Themes -->
+    <header
+        android:id="@+id/themes_settings"
+        android:icon="@drawable/ic_settings_themes"
+        android:title="@string/themes_settings_title">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.tmobile.themechooser"
+            android:targetClass="com.tmobile.themechooser.ThemeChooser" />
+    </header>
+
+    <!-- BAM Papers -->
+    <header android:icon="@drawable/ic_settings_bampapers"
+            android:title="@string/bampapers_title">
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.jellybam.bampapers"
+                android:targetClass="com.jellybam.bampapers.Wallpaper" />
+    </header>
+
     <!-- SYSTEM -->
     <header android:id="@+id/system_section"
         android:title="@string/header_category_system" />
@@ -355,7 +362,7 @@
     <!-- Change Log -->
     <header
          android:icon="@drawable/ic_settings_changelog"
-         android:title="@string/changelog_title">
+         android:title="@string/bam_changelog_title">
 
               <intent android:action="android.intent.action.MAIN"
                       android:targetPackage="com.android.settings"
