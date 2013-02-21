@@ -182,7 +182,7 @@
     <header
         android:id="@+id/bamsettings"
         android:fragment="com.android.settings.Bamsettings"
-        android:icon="@drawable/ic_romcontrol_general_ui"
+        android:icon="@drawable/ic_rom_control_general_ui"
         android:title="@string/jellybam_ui_settings_title" />
 
     <!-- AT -->
