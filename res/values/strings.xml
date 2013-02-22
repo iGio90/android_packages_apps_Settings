@@ -5264,6 +5264,8 @@
     <string name="pie_settings">Pie Controls</string>
     <string name="header_category_graphics">GRAPHICS PREFERENCES</string>
     <string name="header_category_tuning">TUNING PREFERENCES</string>
+    <string name="fullscreen_keyboard">Disable fullscreen keyboard</string>
+    <string name="fullscreen_keyboard_summary">Will allow you to read the message your typing while in landscape mode.</string>
 
     <!-- JELLYBAM CHANGELOG -->
     <string name="bam_changelog_title">Release changelog</string>

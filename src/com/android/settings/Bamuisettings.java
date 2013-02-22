@@ -51,9 +51,11 @@ public class Bamuisettings extends SettingsPreferenceFragment implements
 
     private static final String PREF_POWER_CRT_SCREEN_ON = "system_power_crt_screen_on";
     private static final String PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
-    
+    private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
+
     private CheckBoxPreference mCrtOff;
     private CheckBoxPreference mCrtOn;
+    private CheckBoxPreference mFullscreenKeyboard;
     private final Configuration mCurConfig = new Configuration();
     private Context mContext;
 
@@ -65,7 +67,7 @@ public class Bamuisettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = getContentResolver();
         mContext = getActivity();
 
-        addPreferencesFromResource(R.xml.jellybam_settings);
+        addPreferencesFromResource(R.xml.jellybam_ui_settings);
         PreferenceScreen prefs = getPreferenceScreen();
 
        // respect device default configuration
@@ -90,6 +92,10 @@ public class Bamuisettings extends SettingsPreferenceFragment implements
         mCrtOn.setEnabled(isCrtOffChecked);
         mCrtOn.setOnPreferenceChangeListener(this);
 
+        mFullscreenKeyboard = (CheckBoxPreference) findPreference(PREF_FULLSCREEN_KEYBOARD);
+        mFullscreenKeyboard.setChecked(Settings.System.getInt(resolver,
+                Settings.System.FULLSCREEN_KEYBOARD, 0) == 1);
+
     }
     
     @Override
@@ -101,6 +107,21 @@ public class Bamuisettings extends SettingsPreferenceFragment implements
     public void onPause() {
         super.onPause();
     }
+
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+         boolean value;
+
+         if (preference == mFullscreenKeyboard) {
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.FULLSCREEN_KEYBOARD,
+                    mFullscreenKeyboard.isChecked() ? 1 : 0);
+         }  else {
+              // If not handled, let preferences handle it.
+              return super.onPreferenceTreeClick(preferenceScreen, preference);
+         }
+         return true;
+     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         final String key = preference.getKey();
