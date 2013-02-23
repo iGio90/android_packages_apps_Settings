@@ -52,10 +52,12 @@ public class Bamuisettings extends SettingsPreferenceFragment implements
     private static final String PREF_POWER_CRT_SCREEN_ON = "system_power_crt_screen_on";
     private static final String PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
     private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
+    private static final String PREF_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
 
     private CheckBoxPreference mCrtOff;
     private CheckBoxPreference mCrtOn;
     private CheckBoxPreference mFullscreenKeyboard;
+    private ListPreference mLowBatteryWarning;
     private final Configuration mCurConfig = new Configuration();
     private Context mContext;
 
@@ -96,8 +98,14 @@ public class Bamuisettings extends SettingsPreferenceFragment implements
         mFullscreenKeyboard.setChecked(Settings.System.getInt(resolver,
                 Settings.System.FULLSCREEN_KEYBOARD, 0) == 1);
 
+        mLowBatteryWarning = (ListPreference) findPreference(PREF_LOW_BATTERY_WARNING_POLICY);
+        int lowBatteryWarning = Settings.System.getInt(getActivity().getContentResolver(),
+                                    Settings.System.POWER_UI_LOW_BATTERY_WARNING_POLICY, 3);
+        mLowBatteryWarning.setValue(String.valueOf(lowBatteryWarning));
+        mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntry());
+        mLowBatteryWarning.setOnPreferenceChangeListener(this);
     }
-    
+
     @Override
     public void onResume() {
         super.onResume();
@@ -142,6 +150,13 @@ public class Bamuisettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SYSTEM_POWER_ENABLE_CRT_ON,
                     ((Boolean) newValue).booleanValue() ? 1 : 0);
+            return true;
+        } else if (preference == mLowBatteryWarning) {
+            int lowBatteryWarning = Integer.valueOf((String) Value);
+            int index = mLowBatteryWarning.findIndexOfValue((String) Value);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.POWER_UI_LOW_BATTERY_WARNING_POLICY, lowBatteryWarning);
+            mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntries()[index]);
             return true;
         }
         return false;
