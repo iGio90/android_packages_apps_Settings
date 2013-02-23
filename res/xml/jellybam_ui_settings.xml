@@ -33,13 +33,18 @@
         android:summary="@string/system_power_crt_screen_on_summary"
         android:title="@string/system_power_crt_screen_on_title" />
 
-
    <CheckBoxPreference
         android:key="fullscreen_keyboard"
         android:icon="@drawable/ic_bt_keyboard_hid"
         android:title="@string/fullscreen_keyboard"
         android:summary="@string/fullscreen_keyboard_summary"
         android:defaultValue="false" />
+
+   <CheckBoxPreference
+        android:key="disable_low_battery_warning"
+        android:icon="@drawable/ic_settings_battery"
+        android:title="@string/disable_battery_warning"
+        android:summary="@string/disable_battery_warning_summary" />
 
  </PreferenceCategory>
 
