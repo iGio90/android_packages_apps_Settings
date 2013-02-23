@@ -29,6 +29,11 @@
             android:entries="@array/entries_pie_trigger"
             android:entryValues="@array/values_pie_trigger" />
 
+        <CheckBoxPreference
+            android:key="pie_stick"
+            android:title="@string/pie_stick_title"
+            android:summary="@string/pie_stick_summary" />
+
         <ListPreference
             android:key="pie_mode"
             android:dialogTitle="@string/pie_mode_title"
