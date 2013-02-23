@@ -169,10 +169,15 @@ public class WirelessSettings extends SettingsPreferenceFragment {
         getPreferenceScreen().removePreference(mGlobalProxy);
         mGlobalProxy.setEnabled(mDPM.getGlobalProxyAdmin() == null);
 
+        // Disable Tethering if it's not allowed or if it's a wifi-only device
         ConnectivityManager cm =
                 (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
-        Preference p = findPreference(KEY_TETHER_SETTINGS);
-        p.setTitle(Utils.getTetheringLabel(cm));
+        if (isSecondaryUser || !cm.isTetheringSupported()) {
+            getPreferenceScreen().removePreference(findPreference(KEY_TETHER_SETTINGS));
+        } else {
+            Preference p = findPreference(KEY_TETHER_SETTINGS);
+            p.setTitle(Utils.getTetheringLabel(cm));
+        }
 
         // Enable link to CMAS app settings depending on the value in config.xml.
         boolean isCellBroadcastAppLinkEnabled = this.getResources().getBoolean(
