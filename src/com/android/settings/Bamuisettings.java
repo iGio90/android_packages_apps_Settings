@@ -52,24 +52,20 @@ public class Bamuisettings extends SettingsPreferenceFragment implements
     private static final String PREF_POWER_CRT_SCREEN_ON = "system_power_crt_screen_on";
     private static final String PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
     private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
-    private static final String PREF_DISABLE_LOW_BATTERY_WARNING = "disable_low_battery_warning";
 
     private CheckBoxPreference mCrtOff;
     private CheckBoxPreference mCrtOn;
     private CheckBoxPreference mFullscreenKeyboard;
-    private CheckBoxPreference mBatteryWarning;
     private final Configuration mCurConfig = new Configuration();
     private Context mContext;
 
     private boolean isCrtOffChecked = false;
-    ContentResolver mResolver;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ContentResolver resolver = getContentResolver();
         mContext = getActivity();
-        mResolver = mContext.getContentResolver();
 
         addPreferencesFromResource(R.xml.jellybam_ui_settings);
         PreferenceScreen prefs = getPreferenceScreen();
@@ -100,15 +96,8 @@ public class Bamuisettings extends SettingsPreferenceFragment implements
         mFullscreenKeyboard.setChecked(Settings.System.getInt(resolver,
                 Settings.System.FULLSCREEN_KEYBOARD, 0) == 1);
 
-	mBatteryWarning = (CheckBoxPreference) findPreference("disable_low_battery_warning");
-        mBatteryWarning.setChecked(Settings.System.getInt(mResolver,
-                Settings.System.DISABLE_LOW_BATTERY_WARNING,
-                Settings.System.DISABLE_LOW_BATTERY_WARNING_DEF)
-                == Settings.System.DISABLE_LOW_BATTERY_WARNING_DEF ? false : true);
-        mBatteryWarning.setOnPreferenceChangeListener(this);
-
     }
-
+    
     @Override
     public void onResume() {
         super.onResume();
@@ -153,11 +142,6 @@ public class Bamuisettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SYSTEM_POWER_ENABLE_CRT_ON,
                     ((Boolean) newValue).booleanValue() ? 1 : 0);
-            return true;
-	} else if (preference == mBatteryWarning) {
-            Settings.System.putInt(mResolver,
-                    Settings.System.DISABLE_LOW_BATTERY_WARNING,
-                    ((Boolean) Value).booleanValue() ? 1 : 0);
             return true;
         }
         return false;

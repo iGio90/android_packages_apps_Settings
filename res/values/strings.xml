@@ -5266,8 +5266,6 @@
     <string name="header_category_tuning">TUNING PREFERENCES</string>
     <string name="fullscreen_keyboard">Disable fullscreen keyboard</string>
     <string name="fullscreen_keyboard_summary">Will allow you to read the message your typing while in landscape mode.</string>
-    <string name="disable_battery_warning">Disable low battery warning</string>
-    <string name="disable_battery_warning_summary">Prevent low battery warning popup.</string>
 
     <!-- JELLYBAM CHANGELOG -->
     <string name="bam_changelog_title">Release changelog</string>
