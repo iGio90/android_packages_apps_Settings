@@ -169,6 +169,8 @@ public class WirelessSettings extends SettingsPreferenceFragment {
         getPreferenceScreen().removePreference(mGlobalProxy);
         mGlobalProxy.setEnabled(mDPM.getGlobalProxyAdmin() == null);
 
+        ConnectivityManager cm =
+                (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
         Preference p = findPreference(KEY_TETHER_SETTINGS);
         p.setTitle(Utils.getTetheringLabel(cm));
 

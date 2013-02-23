@@ -131,10 +131,10 @@ public class Bamuisettings extends SettingsPreferenceFragment implements
          return true;
      }
 
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
+    public boolean onPreferenceChange(Preference preference, Object Value) {
         final String key = preference.getKey();
          if (mCrtOff.equals(preference)) {
-            isCrtOffChecked = ((Boolean) newValue).booleanValue();
+            isCrtOffChecked = ((Boolean) Value).booleanValue();
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF,
                     (isCrtOffChecked ? 1 : 0));
@@ -149,7 +149,7 @@ public class Bamuisettings extends SettingsPreferenceFragment implements
         } else if (mCrtOn.equals(preference)) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SYSTEM_POWER_ENABLE_CRT_ON,
-                    ((Boolean) newValue).booleanValue() ? 1 : 0);
+                    ((Boolean) Value).booleanValue() ? 1 : 0);
             return true;
         } else if (preference == mLowBatteryWarning) {
             int lowBatteryWarning = Integer.valueOf((String) Value);
