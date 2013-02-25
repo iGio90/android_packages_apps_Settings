@@ -53,10 +53,12 @@ public class Bamuisettings extends SettingsPreferenceFragment implements
     private static final String PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
     private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
     private static final String PREF_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
+    private static final String KEY_DUAL_PANE = "dual_pane"
 
     private CheckBoxPreference mCrtOff;
     private CheckBoxPreference mCrtOn;
     private CheckBoxPreference mFullscreenKeyboard;
+    private CheckBoxPreference mDualPane;
     private ListPreference mLowBatteryWarning;
     private final Configuration mCurConfig = new Configuration();
     private Context mContext;
@@ -104,6 +106,13 @@ public class Bamuisettings extends SettingsPreferenceFragment implements
         mLowBatteryWarning.setValue(String.valueOf(lowBatteryWarning));
         mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntry());
         mLowBatteryWarning.setOnPreferenceChangeListener(this);
+
+        mDualPane = (CheckBoxPreference) findPreference(KEY_DUAL_PANE);
+        boolean preferDualPane = getResources().getBoolean(
+                com.android.internal.R.bool.preferences_prefer_dual_pane);
+        boolean dualPaneMode = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.DUAL_PANE_PREFS, (preferDualPane ? 1 : 0)) == 1;
+        mDualPane.setChecked(dualPaneMode);
     }
 
     @Override
@@ -124,6 +133,11 @@ public class Bamuisettings extends SettingsPreferenceFragment implements
          if (preference == mFullscreenKeyboard) {
             Settings.System.putInt(getActivity().getContentResolver(), Settings.System.FULLSCREEN_KEYBOARD,
                     mFullscreenKeyboard.isChecked() ? 1 : 0);
++        } else if (preference == mDualPane) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.DUAL_PANE_PREFS,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
          }  else {
               // If not handled, let preferences handle it.
               return super.onPreferenceTreeClick(preferenceScreen, preference);

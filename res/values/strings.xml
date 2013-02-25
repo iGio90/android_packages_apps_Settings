@@ -5290,6 +5290,8 @@
     <string name="fullscreen_keyboard">Disable fullscreen keyboard</string>
     <string name="fullscreen_keyboard_summary">Will allow you to read the message your typing while in landscape mode.</string>
     <string name="pref_low_battery_warning_policy_title">Low battery warning</string>
+    <string name="dual_pane">Dual panel mode</string>
+    <string name="dual_pane_summary">Restart settings to take effect</string>
 
     <!-- Shortcut Picker -->
     <string name="group_applications">Applications</string>
