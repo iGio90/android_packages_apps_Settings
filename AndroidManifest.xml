@@ -1625,9 +1625,9 @@
         <!-- JELLYBAM -->
         <activity android:name=".jellybam.About" />
 
-        <activity android:name="Bamuisettings" />
+        <activity android:name=".Bamuisettings" />
 
-        <activity android:name="Bamquicksettings" />
+        <activity android:name=".Bamquicksettings" />
 
         <activity android:name=".jellybam.ChangeLog" android:label="@string/changelog_title">
             <intent-filter>

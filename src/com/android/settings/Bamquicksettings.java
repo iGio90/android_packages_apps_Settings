@@ -1,5 +1,5 @@
 
-package com.android.settings.carbon;
+package com.android.settings;
 
 import android.app.Activity;
 import android.app.AlertDialog;
