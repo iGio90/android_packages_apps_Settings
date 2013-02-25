@@ -53,7 +53,7 @@ public class Bamuisettings extends SettingsPreferenceFragment implements
     private static final String PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
     private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
     private static final String PREF_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
-    private static final String KEY_DUAL_PANE = "dual_pane"
+    private static final String KEY_DUAL_PANE = "dual_pane";
 
     private CheckBoxPreference mCrtOff;
     private CheckBoxPreference mCrtOn;
@@ -133,7 +133,7 @@ public class Bamuisettings extends SettingsPreferenceFragment implements
          if (preference == mFullscreenKeyboard) {
             Settings.System.putInt(getActivity().getContentResolver(), Settings.System.FULLSCREEN_KEYBOARD,
                     mFullscreenKeyboard.isChecked() ? 1 : 0);
-+        } else if (preference == mDualPane) {
+        } else if (preference == mDualPane) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.DUAL_PANE_PREFS,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);

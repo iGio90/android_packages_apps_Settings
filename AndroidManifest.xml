@@ -1627,18 +1627,9 @@
 
         <activity android:name="Bamuisettings" />
 
-        <activity
-            android:name=".TransparencyDialog"
-            android:theme="@android:style/Theme.Dialog"
-            android:label="@string/interface_title" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name="Bamquicksettings" />
 
-                <category android:name="com.android.settings.SHORTCUT" />
-            </intent-filter>
-        </activity>
-
-       <activity android:name=".jellybam.ChangeLog" android:label="@string/changelog_title">
+        <activity android:name=".jellybam.ChangeLog" android:label="@string/changelog_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>

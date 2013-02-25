@@ -5284,6 +5284,7 @@
     <string name="system_power_crt_screen_on_summary">Screen will animate an Electron Beam when turned on</string>
     <string name="general_ui_header">User Interface Settings</string>
     <string name="jellybam_ui_settings_title">UI Settings</string>
+    <string name="jellybam_quick_settings_title">Quick Settings</string>
     <string name="pie_settings">Pie Controls</string>
     <string name="header_category_graphics">GRAPHICS PREFERENCES</string>
     <string name="header_category_tuning">TUNING PREFERENCES</string>
@@ -5292,6 +5293,12 @@
     <string name="pref_low_battery_warning_policy_title">Low battery warning</string>
     <string name="dual_pane">Dual panel mode</string>
     <string name="dual_pane_summary">Restart settings to take effect</string>
+    <string name="toggle_enable_fasttoggle_title">Enable fast toggle</string>
+    <string name="toggle_enable_fasttoggle_summary">Overrides default behavior</string>
+    <string name="toggle_choose_fasttoggle_side_title">Choose fast toggle side</string>
+    <string name="toggle_choose_fasttoggle_side_summary">Choose which side the fast toggle area shall be</string>
+    <string name="right">Right</string>
+    <string name="left">Left</string>
 
     <!-- Shortcut Picker -->
     <string name="group_applications">Applications</string>

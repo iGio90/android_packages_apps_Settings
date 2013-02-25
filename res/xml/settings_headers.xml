@@ -185,6 +185,13 @@
         android:icon="@drawable/ic_rom_control_general_ui"
         android:title="@string/jellybam_ui_settings_title" />
 
+    <!-- QUICK Settings -->
+    <header
+        android:id="@+id/bamquicksettings"
+        android:fragment="com.android.settings.Bamquicksettings"
+        android:icon="@drawable/ic_rom_control_general_ui"
+        android:title="@string/jellybam_quick_settings_title" />
+
     <!-- CYANOGENMOD -->
     <header android:id="@+id/customization_section"
         android:title="@string/header_category_cyanogenmod" />
