@@ -29,33 +29,42 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.util.Helpers;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class Pie extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
+    private static final String PIE_CONTROLS = "pie_controls";
     private static final String PIE_GRAVITY = "pie_gravity";
     private static final String PIE_MODE = "pie_mode";
     private static final String PIE_SIZE = "pie_size";
     private static final String PIE_TRIGGER = "pie_trigger";
     private static final String PIE_GAP = "pie_gap";
-    private static final String PIE_MENU = "pie_menu";
-    private static final String PIE_SEARCH = "pie_search";
     private static final String PIE_CENTER = "pie_center";
     private static final String PIE_STICK = "pie_stick";
+    private static final String PIE_NOTIFICATIONS = "pie_notifications";
+    private static final String PIE_LASTAPP = "pie_lastapp";
+    private static final String PIE_MENU = "pie_menu";
+    private static final String PIE_SEARCH = "pie_search";
 
     private ListPreference mPieMode;
     private ListPreference mPieSize;
     private ListPreference mPieGravity;
     private ListPreference mPieTrigger;
     private ListPreference mPieGap;
-    private CheckBoxPreference mPieMenu;
-    private CheckBoxPreference mPieSearch;
     private CheckBoxPreference mPieCenter;
     private CheckBoxPreference mPieStick;
+    private CheckBoxPreference mPieNotifi;
+    private CheckBoxPreference mPieControls;
+    private CheckBoxPreference mPieLastApp;
+    private CheckBoxPreference mPieMenu;
+    private CheckBoxPreference mPieSearch;
 
     private Context mContext;
     private int mAllowedLocations;
@@ -68,21 +77,9 @@ public class Pie extends SettingsPreferenceFragment
         PreferenceScreen prefSet = getPreferenceScreen();
         mContext = getActivity();
 
-        mPieMenu = (CheckBoxPreference) prefSet.findPreference(PIE_MENU);
-        mPieMenu.setChecked(Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.PIE_MENU, 0) == 1);
-
-        mPieSearch = (CheckBoxPreference) prefSet.findPreference(PIE_SEARCH);
-        mPieSearch.setChecked(Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.PIE_SEARCH, 1) == 1);
-
-        mPieCenter = (CheckBoxPreference) prefSet.findPreference(PIE_CENTER);
-        mPieCenter.setChecked(Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.PIE_CENTER, 1) == 1);
-
-        mPieStick = (CheckBoxPreference) prefSet.findPreference(PIE_STICK);
-        mPieStick.setChecked(Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.PIE_STICK, 0) == 1);
+        mPieControls = (CheckBoxPreference) findPreference(PIE_CONTROLS);
+        mPieControls.setChecked((Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PIE_CONTROLS, 0) == 1));
 
         mPieGravity = (ListPreference) prefSet.findPreference(PIE_GRAVITY);
         int pieGravity = Settings.System.getInt(mContext.getContentResolver(),
@@ -113,17 +110,63 @@ public class Pie extends SettingsPreferenceFragment
         mPieSize.setOnPreferenceChangeListener(this);
         mPieTrigger.setOnPreferenceChangeListener(this);
 
+        mPieCenter = (CheckBoxPreference) prefSet.findPreference(PIE_CENTER);
+        mPieCenter.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PIE_CENTER, 1) == 1);
+
+        mPieStick = (CheckBoxPreference) prefSet.findPreference(PIE_STICK);
+        mPieStick.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PIE_STICK, 0) == 1);
+
         mPieGap = (ListPreference) prefSet.findPreference(PIE_GAP);
         int pieGap = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_GAP, 1);
         mPieGap.setValue(String.valueOf(pieGap));
         mPieGap.setOnPreferenceChangeListener(this);
 
+        mPieNotifi = (CheckBoxPreference) prefSet.findPreference(PIE_NOTIFICATIONS);
+        mPieNotifi.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.PIE_NOTIFICATIONS, 0) == 1));
+
+        mPieLastApp = (CheckBoxPreference) prefSet.findPreference(PIE_LASTAPP);
+        mPieLastApp.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PIE_LAST_APP, 0) == 1);
+
+        mPieMenu = (CheckBoxPreference) prefSet.findPreference(PIE_MENU);
+        mPieMenu.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PIE_MENU, 0) == 1);
+
+        mPieSearch = (CheckBoxPreference) prefSet.findPreference(PIE_SEARCH);
+        mPieSearch.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PIE_SEARCH, 1) == 1);
+
+        checkControls();
+    }
+
+    private void checkControls() {
+        boolean pieCheck = mPieControls.isChecked();
+        mPieGravity.setEnabled(pieCheck);
+        mPieMode.setEnabled(pieCheck);
+        mPieSize.setEnabled(pieCheck);
+        mPieTrigger.setEnabled(pieCheck);
+        mPieGap.setEnabled(pieCheck);
+        mPieNotifi.setEnabled(pieCheck);
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-          if (preference == mPieMenu) {
+        if (preference == mPieControls) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.PIE_CONTROLS, mPieControls.isChecked() ? 1 : 0);
+            checkControls();
+            Helpers.restartSystemUI();
+        } else if (preference == mPieNotifi) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.PIE_NOTIFICATIONS, mPieNotifi.isChecked() ? 1 : 0);
+        } else if (preference == mPieLastApp) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.PIE_LAST_APP, mPieLastApp.isChecked() ? 1 : 0);
+        } else if (preference == mPieMenu) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.PIE_MENU, mPieMenu.isChecked() ? 1 : 0);
         } else if (preference == mPieSearch) {
@@ -135,7 +178,7 @@ public class Pie extends SettingsPreferenceFragment
         } else if (preference == mPieStick) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.PIE_STICK, mPieStick.isChecked() ? 1 : 0);
-        }
+	}
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
@@ -169,5 +212,3 @@ public class Pie extends SettingsPreferenceFragment
         return false;
     }
 }
-
-
