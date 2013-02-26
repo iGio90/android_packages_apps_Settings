@@ -182,14 +182,14 @@
     <header
         android:id="@+id/bamuisettings"
         android:fragment="com.android.settings.Bamuisettings"
-        android:icon="@drawable/ic_rom_control_general_ui"
+        android:icon="@drawable/ic_settings_bamuisettings"
         android:title="@string/jellybam_ui_settings_title" />
 
-    <!-- QUICK Settings -->
+    <!-- Notification Panel Settings -->
     <header
         android:id="@+id/bamquicksettings"
         android:fragment="com.android.settings.Bamquicksettings"
-        android:icon="@drawable/ic_rom_control_general_ui"
+        android:icon="@drawable/ic_settings_bamquicksettings"
         android:title="@string/jellybam_quick_settings_title" />
 
     <!-- CYANOGENMOD -->
