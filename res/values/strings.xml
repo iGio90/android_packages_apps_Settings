@@ -4613,9 +4613,9 @@
     <string name="pie_gap_title">Pie gap</string>
     <string name="pie_gap_summary">Adjust the gap that separates Pie elements</string>
     <string name="pie_gap_none">None</string>
-    <string name="pie_gap_small">Small (default)</string>
+    <string name="pie_gap_small">Small</string>
     <string name="pie_gap_big">Big</string>
-    <string name="pie_gap_huge">Huge</string>
+    <string name="pie_gap_huge">Huge (default)</string>
     <string name="pie_center_title">Middle alignment</string>
     <string name="pie_center_summary">Center Pie on the trigger edge</string>
     <string name="pie_stick_title">Prevent rotation</string>
