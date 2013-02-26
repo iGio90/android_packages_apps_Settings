@@ -883,4 +883,5 @@ public class Settings extends PreferenceActivity
     public static class AboutActivity extends Settings { /* empty */ }
     public static class BamuisettingsActivity extends Settings { /* empty */ }
     public static class BamquicksettingsActivity extends Settings { /* empty */ }
+    public static class NotificationShortcutsSettingsActivity extends Settings { /* empty */ }
 }
