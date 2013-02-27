@@ -5299,6 +5299,7 @@
     <string name="toggle_choose_fasttoggle_side_summary">Choose which side the fast toggle area shall be</string>
     <string name="right">Right</string>
     <string name="left">Left</string>
+    <string name="power_menu_expanded_desktop">Expanded Desktop</string>
 
     <!-- Notification Shortcuts -->
     <string name="notification_shortcuts_grouptitle">Shortcuts</string>
