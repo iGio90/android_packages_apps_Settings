@@ -5294,8 +5294,9 @@
     <string name="system_power_crt_screen_on_title">CRT Screen On</string>
     <string name="system_power_crt_screen_on_summary">Screen will animate an Electron Beam when turned on</string>
     <string name="general_ui_header">User Interface Settings</string>
-    <string name="jellybam_ui_settings_title">Interface</string>
+    <string name="jellybam_ui_settings_title">General Interface</string>
     <string name="jellybam_quick_settings_title">Notification Panel</string>
+    <string name="jellybam_hardwarekeys_settings_title">Hardware Keys</string>
     <string name="pie_settings">Pie Controls</string>
     <string name="header_category_graphics">GRAPHICS PREFERENCES</string>
     <string name="header_category_tuning">TUNING PREFERENCES</string>

@@ -192,6 +192,13 @@
         android:icon="@drawable/ic_settings_bamquicksettings"
         android:title="@string/jellybam_quick_settings_title" />
 
+    <!-- Notification Panel Settings -->
+    <header
+        android:id="@+id/bamqhardwarekeyssettings"
+        android:fragment="com.android.settings.cyanogenmod.HardwareKeys"
+        android:icon="@drawable/ic_settings_hardwarekeys"
+        android:title="@string/jellybam_hardwarekeys_settings_title" />
+
     <!-- CYANOGENMOD -->
     <header android:id="@+id/customization_section"
         android:title="@string/header_category_cyanogenmod" />

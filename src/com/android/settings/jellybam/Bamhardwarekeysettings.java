@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.cyanogenmod;
+package com.android.settings.jellybam;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -34,7 +34,7 @@ import com.android.settings.R;
 import com.android.settings.util.ShortcutPickerHelper;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class HardwareKeys extends SettingsPreferenceFragment implements
+public class Bamhardwarekeysettings extends SettingsPreferenceFragment implements
         ShortcutPickerHelper.OnPickListener, OnPreferenceChangeListener {
 
     private static final String HARDWARE_KEYS_CATEGORY_BINDINGS = "hardware_keys_bindings";

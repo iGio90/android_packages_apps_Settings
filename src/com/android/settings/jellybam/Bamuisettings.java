@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-package com.android.settings;
+package com.android.settings.jellybam;
 
 import android.app.Activity;
 import android.app.ActivityManagerNative;
