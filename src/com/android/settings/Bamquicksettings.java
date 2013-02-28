@@ -48,12 +48,6 @@ public class Bamquicksettings extends SettingsPreferenceFragment implements
 
     private static final String TAG = "TogglesLayout";
 
-    private static final String PREF_ENABLE_FASTTOGGLE = "enable_fast_toggle";
-    private static final String PREF_CHOOSE_FASTTOGGLE_SIDE = "choose_fast_toggle_side";
-
-    CheckBoxPreference mFastToggle;
-    ListPreference mChooseFastToggleSide;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,31 +55,5 @@ public class Bamquicksettings extends SettingsPreferenceFragment implements
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.jellybam_quick_settings);
 
-        mFastToggle = (CheckBoxPreference) findPreference(PREF_ENABLE_FASTTOGGLE);
-        mFastToggle.setOnPreferenceChangeListener(this);
-
-        mChooseFastToggleSide = (ListPreference) findPreference(PREF_CHOOSE_FASTTOGGLE_SIDE);
-        mChooseFastToggleSide.setOnPreferenceChangeListener(this);
-        mChooseFastToggleSide.setValue(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.CHOOSE_FASTTOGGLE_SIDE, 1) + "");
-    }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mFastToggle) {
-            boolean val = (Boolean) newValue;
-            Settings.System.putBoolean(getActivity().getContentResolver(),
-                    Settings.System.FAST_TOGGLE, val);
-            getActivity().getBaseContext().getContentResolver().notifyChange(Settings.System.getUriFor(Settings.System.FAST_TOGGLE), null);
-            return true;
-        } else if (preference == mChooseFastToggleSide) {
-            int val = Integer.parseInt((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.CHOOSE_FASTTOGGLE_SIDE, val);
-            getActivity().getBaseContext().getContentResolver().notifyChange(Settings.System.getUriFor(Settings.System.CHOOSE_FASTTOGGLE_SIDE), null);
-            mChooseFastToggleSide.setValue(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.CHOOSE_FASTTOGGLE_SIDE, 1) + "");
-        }
-        return false;
     }
 }
