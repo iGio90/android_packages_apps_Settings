@@ -5066,26 +5066,37 @@
     <string name="ring_mode_mute">Mute</string>
 
     <!-- Hardware keys -->
-    <string name="hardware_keys_title">Hardware keys</string>
-    <string name="hardware_keys_bindings_title">Key actions</string>
-    <string name="hardware_keys_enable_custom_title">Enable custom actions</string>
-    <string name="hardware_keys_home_long_press_title">Home key (long press)</string>
-    <string name="hardware_keys_menu_press_title">Menu key</string>
-    <string name="hardware_keys_menu_long_press_title">Menu key (long press)</string>
-    <string name="hardware_keys_assist_press_title">Search key</string>
-    <string name="hardware_keys_assist_long_press_title">Search key (long press)</string>
-    <string name="hardware_keys_app_switch_press_title">App switch key</string>
-    <string name="hardware_keys_app_switch_long_press_title">App switch key (long press)</string>
-    <string name="hardware_keys_show_overflow_title">Show action overflow</string>
+    <string name="hardware_keys_title">Hardware Keys</string>
+    <string name="hardware_keys_bindings_title">Key Actions</string>
+    <string name="hardware_keys_enable_custom_title">Enable Custom Actions</string>
+    <string name="hardware_keys_home_press_title">Home key</string>
+    <string name="hardware_keys_home_long_press_title">Longpress Home Key</string>
+    <string name="hardware_keys_back_press_title">Back key</string>
+    <string name="hardware_keys_back_long_press_title">Back key (long press)</string>
+    <string name="hardware_keys_menu_press_title">Press Menu Key</string>
+    <string name="hardware_keys_menu_long_press_title">Longpress Menu Key</string>
+    <string name="hardware_keys_assist_press_title">Press Search Key</string>
+    <string name="hardware_keys_assist_long_press_title">Longpress Search Key</string>
+    <string name="hardware_keys_app_switch_press_title">Press Appswitch Key</string>
+    <string name="hardware_keys_app_switch_long_press_title">Longpress Appswitch Key</string>
+    <string name="hardware_keys_show_overflow_title">Show Action Overflow</string>
     <string name="hardware_keys_show_overflow_summary">Display the 3-dot overflow menu button within apps</string>
     <string name="hardware_keys_show_overflow_toast_enable">The action overflow button may not be visible until apps are restarted</string>
     <string name="hardware_keys_show_overflow_toast_disable">The action overflow button may not be hidden until apps are restarted</string>
-    <string name="hardware_keys_action_nothing">No action</string>
-    <string name="hardware_keys_action_menu">Open/close menu</string>
-    <string name="hardware_keys_action_app_switch">Recent apps switcher</string>
-    <string name="hardware_keys_action_search">Search assistant</string>
-    <string name="hardware_keys_action_voice_search">Voice search</string>
-    <string name="hardware_keys_action_in_app_search">In-app search</string>
+    <string name="hardware_keys_action_nothing">No Action</string>
+    <string name="hardware_keys_action_home">Home button</string>
+    <string name="hardware_keys_action_back">Back button</string>
+    <string name="hardware_keys_action_menu">Open/Close Menu</string>
+    <string name="hardware_keys_action_app_switch">Recent Apps Switcher</string>
+    <string name="hardware_keys_action_search">Search Assistant</string>
+    <string name="hardware_keys_action_voice_search">Voice Search</string>
+    <string name="hardware_keys_action_in_app_search">In-app Search</string>
+    <string name="hardware_keys_action_power">Power off</string>
+    <string name="hardware_keys_action_notifications">Notification shade toggle</string>
+    <string name="hardware_keys_action_expanded">Expanded desktop toggle</string>
+    <string name="hardware_keys_action_kill_app">Kill app</string>
+    <string name="hardware_keys_action_last_app">Switch to last app</string>
+    <string name="hardware_keys_action_custom_app">Custom App</string>
 
     <!-- Power Widget  -->
     <string name="power_widget_title">Power widget</string>
