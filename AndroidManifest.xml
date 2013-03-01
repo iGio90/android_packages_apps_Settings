@@ -166,7 +166,7 @@
         <activity android:name=".wifi.WifiSetupActivity"
             android:theme="@style/setup_wizard_theme"
             android:label="@string/wifi_setup_wizard_title"
-                android:icon="@drawable/empty_icon"
+            android:icon="@drawable/empty_icon"
             android:clearTaskOnLaunch="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -1445,17 +1445,11 @@
         />
 
         <!-- ParanoidAndroid customization -->
-       <activity android:name=".paranoid.Lockscreen" />
-
-       <activity android:name=".paranoid.Toolbar" />
-
        <activity android:name=".paranoid.Pie" />
 
        <activity android:name=".paranoid.PieColor" />
 
         <!-- CyanogenMod activities Start -->
-        <activity android:name=".cyanogenmod.PowerWidget" />
-
         <activity android:name=".cyanogenmod.SystemSettings" />
 
         <activity android:name=".cyanogenmod.PerformanceSettings" />
@@ -1479,8 +1473,6 @@
         <activity android:name=".cyanogenmod.LockscreenInterface" />
 
         <activity android:name=".cyanogenmod.LockscreenButtons" />
-
-        <activity android:name=".cyanogenmod.PowerMenu" />
 
         <activity android:name=".profiles.NFCProfile"
                 android:theme="@android:style/Theme.NoDisplay">
@@ -1623,13 +1615,49 @@
         </activity>
 
         <!-- JELLYBAM -->
+
+        <!-- BAM Control -->
+        <activity
+            android:name=".jellybam.BAMControl"
+            android:exported="true"
+            android:icon="@drawable/ic_settings_bamcontrol"
+            android:label="BAM Control"
+            android:hardwareAccelerated="true"
+            android:excludeFromRecents="false"
+            android:launchMode="singleTask"
+                android:theme="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen"
+                android:process=":ui">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.jellybam.SHORTCUT" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".jellybam.About" />
 
-        <activity android:name=".jellybam.Bamquicksettings" />
+        <activity android:name=".jellybam.BamBatterySettings" />
 
-        <activity android:name=".jellybam.Bamhardkeysettings" />
+        <activity android:name=".jellybam.BamClockSettings" />
 
-        <activity android:name=".jellybam.Bamuisettings" />
+        <activity android:name=".jellybam.BamQuickSettings" />
+
+        <activity android:name=".jellybam.BamHardwareKeysSettings" />
+
+        <activity android:name=".jellybam.BamPowerMenuSettings" />
+
+        <activity android:name=".jellybam.BamUiSettings" />
+
+        <activity android:name=".jellybam.BamLockscreenSettings" />
+
+        <activity android:name=".jellybam.BamNavbarSettings" />
+
+        <activity android:name=".jellybam.BamSignalSettings" />
+
+        <activity android:name=".jellybam.BamSoundSettings" />
+
+        <activity android:name=".jellybam.BamLedSettings" />
+
+        <activity android:name=".jellybam.BamVibrationSettings" />
 
         <activity android:name=".jellybam.ChangeLog" android:label="@string/changelog_title">
             <intent-filter>
@@ -1659,4 +1687,5 @@
         </activity>
 
     </application>
+
 </manifest>

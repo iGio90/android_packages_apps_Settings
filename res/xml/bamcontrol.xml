@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2013 JELLYBAM ROM
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/system_interface_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+   <!-- INTERFACE -->
+   <PreferenceCategory
+        android:key="bam_interface"
+        android:title="@string/bamcontrol_interface" >
+
+    <PreferenceScreen
+        android:key="bam_ui_settings"
+	android:icon="@drawable/ic_settings_bamuisettings"
+        android:fragment="com.android.settings.jellybam.BamUiSettings"
+        android:title="@string/jellybam_ui_settings_title" />
+
+   <PreferenceScreen
+        android:key="bam_pie_settings"
+        android:icon="@drawable/ic_settings_pie"
+        android:fragment="com.android.settings.paranoid.Pie"
+        android:title="@string/pie_settings" />
+
+    <PreferenceScreen
+        android:key="bam_lockscreen"
+        android:icon="@drawable/ic_settings_lock_screen"
+        android:title="@string/lock_screen_settings"
+        android:fragment="com.android.settings.jellybam.BamLockscreenSettings" />
+
+    <PreferenceScreen
+        android:key="bam_navigatin_bar"
+        android:icon="@drawable/ic_settings_navbar"
+        android:title="@string/bamcontrol_navigation_bar"
+        android:fragment="com.android.settings.jellybam.BamNavbarSettings" />
+
+    <PreferenceScreen
+        android:key="bam_power_menu"
+        android:icon="@drawable/ic_settings_powermenu"
+        android:title="@string/power_menu_title"
+        android:fragment="com.android.settings.jellybam.BamPowerMenuSettings" />
+
+    </PreferenceCategory>
+
+   <!-- STATUSBAR -->
+   <PreferenceCategory
+        android:key="bam_statusbar"
+        android:title="@string/bamcontrol_statusbar" >
+
+    <PreferenceScreen
+        android:key="bam_quick_settings"
+	android:icon="@drawable/ic_settings_notifications"
+        android:title="@string/jellybam_quick_settings_title"
+        android:fragment="com.android.settings.jellybam.BamQuickSettings" />
+
+    <PreferenceScreen
+	android:key="bam_tiles"
+        android:fragment="com.android.settings.paranoid.CustomTiles"
+        android:icon="@drawable/ic_settings_bamquicksettings" 
+        android:title="@string/custom_tiles_title" />
+
+    <PreferenceScreen
+        android:key="statusbar_battery"
+        android:title="@string/battery"
+        android:fragment="com.android.settings.jellybam.BamBatterySettings"
+        android:icon="@drawable/ic_settings_bambattery" />
+
+    <PreferenceScreen
+        android:key="statusbar_clock"
+        android:fragment="com.android.settings.jellybam.BamClockSettings"
+        android:icon="@drawable/ic_settings_bamclock"
+        android:title="@string/clock" />
+
+    <PreferenceScreen
+        android:key="statusbar_signal"
+        android:title="@string/signal"
+        android:fragment="com.android.settings.jellybam.BamSignalSettings"
+        android:icon="@drawable/ic_settings_bamsignal" />
+
+   </PreferenceCategory>
+
+   <!-- SYSTEM -->
+   <PreferenceCategory
+        android:key="bam_system"
+        android:title="@string/bamcontrol_system" >
+
+    <PreferenceScreen
+        android:key="bam_hardwarekeys_settings"
+        android:icon="@drawable/ic_settings_hardwarekeys"
+        android:title="@string/jellybam_hardwarekeys_settings_title"
+        android:fragment="com.android.settings.jellybam.BamHardwareKeysSettings" />
+
+    <PreferenceScreen
+        android:key="sound"
+        android:fragment="com.android.settings.jellybam.BamSoundSettings"
+        android:title="@string/sound"
+        android:icon="@drawable/ic_settings_bamsound" />
+
+    <PreferenceScreen
+        android:key="lock_clock"
+        android:title="@string/bam_chronus"
+        android:icon="@drawable/ic_settings_chronus">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.cyanogenmod.lockclock"
+                android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:key="led"
+        android:fragment="com.android.settings.jellybam.BamLedSettings"
+        android:title="@string/led_options"
+        android:icon="@drawable/ic_settings_bamled" />
+
+    <PreferenceScreen
+        android:key="vibrations"
+        android:title="@string/vibrations"
+        android:icon="@drawable/ic_settings_bamvibration"
+        android:fragment="com.android.settings.jellybam.BamVibrationSettings" />
+
+   </PreferenceCategory>
+
+</PreferenceScreen>

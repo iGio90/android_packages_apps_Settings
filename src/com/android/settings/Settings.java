@@ -125,11 +125,7 @@ public class Settings extends PreferenceActivity
             R.id.accessibility_settings,
             R.id.customization_section,
             R.id.launcher_settings,
-            R.id.lock_screen_settings,
             R.id.themes_settings,
-            R.id.tool_bar_settings,
-            R.id.system_settings,
-            R.id.rom_control,
             R.id.hybrid_settings,
             R.id.performance,
             R.id.advanced_settings
@@ -882,7 +878,17 @@ public class Settings extends PreferenceActivity
     public static class DreamSettingsActivity extends Settings { /* empty */ }
     public static class AboutActivity extends Settings { /* empty */ }
     public static class NotificationShortcutsSettingsActivity extends Settings { /* empty */ }
-    public static class BamquicksettingsActivity extends Settings { /* empty */ }
-    public static class BamhardwarekeysettingsActivity extends Settings { /* empty */ }
-    public static class BamuisettingsActivity extends Settings { /* empty */ }
+    public static class BAMControlActivity extends Settings { /* empty */ }
+    public static class BamQuickSettingsActivity extends Settings { /* empty */ }
+    public static class BamHardwareKeysSettingsActivity extends Settings { /* empty */ }
+    public static class BamLockscreenSettingsActivity extends Settings { /* empty */ }
+    public static class BamPowerMenuSettingsActivity extends Settings { /* empty */ }
+    public static class BamUiSettingsActivity extends Settings { /* empty */ }
+    public static class BamBatterySettingsActivity extends Settings { /* empty */ }
+    public static class BamNavbarSettingsActivity extends Settings { /* empty */ }
+    public static class BamClockSettingsActivity extends Settings { /* empty */ }
+    public static class BamSignalSettingsActivity extends Settings { /* empty */ }
+    public static class BamSoundSettingsActivity extends Settings { /* empty */ }
+    public static class BamLedSettingsActivity extends Settings { /* empty */ }
+    public static class BamVibrationSettingsActivity extends Settings { /* empty */ }
 }

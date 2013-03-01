@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012 The CyanogenMod Project
+<!-- Copyright (C) 2013 JellyBam
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -19,14 +19,72 @@
     android:title="@string/jellybam_ui_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+        android:key="bootani"
+        android:title="@string/bootani_cat">
+
+        <Preference
+            android:key="custom_bootanimation"
+            android:title="@string/custom_bootanimation_title"
+            android:summary="@string/custom_bootanimation_summary" />
+
+         <CheckBoxPreference
+            android:key="disable_bootanimation"
+            android:title="@string/disable_bootanimation_title" />
+
+    </PreferenceCategory>
+
  <PreferenceCategory
         android:key="bam_general_ui"
         android:title="@string/general_ui_header">
+
+        <CheckBoxPreference
+            android:key="longpress_to_kill"
+            android:title="@string/longpress_to_kill"
+            android:summary="@string/longpress_to_kill_summary" />
+
+        <CheckBoxPreference
+            android:key="recent_kill_all"
+            android:title="@string/recent_kill_all"
+            android:summary="@string/recent_kill_all_summary" />
+
+        <CheckBoxPreference
+            android:key="ram_usage_bar"
+            android:title="@string/ram_bar"
+            android:summary="@string/ram_bar_summary" />
+
+        <CheckBoxPreference
+            android:key="kill_app_longpress_back"
+            android:title="@string/kill_app_longpress_back"
+            android:summary="@string/kill_app_longpress_back_summary" />
+
+    </PreferenceCategory>
+
+     <PreferenceCategory
+            android:key="misc"
+            android:title="@string/misc_short">
 
    <CheckBoxPreference
         android:key="dual_pane"
         android:title="@string/dual_pane"
         android:summary="@string/dual_pane_summary" />
+
+        <CheckBoxPreference
+            android:key="show_overflow"
+            android:title="@string/show_overflow_title"
+            android:summary="@string/show_overflow_summary"
+            android:defaultValue="false" />
+
+         <CheckBoxPreference
+            android:key="rotate_180"
+            android:title="@string/rotate_180_title"
+            android:summary="@string/rotate_180_summary" />
+
+        <CheckBoxPreference
+            android:key="wakeup_when_plugged_unplugged"
+            android:title="@string/wakeup_when_plugged_unplugged_title"
+            android:summary="@string/wakeup_when_plugged_unplugged_summary"
+            android:defaultValue="true" />
 
    <CheckBoxPreference
         android:key="system_power_crt_screen_off"
@@ -40,20 +98,11 @@
 
    <CheckBoxPreference
         android:key="fullscreen_keyboard"
-        android:icon="@drawable/ic_bt_keyboard_hid"
         android:title="@string/fullscreen_keyboard"
         android:summary="@string/fullscreen_keyboard_summary"
         android:defaultValue="false" />
 
-   <ListPreference
-        android:key="pref_low_battery_warning_policy"
-        android:icon="@drawable/ic_settings_battery"
-        android:title="@string/pref_low_battery_warning_policy_title"
-        android:entries="@array/pref_low_battery_warning_policy_entries"
-        android:entryValues="@array/pref_low_battery_warning_policy_values"
-        android:defaultValue="3" />
-
- </PreferenceCategory>
+    </PreferenceCategory>
 
 </PreferenceScreen>
 
