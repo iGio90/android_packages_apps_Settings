@@ -51,6 +51,8 @@ public class CustomTiles extends SettingsPreferenceFragment implements OnPrefere
     private static final String DYNAMIC_BUGREPORT = "dynamic_bugreport";
     private static final String DYNAMIC_IME = "dynamic_ime";
     private static final String DYNAMIC_WIFI = "dynamic_wifi";
+    private static final String PREF_ENABLE_FASTTOGGLE = "enable_fast_toggle";
+    private static final String PREF_CHOOSE_FASTTOGGLE_SIDE = "choose_fast_toggle_side";
 
     MultiSelectListPreference mRingMode;
     ListPreference mNetworkMode;
@@ -58,6 +60,8 @@ public class CustomTiles extends SettingsPreferenceFragment implements OnPrefere
     CheckBoxPreference mDynamicBugReport;
     CheckBoxPreference mDynamicWifi;
     CheckBoxPreference mDynamicIme;
+    CheckBoxPreference mFastToggle;
+    ListPreference mChooseFastToggleSide;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -72,6 +76,15 @@ public class CustomTiles extends SettingsPreferenceFragment implements OnPrefere
         PreferenceScreen prefSet = getPreferenceScreen();
         PackageManager pm = getPackageManager();
         ContentResolver resolver = getActivity().getApplicationContext().getContentResolver();
+
+        mFastToggle = (CheckBoxPreference) findPreference(PREF_ENABLE_FASTTOGGLE);
+        mFastToggle.setOnPreferenceChangeListener(this);
+
+
+        mChooseFastToggleSide = (ListPreference) findPreference(PREF_CHOOSE_FASTTOGGLE_SIDE);
+        mChooseFastToggleSide.setOnPreferenceChangeListener(this);
+        mChooseFastToggleSide.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.CHOOSE_FASTTOGGLE_SIDE, 1) + "");
 
         // Add the dynamic tiles checkboxes
         mDynamicAlarm = (CheckBoxPreference) prefSet.findPreference(DYNAMIC_ALARM);
@@ -188,6 +201,19 @@ public class CustomTiles extends SettingsPreferenceFragment implements OnPrefere
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.EXPANDED_NETWORK_MODE, value);
             mNetworkMode.setSummary(mNetworkMode.getEntries()[index]);
+        } else if (preference == mFastToggle) {
+            boolean val = (Boolean) newValue;
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.FAST_TOGGLE, val);
+            getActivity().getBaseContext().getContentResolver().notifyChange(Settings.System.getUriFor(Settings.System.FAST_TOGGLE), null);
+            return true;
+        } else if (preference == mChooseFastToggleSide) {
+            int val = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.CHOOSE_FASTTOGGLE_SIDE, val);
+            getActivity().getBaseContext().getContentResolver().notifyChange(Settings.System.getUriFor(Settings.System.CHOOSE_FASTTOGGLE_SIDE), null);
+            mChooseFastToggleSide.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.CHOOSE_FASTTOGGLE_SIDE, 1) + "");
         }
         return true;
     }
