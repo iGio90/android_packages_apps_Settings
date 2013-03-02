@@ -47,12 +47,11 @@
         android:title="@string/bamcontrol_navigation_bar"
         android:fragment="com.android.settings.jellybam.BamNavbarSettings" />
 
-     <header
-        android:id="@+id/nav_ring"
+     <PreferenceScreen
+        android:key="nav_ring"
         android:fragment="com.android.settings.jellybam.NavRingTargets"
         android:icon="@drawable/ic_settings_navbar"
-        android:title="@string/interface_navring_settings_title"
-        android:summary="@string/interface_navring_settings_summary" />
+        android:title="@string/interface_navring_settings_title" />
 
     <PreferenceScreen
         android:key="bam_power_menu"
