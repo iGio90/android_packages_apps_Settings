@@ -196,29 +196,11 @@
             android:targetClass="com.paranoid.preferences.MainActivity" />
     </header>
 
-   <header
-            android:icon="@drawable/ic_settings_advanced"
-            android:title="@string/xposed_frameworks_settings">
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="de.robv.android.xposed.installer"
-                android:targetClass="de.robv.android.xposed.installer.XposedInstallerActivity" />
-   </header>
-
-   <header
-            android:icon="@drawable/ic_settings_display"
-            android:title="@string/xposed_dpi_settings">
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="de.robv.android.xposed.mods.appsettings"
-                android:targetClass="de.robv.android.xposed.mods.appsettings.XposedModActivity" />
-    </header>
-
   <!-- Launcher -->
     <header
         android:id="@+id/launcher_settings"
         android:title="@string/launcher_settings_title"
-        android:icon="@drawable/ic_settings_cmlauncher" />
+        android:icon="@drawable/ic_settings_launcher" />
 
     <!-- Themes -->
     <header

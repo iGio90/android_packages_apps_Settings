@@ -97,17 +97,23 @@
         android:key="bam_system"
         android:title="@string/bamcontrol_system" >
 
-    <PreferenceScreen
-        android:key="bam_hardwarekeys_settings"
-        android:icon="@drawable/ic_settings_hardwarekeys"
-        android:title="@string/jellybam_hardwarekeys_settings_title"
-        android:fragment="com.android.settings.jellybam.BamHardwareKeysSettings" />
+	<PreferenceScreen
+	    android:key="xposed_framework_modules"
+            android:icon="@drawable/ic_settings_notifications"
+            android:title="@string/xposed_frameworks_settings">
+	    <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="de.robv.android.xposed.installer"
+		android:targetClass="de.robv.android.xposed.installer.XposedInstallerActivity" />
+	</PreferenceScreen>
 
-    <PreferenceScreen
-        android:key="sound"
-        android:fragment="com.android.settings.jellybam.BamSoundSettings"
-        android:title="@string/sound"
-        android:icon="@drawable/ic_settings_bamsound" />
+	<PreferenceScreen
+	    android:key="xposed_per_app_settings"
+            android:icon="@drawable/ic_settings_notifications"
+            android:title="@string/xposed_dpi_settings">
+	    <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="de.robv.android.xposed.mods.appsettings"
+		android:targetClass="de.robv.android.xposed.mods.appsettings.XposedModActivity" />
+	</PreferenceScreen>
 
     <PreferenceScreen
         android:key="lock_clock"
@@ -117,6 +123,12 @@
                 android:targetPackage="com.cyanogenmod.lockclock"
                 android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
     </PreferenceScreen>
+
+   <PreferenceScreen
+        android:key="sound"
+        android:fragment="com.android.settings.jellybam.BamSoundSettings"
+        android:title="@string/sound"
+        android:icon="@drawable/ic_settings_bamsound" />
 
     <PreferenceScreen
         android:key="led"
@@ -129,6 +141,19 @@
         android:title="@string/vibrations"
         android:icon="@drawable/ic_settings_bamvibration"
         android:fragment="com.android.settings.jellybam.BamVibrationSettings" />
+
+     <header
+        android:id="@+id/spen"
+        android:fragment="com.android.settings.jellybam.BamSpenSettings"
+        android:title="@string/spen_options"
+        android:icon="@drawable/ic_settings_spen"
+        android:summary="@string/header_summary_spen" />
+
+    <PreferenceScreen
+        android:key="bam_hardwarekeys_settings"
+        android:icon="@drawable/ic_settings_hardwarekeys"
+        android:title="@string/jellybam_hardwarekeys_settings_title"
+        android:fragment="com.android.settings.jellybam.BamHardwareKeysSettings" />
 
    </PreferenceCategory>
 
