@@ -21,6 +21,7 @@ import android.graphics.Point;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.Rect;
 import android.net.Uri;
 import android.net.wimax.WimaxHelper;
 import android.os.Bundle;
@@ -37,15 +38,20 @@ import android.provider.ContactsContract;
 import android.provider.Settings;
 import android.text.Spannable;
 import android.text.TextUtils;
+import android.view.Window;
 import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
@@ -59,6 +65,13 @@ import com.android.settings.widgets.TouchInterceptor;
 import com.android.settings.widgets.SeekBarPreference;
 import com.scheffsblend.smw.Preferences.ImageListPreference;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
+import com.android.settings.jellybam.CodeReceiver;
+import com.android.settings.jellybam.AbstractAsyncSuCMDProcessor;
+import com.android.settings.jellybam.CMDProcessor;
+import com.android.settings.jellybam.Executable;
+import com.android.settings.jellybam.Helpers;
+import com.android.settings.jellybam.AlphaSeekBar;
 
 import com.android.settings.jellybam.PowerWidgetUtil;
 
@@ -81,10 +94,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+@SuppressWarnings("InstanceVariableMayNotBeInitialized")
 public class BamQuickSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
+    public final String TAG = getClass().getSimpleName();
+    private static final boolean DEBUG = false;
 
-    private static final String TAG = "Bamquicksettings";
     private static final String SEPARATOR = "OV=I=XseparatorX=I=VO";
     private static final String STATUS_BAR_MAX_NOTIF = "status_bar_max_notifications";
     private static final String STATUS_BAR_DONOTDISTURB = "status_bar_donotdisturb";
@@ -100,6 +115,7 @@ public class BamQuickSettings extends SettingsPreferenceFragment
     private static final String PREF_STATUSBAR_BRIGHTNESS = "statusbar_brightness_slider";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
+    private static final int REQUEST_PICK_CUSTOM_ICON = 202;
     private static final int SELECT_ACTIVITY = 4;
     private static final int SELECT_WALLPAPER = 5;
 
@@ -200,6 +216,30 @@ public class BamQuickSettings extends SettingsPreferenceFragment
         }
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.user_interface, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.remove_wallpaper:
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mContext.deleteFile(WALLPAPER_NAME);
+                        Helpers.restartSystemUI();
+                    }
+                }).start();
+                return true;
+            default:
+                // call to super is implicit
+                return onContextItemSelected(item);
+        }
+    }
+
     private Uri getNotificationExternalUri() {
         File dir = mContext.getExternalCacheDir();
         File wallpaper = new File(dir, WALLPAPER_NAME);
@@ -232,6 +272,20 @@ public class BamQuickSettings extends SettingsPreferenceFragment
                 Helpers.restartSystemUI();
 		}
         }
+    }
+
+    public void copy(File src, File dst) throws IOException {
+        InputStream in = new FileInputStream(src);
+        FileOutputStream out = new FileOutputStream(dst);
+
+        // Transfer bytes from in to out
+        byte[] buf = new byte[1024];
+        int len;
+        while ((len = in.read(buf)) > 0) {
+            out.write(buf, 0, len);
+        }
+        in.close();
+        out.close();
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
