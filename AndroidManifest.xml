@@ -5,6 +5,9 @@
 
     <original-package android:name="com.android.settings" />
 
+    <uses-permission android:name="android.permission.BIND_APPWIDGET"/>
+    <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
+    <uses-permission android:name="android.permission.REBOOT"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
@@ -36,6 +39,8 @@
     <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.WRITE_APN_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR"/>
     <uses-permission android:name="android.permission.ACCESS_CHECKIN_PROPERTIES"/>
     <uses-permission android:name="android.permission.READ_USER_DICTIONARY"/>
     <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY"/>
@@ -1667,6 +1672,11 @@
         <activity android:name=".jellybam.BamLedSettings" />
 
         <activity android:name=".jellybam.BamVibrationSettings" />
+
+        <provider
+            android:name=".jellybam.VibrationsProvider"
+            android:authorities="com.android.settings.jellybam.Vibrations"
+            android:exported="true"/>
 
         <activity android:name=".jellybam.ChangeLog" android:label="@string/changelog_title">
             <intent-filter>
