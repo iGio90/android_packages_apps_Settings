@@ -1961,4 +1961,23 @@
         <item>@string/time_9_seconds</item>
         <item>@string/time_10_seconds</item>
     </string-array>
+
+    <string-array name="navring_long_dialog_entries" translatable="false">
+        <item>@string/navring_short</item>
+        <item>@string/navring_long</item>
+        <item>@string/navring_icon</item>
+    </string-array>
+    <string-array name="navring_long_dialog_values" translatable="false">
+        <item>**short**</item>
+        <item>**long**</item>
+        <item>**icon**</item>
+    </string-array>
+    <string-array name="navring_short_dialog_entries" translatable="false">
+        <item>@string/navring_short</item>
+        <item>@string/navring_icon</item>
+    </string-array>
+    <string-array name="navring_short_dialog_values" translatable="false">
+        <item>**short**</item>
+        <item>**icon**</item>
+    </string-array>
 </resources>

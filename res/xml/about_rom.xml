@@ -42,10 +42,10 @@
 		android:title="@string/contributors_title">
 
 		<com.android.settings.widgets.DeveloperPreference
-            android:title="CyanogenMod"
-            rb:nameDev="CyanogenMod"
-            rb:twitterHandle="cyanogenmod"
-            rb:donateLink="@string/donate_cyanogenmod" />
+            android:title="Iluha Tsuprun"
+            rb:nameDev="icelanderus"
+            rb:twitterHandle="icelanderus"
+            rb:donateLink="@string/donate_iluha" />
 
 	</PreferenceCategory>
 

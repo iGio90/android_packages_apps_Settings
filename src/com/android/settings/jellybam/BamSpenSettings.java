@@ -42,6 +42,7 @@ public class BamSpenSettings extends SettingsPreferenceFragment implements
     ListPreference mDouble;
     ListPreference mLong;
     CheckBoxPreference mEnableSPen;
+    CheckBoxPreference mEnableIcon;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,10 @@ public class BamSpenSettings extends SettingsPreferenceFragment implements
         mEnableSPen = (CheckBoxPreference) findPreference("enable_spen");
         mEnableSPen.setChecked(Settings.System.getBoolean(getContentResolver(),
                 Settings.System.ENABLE_SPEN_ACTIONS, false));
+
+        mEnableIcon = (CheckBoxPreference) findPreference("enable_stylus pointer");
+        mEnableIcon.setChecked(Settings.System.getBoolean(getContentResolver(),
+                Settings.System.STYLUS_ICON_ENABLED, true));
 
         mLeft = (ListPreference) findPreference("spen_left");
         mLeft.setOnPreferenceChangeListener(this);
@@ -91,6 +96,12 @@ public class BamSpenSettings extends SettingsPreferenceFragment implements
 
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.ENABLE_SPEN_ACTIONS,
+                    ((CheckBoxPreference) preference).isChecked());
+            return true;
+	        } else if (preference == mEnableIcon) {
+
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.STYLUS_ICON_ENABLED,
                     ((CheckBoxPreference) preference).isChecked());
             return true;
         }

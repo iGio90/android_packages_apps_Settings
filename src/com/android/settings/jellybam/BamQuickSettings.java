@@ -21,6 +21,7 @@ import android.graphics.Point;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.Rect;
 import android.net.Uri;
 import android.net.wimax.WimaxHelper;
 import android.os.Bundle;
@@ -37,15 +38,20 @@ import android.provider.ContactsContract;
 import android.provider.Settings;
 import android.text.Spannable;
 import android.text.TextUtils;
+import android.view.Window;
 import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
@@ -59,6 +65,13 @@ import com.android.settings.widgets.TouchInterceptor;
 import com.android.settings.widgets.SeekBarPreference;
 import com.scheffsblend.smw.Preferences.ImageListPreference;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
+import com.android.settings.jellybam.CodeReceiver;
+import com.android.settings.jellybam.AbstractAsyncSuCMDProcessor;
+import com.android.settings.jellybam.CMDProcessor;
+import com.android.settings.jellybam.Executable;
+import com.android.settings.jellybam.Helpers;
+import com.android.settings.jellybam.AlphaSeekBar;
 
 import com.android.settings.jellybam.PowerWidgetUtil;
 
@@ -81,10 +94,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+@SuppressWarnings("InstanceVariableMayNotBeInitialized")
 public class BamQuickSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
+    public final String TAG = getClass().getSimpleName();
+    private static final boolean DEBUG = false;
 
-    private static final String TAG = "Bamquicksettings";
     private static final String SEPARATOR = "OV=I=XseparatorX=I=VO";
     private static final String STATUS_BAR_MAX_NOTIF = "status_bar_max_notifications";
     private static final String STATUS_BAR_DONOTDISTURB = "status_bar_donotdisturb";
@@ -93,13 +108,14 @@ public class BamQuickSettings extends SettingsPreferenceFragment
     private static final String UI_EXP_WIDGET_HIDE_SCROLLBAR = "expanded_hide_scrollbar";
     private static final String UI_EXP_WIDGET_HAPTIC_FEEDBACK = "expanded_haptic_feedback";
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
-    private static final String PREF_NOTIFICATION_WALLPAPER = "notification_wallpaper";
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
+    private static final String PREF_NOTIFICATION_WALLPAPER = "notification_wallpaper";
     private static final String PREF_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
     private static final String PREF_VIBRATE_NOTIF_EXPAND = "vibrate_notif_expand";
     private static final String PREF_STATUSBAR_BRIGHTNESS = "statusbar_brightness_slider";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
+    private static final int REQUEST_PICK_CUSTOM_ICON = 202;
     private static final int SELECT_ACTIVITY = 4;
     private static final int SELECT_WALLPAPER = 5;
 
@@ -111,8 +127,8 @@ public class BamQuickSettings extends SettingsPreferenceFragment
     private CheckBoxPreference mStatusBarDoNotDisturb;
 
     Preference mCustomLabel;
-    Preference mNotificationWallpaper;
     Preference mWallpaperAlpha;
+    Preference mNotificationWallpaper;
 
     CheckBoxPreference mStatusBarNotifCount;
     CheckBoxPreference mVibrateOnExpand;
@@ -150,9 +166,9 @@ public class BamQuickSettings extends SettingsPreferenceFragment
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
 
-        mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
-
         mWallpaperAlpha = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
+
+        mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
 
             mStatusBarMaxNotif = (ListPreference) prefSet.findPreference(STATUS_BAR_MAX_NOTIF);
             int maxNotIcons = Settings.System.getInt(mContext.getContentResolver(),
@@ -200,38 +216,10 @@ public class BamQuickSettings extends SettingsPreferenceFragment
         }
     }
 
-    private Uri getNotificationExternalUri() {
-        File dir = mContext.getExternalCacheDir();
-        File wallpaper = new File(dir, WALLPAPER_NAME);
-        return Uri.fromFile(wallpaper);
-    }
-
-    public void onActivityResult(int requestCode, int resultCode, final Intent data) {
-        if (resultCode == Activity.RESULT_OK) {
-            if (requestCode == REQUEST_PICK_WALLPAPER) {
-                FileOutputStream wallpaperStream = null;
-                try {
-                    wallpaperStream = mContext.openFileOutput(WALLPAPER_NAME,
-                            Context.MODE_WORLD_READABLE);
-                    Uri selectedImageUri = getNotificationExternalUri();
-                    Bitmap bitmap = BitmapFactory.decodeFile(
-                            selectedImageUri.getPath());
-                    bitmap.compress(Bitmap.CompressFormat.PNG,
-                                    100,
-                                    wallpaperStream);
-                } catch (FileNotFoundException e) {
-                    return; // NOOOOO
-                } finally {
-                    try {
-                        if (wallpaperStream != null)
-                            wallpaperStream.close();
-                    } catch (IOException e) {
-                        // let it go
-                    }
-                }
-                Helpers.restartSystemUI();
-		}
-        }
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.user_interface, menu);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -275,78 +263,6 @@ public class BamQuickSettings extends SettingsPreferenceFragment
                     Settings.System.STATUSBAR_NOTIF_COUNT,
                     ((CheckBoxPreference) preference).isChecked());
             return true;
-        } else if (preference == mNotificationWallpaper) {
-            Display display = getActivity().getWindowManager().getDefaultDisplay();
-            int width = display.getWidth();
-            int height = display.getHeight();
-
-            Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
-            intent.setType("image/*");
-            intent.putExtra("crop", "true");
-            boolean isPortrait = getResources()
-                    .getConfiguration().orientation
-                    == Configuration.ORIENTATION_PORTRAIT;
-            intent.putExtra("aspectX", isPortrait ? width : height);
-            intent.putExtra("aspectY", isPortrait ? height : width);
-            intent.putExtra("outputX", width);
-            intent.putExtra("outputY", height);
-            intent.putExtra("scale", true);
-            intent.putExtra("scaleUpIfNeeded", true);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT,
-                    getNotificationExternalUri());
-            intent.putExtra("outputFormat",
-                    Bitmap.CompressFormat.PNG.toString());
-            startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
-            return true;
-        } else if (preference == mWallpaperAlpha) {
-            Resources res = getActivity().getResources();
-            String cancel = res.getString(R.string.cancel);
-            String ok = res.getString(R.string.ok);
-            String title = res.getString(R.string.alpha_dialog_title);
-            float savedProgress = Settings.System.getFloat(getActivity()
-                        .getContentResolver(),
-                    Settings.System.NOTIF_WALLPAPER_ALPHA, 1.0f);
-
-            LayoutInflater factory = LayoutInflater.from(getActivity());
-            final View alphaDialog = factory.inflate(R.layout.seekbar_dialog, null);
-            SeekBar seekbar = (SeekBar) alphaDialog.findViewById(R.id.seek_bar);
-            OnSeekBarChangeListener seekBarChangeListener = new OnSeekBarChangeListener() {
-                @Override
-                public void onProgressChanged(SeekBar seekbar,
-                        int progress, boolean fromUser) {
-                    seekbarProgress = seekbar.getProgress();
-                }
-                @Override
-                public void onStopTrackingTouch(SeekBar seekbar) {
-                }
-                @Override
-                public void onStartTrackingTouch(SeekBar seekbar) {
-                }
-            };
-            seekbar.setProgress((int) (savedProgress * 100));
-            seekbar.setMax(100);
-            seekbar.setOnSeekBarChangeListener(seekBarChangeListener);
-            new AlertDialog.Builder(getActivity())
-                    .setTitle(title)
-                    .setView(alphaDialog)
-                    .setNegativeButton(cancel, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    // nothing
-                }
-            })
-            .setPositiveButton(ok, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    float val = ((float) seekbarProgress / 100);
-                    Settings.System.putFloat(getActivity().getContentResolver(),
-                        Settings.System.NOTIF_WALLPAPER_ALPHA, val);
-                    Helpers.restartSystemUI();
-                }
-            })
-            .create()
-            .show();
-            return true;
         } else if (preference == mPowerWidgetHideOnChange) {
             value = mPowerWidgetHideOnChange.isChecked();
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
@@ -388,13 +304,136 @@ public class BamQuickSettings extends SettingsPreferenceFragment
                     // Canceled.
                 }
             });
+        } else if (preference == mNotificationWallpaper) {
+            Display display = getActivity().getWindowManager().getDefaultDisplay();
+            int width = display.getWidth();
+            int height = display.getHeight();
 
-            alert.show();
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
+            intent.setType("image/*");
+            intent.putExtra("crop", "true");
+            boolean isPortrait = getResources()
+                    .getConfiguration().orientation
+                    == Configuration.ORIENTATION_PORTRAIT;
+            intent.putExtra("aspectX", isPortrait ? width : height);
+            intent.putExtra("aspectX", isPortrait ? width : height);
+            intent.putExtra("outputX", width);
+            intent.putExtra("outputY", height);
+            intent.putExtra("scale", true);
+            intent.putExtra("scaleUpIfNeeded", true);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, getNotificationExternalUri());
+            intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
+
+            startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
+            return true;
+        } else if (preference == mWallpaperAlpha) {
+            Resources res = getActivity().getResources();
+            String cancel = res.getString(R.string.cancel);
+            String ok = res.getString(R.string.ok);
+            String title = res.getString(R.string.alpha_dialog_title);
+            float savedProgress = Settings.System.getFloat(getActivity()
+                        .getContentResolver(), Settings.System.NOTIF_WALLPAPER_ALPHA, 1.0f);
+
+            LayoutInflater factory = LayoutInflater.from(getActivity());
+            final View alphaDialog = factory.inflate(R.layout.seekbar_dialog, null);
+            SeekBar seekbar = (SeekBar) alphaDialog.findViewById(R.id.seek_bar);
+            OnSeekBarChangeListener seekBarChangeListener = new OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekbar, int progress, boolean fromUser) {
+                    seekbarProgress = seekbar.getProgress();
+                }
+                @Override
+                public void onStopTrackingTouch(SeekBar seekbar) {
+                }
+                @Override
+                public void onStartTrackingTouch(SeekBar seekbar) {
+                }
+            };
+            seekbar.setProgress((int) (savedProgress * 100));
+            seekbar.setMax(100);
+            seekbar.setOnSeekBarChangeListener(seekBarChangeListener);
+            new AlertDialog.Builder(getActivity())
+                    .setTitle(title)
+                    .setView(alphaDialog)
+                    .setNegativeButton(cancel, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // nothing
+                }
+            })
+            .setPositiveButton(ok, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    float val = ((float) seekbarProgress / 100);
+                    Settings.System.putFloat(getActivity().getContentResolver(),
+                        Settings.System.NOTIF_WALLPAPER_ALPHA, val);
+                    Helpers.restartSystemUI();
+                }
+            })
+            .create()
+            .show();
+            return true;
         } else {
             // If we didn't handle it, let preferences handle it.
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+        switch (item.getItemId()) {
+            case R.id.remove_wallpaper:
+                File f = new File(mContext.getFilesDir(), WALLPAPER_NAME);
+                mContext.deleteFile(WALLPAPER_NAME);
+                Helpers.restartSystemUI();
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
+    private Uri getNotificationExternalUri() {
+        File dir = mContext.getExternalCacheDir();
+        File wallpaper = new File(dir, WALLPAPER_NAME);
+
+        return Uri.fromFile(wallpaper);
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == REQUEST_PICK_WALLPAPER) {
+
+                FileOutputStream wallpaperStream = null;
+                try {
+                    wallpaperStream = mContext.openFileOutput(WALLPAPER_NAME,
+                            Context.MODE_WORLD_READABLE);
+                } catch (FileNotFoundException e) {
+                    return; // NOOOOO
+                }
+
+                Uri selectedImageUri = getNotificationExternalUri();
+                Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
+
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, wallpaperStream);
+                Helpers.restartSystemUI();
+            }
+        }
+    }
+
+    public void copy(File src, File dst) throws IOException {
+        InputStream in = new FileInputStream(src);
+        FileOutputStream out = new FileOutputStream(dst);
+
+        // Transfer bytes from in to out
+        byte[] buf = new byte[1024];
+        int len;
+        while ((len = in.read(buf)) > 0) {
+            out.write(buf, 0, len);
+        }
+        in.close();
+        out.close();
     }
 
     public static class PowerWidgetChooser extends SettingsPreferenceFragment

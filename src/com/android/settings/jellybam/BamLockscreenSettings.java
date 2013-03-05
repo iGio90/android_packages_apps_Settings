@@ -80,7 +80,7 @@ import com.android.settings.Utils;
 public class BamLockscreenSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
-    private static final String TAG = "BamLockscreenSettings";
+    private static final String TAG = "Lockscreens";
     private static final boolean DEBUG = true;
 
     private static final int REQUEST_CODE_BG_WALLPAPER = 1024;
@@ -146,6 +146,10 @@ public class BamLockscreenSettings extends SettingsPreferenceFragment
         mVolumeMusic = (CheckBoxPreference) findPreference(PREF_VOLUME_MUSIC);
         mVolumeMusic.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
                 Settings.System.VOLUME_MUSIC_CONTROLS, false));
+
+        mLockscreenUseCarousel = (CheckBoxPreference)findPreference(PREF_LOCKSCREEN_USE_CAROUSEL);
+        mLockscreenUseCarousel.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
+                Settings.System.LOCKSCREEN_USE_WIDGET_CONTAINER_CAROUSEL, false));
 
         mLockscreenAutoRotate = (CheckBoxPreference)findPreference(PREF_LOCKSCREEN_AUTO_ROTATE);
         mLockscreenAutoRotate.setChecked(Settings.System.getBoolean(mContext
@@ -217,7 +221,6 @@ public class BamLockscreenSettings extends SettingsPreferenceFragment
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (mIsPrimary) {
             if (preference == mSeeThrough) {
                 Settings.System.putInt(mContext.getContentResolver(),
                         Settings.System.LOCKSCREEN_SEE_THROUGH, mSeeThrough.isChecked()
@@ -226,7 +229,6 @@ public class BamLockscreenSettings extends SettingsPreferenceFragment
             Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL,
                     ((CheckBoxPreference) preference).isChecked());
-            return true;
 	    } else if (preference == mVolumeMusic) {
             Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.VOLUME_MUSIC_CONTROLS,
@@ -256,6 +258,11 @@ public class BamLockscreenSettings extends SettingsPreferenceFragment
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_LONGPRESS_CHALLENGE,
                     ((CheckBoxPreference)preference).isChecked());
+            return true;
+            } else if (preference == mLockscreenAutoRotate) {
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                    Settings.System.LOCKSCREEN_AUTO_ROTATE,
+                    ((CheckBoxPreference) preference).isChecked());
             return true;
             } else if (preference == mLockscreenHideInitialPageHints) {
             Settings.System.putInt(getActivity().getContentResolver(),
@@ -293,7 +300,6 @@ public class BamLockscreenSettings extends SettingsPreferenceFragment
                     Settings.System.putInt(mContext.getContentResolver(),
                             Settings.System.HOME_SCREEN_WIDGETS, 0);
                 }
-            }
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -325,6 +331,7 @@ public class BamLockscreenSettings extends SettingsPreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
+	boolean handled = false;
         if (preference == mCustomBackground) {
             int selection = mCustomBackground.findIndexOfValue(objValue.toString());
             return handleBackgroundSelection(selection);

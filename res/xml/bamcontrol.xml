@@ -47,6 +47,12 @@
         android:title="@string/bamcontrol_navigation_bar"
         android:fragment="com.android.settings.jellybam.BamNavbarSettings" />
 
+     <PreferenceScreen
+        android:key="nav_ring"
+        android:fragment="com.android.settings.jellybam.NavRingTargets"
+        android:icon="@drawable/ic_settings_navbar"
+        android:title="@string/interface_navring_settings_title" />
+
     <PreferenceScreen
         android:key="bam_power_menu"
         android:icon="@drawable/ic_settings_powermenu"
@@ -99,8 +105,8 @@
 
 	<PreferenceScreen
 	    android:key="xposed_framework_modules"
-            android:icon="@drawable/ic_settings_notifications"
-            android:title="@string/xposed_frameworks_settings">
+            android:icon="@drawable/ic_settings_bamxposed"
+            android:title="@string/xposed_frameworks_settings" >
 	    <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="de.robv.android.xposed.installer"
 		android:targetClass="de.robv.android.xposed.installer.XposedInstallerActivity" />
@@ -109,7 +115,7 @@
 	<PreferenceScreen
 	    android:key="xposed_per_app_settings"
             android:icon="@drawable/ic_settings_notifications"
-            android:title="@string/xposed_dpi_settings">
+            android:title="@string/xposed_dpi_settings" >
 	    <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="de.robv.android.xposed.mods.appsettings"
 		android:targetClass="de.robv.android.xposed.mods.appsettings.XposedModActivity" />
@@ -142,12 +148,11 @@
         android:icon="@drawable/ic_settings_bamvibration"
         android:fragment="com.android.settings.jellybam.BamVibrationSettings" />
 
-     <header
-        android:id="@+id/spen"
+     <PreferenceScreen
+        android:key="spen"
         android:fragment="com.android.settings.jellybam.BamSpenSettings"
         android:title="@string/spen_options"
-        android:icon="@drawable/ic_settings_spen"
-        android:summary="@string/header_summary_spen" />
+        android:icon="@drawable/ic_settings_spen" />
 
     <PreferenceScreen
         android:key="bam_hardwarekeys_settings"
