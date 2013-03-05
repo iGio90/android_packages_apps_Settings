@@ -2,6 +2,7 @@
 package com.android.settings.jellybam;
 
 import com.android.settings.jellybam.CMDProcessor;
+import com.android.settings.jellybam.Executable;
 
 import android.app.IntentService;
 import android.content.Intent;
@@ -21,7 +22,8 @@ public class ExternalCommandService extends IntentService {
     @Override
     protected void onHandleIntent(Intent intent) {
         if (intent.hasExtra("cmd")) {
-            new CMDProcessor().su.runWaitFor(intent.getStringExtra("cmd"));
+            new CMDProcessor().su.fireAndForget(
+                    new Executable(intent.getStringExtra("cmd")));
         }
     }
 }

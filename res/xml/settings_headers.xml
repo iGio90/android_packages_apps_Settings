@@ -200,7 +200,7 @@
     <header
         android:id="@+id/superuser"
         android:fragment="com.koushikdutta.superuser.PolicyNativeFragment"
-        android:icon="@drawable/ic_action_permission"
+        android:icon="@drawable/ic_settings_superuser"
         android:title="@string/superuser" />
 
     <!-- Launcher -->

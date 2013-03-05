@@ -115,9 +115,8 @@ public class BamQuickSettings extends SettingsPreferenceFragment
     private static final String PREF_STATUSBAR_BRIGHTNESS = "statusbar_brightness_slider";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
-    private static final int REQUEST_PICK_CUSTOM_ICON = 202;
-    private static final int SELECT_ACTIVITY = 4;
-    private static final int SELECT_WALLPAPER = 5;
+    //private static final int REQUEST_PICK_CUSTOM_ICON = 202; //unused
+    private static final int REQUEST_PICK_BOOT_ANIMATION = 203;
 
     private static final String WALLPAPER_NAME = "notification_wallpaper.jpg";
 
@@ -216,12 +215,6 @@ public class BamQuickSettings extends SettingsPreferenceFragment
         }
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.user_interface, menu);
-    }
-
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mPowerWidgetHapticFeedback) {
             int intValue = Integer.parseInt((String) newValue);
@@ -316,14 +309,15 @@ public class BamQuickSettings extends SettingsPreferenceFragment
                     .getConfiguration().orientation
                     == Configuration.ORIENTATION_PORTRAIT;
             intent.putExtra("aspectX", isPortrait ? width : height);
-            intent.putExtra("aspectX", isPortrait ? width : height);
+            intent.putExtra("aspectY", isPortrait ? height : width);
             intent.putExtra("outputX", width);
             intent.putExtra("outputY", height);
             intent.putExtra("scale", true);
             intent.putExtra("scaleUpIfNeeded", true);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, getNotificationExternalUri());
-            intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
-
+            intent.putExtra(MediaStore.EXTRA_OUTPUT,
+                    getNotificationExternalUri());
+            intent.putExtra("outputFormat",
+                    Bitmap.CompressFormat.PNG.toString());
             startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
             return true;
         } else if (preference == mWallpaperAlpha) {
@@ -381,42 +375,58 @@ public class BamQuickSettings extends SettingsPreferenceFragment
     }
 
     @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.user_interface, menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
             case R.id.remove_wallpaper:
-                File f = new File(mContext.getFilesDir(), WALLPAPER_NAME);
-                mContext.deleteFile(WALLPAPER_NAME);
-                Helpers.restartSystemUI();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mContext.deleteFile(WALLPAPER_NAME);
+                        Helpers.restartSystemUI();
+                    }
+                }).start();
                 return true;
             default:
-                return super.onContextItemSelected(item);
+                // call to super is implicit
+                return onContextItemSelected(item);
         }
     }
 
     private Uri getNotificationExternalUri() {
         File dir = mContext.getExternalCacheDir();
         File wallpaper = new File(dir, WALLPAPER_NAME);
-
         return Uri.fromFile(wallpaper);
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == REQUEST_PICK_WALLPAPER) {
-
                 FileOutputStream wallpaperStream = null;
                 try {
                     wallpaperStream = mContext.openFileOutput(WALLPAPER_NAME,
                             Context.MODE_WORLD_READABLE);
+                    Uri selectedImageUri = getNotificationExternalUri();
+                    Bitmap bitmap = BitmapFactory.decodeFile(
+                            selectedImageUri.getPath());
+                    bitmap.compress(Bitmap.CompressFormat.PNG,
+                                    100,
+                                    wallpaperStream);
                 } catch (FileNotFoundException e) {
                     return; // NOOOOO
+                } finally {
+                    try {
+                        if (wallpaperStream != null)
+                            wallpaperStream.close();
+                    } catch (IOException e) {
+                        // let it go
+                    }
                 }
-
-                Uri selectedImageUri = getNotificationExternalUri();
-                Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
-
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, wallpaperStream);
                 Helpers.restartSystemUI();
             }
         }
@@ -872,6 +882,16 @@ public class BamQuickSettings extends SettingsPreferenceFragment
             }
         }
     }
+
+        private boolean getSavedLinkedState() {
+            return getActivity().getSharedPreferences("transparency", Context.MODE_PRIVATE)
+                    .getBoolean("link", true);
+        }
+
+        private void saveSavedLinkedState(boolean v) {
+            getActivity().getSharedPreferences("transparency", Context.MODE_PRIVATE).edit()
+                    .putBoolean("link", v).commit();
+        }
 
     protected boolean isCheckBoxPrefernceChecked(Preference p) {
         if(p instanceof CheckBoxPreference) {
