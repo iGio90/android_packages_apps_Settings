@@ -137,8 +137,6 @@ public class BamQuickSettings extends SettingsPreferenceFragment
     private ListPreference mPowerWidgetHapticFeedback;
     private ListPreference mStatusBarMaxNotif;
 
-    private int seekbarProgress;
-
     private Context mContext;
     private int mAllowedLocations;
 
@@ -222,20 +220,6 @@ public class BamQuickSettings extends SettingsPreferenceFragment
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.user_interface, menu);
-    }
-
-    public void copy(File src, File dst) throws IOException {
-        InputStream in = new FileInputStream(src);
-        FileOutputStream out = new FileOutputStream(dst);
-
-        // Transfer bytes from in to out
-        byte[] buf = new byte[1024];
-        int len;
-        while ((len = in.read(buf)) > 0) {
-            out.write(buf, 0, len);
-        }
-        in.close();
-        out.close();
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -394,12 +378,6 @@ public class BamQuickSettings extends SettingsPreferenceFragment
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
         return true;
-    }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.user_interface, menu);
     }
 
     @Override
