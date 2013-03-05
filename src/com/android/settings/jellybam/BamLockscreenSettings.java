@@ -259,6 +259,11 @@ public class BamLockscreenSettings extends SettingsPreferenceFragment
                     Settings.System.LOCKSCREEN_LONGPRESS_CHALLENGE,
                     ((CheckBoxPreference)preference).isChecked());
             return true;
+            } else if (preference == mLockscreenAutoRotate) {
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                    Settings.System.LOCKSCREEN_AUTO_ROTATE,
+                    ((CheckBoxPreference) preference).isChecked());
+            return true;
             } else if (preference == mLockscreenHideInitialPageHints) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_HIDE_INITIAL_PAGE_HINTS,
