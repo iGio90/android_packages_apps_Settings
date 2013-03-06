@@ -52,6 +52,7 @@ public class Pie extends SettingsPreferenceFragment
     private static final String PIE_LASTAPP = "pie_lastapp";
     private static final String PIE_MENU = "pie_menu";
     private static final String PIE_SEARCH = "pie_search";
+    private static final String PIE_RESTART = "pie_restart_launcher";
 
     private ListPreference mPieMode;
     private ListPreference mPieSize;
@@ -65,6 +66,7 @@ public class Pie extends SettingsPreferenceFragment
     private CheckBoxPreference mPieLastApp;
     private CheckBoxPreference mPieMenu;
     private CheckBoxPreference mPieSearch;
+    private CheckBoxPreference mPieRestart;
 
     private Context mContext;
     private int mAllowedLocations;
@@ -117,6 +119,10 @@ public class Pie extends SettingsPreferenceFragment
         mPieStick = (CheckBoxPreference) prefSet.findPreference(PIE_STICK);
         mPieStick.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_STICK, 1) == 1);
+
+        mPieRestart = (CheckBoxPreference) prefSet.findPreference(PIE_RESTART);
+        mPieRestart.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.EXPANDED_DESKTOP_RESTART_LAUNCHER, 1) == 1);
 
         mPieGap = (ListPreference) prefSet.findPreference(PIE_GAP);
         int pieGap = Settings.System.getInt(mContext.getContentResolver(),
@@ -178,7 +184,10 @@ public class Pie extends SettingsPreferenceFragment
         } else if (preference == mPieStick) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.PIE_STICK, mPieStick.isChecked() ? 1 : 0);
-	}
+	} else if (preference == mPieRestart) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.EXPANDED_DESKTOP_RESTART_LAUNCHER, mPieRestart.isChecked() ? 1 : 0);
+         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 

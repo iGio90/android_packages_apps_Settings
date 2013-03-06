@@ -4644,6 +4644,8 @@
     <string name="pie_lastapp_summary">Enable last app button on Pie</string>
     <string name="all_color">Custom Colors</string>
     <string name="stock_color">Default Colors</string>
+    <string name="pie_restart_launcher_title">Restart Launcher</string>
+    <string name="pie_restart_launcher_summary">Changing screensize can have adverse effects. This option allows your launcher to regain sanity, the cost is a slight blackout (recommended)</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
