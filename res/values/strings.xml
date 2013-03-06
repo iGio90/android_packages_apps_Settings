@@ -5291,6 +5291,10 @@
     <string name="jellybam_source_title">JellyBam GitHub</string>
     <string name="jellybam_source_summary">Explore JellyBam GitHub</string>
 
+    <!-- Quick pulldown -->
+    <string name="quick_pulldown_title">Quick pulldown</string>
+    <string name="quick_pulldown_summary">Edge of status bar will pull down Quick Settings</string>
+
     <!-- BAMControl -->
     <string name="bamcontrol_settings_title">BAM Control</string>
     <string name="bamcontrol_interface">Interface</string>
