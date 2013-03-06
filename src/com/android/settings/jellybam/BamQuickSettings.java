@@ -101,6 +101,7 @@ public class BamQuickSettings extends SettingsPreferenceFragment
     private static final boolean DEBUG = false;
 
     private static final String SEPARATOR = "OV=I=XseparatorX=I=VO";
+    private static final String KEY_QUICK_PULL_DOWN = "quick_pulldown";
     private static final String STATUS_BAR_MAX_NOTIF = "status_bar_max_notifications";
     private static final String STATUS_BAR_DONOTDISTURB = "status_bar_donotdisturb";
     private static final String UI_EXP_WIDGET = "expanded_widget";
@@ -116,6 +117,7 @@ public class BamQuickSettings extends SettingsPreferenceFragment
     private CheckBoxPreference mPowerWidgetHideOnChange;
     private CheckBoxPreference mPowerWidgetHideScrollBar;
     private CheckBoxPreference mStatusBarDoNotDisturb;
+    private CheckBoxPreference mQuickPullDown;
 
     Preference mCustomLabel;
 
@@ -154,6 +156,10 @@ public class BamQuickSettings extends SettingsPreferenceFragment
 
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
+
+        mQuickPullDown = (CheckBoxPreference) prefSet.findPreference(KEY_QUICK_PULL_DOWN);
+        mQuickPullDown.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.QS_QUICK_PULLDOWN, 0) == 1);
 
             mStatusBarMaxNotif = (ListPreference) prefSet.findPreference(STATUS_BAR_MAX_NOTIF);
             int maxNotIcons = Settings.System.getInt(mContext.getContentResolver(),
@@ -231,6 +237,10 @@ public class BamQuickSettings extends SettingsPreferenceFragment
                     Settings.System.STATUSBAR_BRIGHTNESS_SLIDER,
                     isCheckBoxPrefernceChecked(preference));
             return true;
+        } else if (preference == mQuickPullDown) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.QS_QUICK_PULLDOWN,	mQuickPullDown.isChecked()
+                    ? 1 : 0);
         } else if (preference == mVibrateOnExpand) {
             Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.VIBRATE_NOTIF_EXPAND,

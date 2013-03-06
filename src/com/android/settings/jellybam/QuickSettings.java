@@ -67,8 +67,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
     private static final String DYNAMIC_IME = "dynamic_ime";
     private static final String DYNAMIC_USBTETHER = "dynamic_usbtether";
     private static final String DYNAMIC_WIFI = "dynamic_wifi";
-    private static final String PREF_ENABLE_FASTTOGGLE = "enable_fast_toggle";
-    private static final String PREF_CHOOSE_FASTTOGGLE_SIDE = "choose_fast_toggle_side";
     private static final String COLLAPSE_PANEL = "collapse_panel";
     private static final String GENERAL_SETTINGS = "pref_general_settings";
     private static final String STATIC_TILES = "static_tiles";
