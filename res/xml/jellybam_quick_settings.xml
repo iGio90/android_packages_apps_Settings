@@ -2,12 +2,48 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" 
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-        <PreferenceScreen  
+    <!-- Customization -->
+    <PreferenceCategory
+       android:title="@string/quick_customization">
+
+        <ListPreference
+            android:key="notification_wallpaper"
+            android:persistent="false"
+            android:dialogTitle="@string/notification_wallpaper_title"
+            android:title="@string/notification_wallpaper_title"
+            android:entries="@array/notification_wallpaper_entries"
+            android:entryValues="@array/notification_wallpaper_values"/>
+
+        <ListPreference
+            android:key="notification_wallpaper_landscape"
+            android:persistent="false"
+            android:dialogTitle="@string/notification_wallpaper_landscape_title"
+            android:title="@string/notification_wallpaper_landscape_title"
+            android:entries="@array/notification_wallpaper_landscape_entries"
+            android:entryValues="@array/notification_wallpaper_landscape_values"/>
+
+        <com.android.settings.widget.SeekBarPreference
+             android:key="notification_wallpaper_alpha"
+             android:title="@string/notif_wallpaper_alpha_title" />
+
+        <com.android.settings.widget.SeekBarPreference
+             android:key="notification_alpha"
+             android:title="@string/notif_alpha_title" />
+
+    </PreferenceCategory>
+
+    <!-- Notification Shortcuts -->
+    <PreferenceCategory
+       android:title="@string/quick_shortctus">
+
+        <PreferenceScreen
             android:id="@+id/slim_notification_shortcuts"
             android:fragment="com.android.settings.carbon.notificationshortcuts.NotificationShortcuts"
             android:key="slim_shortcuts_settings"
             android:title="@string/notification_shortcuts_settings_title"
             android:summary="@string/notification_shortcuts_settings_summary" />
+
+    </PreferenceCategory>
 
     <!-- Notification drawer Power Widget -->
     <PreferenceCategory
@@ -65,18 +101,15 @@
         android:key="toolbar_status"
         android:title="@string/tool_bar_status_header">
 
+         <CheckBoxPreference
+            android:key="quick_pulldown"
+            android:title="@string/quick_pulldown_title"
+            android:summary="@string/quick_pulldown_summary"
+            android:defaultValue="false" />
+
         <Preference
             android:key="custom_carrier_label"
             android:title="@string/custom_carrier_label_title" />
-
-        <Preference
-            android:key="notification_wallpaper"
-            android:title="@string/notification_wallpaper_title"
-            android:summary="@string/notification_wallpaper_summary" />
-
-        <Preference
-            android:key="notification_wallpaper_alpha"
-            android:title="@string/notif_wallpaper_alpha_title" />
 
         <CheckBoxPreference
             android:key="status_bar_notif_count"

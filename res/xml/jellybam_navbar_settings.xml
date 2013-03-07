@@ -28,7 +28,6 @@
         <PreferenceCategory
                 android:key="navbar_general"
                 android:title="@string/navbar_general">
-
         </PreferenceCategory>
 
         <ListPreference

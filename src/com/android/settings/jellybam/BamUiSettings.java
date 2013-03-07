@@ -34,7 +34,6 @@ import android.graphics.Point;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -46,6 +45,7 @@ import android.preference.Preference;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.TwoStatePreference;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
@@ -60,7 +60,6 @@ import android.view.ViewGroup;
 import android.view.IWindowManager;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
@@ -80,6 +79,7 @@ import java.nio.channels.FileChannel;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.Random;
+import java.security.SecureRandom;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -87,37 +87,44 @@ import com.android.settings.jellybam.CodeReceiver;
 import com.android.settings.jellybam.AbstractAsyncSuCMDProcessor;
 import com.android.settings.jellybam.CMDProcessor;
 import com.android.settings.jellybam.Helpers;
+import com.android.settings.jellybam.AlphaSeekBar;
+import com.android.settings.jellybam.Executable;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
+@SuppressWarnings("InstanceVariableMayNotBeInitialized")
 public class BamUiSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "Bamuisettings";
 
+    private static final boolean DEBUG = false;
+
     private static final String PREF_POWER_CRT_SCREEN_ON = "system_power_crt_screen_on";
     private static final String PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
     private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
-    private static final String KEY_DUAL_PANE = "dual_pane";
+    private static final String FORCE_DUAL_PANEL = "dual_pane";
     private static final String PREF_180 = "rotate_180";
     private static final String PREF_SHOW_OVERFLOW = "show_overflow";
+    private static final CharSequence PREF_DISABLE_BOOTANIM = "disable_bootanimation";
+    private static final CharSequence PREF_CUSTOM_BOOTANIM = "custom_bootanimation";
     private static final String PREF_LONGPRESS_TO_KILL = "longpress_to_kill";
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_RAM_USAGE_BAR = "ram_usage_bar";
     private static final String PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
 
-    private static final int REQUEST_PICK_CUSTOM_ICON = 202;
     private static final int REQUEST_PICK_BOOT_ANIMATION = 203;
-    private static final int SELECT_ACTIVITY = 4;
+    //private static final int REQUEST_PICK_CUSTOM_ICON = 202; //unused
 
     private static final String BOOTANIMATION_USER_PATH = "/data/local/bootanimation.zip";
     private static final String BOOTANIMATION_SYSTEM_PATH = "/system/media/bootanimation.zip";
 
-    private CheckBoxPreference mCrtOff;
-    private CheckBoxPreference mCrtOn;
-    private CheckBoxPreference mFullscreenKeyboard;
-    private CheckBoxPreference mDualPane;
+    CheckBoxPreference mCrtOff;
+    CheckBoxPreference mCrtOn;
+    CheckBoxPreference mFullscreenKeyboard;
+    CheckBoxPreference mDualPane;
+
     private final Configuration mCurConfig = new Configuration();
     private Context mContext;
 
@@ -126,8 +133,8 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
     CheckBoxPreference mAllow180Rotation;
     CheckBoxPreference mDisableBootAnimation;
     Preference mCustomBootAnimation;
-    ImageView view;
-    TextView error;
+    ImageView mView;
+    TextView mError;
     CheckBoxPreference mShowActionOverflow;
     CheckBoxPreference mLongPressToKill;
     CheckBoxPreference mRecentKillAll;
@@ -137,31 +144,32 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
 
     private AnimationDrawable mAnimationPart1;
     private AnimationDrawable mAnimationPart2;
-    private String mPartName1;
-    private String mPartName2;
-    private int delay;
-    private int height;
-    private int width;
-    private String errormsg;
+    private String mErrormsg;
     private String mBootAnimationPath;
 
-    private Random randomGenerator = new Random();
+    private CMDProcessor mCMDProcessor = new CMDProcessor();
+    private static ContentResolver mContentResolver;
+    private Random mRandomGenerator = new SecureRandom();
+
     // previous random; so we don't repeat
     private static int mLastRandomInsultIndex = -1;
     private String[] mInsults;
 
-    private int seekbarProgress;
+    private int mSeekbarProgress;
     int mUserRotationAngles = -1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.jellybam_ui_settings);
-        ContentResolver resolver = getContentResolver();
+
+	mCMDProcessor.setLogcatDebugging(DEBUG);
+
+        mContentResolver = getContentResolver();
+
         mContext = getActivity();
 
         PreferenceScreen prefs = getPreferenceScreen();
-	ContentResolver cr = mContext.getContentResolver();
         mInsults = mContext.getResources().getStringArray(
                 R.array.disable_bootanimation_insults);
 
@@ -170,7 +178,7 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
         boolean electronBeamFadesConfig = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_animateScreenLights);
 
-        isCrtOffChecked = Settings.System.getInt(getActivity().getContentResolver(),
+        isCrtOffChecked = Settings.System.getInt(mContentResolver,
                 Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF,
                 electronBeamFadesConfig ? 0 : 1) == 1;
 
@@ -179,24 +187,22 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
         mCrtOff.setOnPreferenceChangeListener(this);
 
         mCrtOn = (CheckBoxPreference) findPreference(PREF_POWER_CRT_SCREEN_ON);
-        mCrtOn.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+        mCrtOn.setChecked(Settings.System.getInt(mContentResolver,
                 Settings.System.SYSTEM_POWER_ENABLE_CRT_ON, 0) == 1);
         mCrtOn.setEnabled(isCrtOffChecked);
         mCrtOn.setOnPreferenceChangeListener(this);
 
         mFullscreenKeyboard = (CheckBoxPreference) findPreference(PREF_FULLSCREEN_KEYBOARD);
-        mFullscreenKeyboard.setChecked(Settings.System.getInt(resolver,
+        mFullscreenKeyboard.setChecked(Settings.System.getInt(mContentResolver,
                 Settings.System.FULLSCREEN_KEYBOARD, 0) == 1);
 
-        mDualPane = (CheckBoxPreference) findPreference(KEY_DUAL_PANE);
-        boolean preferDualPane = getResources().getBoolean(
-                com.android.internal.R.bool.preferences_prefer_dual_pane);
-        boolean dualPaneMode = Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.DUAL_PANE_PREFS, (preferDualPane ? 1 : 0)) == 1;
-        mDualPane.setChecked(dualPaneMode);
+        mDualPane = (CheckBoxPreference) findPreference(FORCE_DUAL_PANEL);
+        mDualPane.setChecked(Settings.System.getBoolean(mContentResolver,
+                         Settings.System.FORCE_DUAL_PANEL, getResources().getBoolean(
+                         com.android.internal.R.bool.preferences_prefer_dual_pane)));
 
         mAllow180Rotation = (CheckBoxPreference) findPreference(PREF_180);
-        mUserRotationAngles = Settings.System.getInt(cr,
+        mUserRotationAngles = Settings.System.getInt(mContentResolver,
                 Settings.System.ACCELEROMETER_ROTATION_ANGLES, -1);
         if (mUserRotationAngles < 0) {
             // Not set by user so use these defaults
@@ -208,29 +214,28 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
         }
         mAllow180Rotation.setChecked(mUserRotationAngles == (1 | 2 | 4 | 8));
 
-        mDisableBootAnimation = (CheckBoxPreference)findPreference("disable_bootanimation");
+        mDisableBootAnimation = (CheckBoxPreference)findPreference(PREF_DISABLE_BOOTANIM);
 
-        mCustomBootAnimation = findPreference("custom_bootanimation");
+        mCustomBootAnimation = findPreference(PREF_CUSTOM_BOOTANIM);
 
         mLongPressToKill = (CheckBoxPreference)findPreference(PREF_LONGPRESS_TO_KILL);
-        mLongPressToKill.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+        mLongPressToKill.setChecked(Settings.System.getInt(mContentResolver,
                 Settings.System.KILL_APP_LONGPRESS_BACK, 0) == 1);
 
         mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
-        mRecentKillAll.setChecked(Settings.System.getBoolean(getActivity  ().getContentResolver(),
+        mRecentKillAll.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.RECENT_KILL_ALL_BUTTON, false));
 
         mRamBar = (CheckBoxPreference) findPreference(PREF_RAM_USAGE_BAR);
-        mRamBar.setChecked(Settings.System.getBoolean(getActivity  ().getContentResolver(),
+        mRamBar.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.RAM_USAGE_BAR, false));
 
         mShowActionOverflow = (CheckBoxPreference) findPreference(PREF_SHOW_OVERFLOW);
-        mShowActionOverflow.setChecked(Settings.System.getBoolean(getActivity().
-                        getApplicationContext().getContentResolver(),
+        mShowActionOverflow.setChecked(Settings.System.getBoolean(mContentResolver,
                         Settings.System.UI_FORCE_OVERFLOW_BUTTON, false));
 
         mWakeUpWhenPluggedOrUnplugged = (CheckBoxPreference) findPreference(PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED);
-        mWakeUpWhenPluggedOrUnplugged.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+        mWakeUpWhenPluggedOrUnplugged.setChecked(Settings.System.getBoolean(mContentResolver,
                         Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED, true));
 
         // hide option if device is already set to never wake up
@@ -247,11 +252,11 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
     @Override
     public void onResume() {
         super.onResume();
-        if(mDisableBootAnimation != null) {
+        if (mDisableBootAnimation != null) {
             if (mDisableBootAnimation.isChecked()) {
                 Resources res = mContext.getResources();
                 String[] insults = res.getStringArray(R.array.disable_bootanimation_insults);
-                int randomInt = randomGenerator.nextInt(insults.length);
+                int randomInt = mRandomGenerator.nextInt(insults.length);
                 mDisableBootAnimation.setSummary(insults[randomInt]);
             } else {
                 mDisableBootAnimation.setSummary(null);
@@ -266,12 +271,12 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-            final Preference preference) {
+            Preference preference) {
         if (preference == mAllow180Rotation) {
-            boolean checked = ((CheckBoxPreference) preference).isChecked();
-            Settings.System.putInt(mContext.getContentResolver(),
+            boolean checked = ((TwoStatePreference) preference).isChecked();
+            Settings.System.putInt(mContentResolver,
                     Settings.System.ACCELEROMETER_ROTATION_ANGLES,
-                    checked ? (1 | 2 | 4 | 8) : (1 | 2 | 8 ));
+                    checked ? (1 | 2 | 4 | 8) : (1 | 2 | 8));
             return true;
         } else if (preference == mDisableBootAnimation) {
             DisableBootAnimation();
@@ -281,8 +286,8 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
             return true;
         } else if (preference == mShowActionOverflow) {
             boolean enabled = mShowActionOverflow.isChecked();
-            Settings.System.putBoolean(getContentResolver(), Settings.System.UI_FORCE_OVERFLOW_BUTTON,
-                    enabled ? true : false);
+            Settings.System.putBoolean(mContentResolver, Settings.System.UI_FORCE_OVERFLOW_BUTTON,
+                    enabled);
             // Show toast appropriately
             if (enabled) {
                 Toast.makeText(getActivity(), R.string.show_overflow_toast_enable,
@@ -293,38 +298,38 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
             }
             return true;
         } else if (preference == mLongPressToKill) {
-            boolean checked = ((CheckBoxPreference) preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
+            boolean checked = ((TwoStatePreference) preference).isChecked();
+            Settings.System.putInt(mContentResolver,
                     Settings.System.KILL_APP_LONGPRESS_BACK, checked ? 1 : 0);
             return true;
         } else if (preference == mRecentKillAll) {
             boolean checked = ((CheckBoxPreference)preference).isChecked();
-            Settings.System.putBoolean(getActivity().getContentResolver(),
+            Settings.System.putBoolean(mContentResolver,
                     Settings.System.RECENT_KILL_ALL_BUTTON, checked ? true : false);
             return true;
         } else if (preference == mRamBar) {
             boolean checked = ((CheckBoxPreference)preference).isChecked();
-            Settings.System.putBoolean(getActivity().getContentResolver(),
+            Settings.System.putBoolean(mContentResolver,
                     Settings.System.RAM_USAGE_BAR, checked ? true : false);
             return true;
         } else if (preference == mWakeUpWhenPluggedOrUnplugged) {
-            Settings.System.putBoolean(getActivity().getContentResolver(),
+            Settings.System.putBoolean(mContentResolver,
                     Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED,
-                    ((CheckBoxPreference) preference).isChecked());
+                    ((TwoStatePreference) preference).isChecked());
             return true;
         } else  if (preference == mFullscreenKeyboard) {
-            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.FULLSCREEN_KEYBOARD,
+            Settings.System.putInt(mContentResolver, Settings.System.FULLSCREEN_KEYBOARD,
                     mFullscreenKeyboard.isChecked() ? 1 : 0);
         } else if (preference == mDualPane) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.DUAL_PANE_PREFS,
-                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            Settings.System.putBoolean(mContentResolver,
+                    Settings.System.FORCE_DUAL_PANEL,
+                    ((TwoStatePreference) preference).isChecked());
             return true;
          }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
-    public void onActivityResult(int requestCode, int resultCode, final Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == REQUEST_PICK_BOOT_ANIMATION) {
                 if (data==null) {
@@ -347,12 +352,12 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(R.string.bootanimation_preview);
         if (!mBootAnimationPath.isEmpty()
-                && (!BOOTANIMATION_SYSTEM_PATH.equalsIgnoreCase(mBootAnimationPath) && !BOOTANIMATION_USER_PATH
-                        .equalsIgnoreCase(mBootAnimationPath))) {
+                && (!BOOTANIMATION_SYSTEM_PATH.equalsIgnoreCase(mBootAnimationPath)
+                && !BOOTANIMATION_USER_PATH.equalsIgnoreCase(mBootAnimationPath))) {
             builder.setPositiveButton(R.string.apply, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    new InstallBootAnimTask(dialog).execute();
+                    installBootAnim(dialog, mBootAnimationPath);
                     resetBootAnimation();
                 }
             });
@@ -376,7 +381,7 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
                 test.setType("file/*");
                 List<ResolveInfo> list = packageManager.queryIntentActivities(test,
                         PackageManager.GET_ACTIVITIES);
-                if (list.size() > 0) {
+                if (!list.isEmpty()) {
                     Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
                     intent.setType("file/*");
                     startActivityForResult(intent, REQUEST_PICK_BOOT_ANIMATION);
@@ -401,14 +406,14 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
         View layout = inflater.inflate(R.layout.dialog_bootanimation_preview,
                 (ViewGroup) getActivity()
                         .findViewById(R.id.bootanimation_layout_root));
-        error = (TextView) layout.findViewById(R.id.textViewError);
-        view = (ImageView) layout.findViewById(R.id.imageViewPreview);
-        view.setVisibility(View.GONE);
+        mError = (TextView) layout.findViewById(R.id.textViewError);
+        mView = (ImageView) layout.findViewById(R.id.imageViewPreview);
+        mView.setVisibility(View.GONE);
         Display display = getActivity().getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-        view.setLayoutParams(new LinearLayout.LayoutParams(size.x / 2, size.y / 2));
-        error.setText(R.string.creating_preview);
+        mView.setLayoutParams(new LinearLayout.LayoutParams(size.x / 2, size.y / 2));
+        mError.setText(R.string.creating_preview);
         builder.setView(layout);
         mCustomBootAnimationDialog = builder.create();
         mCustomBootAnimationDialog.setOwnerActivity(getActivity());
@@ -452,17 +457,17 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
             ZipEntry ze = zipfile.getEntry("desc.txt");
             inputStream = zipfile.getInputStream(ze);
             inputStreamReader = new InputStreamReader(inputStream);
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder(0);
             bufferedReader = new BufferedReader(inputStreamReader);
             String read = bufferedReader.readLine();
             while (read != null) {
                 sb.append(read);
-                sb.append("\n");
+                sb.append('\n');
                 read = bufferedReader.readLine();
             }
             desc = sb.toString();
-        } catch (Exception e1) {
-            errormsg = getActivity().getString(R.string.error_reading_zip_file);
+        } catch (Exception handleAllException) {
+            mErrormsg = getActivity().getString(R.string.error_reading_zip_file);
             errorHandler.sendEmptyMessage(0);
             return;
         } finally {
@@ -487,19 +492,19 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
         }
 
         String[] info = desc.replace("\\r", "").split("\\n");
-        width = Integer.parseInt(info[0].split(" ")[0]);
-        height = Integer.parseInt(info[0].split(" ")[1]);
-        delay = Integer.parseInt(info[0].split(" ")[2]);
-        mPartName1 = info[1].split(" ")[3];
+        // ignore first two ints height and width
+        int delay = Integer.parseInt(info[0].split(" ")[2]);
+        String partName1 = info[1].split(" ")[3];
+        String partName2;
         try {
             if (info.length > 2) {
-                mPartName2 = info[2].split(" ")[3];
+                partName2 = info[2].split(" ")[3];
             }
             else {
-                mPartName2 = "";
+                partName2 = "";
             }
         } catch (Exception e) {
-            mPartName2 = "";
+            partName2 = "";
         }
 
         BitmapFactory.Options opt = new BitmapFactory.Options();
@@ -507,13 +512,14 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
         mAnimationPart1 = new AnimationDrawable();
         mAnimationPart2 = new AnimationDrawable();
         try {
-            for (Enumeration<? extends ZipEntry> e = zipfile.entries(); e.hasMoreElements();) {
-                ZipEntry entry = (ZipEntry) e.nextElement();
+            for (Enumeration<? extends ZipEntry> enumeration = zipfile.entries();
+                    enumeration.hasMoreElements();) {
+                ZipEntry entry = enumeration.nextElement();
                 if (entry.isDirectory()) {
                     continue;
                 }
                 String partname = entry.getName().split("/")[0];
-                if (mPartName1.equalsIgnoreCase(partname)) {
+                if (partName1.equalsIgnoreCase(partname)) {
                     InputStream partOneInStream = null;
                     try {
                         partOneInStream = zipfile.getInputStream(entry);
@@ -524,7 +530,7 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
                         if (partOneInStream != null)
                             partOneInStream.close();
                     }
-                } else if (mPartName2.equalsIgnoreCase(partname)) {
+                } else if (partName2.equalsIgnoreCase(partname)) {
                     InputStream partTwoInStream = null;
                     try {
                         partTwoInStream = zipfile.getInputStream(entry);
@@ -538,12 +544,12 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
                 }
             }
         } catch (IOException e1) {
-            errormsg = getActivity().getString(R.string.error_creating_preview);
+            mErrormsg = getActivity().getString(R.string.error_creating_preview);
             errorHandler.sendEmptyMessage(0);
             return;
         }
 
-        if (mPartName2.length() > 0) {
+        if (!partName2.isEmpty()) {
             Log.d(TAG, "Multipart Animation");
             mAnimationPart1.setOneShot(false);
             mAnimationPart2.setOneShot(false);
@@ -552,7 +558,7 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
                 @Override
                 public void onAnimationFinished() {
                     Log.d(TAG, "First part finished");
-                    view.setImageDrawable(mAnimationPart2);
+                    mView.setImageDrawable(mAnimationPart2);
                     mAnimationPart1.stop();
                     mAnimationPart2.start();
                 }
@@ -578,12 +584,12 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
         String activeUserLocation = "/data/local/bootanimation.zip";
         if (checked) {
             /* make backup */
-            cmds[0] = "mv " + activeLocation + " " + storedLocation + "; ";
-            cmds[1] = "mv " + activeUserLocation + " " + storedUserLocation + "; ";
+            cmds[0] = "mv " + activeLocation + ' ' + storedLocation + "; ";
+            cmds[1] = "mv " + activeUserLocation + ' ' + storedUserLocation + "; ";
         } else {
             /* apply backup */
-            cmds[0] = "mv " + storedLocation + " " + activeLocation + "; ";
-            cmds[1] = "mv " + activeUserLocation + " " + storedUserLocation + "; ";
+            cmds[0] = "mv " + storedLocation + ' ' + activeLocation + "; ";
+            cmds[1] = "mv " + activeUserLocation + ' ' + storedUserLocation + "; ";
         }
         /*
          * use sed to replace build.prop property
@@ -593,7 +599,7 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
          * /system/media/bootanimation.zip is not found
          */
         cmds[2] = "busybox sed -i \"/debug.sf.nobootanimation/ c "
-                + "debug.sf.nobootanimation=" + String.valueOf(checked ? 1 : 0)
+                + "debug.sf.nobootanimation=" + (checked ? 1 : 0)
                 + "\" " + "/system/build.prop";
         return cmds;
     }
@@ -601,57 +607,41 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
     private Handler errorHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            view.setVisibility(View.GONE);
-            error.setText(errormsg);
+            mView.setVisibility(View.GONE);
+            mError.setText(mErrormsg);
         }
     };
 
     private Handler finishedHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            view.setImageDrawable(mAnimationPart1);
-            view.setVisibility(View.VISIBLE);
-            error.setVisibility(View.GONE);
+            mView.setImageDrawable(mAnimationPart1);
+            mView.setVisibility(View.VISIBLE);
+            mError.setVisibility(View.GONE);
             mAnimationPart1.start();
         }
     };
 
-    class InstallBootAnimTask extends AsyncTask<Void, Void, Void> {
-        private final DialogInterface dialog;
-        private String taskAnimationPath;
-
-        public InstallBootAnimTask(DialogInterface dialog) {
-            this.dialog = dialog;
-        }
-
-        protected void onPreExecute() {
-            //Update setting to reflect that boot animation is now enabled
-            taskAnimationPath = mBootAnimationPath;
-            mDisableBootAnimation.setChecked(false);
-            DisableBootAnimation();
-            dialog.dismiss();
-        }
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            //Copy new bootanimation, give proper permissions
-            new CMDProcessor().su.runWaitFor("cp "+ taskAnimationPath +" /data/local/bootanimation.zip");
-            new CMDProcessor().su.runWaitFor("chmod 644 /data/local/bootanimation.zip");
-            return null;
-        }
+    private void installBootAnim(DialogInterface dialog, String bootAnimationPath) {
+        //Update setting to reflect that boot animation is now enabled
+        mDisableBootAnimation.setChecked(false);
+        DisableBootAnimation();
+        dialog.dismiss();
+        Executable installScript = new Executable(
+                "cp " + bootAnimationPath + " /data/local/bootanimation.zip",
+                "chmod 644 /data/local/bootanimation.zip");
+        mCMDProcessor.su.runWaitFor(installScript);
     }
 
     private void DisableBootAnimation() {
         resetSwaggedOutBootAnimation();
-        CMDProcessor term = new CMDProcessor();
-        if (!term.su.runWaitFor(
+        if (!mCMDProcessor.su.runWaitFor(
                 "grep -q \"debug.sf.nobootanimation\" /system/build.prop")
                 .success()) {
             // if not add value
             Helpers.getMount("rw");
-            term.su.runWaitFor("echo debug.sf.nobootanimation="
-                + String.valueOf(mDisableBootAnimation.isChecked() ? 1 : 0)
-                + " >> /system/build.prop");
+            mCMDProcessor.su.runWaitFor(String.format("echo debug.sf.nobootanimation=%d >> /system/build.prop",
+                    mDisableBootAnimation.isChecked() ? 1 : 0));
             Helpers.getMount("ro");
         }
         // preform bootanimation operations off UI thread
@@ -660,9 +650,9 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
             protected void onPostExecute(String result) {
                 if (mDisableBootAnimation.isChecked()) {
                     // do not show same insult as last time
-                    int newInsult = randomGenerator.nextInt(mInsults.length);
+                    int newInsult = mRandomGenerator.nextInt(mInsults.length);
                     while (newInsult == mLastRandomInsultIndex)
-                        newInsult = randomGenerator.nextInt(mInsults.length);
+                        newInsult = mRandomGenerator.nextInt(mInsults.length);
 
                     // update our static index reference
                     mLastRandomInsultIndex = newInsult;
@@ -680,19 +670,19 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
         final String key = preference.getKey();
          if (mCrtOff.equals(preference)) {
             isCrtOffChecked = ((Boolean) Value).booleanValue();
-            Settings.System.putInt(getActivity().getContentResolver(),
+            Settings.System.putInt(mContentResolver,
                     Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF,
                     (isCrtOffChecked ? 1 : 0));
             // if crt off gets turned off, crt on gets turned off and disabled
             if (!isCrtOffChecked) {
-                Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.putInt(mContentResolver,
                         Settings.System.SYSTEM_POWER_ENABLE_CRT_ON, 0);
                 mCrtOn.setChecked(false);
             }
             mCrtOn.setEnabled(isCrtOffChecked);
             return true;
         } else if (mCrtOn.equals(preference)) {
-            Settings.System.putInt(getActivity().getContentResolver(),
+            Settings.System.putInt(mContentResolver,
                     Settings.System.SYSTEM_POWER_ENABLE_CRT_ON,
                     ((Boolean) Value).booleanValue() ? 1 : 0);
             return true;
@@ -741,13 +731,9 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
     private void resetSwaggedOutBootAnimation() {
         if(new File("/data/local/bootanimation.user").exists()) {
             // we're using the alt boot animation
-            new AsyncTask<Void, Void, Void>() {
-                @Override
-                protected Void doInBackground(Void... params) {
-                    new CMDProcessor().su.run("mv /data/local/bootanimation.user /data/local/bootanimation.zip");
-                    return null;
-                }
-            }.execute();
+            Executable moveAnimCommand = new Executable("mv /data/local/bootanimation.user /data/local/bootanimation.zip");
+            // we must wait for this command to finish before we continue
+            mCMDProcessor.su.runWaitFor(moveAnimCommand);
         }
         CodeReceiver.setSwagInitiatedPref(mContext, false);
     }

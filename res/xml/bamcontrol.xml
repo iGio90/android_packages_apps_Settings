@@ -73,10 +73,10 @@
         android:fragment="com.android.settings.jellybam.BamQuickSettings" />
 
     <PreferenceScreen
-	android:key="bam_tiles"
-        android:fragment="com.android.settings.paranoid.CustomTiles"
+        android:key="quick_settings_panel"
+        android:fragment="com.android.settings.jellybam.QuickSettings"
         android:icon="@drawable/ic_settings_bamquicksettings" 
-        android:title="@string/custom_tiles_title" />
+        android:title="@string/quick_settings_panel_title" />
 
     <PreferenceScreen
         android:key="statusbar_battery"
