@@ -113,14 +113,10 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_RAM_USAGE_BAR = "ram_usage_bar";
     private static final String PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
-    private static final CharSequence PREF_NOTIFICATION_WALLPAPER = "notification_wallpaper";
-    private static final CharSequence PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
 
-    private static final int REQUEST_PICK_WALLPAPER = 201;
-    //private static final int REQUEST_PICK_CUSTOM_ICON = 202; //unused
     private static final int REQUEST_PICK_BOOT_ANIMATION = 203;
+    //private static final int REQUEST_PICK_CUSTOM_ICON = 202; //unused
 
-    private static final String WALLPAPER_NAME = "notification_wallpaper.jpg";
     private static final String BOOTANIMATION_USER_PATH = "/data/local/bootanimation.zip";
     private static final String BOOTANIMATION_SYSTEM_PATH = "/system/media/bootanimation.zip";
 
@@ -128,8 +124,6 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
     CheckBoxPreference mCrtOn;
     CheckBoxPreference mFullscreenKeyboard;
     CheckBoxPreference mDualPane;
-    Preference mNotificationWallpaper;
-    Preference mWallpaperAlpha;
 
     private final Configuration mCurConfig = new Configuration();
     private Context mContext;
@@ -244,10 +238,6 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
         mWakeUpWhenPluggedOrUnplugged.setChecked(Settings.System.getBoolean(mContentResolver,
                         Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED, true));
 
-        mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
-
-        mWallpaperAlpha = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
-
         // hide option if device is already set to never wake up
         if(!mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_unplugTurnsOnScreen)) {
@@ -290,77 +280,6 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
             return true;
         } else if (preference == mDisableBootAnimation) {
             DisableBootAnimation();
-            return true;
-        } else if (preference == mNotificationWallpaper) {
-            Display display = getActivity().getWindowManager().getDefaultDisplay();
-            int width = display.getWidth();
-            int height = display.getHeight();
-
-            Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
-            intent.setType("image/*");
-            intent.putExtra("crop", "true");
-            boolean isPortrait = getResources()
-                    .getConfiguration().orientation
-                    == Configuration.ORIENTATION_PORTRAIT;
-            intent.putExtra("aspectX", isPortrait ? width : height);
-            intent.putExtra("aspectY", isPortrait ? height : width);
-            intent.putExtra("outputX", width);
-            intent.putExtra("outputY", height);
-            intent.putExtra("scale", true);
-            intent.putExtra("scaleUpIfNeeded", true);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT,
-                    getNotificationExternalUri());
-            intent.putExtra("outputFormat",
-                    Bitmap.CompressFormat.PNG.toString());
-            startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
-            return true;
-        } else if (preference == mWallpaperAlpha) {
-            Resources res = getActivity().getResources();
-            String cancel = res.getString(R.string.cancel);
-            String ok = res.getString(R.string.ok);
-            String title = res.getString(R.string.alpha_dialog_title);
-            float savedProgress = Settings.System.getFloat(mContentResolver,
-                    Settings.System.NOTIF_WALLPAPER_ALPHA, 1.0f);
-
-            LayoutInflater factory = LayoutInflater.from(getActivity());
-            View alphaDialog = factory.inflate(R.layout.seekbar_dialog, null);
-            SeekBar seekbar = (SeekBar) alphaDialog.findViewById(R.id.seek_bar);
-            OnSeekBarChangeListener seekBarChangeListener = new OnSeekBarChangeListener() {
-                @Override
-                public void onProgressChanged(SeekBar seekbar,
-                        int progress, boolean fromUser) {
-                    mSeekbarProgress = seekbar.getProgress();
-                }
-                @Override
-                public void onStopTrackingTouch(SeekBar seekbar) {
-                }
-                @Override
-                public void onStartTrackingTouch(SeekBar seekbar) {
-                }
-            };
-            seekbar.setProgress((int) (savedProgress * 100));
-            seekbar.setMax(100);
-            seekbar.setOnSeekBarChangeListener(seekBarChangeListener);
-            new AlertDialog.Builder(getActivity())
-                    .setTitle(title)
-                    .setView(alphaDialog)
-                    .setNegativeButton(cancel, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    // nothing
-                }
-            })
-            .setPositiveButton(ok, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    float val = (float) mSeekbarProgress / 100;
-                    Settings.System.putFloat(mContentResolver,
-                        Settings.System.NOTIF_WALLPAPER_ALPHA, val);
-                    Helpers.restartSystemUI();
-                }
-            })
-            .create()
-            .show();
             return true;
         } else if (preference == mCustomBootAnimation) {
             openBootAnimationDialog();
@@ -412,29 +331,7 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK) {
-            if (requestCode == REQUEST_PICK_WALLPAPER) {
-                FileOutputStream wallpaperStream = null;
-                try {
-                    wallpaperStream = mContext.openFileOutput(WALLPAPER_NAME,
-                            Context.MODE_WORLD_READABLE);
-                    Uri selectedImageUri = getNotificationExternalUri();
-                    Bitmap bitmap = BitmapFactory.decodeFile(
-                            selectedImageUri.getPath());
-                    bitmap.compress(Bitmap.CompressFormat.PNG,
-                                    100,
-                                    wallpaperStream);
-                } catch (FileNotFoundException e) {
-                    return; // NOOOOO
-                } finally {
-                    try {
-                        if (wallpaperStream != null)
-                            wallpaperStream.close();
-                    } catch (IOException e) {
-                        // let it go
-                    }
-                }
-                Helpers.restartSystemUI();
-            } else if (requestCode == REQUEST_PICK_BOOT_ANIMATION) {
+            if (requestCode == REQUEST_PICK_BOOT_ANIMATION) {
                 if (data==null) {
                     //Nothing returned by user, probably pressed back button in file manager
                     return;
@@ -528,12 +425,6 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
             }
         });
         thread.start();
-    }
-
-    private Uri getNotificationExternalUri() {
-        File dir = mContext.getExternalCacheDir();
-        File wallpaper = new File(dir, WALLPAPER_NAME);
-        return Uri.fromFile(wallpaper);
     }
 
     public void copy(File src, File dst) throws IOException {
