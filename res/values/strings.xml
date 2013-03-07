@@ -5291,6 +5291,10 @@
     <string name="jellybam_source_title">JellyBam GitHub</string>
     <string name="jellybam_source_summary">Explore JellyBam GitHub</string>
 
+    <!-- Quick pulldown -->
+    <string name="quick_pulldown_title">Quick pulldown</string>
+    <string name="quick_pulldown_summary">Edge of status bar will pull down Quick Settings</string>
+
     <!-- BAMControl -->
     <string name="bamcontrol_settings_title">BAM Control</string>
     <string name="bamcontrol_interface">Interface</string>
@@ -5465,7 +5469,6 @@
     <string name="vibrate_notif_expand_title">Vibrate on expand</string>
     <string name="vibrate_notif_expand_summary">Vibrate when expanding notifications (requires UI restart)</string>
     <string name="notification_cat">Notification</string>
-    <string name="notification_wallpaper_title">Choose notification background</string>
     <string name="notification_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
     <string name="show_overflow_title">Show Menu UI Overflow</string>
     <string name="show_overflow_summary">Display the 3-dot overflow menu button within apps</string>
@@ -5473,7 +5476,6 @@
     <string name="navbar_cat">NavBar</string>
     <string name="brightness_slider_title">Statusbar brightness slider</string>
     <string name="brightness_slider_summary">Allows you to slide your finger along the top of the statusbar to change the brightness. Does nothing when autobrightness is enabled.</string>
-    <string name="notif_wallpaper_alpha_title">Notification background alpha</string>
     <string name="misc_short">Misc</string>
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display number of pending notifications on the status bar</string>
@@ -5782,6 +5784,14 @@
     <string name="spen_long_title">Action on long press</string>
     <string name="spen_enable">Enable S Pen Gestures</string>
     <string name="spen_enable_summary">Set custom actions for S Pen gestures</string>
+    <string name="notification_wallpaper_title">Notification drawer background</string>
+    <string name="notification_wallpaper_landscape_title">Different landscape background</string>
+    <string name="notification_background_color_fill">Color fill</string>
+    <string name="notification_background_custom_image">Custom image</string>
+    <string name="notification_background_default_wallpaper">Default background</string>
+    <string name="notification_drawer_custom_background_dialog_title">Choose color</string>
+    <string name="notif_wallpaper_alpha_title">Notification background transparency</string>
+    <string name="notif_alpha_title">Notification Rows transparency</string>
 
     <!-- JELLYBAM CHANGELOG -->
     <string name="bam_changelog_title">Release changelog</string>
