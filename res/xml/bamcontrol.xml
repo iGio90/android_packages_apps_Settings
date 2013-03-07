@@ -50,7 +50,7 @@
      <PreferenceScreen
         android:key="nav_ring"
         android:fragment="com.android.settings.jellybam.NavRingTargets"
-        android:icon="@drawable/ic_settings_navbar"
+        android:icon="@drawable/ic_settings_navring"
         android:title="@string/interface_navring_settings_title" />
 
     <PreferenceScreen
