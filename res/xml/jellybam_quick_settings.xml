@@ -2,12 +2,9 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" 
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-        <PreferenceScreen  
-            android:id="@+id/slim_notification_shortcuts"
-            android:fragment="com.android.settings.carbon.notificationshortcuts.NotificationShortcuts"
-            android:key="slim_shortcuts_settings"
-            android:title="@string/notification_shortcuts_settings_title"
-            android:summary="@string/notification_shortcuts_settings_summary" />
+    <!-- Customization -->
+    <PreferenceCategory
+       android:title="@string/quick_customization">
 
         <ListPreference
             android:key="notification_wallpaper"
@@ -32,6 +29,21 @@
         <com.android.settings.widget.SeekBarPreference
              android:key="notification_alpha"
              android:title="@string/notif_alpha_title" />
+
+    </PreferenceCategory>
+
+    <!-- Notification Shortcuts -->
+    <PreferenceCategory
+       android:title="@string/quick_shortctus">
+
+        <PreferenceScreen
+            android:id="@+id/slim_notification_shortcuts"
+            android:fragment="com.android.settings.carbon.notificationshortcuts.NotificationShortcuts"
+            android:key="slim_shortcuts_settings"
+            android:title="@string/notification_shortcuts_settings_title"
+            android:summary="@string/notification_shortcuts_settings_summary" />
+
+    </PreferenceCategory>
 
     <!-- Notification drawer Power Widget -->
     <PreferenceCategory

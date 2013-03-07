@@ -5792,6 +5792,8 @@
     <string name="notification_drawer_custom_background_dialog_title">Choose color</string>
     <string name="notif_wallpaper_alpha_title">Notification background transparency</string>
     <string name="notif_alpha_title">Notification Rows transparency</string>
+    <string name="quick_shortctus">Notification Shortcuts</string>
+    <string name="quick_customization">Customization</string>
 
     <!-- JELLYBAM CHANGELOG -->
     <string name="bam_changelog_title">Release changelog</string>
