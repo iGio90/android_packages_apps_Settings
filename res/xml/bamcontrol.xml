@@ -127,11 +127,6 @@
         android:title="@string/bamcontrol_system" >
 
     <PreferenceScreen
-        android:key="bam_performance"
-        android:title="@string/bamcontrol_performance"
-        android:fragment="com.android.settings.jellybam.BamPerformanceSettings" />
-
-    <PreferenceScreen
         android:key="lock_clock"
         android:title="@string/bam_chronus"
         android:icon="@drawable/ic_settings_chronus">
@@ -169,6 +164,27 @@
         android:icon="@drawable/ic_settings_hardwarekeys"
         android:title="@string/jellybam_hardwarekeys_settings_title"
         android:fragment="com.android.settings.jellybam.BamHardwareKeysSettings" />
+   </PreferenceCategory>
+
+   <!-- ADVANCED -->
+   <PreferenceCategory
+        android:key="bam_advanced"
+        android:title="@string/bamcontrol_advanced" >
+
+    <PreferenceScreen
+        android:id="@+id/permissions_settings"
+        android:icon="@drawable/ic_settings_permissions"
+        android:title="@string/permissions_settings_title">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="org.chameleonos.permissionsmanager"
+            android:targetClass="org.chameleonos.permissionsmanager.activity.PermissionManagerActivity" />
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:key="bam_performance"
+        android:title="@string/bamcontrol_performance"
+        android:fragment="com.android.settings.jellybam.BamPerformanceSettings" />
 
         <PreferenceScreen
             android:key="anonymous_stats"
@@ -180,5 +196,4 @@
         </PreferenceScreen>
 
    </PreferenceCategory>
-
 </PreferenceScreen>
