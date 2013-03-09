@@ -203,6 +203,12 @@
         android:icon="@drawable/ic_settings_superuser"
         android:title="@string/superuser" />
 
+    <!-- TRDS -->
+    <header
+        android:id="@+id/holobam_settings"
+        android:icon="@drawable/ic_settings_themes"
+        android:title="@string/holobam_settings_title" />
+
     <!-- Launcher -->
     <header
         android:id="@+id/launcher_settings"

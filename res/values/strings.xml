@@ -5691,7 +5691,6 @@
     <string name="vib_play">Play</string>
     <string name="vib_save">Save</string>
     <string name="vib_del">Delete</string>
-
     <string name="vib_dialog_text_entry">Save vibration</string>
     <string name="vib_dialog_name">Name:</string>
     <string name="vib_cur_loaded_title">Loaded:</string>
@@ -5820,6 +5819,7 @@
     <string name="keyboard_settings_header">Keyboard</string>
     <string name="swap_volume_keys_title">Swap volume buttons</string>
     <string name="swap_volume_keys_summary">Swap volume buttons when the screen is rotated by 90 or 180 degrees</string>
+    <string name="holobam_settings_title">HoloBam</string>
 
     <!-- JELLYBAM CHANGELOG -->
     <string name="bam_changelog_title">Release changelog</string>
