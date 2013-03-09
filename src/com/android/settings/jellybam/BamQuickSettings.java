@@ -118,6 +118,7 @@ public class BamQuickSettings extends SettingsPreferenceFragment
     private static final String PREF_NOTIFICATION_WALLPAPER_LANDSCAPE = "notification_wallpaper_landscape";
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
     private static final String PREF_NOTIFICATION_ALPHA = "notification_alpha";
+    private static final String KEY_MMS_BREATH = "mms_breath";
 
     private ListPreference mNotificationWallpaper;
     private ListPreference mNotificationWallpaperLandscape;
@@ -128,6 +129,7 @@ public class BamQuickSettings extends SettingsPreferenceFragment
     private CheckBoxPreference mPowerWidgetHideScrollBar;
     private CheckBoxPreference mStatusBarDoNotDisturb;
     private CheckBoxPreference mQuickPullDown;
+    private CheckBoxPreference mMMSBreath;
 
     Preference mCustomLabel;
 
@@ -217,6 +219,10 @@ public class BamQuickSettings extends SettingsPreferenceFragment
             mPowerWidgetHapticFeedback.setValue(Integer.toString(Settings.System.getInt(
                     getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.EXPANDED_HAPTIC_FEEDBACK, 2)));
+
+            mMMSBreath = (CheckBoxPreference) findPreference(KEY_MMS_BREATH);
+            mMMSBreath.setChecked(Settings.System.getInt(resolver,
+                    Settings.System.MMS_BREATH, 0) == 1);
 
         customnavTemp = new File(getActivity().getFilesDir()+"/notification_wallpaper_temp.jpg");
         customnavTempLandscape = new File(getActivity().getFilesDir()+"/notification_wallpaper_temp_landscape.jpg");
@@ -592,7 +598,10 @@ public class BamQuickSettings extends SettingsPreferenceFragment
                     // Canceled.
                 }
             });
-        } else {
+          } else if (preference == mMMSBreath) {
+                Settings.System.putInt(mContext.getContentResolver(), Settings.System.MMS_BREATH,
+                        mMMSBreath.isChecked() ? 1 : 0);
+          } else {
             // If we didn't handle it, let preferences handle it.
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }

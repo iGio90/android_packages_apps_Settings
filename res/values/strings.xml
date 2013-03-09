@@ -5794,6 +5794,8 @@
     <string name="notif_alpha_title">Notification Rows transparency</string>
     <string name="quick_shortctus">Notification Shortcuts</string>
     <string name="quick_customization">Customization</string>
+    <string name="mms_breath">Breathing SMS</string>
+    <string name="mms_breath_summary">Will give your sms notifications a breathing effect on the statusbar.</string>
 
     <!-- JELLYBAM CHANGELOG -->
     <string name="bam_changelog_title">Release changelog</string>

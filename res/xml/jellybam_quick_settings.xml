@@ -107,6 +107,12 @@
             android:summary="@string/quick_pulldown_summary"
             android:defaultValue="false" />
 
+         <CheckBoxPreference
+            android:key="mms_breath"
+            android:title="@string/mms_breath"
+            android:summary="@string/mms_breath_summary"
+            android:defaultValue="false" />
+
         <Preference
             android:key="custom_carrier_label"
             android:title="@string/custom_carrier_label_title" />
