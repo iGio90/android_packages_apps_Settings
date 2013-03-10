@@ -5796,7 +5796,9 @@
     <string name="quick_customization">Customization</string>
     <string name="mms_breath">Breathing SMS</string>
     <string name="mms_breath_summary">Will give your sms notifications a breathing effect on the statusbar.</string>
-    <string name="rb_battery">RootBox Circle</string>
+    <string name="rb_battery1">RootBox CircleMod</string>
+    <string name="rb_battery2">RootBox SquareMod</string>
+    <string name="rb_battery3">RootBox SpeedoMeter</string>
 
     <!-- JELLYBAM CHANGELOG -->
     <string name="bam_changelog_title">Release changelog</string>
