@@ -1531,7 +1531,6 @@
         <item>@string/text_only</item>
         <item>@string/icon_with_text</item>
         <item>@string/icon_with_centered_text</item>
-        <item>@string/circlemod</item>
         <item>@string/rb_battery1</item>
         <item>@string/rb_battery2</item>
         <item>@string/rb_battery3</item>

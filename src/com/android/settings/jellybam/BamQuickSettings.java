@@ -221,7 +221,8 @@ public class BamQuickSettings extends SettingsPreferenceFragment
                     Settings.System.EXPANDED_HAPTIC_FEEDBACK, 2)));
 
             mMMSBreath = (CheckBoxPreference) findPreference(KEY_MMS_BREATH);
-            mMMSBreath.setChecked(Settings.System.getInt(resolver,
+            mMMSBreath.setChecked(Settings.System.getInt(getActivity().getApplicationContext()
+                    .getContentResolver(),
                     Settings.System.MMS_BREATH, 0) == 1);
 
         customnavTemp = new File(getActivity().getFilesDir()+"/notification_wallpaper_temp.jpg");
