@@ -60,6 +60,7 @@ import android.view.ViewGroup;
 import android.view.IWindowManager;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
@@ -113,6 +114,7 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_RAM_USAGE_BAR = "ram_usage_bar";
     private static final String PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
+    private static final CharSequence PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
 
     private static final int REQUEST_PICK_BOOT_ANIMATION = 203;
     //private static final int REQUEST_PICK_CUSTOM_ICON = 202; //unused
@@ -124,6 +126,7 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
     CheckBoxPreference mCrtOn;
     CheckBoxPreference mFullscreenKeyboard;
     CheckBoxPreference mDualPane;
+    Preference mCustomLabel;
 
     private final Configuration mCurConfig = new Configuration();
     private Context mContext;
@@ -157,6 +160,7 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
 
     private int mSeekbarProgress;
     int mUserRotationAngles = -1;
+    String mCustomLabelText = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -195,6 +199,9 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
         mFullscreenKeyboard = (CheckBoxPreference) findPreference(PREF_FULLSCREEN_KEYBOARD);
         mFullscreenKeyboard.setChecked(Settings.System.getInt(mContentResolver,
                 Settings.System.FULLSCREEN_KEYBOARD, 0) == 1);
+
+        mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
+        updateCustomLabelTextSummary();
 
         mDualPane = (CheckBoxPreference) findPreference(FORCE_DUAL_PANEL);
         mDualPane.setChecked(Settings.System.getBoolean(mContentResolver,
@@ -269,6 +276,16 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
         super.onPause();
     }
 
+    private void updateCustomLabelTextSummary() {
+        mCustomLabelText = Settings.System.getString(mContentResolver,
+                Settings.System.CUSTOM_CARRIER_LABEL);
+        if (mCustomLabelText == null || mCustomLabelText.isEmpty()) {
+            mCustomLabel.setSummary(R.string.custom_carrier_label_notset);
+        } else {
+            mCustomLabel.setSummary(mCustomLabelText);
+        }
+    }
+
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
@@ -284,6 +301,34 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
         } else if (preference == mCustomBootAnimation) {
             openBootAnimationDialog();
             return true;
+        } else if (preference == mCustomLabel) {
+            AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+            alert.setTitle(R.string.custom_carrier_label_title);
+            alert.setMessage(R.string.custom_carrier_label_explain);
+
+            // Set an EditText mView to get user input
+            final EditText input = new EditText(getActivity());
+            input.setText(mCustomLabelText != null ? mCustomLabelText : "");
+            alert.setView(input);
+            alert.setPositiveButton(getResources().getString(R.string.ok),
+                    new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                    String value = input.getText().toString();
+                    Settings.System.putString(mContentResolver,
+                            Settings.System.CUSTOM_CARRIER_LABEL, value);
+                    updateCustomLabelTextSummary();
+                    Intent i = new Intent();
+                    i.setAction("com.aokp.romcontrol.LABEL_CHANGED");
+                    mContext.sendBroadcast(i);
+                }
+            });
+            alert.setNegativeButton(getResources().getString(R.string.cancel),
+                    new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                    // Canceled.
+                }
+            });
+            alert.show();
         } else if (preference == mShowActionOverflow) {
             boolean enabled = mShowActionOverflow.isChecked();
             Settings.System.putBoolean(mContentResolver, Settings.System.UI_FORCE_OVERFLOW_BUTTON,
