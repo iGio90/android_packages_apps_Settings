@@ -47,6 +47,12 @@
             rb:twitterHandle="icelanderus"
             rb:donateLink="@string/donate_iluha" />
 
+                <com.android.settings.widgets.DeveloperPreference
+            android:title="Frogfire"
+            rb:nameDev="Frogfire"
+            rb:twitterHandle="frogfire_de"
+            rb:donateLink="@string/donate_frogfire" />
+
 	</PreferenceCategory>
 
 </PreferenceScreen>
