@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.app.ListFragment;
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.CursorLoader;
@@ -49,6 +51,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -577,19 +583,19 @@ public class BamQuickSettings extends SettingsPreferenceFragment
             alert.setTitle(R.string.custom_carrier_label_title);
             alert.setMessage(R.string.custom_carrier_label_explain);
 
-            // Set an EditText view to get user input
+            // Set an EditText mView to get user input
             final EditText input = new EditText(getActivity());
             input.setText(mCustomLabelText != null ? mCustomLabelText : "");
             alert.setView(input);
             alert.setPositiveButton(getResources().getString(R.string.ok),
                     new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
-                    String value = ((Spannable) input.getText()).toString();
-                    Settings.System.putString(getActivity().getContentResolver(),
+                    String value = input.getText().toString();
+                    Settings.System.putString(getActivity().getApplicationContext().getContentResolver(),
                             Settings.System.CUSTOM_CARRIER_LABEL, value);
                     updateCustomLabelTextSummary();
                     Intent i = new Intent();
-                    i.setAction("com.android.settings.LABEL_CHANGED");
+                    i.setAction("com.aokp.romcontrol.LABEL_CHANGED");
                     mContext.sendBroadcast(i);
                 }
             });
@@ -599,6 +605,7 @@ public class BamQuickSettings extends SettingsPreferenceFragment
                     // Canceled.
                 }
             });
+            alert.show();
           } else if (preference == mMMSBreath) {
                 Settings.System.putInt(mContext.getContentResolver(), Settings.System.MMS_BREATH,
                         mMMSBreath.isChecked() ? 1 : 0);
