@@ -5801,6 +5801,22 @@
     <string name="rb_battery1">RootBox CircleMod</string>
     <string name="rb_battery2">RootBox SquareMod</string>
     <string name="rb_battery3">RootBox SpeedoMeter</string>
+    <string name="spen_extras_cat">S Pen Extras</string>
+    <string name="spen_gestures_cat">S Pen Gestures</string>
+    <string name="enable_stylus_pointer_title">Enable S Pen pointer</string>
+    <string name="enable_stylus_pointer_summary">Enable the mouse icon when using the S Pen</string>
+    <string name="status_bar_icon_opacity">Notification icon opacity</string>
+    <string name="status_bar_icon_opacity_summary">Sets opacity of status bar notification icons</string>
+    <string name="keyboard_rotation_toggle_title">Auto keyboard rotation</string>
+    <string name="keyboard_rotation_toggle_summary">Force auto-rotate when keyboard is shown</string>
+    <string name="keyboard_rotation_timeout_title">Auto-rotate timeout</string>
+    <string name="keyboard_rotation_timeout_summary">Disables auto-rotate sensor <xliff:g id="rotate_timeout">%1$s</xliff:g> seconds after keyboard is hidden</string>
+    <string name="keyboard_rotation_dialog">Note: This feature forces auto-rotate to turn on temporarily while the keyboard is out.  It has no effect when auto-rotate is already enabled.</string>
+    <string name="keyboard_settings_header">Keyboard</string>
+    <string name="volume_key_cursor_control_title">Volume key cursor control</string>
+    <string name="volume_key_cursor_control_off">Disabled</string>
+    <string name="volume_key_cursor_control_on">Volume up/down moves cursor left/right</string>
+    <string name="volume_key_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
 
     <!-- JELLYBAM CHANGELOG -->
     <string name="bam_changelog_title">Release changelog</string>
@@ -5809,12 +5825,6 @@
     <string name="changelog_error">Unable to load changelog</string>
     <string name="changelog_unknown">Unknown</string>
     <string name="changelog_version">Version</string>
-    <string name="spen_extras_cat">S Pen Extras</string>
-    <string name="spen_gestures_cat">S Pen Gestures</string>
-    <string name="enable_stylus_pointer_title">Enable S Pen pointer</string>
-    <string name="enable_stylus_pointer_summary">Enable the mouse icon when using the S Pen</string>
-    <string name="status_bar_icon_opacity">Notification icon opacity</string>
-    <string name="status_bar_icon_opacity_summary">Sets opacity of status bar notification icons</string>
 
     <!-- Header Summaries -->
     <string name="header_summary_clock">@null</string>

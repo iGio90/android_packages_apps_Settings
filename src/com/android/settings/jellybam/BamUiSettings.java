@@ -113,9 +113,12 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_RAM_USAGE_BAR = "ram_usage_bar";
     private static final String PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
+    private static final String KEYBOARD_ROTATION_TOGGLE = "keyboard_rotation_toggle";
+    private static final String KEYBOARD_ROTATION_TIMEOUT = "keyboard_rotation_timeout";
 
     private static final int REQUEST_PICK_BOOT_ANIMATION = 203;
     //private static final int REQUEST_PICK_CUSTOM_ICON = 202; //unused
+    private static final int KEYBOARD_ROTATION_TIMEOUT_DEFAULT = 5000; // 5s
 
     private static final String BOOTANIMATION_USER_PATH = "/data/local/bootanimation.zip";
     private static final String BOOTANIMATION_SYSTEM_PATH = "/system/media/bootanimation.zip";
@@ -141,6 +144,9 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
     CheckBoxPreference mRamBar;
     AlertDialog mCustomBootAnimationDialog;
     CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
+
+    private CheckBoxPreference mKeyboardRotationToggle;
+    private ListPreference mKeyboardRotationTimeout;
 
     private AnimationDrawable mAnimationPart1;
     private AnimationDrawable mAnimationPart2;
@@ -247,6 +253,22 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
         setHasOptionsMenu(true);
         resetBootAnimation();
 
+        mKeyboardRotationToggle = (CheckBoxPreference) findPreference(KEYBOARD_ROTATION_TOGGLE);
+        mKeyboardRotationToggle.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.KEYBOARD_ROTATION_TIMEOUT, 0) > 0);
+
+        mKeyboardRotationTimeout = (ListPreference) findPreference(KEYBOARD_ROTATION_TIMEOUT);
+        mKeyboardRotationTimeout.setOnPreferenceChangeListener(this);
+        updateRotationTimeout(Settings.System.getInt(getActivity()
+                    .getContentResolver(), Settings.System.KEYBOARD_ROTATION_TIMEOUT, KEYBOARD_ROTATION_TIMEOUT_DEFAULT));
+
+    }
+
+    public void updateRotationTimeout(int timeout) {
+        if (timeout == 0)
+            timeout = KEYBOARD_ROTATION_TIMEOUT_DEFAULT;
+        mKeyboardRotationTimeout.setValue(Integer.toString(timeout));
+        mKeyboardRotationTimeout.setSummary(getString(R.string.keyboard_rotation_timeout_summary, mKeyboardRotationTimeout.getEntry()));
     }
 
     @Override
@@ -262,6 +284,15 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
                 mDisableBootAnimation.setSummary(null);
             }
         }
+    }
+
+    public void mKeyboardRotationDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(R.string.keyboard_rotation_dialog);
+        builder.setCancelable(false);
+        builder.setPositiveButton(getResources().getString(com.android.internal.R.string.ok), null);
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
     @Override
@@ -284,6 +315,15 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
         } else if (preference == mCustomBootAnimation) {
             openBootAnimationDialog();
             return true;
+         } else if (preference == mKeyboardRotationToggle) {
+            boolean isAutoRotate = (Settings.System.getInt(getContentResolver(),
+                        Settings.System.ACCELEROMETER_ROTATION, 0) == 1);
+            if (isAutoRotate && mKeyboardRotationToggle.isChecked())
+                mKeyboardRotationDialog();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.KEYBOARD_ROTATION_TIMEOUT,
+                    mKeyboardRotationToggle.isChecked() ? KEYBOARD_ROTATION_TIMEOUT_DEFAULT : 0);
+            updateRotationTimeout(KEYBOARD_ROTATION_TIMEOUT_DEFAULT);
         } else if (preference == mShowActionOverflow) {
             boolean enabled = mShowActionOverflow.isChecked();
             Settings.System.putBoolean(mContentResolver, Settings.System.UI_FORCE_OVERFLOW_BUTTON,
@@ -680,6 +720,12 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
                 mCrtOn.setChecked(false);
             }
             mCrtOn.setEnabled(isCrtOffChecked);
+            return true;
+        } else if (preference == mKeyboardRotationTimeout) {
+            int timeout = Integer.parseInt((String) Value);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.KEYBOARD_ROTATION_TIMEOUT, timeout);
+            updateRotationTimeout(timeout);
             return true;
         } else if (mCrtOn.equals(preference)) {
             Settings.System.putInt(mContentResolver,

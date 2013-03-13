@@ -96,11 +96,33 @@
         android:summary="@string/system_power_crt_screen_on_summary"
         android:title="@string/system_power_crt_screen_on_title" />
 
+    </PreferenceCategory>
+
+  <PreferenceCategory
+        android:key="bam_keyboard"
+        android:title="@string/keyboard_settings_header">
+
    <CheckBoxPreference
         android:key="fullscreen_keyboard"
         android:title="@string/fullscreen_keyboard"
         android:summary="@string/fullscreen_keyboard_summary"
         android:defaultValue="false" />
+
+    <CheckBoxPreference
+        android:key="keyboard_rotation_toggle"
+        android:title="@string/keyboard_rotation_toggle_title"
+        android:summary="@string/keyboard_rotation_toggle_summary"
+        android:defaultValue="false"
+        android:persistent="false" />
+
+    <ListPreference
+        android:key="keyboard_rotation_timeout"
+        android:persistent="false"
+        android:dialogTitle="@string/keyboard_rotation_timeout_title"
+        android:title="@string/keyboard_rotation_timeout_title"
+        android:entries="@array/keyboard_rotation_timeout_entries"
+        android:entryValues="@array/keyboard_rotation_timeout_values"
+        android:dependency="keyboard_rotation_toggle" />
 
     </PreferenceCategory>
 
