@@ -75,7 +75,8 @@ public class BamSoundSettings extends SettingsPreferenceFragment implements
         mPhoneSilent.setOnPreferenceChangeListener(this);
 
         mSwapVolumeButtons = (CheckBoxPreference) findPreference(KEY_SWAP_VOLUME_BUTTONS);
-        mSwapVolumeButtons.setChecked(Settings.System.getInt(resolver,
+        mSwapVolumeButtons.setChecked(Settings.System.getInt(getActivity()
+                .getContentResolver(),
                 Settings.System.SWAP_VOLUME_KEYS, 0) == 1);
 
         if (HeadphoneService.DEBUG)

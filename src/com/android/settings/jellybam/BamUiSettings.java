@@ -731,7 +731,7 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
             mCrtOn.setEnabled(isCrtOffChecked);
             return true;
 	} else if (preference == mVolumeKeyCursorControl) {
-            String volumeKeyCursorControl = (String) value;
+            String volumeKeyCursorControl = (String) Value;
             int val = Integer.parseInt(volumeKeyCursorControl);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.VOLUME_KEY_CURSOR_CONTROL, val);
