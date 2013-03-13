@@ -97,6 +97,9 @@ public class QuickSettingsUtil {
         TILES.put(TILE_SYNC, new QuickSettingsUtil.TileInfo(
                 TILE_SYNC, R.string.title_tile_sync,
                 "com.android.systemui:drawable/ic_qs_sync_off"));
+        TILES.put(TILE_NETWORKMODE, new QuickSettingsUtil.TileInfo(
+                TILE_NETWORKMODE, R.string.title_tile_networkmode,
+                "com.android.systemui:drawable/ic_qs_2g3g_on"));
         TILES.put(TILE_SCREENTIMEOUT, new QuickSettingsUtil.TileInfo(
                 TILE_SCREENTIMEOUT, R.string.title_tile_screen_timeout,
                 "com.android.systemui:drawable/ic_qs_screen_timeout_off"));
