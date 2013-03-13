@@ -33,6 +33,7 @@ import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.MultiSelectListPreference;
 import android.preference.Preference;
+import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceGroup;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -40,6 +41,7 @@ import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
 import android.provider.ContactsContract;
 import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException;
 import android.text.Spannable;
 import android.text.TextUtils;
 import android.view.Window;
@@ -242,6 +244,11 @@ public class BamQuickSettings extends SettingsPreferenceFragment
         mNotificationWallpaperLandscape = (ListPreference) findPreference(PREF_NOTIFICATION_WALLPAPER_LANDSCAPE);
         mNotificationWallpaperLandscape.setOnPreferenceChangeListener(this);
 
+        int iconOpacity = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.STATUS_BAR_NOTIF_ICON_OPACITY, 140);
+        mStatusBarIconOpacity.setValue(String.valueOf(iconOpacity));
+        mStatusBarIconOpacity.setOnPreferenceChangeListener(this);
+
         float wallpaperTransparency;
         try{
             wallpaperTransparency = Settings.System.getFloat(getActivity().getContentResolver(), Settings.System.NOTIF_WALLPAPER_ALPHA);
@@ -266,11 +273,6 @@ public class BamQuickSettings extends SettingsPreferenceFragment
         mNotifAlpha.setProperty(Settings.System.NOTIF_ALPHA);
         mNotifAlpha.setOnPreferenceChangeListener(this);
         updateCustomBackgroundSummary();
-
-        int iconOpacity = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.STATUS_BAR_NOTIF_ICON_OPACITY, 140);
-        mStatusBarIconOpacity.setValue(String.valueOf(iconOpacity));
-        mStatusBarIconOpacity.setOnPreferenceChangeListener(this);
     }
 }
 
@@ -405,12 +407,12 @@ public class BamQuickSettings extends SettingsPreferenceFragment
                     Settings.System.EXPANDED_HAPTIC_FEEDBACK, intValue);
             mPowerWidgetHapticFeedback.setSummary(mPowerWidgetHapticFeedback.getEntries()[index]);
             return true;
-        }  else if (preference == mStatusBarIconOpacity) {
+        } else if (preference == mStatusBarIconOpacity) {
             int iconOpacity = Integer.valueOf((String) newValue);
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.STATUS_BAR_NOTIF_ICON_OPACITY, iconOpacity);
             return true;
-         } else if (preference == mStatusBarMaxNotif) {
+        } else if (preference == mStatusBarMaxNotif) {
             int maxNotIcons = Integer.valueOf((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.MAX_NOTIFICATION_ICONS, maxNotIcons);
