@@ -5813,6 +5813,8 @@
     <string name="spen_gestures_cat">S Pen Gestures</string>
     <string name="enable_stylus_pointer_title">Enable S Pen pointer</string>
     <string name="enable_stylus_pointer_summary">Enable the mouse icon when using the S Pen</string>
+    <string name="status_bar_icon_opacity">Notification icon opacity</string>
+    <string name="status_bar_icon_opacity_summary">Sets opacity of status bar notification icons</string>
 
     <!-- Header Summaries -->
     <string name="header_summary_clock">@null</string>

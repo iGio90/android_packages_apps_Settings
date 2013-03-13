@@ -125,6 +125,7 @@ public class BamQuickSettings extends SettingsPreferenceFragment
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
     private static final String PREF_NOTIFICATION_ALPHA = "notification_alpha";
     private static final String KEY_MMS_BREATH = "mms_breath";
+    private static final String KEY_STATUS_BAR_ICON_OPACITY = "status_bar_icon_opacity";
 
     private ListPreference mNotificationWallpaper;
     private ListPreference mNotificationWallpaperLandscape;
@@ -136,6 +137,7 @@ public class BamQuickSettings extends SettingsPreferenceFragment
     private CheckBoxPreference mStatusBarDoNotDisturb;
     private CheckBoxPreference mQuickPullDown;
     private CheckBoxPreference mMMSBreath;
+    private ListPreference mStatusBarIconOpacity;
 
     Preference mCustomLabel;
 
@@ -264,6 +266,11 @@ public class BamQuickSettings extends SettingsPreferenceFragment
         mNotifAlpha.setProperty(Settings.System.NOTIF_ALPHA);
         mNotifAlpha.setOnPreferenceChangeListener(this);
         updateCustomBackgroundSummary();
+
+        int iconOpacity = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.STATUS_BAR_NOTIF_ICON_OPACITY, 140);
+        mStatusBarIconOpacity.setValue(String.valueOf(iconOpacity));
+        mStatusBarIconOpacity.setOnPreferenceChangeListener(this);
     }
 }
 
@@ -398,7 +405,12 @@ public class BamQuickSettings extends SettingsPreferenceFragment
                     Settings.System.EXPANDED_HAPTIC_FEEDBACK, intValue);
             mPowerWidgetHapticFeedback.setSummary(mPowerWidgetHapticFeedback.getEntries()[index]);
             return true;
-        } else if (preference == mStatusBarMaxNotif) {
+        }  else if (preference == mStatusBarIconOpacity) {
+            int iconOpacity = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.STATUS_BAR_NOTIF_ICON_OPACITY, iconOpacity);
+            return true;
+         } else if (preference == mStatusBarMaxNotif) {
             int maxNotIcons = Integer.valueOf((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.MAX_NOTIFICATION_ICONS, maxNotIcons);
