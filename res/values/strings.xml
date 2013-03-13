@@ -5817,6 +5817,8 @@
     <string name="volume_key_cursor_control_off">Disabled</string>
     <string name="volume_key_cursor_control_on">Volume up/down moves cursor left/right</string>
     <string name="volume_key_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
+    <string name="swap_volume_keys_title">Swap volume buttons</string>
+    <string name="swap_volume_keys_summary">Swap volume buttons when the screen is rotated by 90 or 180 degrees</string>
 
     <!-- JELLYBAM CHANGELOG -->
     <string name="bam_changelog_title">Release changelog</string>

@@ -33,6 +33,7 @@ public class BamSoundSettings extends SettingsPreferenceFragment implements
     private static final String PREF_USER_DOWN_MS = "user_down_ms";
     private static final String PREF_PHONE_RING_SILENCE = "phone_ring_silence";
     private static final String PREF_LESS_NOTIFICATION_SOUNDS = "less_notification_sounds";
+    private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
 
     SharedPreferences prefs;
     ListPreference mHeadphonesPluggedAction;
@@ -42,6 +43,8 @@ public class BamSoundSettings extends SettingsPreferenceFragment implements
     ListPreference mFlipScreenOff;
     ListPreference mPhoneSilent;
     ListPreference mAnnoyingNotifications;
+
+    private CheckBoxPreference mSwapVolumeButtons;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -71,6 +74,10 @@ public class BamSoundSettings extends SettingsPreferenceFragment implements
         mPhoneSilent.setValue((prefs.getString(PREF_PHONE_RING_SILENCE, "0")));
         mPhoneSilent.setOnPreferenceChangeListener(this);
 
+        mSwapVolumeButtons = (CheckBoxPreference) findPreference(KEY_SWAP_VOLUME_BUTTONS);
+        mSwapVolumeButtons.setChecked(Settings.System.getInt(resolver,
+                Settings.System.SWAP_VOLUME_KEYS, 0) == 1);
+
         if (HeadphoneService.DEBUG)
             mContext.startService(new Intent(mContext, HeadphoneService.class));
 
@@ -81,7 +88,10 @@ public class BamSoundSettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
-
+	if (preference == mSwapVolumeButtons) {
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.SWAP_VOLUME_KEYS,
+                    mSwapVolumeButtons.isChecked() ? 1 : 0);
+	}
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
