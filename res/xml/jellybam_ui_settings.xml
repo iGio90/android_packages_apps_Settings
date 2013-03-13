@@ -124,6 +124,14 @@
         android:entryValues="@array/keyboard_rotation_timeout_values"
         android:dependency="keyboard_rotation_toggle" />
 
+    <ListPreference
+            android:key="volume_key_cursor_control"
+            android:persistent="false"
+            android:dialogTitle="@string/volume_key_cursor_control_title"
+            android:title="@string/volume_key_cursor_control_title"
+            android:entries="@array/volume_key_cursor_control_entries"
+            android:entryValues="@array/volume_key_cursor_control_values" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
