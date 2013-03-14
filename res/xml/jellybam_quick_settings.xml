@@ -2,49 +2,6 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" 
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <!-- Customization -->
-    <PreferenceCategory
-       android:title="@string/quick_customization">
-
-        <ListPreference
-            android:key="notification_wallpaper"
-            android:persistent="false"
-            android:dialogTitle="@string/notification_wallpaper_title"
-            android:title="@string/notification_wallpaper_title"
-            android:entries="@array/notification_wallpaper_entries"
-            android:entryValues="@array/notification_wallpaper_values"/>
-
-        <ListPreference
-            android:key="notification_wallpaper_landscape"
-            android:persistent="false"
-            android:dialogTitle="@string/notification_wallpaper_landscape_title"
-            android:title="@string/notification_wallpaper_landscape_title"
-            android:entries="@array/notification_wallpaper_landscape_entries"
-            android:entryValues="@array/notification_wallpaper_landscape_values"/>
-
-        <com.android.settings.widget.SeekBarPreference
-             android:key="notification_wallpaper_alpha"
-             android:title="@string/notif_wallpaper_alpha_title" />
-
-        <com.android.settings.widget.SeekBarPreference
-             android:key="notification_alpha"
-             android:title="@string/notif_alpha_title" />
-
-    </PreferenceCategory>
-
-    <!-- Notification Shortcuts -->
-    <PreferenceCategory
-       android:title="@string/quick_shortctus">
-
-        <PreferenceScreen
-            android:id="@+id/slim_notification_shortcuts"
-            android:fragment="com.android.settings.carbon.notificationshortcuts.NotificationShortcuts"
-            android:key="slim_shortcuts_settings"
-            android:title="@string/notification_shortcuts_settings_title"
-            android:summary="@string/notification_shortcuts_settings_summary" />
-
-    </PreferenceCategory>
-
     <!-- Notification drawer Power Widget -->
     <PreferenceCategory
        android:title="@string/power_widget_title">
@@ -69,6 +26,68 @@
             android:dependency="expanded_widget"
             android:fragment="com.android.settings.jellybam.PowerWidget$PowerWidgetOrder">
         </PreferenceScreen>
+
+    </PreferenceCategory>
+
+    <!-- Notification Shortcuts -->
+    <PreferenceCategory
+       android:title="@string/quick_shortctus">
+
+        <PreferenceScreen
+            android:id="@+id/slim_notification_shortcuts"
+            android:fragment="com.android.settings.carbon.notificationshortcuts.NotificationShortcuts"
+            android:key="slim_shortcuts_settings"
+            android:title="@string/notification_shortcuts_settings_title"
+            android:summary="@string/notification_shortcuts_settings_summary" />
+
+    </PreferenceCategory>
+
+    <!-- Customization -->
+    <PreferenceCategory
+       android:title="@string/quick_customization">
+
+         <CheckBoxPreference
+            android:key="mms_breath"
+            android:title="@string/mms_breath"
+            android:summary="@string/mms_breath_summary"
+            android:defaultValue="false" />
+
+    <ListPreference
+        android:key="status_bar_icon_opacity"
+        android:dialogTitle="@string/status_bar_icon_opacity"
+        android:title="@string/status_bar_icon_opacity"
+        android:summary="@string/status_bar_icon_opacity_summary"
+        android:entries="@array/status_bar_icon_opacity_entries"
+        android:entryValues="@array/status_bar_icon_opacity_values"
+        android:defaultValue="140" />
+
+        <Preference
+            android:key="custom_carrier_label"
+            android:title="@string/custom_carrier_label_title" />
+
+        <ListPreference
+            android:key="notification_wallpaper"
+            android:persistent="false"
+            android:dialogTitle="@string/notification_wallpaper_title"
+            android:title="@string/notification_wallpaper_title"
+            android:entries="@array/notification_wallpaper_entries"
+            android:entryValues="@array/notification_wallpaper_values"/>
+
+        <ListPreference
+            android:key="notification_wallpaper_landscape"
+            android:persistent="false"
+            android:dialogTitle="@string/notification_wallpaper_landscape_title"
+            android:title="@string/notification_wallpaper_landscape_title"
+            android:entries="@array/notification_wallpaper_landscape_entries"
+            android:entryValues="@array/notification_wallpaper_landscape_values"/>
+
+        <com.android.settings.widget.SeekBarPreference
+             android:key="notification_wallpaper_alpha"
+             android:title="@string/notif_wallpaper_alpha_title" />
+
+        <com.android.settings.widget.SeekBarPreference
+             android:key="notification_alpha"
+             android:title="@string/notif_alpha_title" />
 
     </PreferenceCategory>
 
@@ -107,16 +126,6 @@
             android:summary="@string/quick_pulldown_summary"
             android:defaultValue="false" />
 
-         <CheckBoxPreference
-            android:key="mms_breath"
-            android:title="@string/mms_breath"
-            android:summary="@string/mms_breath_summary"
-            android:defaultValue="false" />
-
-        <Preference
-            android:key="custom_carrier_label"
-            android:title="@string/custom_carrier_label_title" />
-
         <CheckBoxPreference
             android:key="status_bar_notif_count"
             android:title="@string/status_bar_notif_count_title"
@@ -147,14 +156,6 @@
             android:summary="@string/status_bar_donotdisturb_summary"
             android:defaultValue="false" />
 
-    <ListPreference
-        android:key="status_bar_icon_opacity"
-        android:dialogTitle="@string/status_bar_icon_opacity"
-        android:title="@string/status_bar_icon_opacity"
-        android:summary="@string/status_bar_icon_opacity_summary"
-        android:entries="@array/status_bar_icon_opacity_entries"
-        android:entryValues="@array/status_bar_icon_opacity_values"
-        android:defaultValue="140" />
     </PreferenceCategory>
 
 </PreferenceScreen>

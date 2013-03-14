@@ -5307,6 +5307,7 @@
     <string name="bamcontrol_statusbar">Statusbar</string>
     <string name="bamcontrol_system">System</string>
     <string name="bamcontrol_navigation_bar">Navigation Bar</string>
+    <string name="bamcontrol_tiles">Notification Tiles</string>
     <string name="bamlockscreen_security">Security</string>
     <string name="bamlockscreen_style">Style</string>
     <string name="bamlockscreen_widgets">Widgets</string>

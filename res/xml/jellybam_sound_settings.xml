@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
-  <CheckBoxPreference
-        android:key="swap_volume_buttons"
-        android:title="@string/swap_volume_keys_title"
-        android:summary="@string/swap_volume_keys_summary"
-        android:dependency="accelerometer" />
-
-    <ListPreference
+     <ListPreference
         android:entries="@array/less_notification_sounds_entries"
         android:entryValues="@array/less_notification_sounds_values"
         android:key="less_notification_sounds"
         android:summary="@string/less_notification_sounds_summary"
         android:title="@string/less_notification_sounds_title" />
+
     <ListPreference
         android:defaultValue="-1"
         android:entries="@array/headphone_audio_mode_entries"
