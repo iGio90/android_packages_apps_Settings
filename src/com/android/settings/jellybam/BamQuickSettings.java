@@ -127,6 +127,7 @@ public class BamQuickSettings extends SettingsPreferenceFragment
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
     private static final String PREF_NOTIFICATION_ALPHA = "notification_alpha";
     private static final String KEY_MMS_BREATH = "mms_breath";
+    private static final String KEY_MISSED_CALL_BREATH = "missed_call_breath";
     private static final String KEY_STATUS_BAR_ICON_OPACITY = "status_bar_icon_opacity";
 
     private ListPreference mNotificationWallpaper;
@@ -139,6 +140,7 @@ public class BamQuickSettings extends SettingsPreferenceFragment
     private CheckBoxPreference mStatusBarDoNotDisturb;
     private CheckBoxPreference mQuickPullDown;
     private CheckBoxPreference mMMSBreath;
+    private CheckBoxPreference mMissedCallBreath;
     private ListPreference mStatusBarIconOpacity;
 
     Preference mCustomLabel;
@@ -235,6 +237,11 @@ public class BamQuickSettings extends SettingsPreferenceFragment
             mPowerWidgetHapticFeedback.setValue(Integer.toString(Settings.System.getInt(
                     getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.EXPANDED_HAPTIC_FEEDBACK, 2)));
+
+        mMissedCallBreath = (CheckBoxPreference) findPreference(KEY_MISSED_CALL_BREATH);
+        mMissedCallBreath.setChecked(Settings.System.getInt(getActivity().getApplicationContext()
+                    .getContentResolver(),
+                Settings.System.MISSED_CALL_BREATH, 0) == 1);
 
             mMMSBreath = (CheckBoxPreference) findPreference(KEY_MMS_BREATH);
             mMMSBreath.setChecked(Settings.System.getInt(getActivity().getApplicationContext()
@@ -621,6 +628,9 @@ public class BamQuickSettings extends SettingsPreferenceFragment
                 }
             });
             alert.show();
+          } else if (preference == mMissedCallBreath) {
+            Settings.System.putInt(mContext.getContentResolver(), Settings.System.MISSED_CALL_BREATH,
+                    mMissedCallBreath.isChecked() ? 1 : 0);
           } else if (preference == mMMSBreath) {
                 Settings.System.putInt(mContext.getContentResolver(), Settings.System.MMS_BREATH,
                         mMMSBreath.isChecked() ? 1 : 0);
