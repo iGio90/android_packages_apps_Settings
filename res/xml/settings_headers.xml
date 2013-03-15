@@ -270,13 +270,6 @@
                 android:targetClass="com.brewcrewfoo.performance.activities.MainActivity" />
     </header>
 
-    <!-- Performance -->
-    <header
-        android:id="@+id/performance_settings"
-        android:fragment="com.android.settings.cyanogenmod.PerformanceSettings"
-        android:icon="@drawable/ic_settings_performance"
-        android:title="@string/performance_settings_title" />
-
     <!-- Change Log -->
     <header
          android:icon="@drawable/ic_settings_changelog"
