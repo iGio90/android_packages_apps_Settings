@@ -129,7 +129,6 @@ public class Settings extends PreferenceActivity
             R.id.launcher_settings,
             R.id.themes_settings,
             R.id.hybrid_settings,
-            R.id.performance,
             R.id.advanced_settings
     };
 
@@ -486,8 +485,7 @@ public class Settings extends PreferenceActivity
                         || Utils.isMonkeyRunning()) {
                     target.remove(i);
                 }
-            } else if (id == R.id.development_settings
-                    || id == R.id.performance_settings) {
+            } else if (id == R.id.development_settings) {
                 if (!showDev) {
                     target.remove(i);
                 }
