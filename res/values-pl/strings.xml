@@ -4649,7 +4649,7 @@
   <!--About JellyBam-->
   <string name="about_jb_settings_title">O JellyBam</string>
   <string name="about_jellybam">O JellyBam</string>
-  <string name="about_jellybam_summary">@nul</string>
+  <string name="about_jellybam_summary">@null</string>
   <string name="app_name">JELLYBAM</string>
   <string name="devs">Developer</string>
   <string name="grap">Grafika</string>
