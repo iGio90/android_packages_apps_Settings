@@ -23,6 +23,7 @@ import android.content.IntentFilter;
 import android.provider.Settings;
 import android.widget.CompoundButton;
 import android.widget.Switch;
+import com.android.settings.util.Helpers;
 
 public class TRDSEnabler implements CompoundButton.OnCheckedChangeListener {
     private final Context mContext;
@@ -66,6 +67,7 @@ public class TRDSEnabler implements CompoundButton.OnCheckedChangeListener {
         // Handle a switch change
         Settings.Secure.putInt(mContext.getContentResolver(),
                 Settings.Secure.UI_INVERTED_MODE, isChecked ? 1 : 0);
+        Helpers.restartSystemUI(); 
     }
 
 }

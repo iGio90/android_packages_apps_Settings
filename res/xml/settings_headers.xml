@@ -196,14 +196,7 @@
             android:targetClass="com.paranoid.preferences.MainActivity" />
     </header>
 
-    <!-- Superuser -->
-    <header
-        android:id="@+id/superuser"
-        android:fragment="com.koushikdutta.superuser.PolicyNativeFragment"
-        android:icon="@drawable/ic_settings_superuser"
-        android:title="@string/superuser" />
-
-    <!-- TRDS -->
+    <!-- Holo Bam -->
     <header
         android:id="@+id/holobam_settings"
         android:icon="@drawable/ic_settings_holobam"
@@ -259,6 +252,13 @@
         android:fragment="com.android.settings.DevelopmentSettings"
         android:icon="@drawable/ic_settings_development"
         android:title="@string/development_settings_title" />
+
+    <!-- Superuser -->
+    <header
+        android:id="@+id/superuser"
+        android:fragment="com.koushikdutta.superuser.PolicyNativeFragment"
+        android:icon="@drawable/ic_settings_superuser"
+        android:title="@string/superuser" />
 
     <!-- PERFORMANCE CONTROL -->
     <header android:id="@+id/performance"
