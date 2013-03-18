@@ -1534,6 +1534,7 @@
         <item>@string/rb_battery1</item>
         <item>@string/rb_battery2</item>
         <item>@string/rb_battery3</item>
+        <item>@string/gear_battery</item>
         <item>@string/dont_show</item>
     </string-array>
     <string-array name="battery_icon_values" translatable="false">
@@ -1545,6 +1546,7 @@
         <item>5</item>
         <item>6</item>
         <item>7</item>
+        <item>8</item>
     </string-array>
 
     <string-array name="battery_bar_entries" translatable="false">
