@@ -672,14 +672,16 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
     };
 
     private void installBootAnim(DialogInterface dialog, String bootAnimationPath) {
-        //Update setting to reflect that boot animation is now enabled
+	        //Update setting to reflect that boot animation is now enabled
         mDisableBootAnimation.setChecked(false);
-        DisableBootAnimation();
+	        DisableBootAnimation();
         dialog.dismiss();
-        Executable installScript = new Executable(
-                "cp " + bootAnimationPath + " /data/local/bootanimation.zip",
-                "chmod 644 /data/local/bootanimation.zip");
-        mCMDProcessor.su.runWaitFor(installScript);
+        new AbstractAsyncSuCMDProcessor() {
+          @Override
+          protected void onPostExecute(String result) {
+          }
+        }.execute("cp " + bootAnimationPath + " /data/local/bootanimation.zip",
+                 "chmod 644 /data/local/bootanimation.zip");
     }
 
     private void DisableBootAnimation() {
