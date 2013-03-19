@@ -16,14 +16,17 @@
 
 package com.android.settings.slim;
 
-import android.util.Slog;
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.provider.Settings;
+import android.util.Slog;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import com.android.settings.util.Helpers;
+
+import java.util.List;
 
 public class TRDSEnabler implements CompoundButton.OnCheckedChangeListener {
     private final Context mContext;
@@ -67,7 +70,25 @@ public class TRDSEnabler implements CompoundButton.OnCheckedChangeListener {
         // Handle a switch change
         Settings.Secure.putInt(mContext.getContentResolver(),
                 Settings.Secure.UI_INVERTED_MODE, isChecked ? 1 : 0);
-        Helpers.restartSystemUI(); 
+        Helpers.restartSystemUI();
+
+        ActivityManager am = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningAppProcessInfo> pids = am.getRunningAppProcesses();
+           for(int i = 0; i < pids.size(); i++) {
+               ActivityManager.RunningAppProcessInfo info = pids.get(i);
+               if(info.processName.equalsIgnoreCase("com.android.contacts")) {
+                    am.killBackgroundProcesses("com.android.contacts");
+               }
+               if(info.processName.equalsIgnoreCase("com.google.android.gm")) {
+                    am.killBackgroundProcesses("com.google.android.gm");
+               }
+               if(info.processName.equalsIgnoreCase("com.android.email")) {
+                    am.killBackgroundProcesses("com.android.email");
+               }
+               if(info.processName.equalsIgnoreCase("com.android.vending")) {
+                    am.killBackgroundProcesses("com.android.vending");
+               }
+           }
     }
 
 }
