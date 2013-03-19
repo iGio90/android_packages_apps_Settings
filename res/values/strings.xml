@@ -5528,8 +5528,6 @@
     <string name="battery_bar_thickness_title">Battery bar thickness</string>
     <string name="battery_bar_animate_title">Charging animation</string>
     <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion.</string>
-    <string name="icon_only">Icon only</string>
-    <string name="text_only">Text only</string>
     <string name="right_clock">Right clock</string>
     <string name="center_clock">Center clock</string>
     <string name="no_clock">No clock</string>
