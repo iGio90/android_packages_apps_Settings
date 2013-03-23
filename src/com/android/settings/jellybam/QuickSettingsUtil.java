@@ -41,6 +41,7 @@ import static com.android.internal.util.cm.QSConstants.TILE_DESKTOPMODE;
 import static com.android.internal.util.cm.QSConstants.TILE_VOLUME;
 import static com.android.internal.util.cm.QSUtils.deviceSupportsBluetooth;
 import static com.android.internal.util.cm.QSUtils.deviceSupportsTelephony;
+import static com.android.internal.util.cm.QSConstants.TILE_HYBRID;
 
 import android.content.Context;
 import android.provider.Settings;
@@ -123,6 +124,9 @@ public class QuickSettingsUtil {
         TILES.put(TILE_VOLUME, new QuickSettingsUtil.TileInfo(
                 TILE_VOLUME, R.string.title_tile_volume,
                 "com.android.systemui:drawable/ic_qs_volume"));
+        TILES.put(TILE_HYBRID, new QuickSettingsUtil.TileInfo(
+                TILE_HYBRID, R.string.title_tile_hybrid,
+                "com.android.systemui:drawable/ic_qs_hybrid"));
     }
 
     public static String getCurrentTiles(Context context) {
