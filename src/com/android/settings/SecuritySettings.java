@@ -618,6 +618,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
         }
         if (mVisibleDots != null) {
             mVisibleDots.setChecked(lockPatternUtils.isVisibleDotsEnabled());
+	}
         if (mQuickUnlock != null) {
             mQuickUnlock.setChecked(Settings.System.getBoolean(getContentResolver(),
                     Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, false));
