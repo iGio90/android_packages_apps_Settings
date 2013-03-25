@@ -4726,9 +4726,6 @@
     <string name="notification_convert_sound_to_vibration_title">Vibrate on notification</string>
     <string name="notification_convert_sound_to_vibration_summary">In vibrate mode, all notifications will vibrate regardless of individual app settings</string>
 
-    <string name="lockscreen_quick_unlock_control_title">Quick pin unlock</string>
-    <string name="lockscreen_quick_unlock_control_summary">Unlock password/pin lockscreen without pressing enter button</string>
-
     <!-- Hostname setting -->
     <string name="device_hostname">Device hostname</string>
 
@@ -4759,8 +4756,6 @@
 
     <!-- Lock Screen Shortcuts -->
     <string name="lockscreen_target_info">Drag the slider to targets to assign shortcuts</string>
-    <string name="lockscreen_target_title">Slider shortcuts</string>
-    <string name="lockscreen_target_summary">View or change custom lock screen shortcuts</string>
     <string name="lockscreen_target_reset">Lock screen shortcuts reset to default</string>
     <string name="lockscreen_target_save">Lock screen shortcuts saved</string>
     <string name="lockscreen_target_reset_title">Reset</string>
@@ -4768,6 +4763,16 @@
     <string name="lockscreen_target_empty">Empty</string>
     <string name="lockscreen_target_edit_title">Edit shortcut and icon</string>
     <string name="lockscreen_target_edit_msg">Select or change the desired application or activity and the associated icon</string>
+    <string name="lockscreen_all_widgets_title">Allow all widgets</string>
+    <string name="lockscreen_all_widgets_summary">Warning** Some widgets are not intended to be used on the lockscreen, The widget maker and AOKP are not responsible for your choice of lockscreen widgets. Choose responsibly.</string>
+    <string name="lockscreen_targets_title">Lockscreen targets</string>
+    <string name="lockscreen_targets_summary">Lockscreen targets summary.</string>
+    <string name="lockscreen_target_longpress_text">Longpress status</string>
+    <string name="lockscreen_camera">Camera</string>
+    <string name="lockscreen_unlock">Unlock</string>
+    <string name="save_error">Could not save targets! You must have at least one unlock target!</string>
+    <string name="lockscreen_target_longpress_summary">Enables long press options for lock screen targets</string>
+    <string name="lockscreen_options_info">Touch text to get summary of each option</string>
 
     <!-- Lock screen vibrate settings -->
     <string name="lockscreen_vibrate_enabled_title">Vibrate</string>
@@ -5327,12 +5332,11 @@
     <string name="text_off">Off</string>
     <string name="text_on">On</string>
     <string name="lockscreen_text_color_title">Lockscreen text color</string>
+    <string name="lockscreen_text_color_summary">Set the lockscreen text color</string>
     <string name="lockscreen_hide_initial_page_hints_title">Hide initial page hints</string>
     <string name="lockscreen_hide_initial_page_hints_summary">Set whether the hints for the left and right widgets are shown when the screen is turned on.</string>
     <string name="lockscreen_minimize_challenge_title">Minimize lockscreen challenge</string>
     <string name="lockscreen_minimize_challenge_summary">Set whether the lockscreen challenge (circle, pattern, pin) is minimized when the screen is turned on.</string>
-    <string name="lockscreen_longpress_challenge_title">Enable longpress to unlock</string>
-    <string name="lockscreen_longpress_challenge_summary">This enables your device to be unlocked with the widgets maximised by long pressing the lock icon.</string>
     <string name="lockscreen_battery_title">Lockscreen battery percentage</string>
     <string name="lockscreen_battery_summary">Always show battery percentage on the lockscreen</string>
     <string name="lockscreen_unlimited_widgets_title">Allow unlimited widgets</string>

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:prvandroid="http://schemas.android.com/apk/prv/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal" >
+    android:orientation="horizontal"
+    android:weightSum="1" >
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:layout_weight="0.5"
         android:orientation="vertical" >
 
         <TextView
@@ -53,6 +55,7 @@
                 android:clickable="true"
                 android:gravity="right"
                 android:padding="4dip" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -358,12 +361,12 @@
 
     <com.android.internal.widget.multiwaveview.GlowPadView
         android:id="@+id/lock_target"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:layout_gravity="center_vertical"
         android:contentDescription="@*android:string/keyguard_accessibility_slide_area"
-        android:gravity="bottom"
+        android:gravity="left"
         android:orientation="horizontal"
         prvandroid:allowScaling="true"
         prvandroid:directionDescriptions="@*android:array/lockscreen_direction_descriptions"
@@ -381,4 +384,4 @@
         prvandroid:targetDrawables="@*android:array/lockscreen_targets_unlock_only"
         prvandroid:vibrationDuration="20" />
 
-</RelativeLayout>
+</LinearLayout>
