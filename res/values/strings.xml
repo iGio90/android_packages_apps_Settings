@@ -5326,8 +5326,6 @@
     <string name="bamlockscreen_misc">Misc</string>
     <string name="text_off">Off</string>
     <string name="text_on">On</string>
-    <string name="lockscreen_quick_unlock_control_title">Quick pin unlock</string>
-    <string name="lockscreen_quick_unlock_control_summary">Unlock password/pin lockscreen without pressing enter button</string>
     <string name="lockscreen_text_color_title">Lockscreen text color</string>
     <string name="lockscreen_hide_initial_page_hints_title">Hide initial page hints</string>
     <string name="lockscreen_hide_initial_page_hints_summary">Set whether the hints for the left and right widgets are shown when the screen is turned on.</string>
