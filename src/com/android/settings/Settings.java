@@ -901,4 +901,6 @@ public class Settings extends PreferenceActivity
     public static class BamSoundSettingsActivity extends Settings { /* empty */ }
     public static class BamLedSettingsActivity extends Settings { /* empty */ }
     public static class BamVibrationSettingsActivity extends Settings { /* empty */ }
+    public static class BAMModderSettingsActivity extends Settings { /* empty */ }
+    public static class BamModderLaunchersSettingsActivity extends Settings { /* empty */ }
 }

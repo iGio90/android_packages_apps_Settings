@@ -34,14 +34,14 @@ import com.android.settings.SettingsPreferenceFragment;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class BAMControl extends SettingsPreferenceFragment {
-    private static final String TAG = "BAMControl";
+public class BAMModder extends SettingsPreferenceFragment {
+    private static final String TAG = "BAMModder";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.bamcontrol);
+        addPreferencesFromResource(R.xml.bammodder);
         PreferenceScreen prefScreen = getPreferenceScreen();
 
     }

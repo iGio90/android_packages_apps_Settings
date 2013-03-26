@@ -185,6 +185,13 @@
         android:fragment="com.android.settings.jellybam.BAMControl"
         android:title="@string/bamcontrol_settings_title" />
 
+    <!-- BAM Control -->
+    <header
+        android:id="@+id/bammodder"
+        android:icon="@drawable/ic_settings_bammodder"
+        android:fragment="com.android.settings.jellybam.BAMModder"
+        android:title="@string/bammodder_settings_title" />
+
     <!-- Hybrid options -->
     <header
         android:id="@+id/hybrid_settings"

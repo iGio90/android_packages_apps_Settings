@@ -5878,4 +5878,13 @@
     <string name="header_summary_lockscreens">@null</string>
     <string name="header_summary_weather">@null</string>
     <string name="header_summary_vibrations">@null</string>
+
+    <!-- BAM Modder -->
+    <string name="bammodder_settings_title">BAM Modder</string> 
+    <string name="bam_modder_launchers_title">Launchers</string>
+    <string name="bam_modder_sound_title">Sounds</string>
+    <string name="bam_modder_graphics_title">Graphics</string>
+    <string name="bam_modder_misc_title">Miscellaneus</string>
+
+    <string name="bammodder_launchers_touchwiz">TouchWiz Launcher</string>
 </resources>
