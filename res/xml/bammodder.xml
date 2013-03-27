@@ -18,28 +18,51 @@
     android:title="@string/system_interface_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+        <Preference
+            style="?android:preferenceInformationStyle"
+            android:title="@string/bam_modder_welcome"
+            android:icon="@drawable/ic_settings_bammodder"
+            android:summary="@string/bam_modder_welcome_summary"
+            android:selectable="false" />
+
+        <PreferenceCategory
+                android:key="bam_modder_categories"
+                android:title="@string/bam_modder_categories">
+        </PreferenceCategory>
+
     <PreferenceScreen
         android:key="bam_modder_launchers"
-	android:icon="@drawable/ic_settings_bamuisettings"
+	android:icon="@drawable/ic_settings_launcher"
         android:fragment="com.android.settings.jellybam.bammodder.BamModderLaunchers"
         android:title="@string/bam_modder_launchers_title" />
 
     <PreferenceScreen
-        android:key="bam_modder_sound"
-        android:icon="@drawable/ic_settings_bamuisettings"
+        android:key="bam_modder_sounds"
+        android:icon="@drawable/ic_settings_bamsound"
         android:fragment="com.android.settings.jellybam.bammodder.BamModderLaunchers"
         android:title="@string/bam_modder_sound_title" />
 
     <PreferenceScreen
         android:key="bam_modder_graphics"
-        android:icon="@drawable/ic_settings_bamuisettings"
+        android:icon="@drawable/ic_settings_themes"
         android:fragment="com.android.settings.jellybam.bammodder.BamModderLaunchers"
         android:title="@string/bam_modder_graphics_title" />
 
     <PreferenceScreen
-        android:key="bam_modder_misc"
+        android:key="bam_modder_miscs"
         android:icon="@drawable/ic_settings_bamuisettings"
         android:fragment="com.android.settings.jellybam.bammodder.BamModderLaunchers"
         android:title="@string/bam_modder_misc_title" />
+
+        <PreferenceCategory
+                android:key="bam_modder_about"
+                android:title="@string/bam_modder_about">
+        </PreferenceCategory>
+
+        <Preference
+	    android:key="bammodderstore"
+            android:title="@string/bam_modder_support_us"
+            android:icon="@drawable/ic_settings_bammodder"
+            android:summary="@string/bam_modder_support_us_summary" />
 
 </PreferenceScreen>

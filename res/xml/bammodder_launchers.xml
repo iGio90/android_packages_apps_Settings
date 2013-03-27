@@ -19,19 +19,41 @@
     android:title="@string/jellybam_ui_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+        <PreferenceCategory
+                android:key="bam_modder_launchers_samsung"
+                android:title="@string/bam_modder_launchers_samsung">
+        </PreferenceCategory>
+
         <PreferenceScreen
-            android:key="bammodder_launchers_touchwiz"
+            android:key="bam_modder_launchers_touchwiz_weather"
             android:icon="@drawable/ic_settings_bamxposed"
-            android:title="@string/bammodder_launchers_touchwiz" >
+            android:title="@string/bam_modder_launchers_touchwiz_weather" 
+	    android:summary="@string/bam_modder_launchers_touchwiz_weather_summary" >
             <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="com.bam.android.bammodder"
-                android:targetClass="com.bam.android.bammodder.TouchWiz" />
+                android:targetClass="com.bam.android.bammodder.TouchWizWeather" />
         </PreferenceScreen>
 
         <PreferenceScreen
-            android:key="bammodder_launchers_xperiahome"
+            android:key="bam_modder_launchers_touchwiz_noweather"
             android:icon="@drawable/ic_settings_bamxposed"
-            android:title="@string/bammodder_launchers_xperiahome" >
+            android:title="@string/bam_modder_launchers_touchwiz_noweather" 
+            android:summary="@string/bam_modder_launchers_touchwiz_noweather_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.TouchWizNoWeather" />
+        </PreferenceScreen>
+
+        <PreferenceCategory
+                android:key="bam_modder_launchers_sony"
+                android:title="@string/bam_modder_launchers_sony">
+        </PreferenceCategory>
+
+        <PreferenceScreen
+            android:key="bam_modder_launchers_xperia_home_launcher"
+            android:icon="@drawable/ic_settings_bamxposed"
+            android:title="@string/bam_modder_launchers_xperiahome" 
+            android:summary="@string/bam_modder_launchers_xperiahome_summary" >
             <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="com.bam.android.bammodder"
                 android:targetClass="com.bam.android.bammodder.XperiaHome" />

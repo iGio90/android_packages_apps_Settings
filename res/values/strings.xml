@@ -5879,12 +5879,26 @@
     <string name="header_summary_weather">@null</string>
     <string name="header_summary_vibrations">@null</string>
 
-    <!-- BAM Modder -->
-    <string name="bammodder_settings_title">BAM Modder</string> 
+    <!-- BAMModder -->
+    <string name="bam_modder_settings_title">BAM Modder</string> 
+    <string name="bam_modder_welcome">Welcome to BAM Modder</string>
+    <string name="bam_modder_welcome_summary">Here you can find useful mods to download and flash into your device</string>
+    <string name="bam_modder_support_us">App donate</string>
+    <string name="bam_modder_support_us_summary">By tapping here you can buy the donate version of BAM Modder.\nNo additional features are provided to the donation app, but if you would like to contribute and maintein the project, just tap here!</string>
+    <string name="bam_modder_categories">Mod categories</string>
+    <string name="bam_modder_about">About BAM Modder</string>
+
     <string name="bam_modder_launchers_title">Launchers</string>
     <string name="bam_modder_sound_title">Sounds</string>
     <string name="bam_modder_graphics_title">Graphics</string>
     <string name="bam_modder_misc_title">Miscellaneus</string>
 
-    <string name="bammodder_launchers_touchwiz">TouchWiz Launcher</string>
+    <string name="bam_modder_launchers_samsung">Samsung</string>
+    <string name="bam_modder_launchers_touchwiz_weather">TouchWiz Pack</string>
+    <string name="bam_modder_launchers_touchwiz_weather_summary">This pack includes: Stock Samsung touchwiz launcher with the samsung weather widget</string>
+    <string name="bam_modder_launchers_touchwiz_noweather">TouchWiz Launcher</string>
+    <string name="bam_modder_launchers_touchwiz_noweather_summary">This pack includes: Stock Samsung touchwiz launcher</string>
+    <string name="bam_modder_launchers_sony">Sony</string>
+    <string name="bam_modder_launchers_xperiahome">Xperia Z Home Launcher</string>
+    <string name="bam_modder_launchers_xperiahome_summary">This pack includes: Stock Sony Xperia Z home launcher ported by XDA member ThilinaC</string>
 </resources>
