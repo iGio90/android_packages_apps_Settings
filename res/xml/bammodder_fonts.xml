@@ -24,10 +24,80 @@
                 android:title="@string/bam_modder_fonts_android">
         </PreferenceCategory>
 
+        <PreferenceScreen
+            android:key="bam_modder_fonts_robotolt"
+            android:icon="@drawable/ic_settings_themes"
+            android:title="@string/bam_modder_fonts_robotolt"
+            android:summary="@string/bam_modder_fonts_robotolt_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.RobotoLt" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="bam_modder_fonts_robotocl"
+            android:icon="@drawable/ic_settings_themes"
+            android:title="@string/bam_modder_fonts_robotocl"
+            android:summary="@string/bam_modder_fonts_robotocl_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.RobotoCl" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="bam_modder_fonts_sense"
+            android:icon="@drawable/ic_settings_themes"
+            android:title="@string/bam_modder_fonts_sense"
+            android:summary="@string/bam_modder_fonts_sense_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.SenseFont" />
+        </PreferenceScreen>
+
         <PreferenceCategory
                 android:key="bam_modder_fonts_additional"
                 android:title="@string/bam_modder_fonts_additional">
         </PreferenceCategory>
+
+        <PreferenceScreen
+            android:key="bam_modder_fonts_arial"
+            android:icon="@drawable/ic_settings_themes"
+            android:title="@string/bam_modder_fonts_arial"
+            android:summary="@string/bam_modder_fonts_arial_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.Arial" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="bam_modder_fonts_bpreplay"
+            android:icon="@drawable/ic_settings_themes"
+            android:title="@string/bam_modder_fonts_bpreplay"
+            android:summary="@string/bam_modder_fonts_bpreplay_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.BPReplay" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="bam_modder_fonts_cocon"
+            android:icon="@drawable/ic_settings_themes"
+            android:title="@string/bam_modder_fonts_cocon"
+            android:summary="@string/bam_modder_fonts_cocon_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.Cocon" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="bam_modder_fonts_timesnewroman"
+            android:icon="@drawable/ic_settings_themes"
+            android:title="@string/bam_modder_fonts_timesnewroman"
+            android:summary="@string/bam_modder_fonts_timesnewroman_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.TimesNewRoman" />
+        </PreferenceScreen>
 
 </PreferenceScreen>
 

@@ -25,6 +25,26 @@
         </PreferenceCategory>
 
         <PreferenceScreen
+            android:key="bam_modder_apps_samsung_apps"
+            android:icon="@drawable/ic_settings_bamuisettings"
+            android:title="@string/bam_modder_apps_samsung_apps"
+            android:summary="@string/bam_modder_apps_samsung_apps_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.SApps" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="bam_modder_apps_samsung_smartview"
+            android:icon="@drawable/ic_settings_bamuisettings"
+            android:title="@string/bam_modder_apps_samsung_smartview"
+            android:summary="@string/bam_modder_apps_samsung_smartview_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.SmartView" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
             android:key="bam_modder_apps_samsung_svoice"
             android:icon="@drawable/ic_settings_bamuisettings"
             android:title="@string/bam_modder_apps_samsung_svoice" 
@@ -32,6 +52,16 @@
             <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="com.bam.android.bammodder"
                 android:targetClass="com.bam.android.bammodder.SVoice" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="bam_modder_apps_samsung_paperartist"
+            android:icon="@drawable/ic_settings_bamuisettings"
+            android:title="@string/bam_modder_apps_samsung_paperartist"
+            android:summary="@string/bam_modder_apps_samsung_paperartist_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.PaperArtist" />
         </PreferenceScreen>
 
         <PreferenceCategory

@@ -35,6 +35,12 @@
             rb:twitterHandle="_disca"
             rb:donateLink="@string/donate_bliss" />
 
+                <com.android.settings.widgets.DeveloperPreference
+            android:title="MVODESIGN"
+            rb:nameDev="MVODESIGN"
+            rb:twitterHandle="_MVODESIGN"
+            rb:donateLink="@string/donate_mvodesign" />
+
 	</PreferenceCategory>    
 
 	<PreferenceCategory
