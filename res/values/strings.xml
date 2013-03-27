@@ -5889,30 +5889,45 @@
     <string name="bam_modder_about">About BAM Modder</string>
     <string name="bam_modder_additional">Additional</string>
 
+    <!-- BAMModder Menu -->
     <string name="bam_modder_launchers_title">Launchers</string>
     <string name="bam_modder_sounds_title">Sounds</string>
     <string name="bam_modder_graphics_title">Graphics</string>
     <string name="bam_modder_miscs_title">Miscellaneus</string>
 
+    <!-- BAMModder Launchers -->
     <string name="bam_modder_launchers_samsung">Samsung</string>
     <string name="bam_modder_launchers_touchwiz_weather">TouchWiz Pack</string>
-    <string name="bam_modder_launchers_touchwiz_weather_summary">This pack includes: Stock Samsung touchwiz launcher with the samsung weather widget</string>
+    <string name="bam_modder_launchers_touchwiz_weather_summary">This pack includes:\nStock Samsung touchwiz launcher with the samsung weather widget</string>
     <string name="bam_modder_launchers_touchwiz_noweather">TouchWiz Launcher</string>
-    <string name="bam_modder_launchers_touchwiz_noweather_summary">This pack includes: Stock Samsung touchwiz launcher</string>
+    <string name="bam_modder_launchers_touchwiz_noweather_summary">This pack includes:\nStock Samsung touchwiz launcher</string>
     <string name="bam_modder_launchers_sony">Sony</string>
     <string name="bam_modder_launchers_xperiahome">Xperia Z Home Launcher</string>
-    <string name="bam_modder_launchers_xperiahome_summary">This pack includes: Stock Sony Xperia Z home launcher ported by XDA member ThilinaC</string>
+    <string name="bam_modder_launchers_xperiahome_summary">This pack includes:\nStock Sony Xperia Z home launcher ported by XDA member ThilinaC</string>
 
+    <!-- BAMModder Sounds -->
     <string name="bam_modder_sounds_improvements">Sound Improvements</string>
     <string name="bam_modder_sounds_system">System Sounds</string>
     <string name="bam_modder_sounds_acid">AC!D Audio Engine</string>
-    <string name="bam_modder_sounds_acid_summary">This pack includes: AC!D Audio Engine v7 by AC!D Team</string>
+    <string name="bam_modder_sounds_acid_summary">This pack includes:\nAC!D Audio Engine v7 by AC!D Team</string>
     <string name="bam_modder_sounds_system_siii">Galaxy S3 sounds pack</string>
-    <string name="bam_modder_sounds_system_siii_summary">This pack includes: Galaxy S3 System, Notifications and Alarm sounds</string>
+    <string name="bam_modder_sounds_system_siii_summary">This pack includes:\nGalaxy S3 System, Notifications and Alarm sounds</string>
     <string name="bam_modder_sounds_system_zelda">Zelda sounds pack</string>
-    <string name="bam_modder_sounds_system_zelda_summary">This pack includes: Original Zelda System and Notifications sounds. Provided by Kirabyte</string>
+    <string name="bam_modder_sounds_system_zelda_summary">This pack includes:\nOriginal Zelda System and Notifications sounds. Provided by Kirabyte</string>
     <string name="bam_modder_sounds_system_starwars">Star Wars sounds pack</string>
-    <string name="bam_modder_sounds_system_starwars_summary">This pack includes: Original Star Wars System and Notifications sounds. Provided by Kirabyte</string>
+    <string name="bam_modder_sounds_system_starwars_summary">This pack includes:\nOriginal Star Wars System and Notifications sounds. Provided by Kirabyte</string>
     <string name="bam_modder_sounds_system_supermario">Super Mario sounds pack</string>
-    <string name="bam_modder_sounds_system_supermario_summary">This pack includes: Original Super Mario System and Notifications sounds. Provided by Kirabyte</string>
+    <string name="bam_modder_sounds_system_supermario_summary">This pack includes:\nOriginal Super Mario System and Notifications sounds. Provided by Kirabyte</string>
+
+    <!-- BAMModder Graphics -->
+    <string name="bam_modder_graphics_improvements">Graphics Improvements</string>
+    <string name="bam_modder_graphics_bravia">Bravia Engine</string>
+    <string name="bam_modder_graphics_bravia_summary">This pack includes:\nMobile BRAVIA Engine 2 is an update of Sony\'s famous image processing engine. With many improved features to get your phone to entirely new level of image processing</string>
+
+    <!-- BAMModder Miscs -->
+    <string name="bam_modder_miscs_general">General Mods</string>
+    <string name="bam_modder_miscs_silentcameraon">Enable Silent Camera</string>
+    <string name="bam_modder_miscs_silentcameraon_summary">This pack includes:\nAddod.d script provided by rmkilc that will enable the silent mode for your stock camera</string>
+    <string name="bam_modder_miscs_silentcameraoff">Disable Silent Camera</string>
+    <string name="bam_modder_miscs_silentcameraoff_summary">This pack includes:\nAddod.d script provided by rmkilc that will disable the silent camera and enable the stock shutter sound</string>
 </resources>
