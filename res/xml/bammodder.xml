@@ -74,7 +74,7 @@
         <Preference
 	    android:key="bammodderstore"
             android:title="@string/bam_modder_support_us"
-            android:icon="@drawable/ic_settings_bammodder"
+            android:icon="@drawable/ic_bammodder_support"
             android:summary="@string/bam_modder_support_us_summary" />
 
 </PreferenceScreen>
