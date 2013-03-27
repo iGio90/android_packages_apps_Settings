@@ -45,13 +45,13 @@
     <PreferenceScreen
         android:key="bam_modder_graphics"
         android:icon="@drawable/ic_settings_themes"
-        android:fragment="com.android.settings.jellybam.bammodder.BamModderLaunchers"
+        android:fragment="com.android.settings.jellybam.bammodder.BamModderGraphics"
         android:title="@string/bam_modder_graphics_title" />
 
     <PreferenceScreen
         android:key="bam_modder_miscs"
         android:icon="@drawable/ic_settings_bamuisettings"
-        android:fragment="com.android.settings.jellybam.bammodder.BamModderLaunchers"
+        android:fragment="com.android.settings.jellybam.bammodder.BamModderMiscs"
         android:title="@string/bam_modder_miscs_title" />
 
         <PreferenceCategory
