@@ -5884,26 +5884,38 @@
     <string name="bam_modder_welcome">Welcome to BAM Modder</string>
     <string name="bam_modder_welcome_summary">Here you can find useful mods to download and flash into your device</string>
     <string name="bam_modder_support_us">App donate</string>
-    <string name="bam_modder_support_us_summary">By tapping here you can buy the donate version of BAM Modder.\nNo additional features are provided to the donation app, but if you would like to contribute and maintein the project, just tap here!</string>
+    <string name="bam_modder_support_us_summary">By tapping here you can buy the donate version of BAM Modder.\nNo additional features are provided to the donation app, but if you would like to contribute and maintain the project, just tap here!</string>
     <string name="bam_modder_categories">Mod categories</string>
     <string name="bam_modder_about">About BAM Modder</string>
     <string name="bam_modder_additional">Additional</string>
 
     <!-- BAMModder Menu -->
     <string name="bam_modder_launchers_title">Launchers</string>
+    <string name="bam_modder_apps_title">Applications</string>
     <string name="bam_modder_sounds_title">Sounds</string>
     <string name="bam_modder_graphics_title">Graphics</string>
+    <string name="bam_modder_fonts_title">Fonts</string>
     <string name="bam_modder_miscs_title">Miscellaneus</string>
 
     <!-- BAMModder Launchers -->
     <string name="bam_modder_launchers_samsung">Samsung</string>
+    <string name="bam_modder_launchers_sony">Sony</string>
     <string name="bam_modder_launchers_touchwiz_weather">TouchWiz Pack</string>
     <string name="bam_modder_launchers_touchwiz_weather_summary">This pack includes:\nStock Samsung touchwiz launcher with the samsung weather widget</string>
     <string name="bam_modder_launchers_touchwiz_noweather">TouchWiz Launcher</string>
     <string name="bam_modder_launchers_touchwiz_noweather_summary">This pack includes:\nStock Samsung touchwiz launcher</string>
-    <string name="bam_modder_launchers_sony">Sony</string>
     <string name="bam_modder_launchers_xperiahome">Xperia Z Home Launcher</string>
     <string name="bam_modder_launchers_xperiahome_summary">This pack includes:\nStock Sony Xperia Z home launcher ported by XDA member ThilinaC</string>
+
+    <!-- BAMModder Applications -->
+    <string name="bam_modder_apps_samsung_svoice">Samsung S-Voice</string>
+    <string name="bam_modder_apps_samsung_svoice_summary">This pack includes:\nStock S-Voice app from Galaxy S3</string>
+    <string name="bam_modder_apps_sony_media">Xperia Z Media pack</string>
+    <string name="bam_modder_apps_sony_media_summary">This pack includes:\nStcok Sony Xperia Z Media applications like album, walkman, photo editor, all the various plugins and widgets</string>
+    <string name="bam_modder_apps_sony_keyboard">Xperia Z Keyboard</string>
+    <string name="bam_modder_apps_sony_keyboard_summary">This pack includes:\nStock Sony Xperia Z keyboard</string>
+    <string name="bam_modder_apps_sony_widgets">Xperia Z Widgets pack</string>
+    <string name="bam_modder_apps_sony_widgets_summary">This pack includes:\nStock Sony Xperia Z widgets like notes, clock, TrackdID, weather and more</string>
 
     <!-- BAMModder Sounds -->
     <string name="bam_modder_sounds_improvements">Sound Improvements</string>
@@ -5921,8 +5933,15 @@
 
     <!-- BAMModder Graphics -->
     <string name="bam_modder_graphics_improvements">Graphics Improvements</string>
+    <string name="bam_modder_graphics_additional">Additional</string>
     <string name="bam_modder_graphics_bravia">Bravia Engine</string>
     <string name="bam_modder_graphics_bravia_summary">This pack includes:\nMobile BRAVIA Engine 2 is an update of Sony\'s famous image processing engine. With many improved features to get your phone to entirely new level of image processing</string>
+    <string name="bam_modder_graphics_sony_wallpapers">Xperia Z Wallpapers pack</string>
+    <string name="bam_modder_graphics_sony_wallpapers_summary">This pack includes:\nStock Sony Xperia Z wallpapers</string>
+
+    <!-- BAMModder Fonts -->
+    <string name="bam_modder_fonts_android">Android Fonts</string>
+    <string name="bam_modder_fonts_additional">Additional Fonts</string>
 
     <!-- BAMModder Miscs -->
     <string name="bam_modder_miscs_general">General Mods</string>

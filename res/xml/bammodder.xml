@@ -37,6 +37,12 @@
         android:title="@string/bam_modder_launchers_title" />
 
     <PreferenceScreen
+        android:key="bam_modder_apps"
+        android:icon="@drawable/ic_settings_bamuisettings"
+        android:fragment="com.android.settings.jellybam.bammodder.BamModderApps"
+        android:title="@string/bam_modder_apps_title" />
+
+    <PreferenceScreen
         android:key="bam_modder_sounds"
         android:icon="@drawable/ic_settings_bamsound"
         android:fragment="com.android.settings.jellybam.bammodder.BamModderSounds"
@@ -47,6 +53,12 @@
         android:icon="@drawable/ic_settings_themes"
         android:fragment="com.android.settings.jellybam.bammodder.BamModderGraphics"
         android:title="@string/bam_modder_graphics_title" />
+
+    <PreferenceScreen
+        android:key="bam_modder_fonts"
+        android:icon="@drawable/ic_settings_bamuisettings"
+        android:fragment="com.android.settings.jellybam.bammodder.BamModderFonts"
+        android:title="@string/bam_modder_fonts_title" />
 
     <PreferenceScreen
         android:key="bam_modder_miscs"

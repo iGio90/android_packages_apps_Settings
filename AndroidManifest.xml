@@ -1813,6 +1813,23 @@
             </intent-filter>
         </activity>
 
+        <!-- BAM Modder Applications -->
+        <activity
+            android:name=".jellybam.bammodder.BamModderApps"
+            android:exported="true"
+            android:icon="@drawable/ic_settings_bammodder"
+            android:label="BAM Modder"
+            android:hardwareAccelerated="true"
+            android:excludeFromRecents="false"
+            android:launchMode="singleTask"
+                android:theme="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen"
+                android:process=":ui">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.jellybam.SHORTCUT" />
+            </intent-filter>
+        </activity>
+
         <!-- BAM Modder Sounds -->
         <activity
             android:name=".jellybam.bammodder.BamModderSounds"
@@ -1833,6 +1850,23 @@
         <!-- BAM Modder Graphics -->
         <activity
             android:name=".jellybam.bammodder.BamModderGraphics"
+            android:exported="true"
+            android:icon="@drawable/ic_settings_bammodder"
+            android:label="BAM Modder"
+            android:hardwareAccelerated="true"
+            android:excludeFromRecents="false"
+            android:launchMode="singleTask"
+                android:theme="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen"
+                android:process=":ui">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.jellybam.SHORTCUT" />
+            </intent-filter>
+        </activity>
+
+        <!-- BAM Modder Fonts -->
+        <activity
+            android:name=".jellybam.bammodder.BamModderFonts"
             android:exported="true"
             android:icon="@drawable/ic_settings_bammodder"
             android:label="BAM Modder"

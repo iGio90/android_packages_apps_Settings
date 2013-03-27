@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2013 JellyBam
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/bam_modder_apps_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+        <PreferenceCategory
+                android:key="bam_modder_apps_samsung"
+                android:title="@string/bam_modder_launchers_samsung">
+        </PreferenceCategory>
+
+        <PreferenceScreen
+            android:key="bam_modder_apps_samsung_svoice"
+            android:icon="@drawable/ic_settings_bamuisettings"
+            android:title="@string/bam_modder_apps_samsung_svoice" 
+	    android:summary="@string/bam_modder_apps_samsung_svoice_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.SVoice" />
+        </PreferenceScreen>
+
+        <PreferenceCategory
+                android:key="bam_modder_apps_sony"
+                android:title="@string/bam_modder_launchers_sony">
+        </PreferenceCategory>
+
+        <PreferenceScreen
+            android:key="bam_modder_apps_sony_media"
+            android:icon="@drawable/ic_settings_bamuisettings"
+            android:title="@string/bam_modder_apps_sony_media"
+            android:summary="@string/bam_modder_apps_sony_media_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.SonyMedia" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="bam_modder_apps_sony_widgets"
+            android:icon="@drawable/ic_settings_bamuisettings"
+            android:title="@string/bam_modder_apps_sony_widgets"
+            android:summary="@string/bam_modder_apps_sony_widgets_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.SonyWidgets" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="bam_modder_apps_sony_keyboard"
+            android:icon="@drawable/ic_settings_bamuisettings"
+            android:title="@string/bam_modder_apps_sony_keyboard"
+            android:summary="@string/bam_modder_apps_sony_keyboard_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.SonyKeyboard" />
+        </PreferenceScreen>
+
+</PreferenceScreen>
+
+

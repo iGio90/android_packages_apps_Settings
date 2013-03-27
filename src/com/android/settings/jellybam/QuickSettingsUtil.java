@@ -105,7 +105,7 @@ public class QuickSettingsUtil {
                 "com.android.systemui:drawable/ic_qs_screen_timeout_off"));
         TILES.put(TILE_SLEEP, new QuickSettingsUtil.TileInfo(
                 TILE_SLEEP, R.string.title_tile_power,
-                "com.android.systemui:drawable/ic_qs_power", true));
+                "com.android.systemui:drawable/ic_qs_power"));
         TILES.put(TILE_TORCH, new QuickSettingsUtil.TileInfo(
                 TILE_TORCH, R.string.title_tile_torch,
                 "com.android.systemui:drawable/ic_qs_torch_off"));
