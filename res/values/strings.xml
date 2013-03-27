@@ -4553,7 +4553,7 @@
     <string name="title_tile_battery">Battery stats</string>
     <string name="title_tile_bluetooth">Bluetooth</string>
     <string name="title_tile_brightness">Brightness</string>
-    <string name="title_tile_sleep">Go to sleep</string>
+    <string name="title_tile_power">Power</string>
     <string name="title_tile_gps">GPS</string>
     <string name="title_tile_torch">Torch</string>
     <string name="title_tile_lockscreen">Lock screen</string>
@@ -5155,7 +5155,7 @@
     <string name="title_toggle_autorotate">Toggle Orientation</string>
     <string name="title_toggle_airplane">Toggle Airplane mode</string>
     <string name="title_toggle_flashlight">Toggle LED flashlight</string>
-    <string name="title_toggle_sleep">Go to sleep</string>
+    <string name="title_toggle_power">Power Button</string>
     <string name="title_toggle_media_play_pause">Media: Toggle Play/Pause</string>
     <string name="title_toggle_media_previous">Media: Skip to Previous</string>
     <string name="title_toggle_media_next">Media: Skip to Next</string>
@@ -5304,6 +5304,7 @@
     <string name="donate_iluha">http://tinyurl.com/csr3f6c</string>
     <string name="donate_aokp">http://aokp.co/</string>
     <string name="donate_e7d">http://forum.xda-developers.com/donatetome.php?u=4733661</string>
+    <string name="donate_mvodesign">http://forum.xda-developers.com/donatetome.php?u=5012100</string>
     <string name="jellybam">JELLYBAM</string>
     <string name="jellybam_website_title">JELLYBAM website</string>
     <string name="jellybam_website_summary">Visit us and get the latest JELLYBAM release, mods, news and updates</string>
@@ -5878,4 +5879,95 @@
     <string name="header_summary_lockscreens">@null</string>
     <string name="header_summary_weather">@null</string>
     <string name="header_summary_vibrations">@null</string>
+
+    <!-- BAMModder -->
+    <string name="bam_modder_settings_title">BAM Modder</string> 
+    <string name="bam_modder_welcome">Welcome to BAM Modder</string>
+    <string name="bam_modder_welcome_summary">Here you can find useful mods to download and flash into your device</string>
+    <string name="bam_modder_support_us">App donate</string>
+    <string name="bam_modder_support_us_summary">By tapping here you can buy the donate version of BAM Modder.\nNo additional features are provided to the donation app, but if you would like to contribute and maintain the project, just tap here!</string>
+    <string name="bam_modder_categories">Mod categories</string>
+    <string name="bam_modder_about">About BAM Modder</string>
+    <string name="bam_modder_additional">Additional</string>
+
+    <!-- BAMModder Menu -->
+    <string name="bam_modder_launchers_title">Launchers</string>
+    <string name="bam_modder_apps_title">Applications</string>
+    <string name="bam_modder_sounds_title">Sounds</string>
+    <string name="bam_modder_graphics_title">Graphics</string>
+    <string name="bam_modder_fonts_title">Fonts</string>
+    <string name="bam_modder_miscs_title">Miscellaneus</string>
+
+    <!-- BAMModder Launchers -->
+    <string name="bam_modder_launchers_samsung">Samsung</string>
+    <string name="bam_modder_launchers_sony">Sony</string>
+    <string name="bam_modder_launchers_touchwiz_weather">TouchWiz Pack</string>
+    <string name="bam_modder_launchers_touchwiz_weather_summary">This pack includes:\nStock Samsung touchwiz launcher with the samsung weather widget</string>
+    <string name="bam_modder_launchers_touchwiz_noweather">TouchWiz Launcher</string>
+    <string name="bam_modder_launchers_touchwiz_noweather_summary">This pack includes:\nStock Samsung touchwiz launcher</string>
+    <string name="bam_modder_launchers_xperiahome">Xperia Z Home Launcher</string>
+    <string name="bam_modder_launchers_xperiahome_summary">This pack includes:\nStock Sony Xperia Z home launcher ported by XDA member ThilinaC</string>
+
+    <!-- BAMModder Applications -->
+    <string name="bam_modder_apps_samsung_apps">Samsung Apps</string>
+    <string name="bam_modder_apps_samsung_apps_summary">This pack includes:\nStock Samsung apps store</string>
+    <string name="bam_modder_apps_samsung_smartview">Samsung Smart View</string>
+    <string name="bam_modder_apps_samsung_smartview_summary">This pack includes:\nStock Samsung smart view</string>
+    <string name="bam_modder_apps_samsung_paperartist">Samsung Paper Artist</string>
+    <string name="bam_modder_apps_samsung_paperartist_summary">This pack includes:\nStock Samsung paper artist</string>
+    <string name="bam_modder_apps_samsung_svoice">Samsung S-Voice</string>
+    <string name="bam_modder_apps_samsung_svoice_summary">This pack includes:\nStock S-Voice app from Galaxy S3</string>
+    <string name="bam_modder_apps_sony_media">Xperia Z Media pack</string>
+    <string name="bam_modder_apps_sony_media_summary">This pack includes:\nStcok Sony Xperia Z Media applications like album, walkman, photo editor, all the various plugins and widgets</string>
+    <string name="bam_modder_apps_sony_keyboard">Xperia Z Keyboard</string>
+    <string name="bam_modder_apps_sony_keyboard_summary">This pack includes:\nStock Sony Xperia Z keyboard</string>
+    <string name="bam_modder_apps_sony_widgets">Xperia Z Widgets pack</string>
+    <string name="bam_modder_apps_sony_widgets_summary">This pack includes:\nStock Sony Xperia Z widgets like notes, clock, TrackdID, weather and more</string>
+
+    <!-- BAMModder Sounds -->
+    <string name="bam_modder_sounds_improvements">Sound Improvements</string>
+    <string name="bam_modder_sounds_system">System Sounds</string>
+    <string name="bam_modder_sounds_acid">AC!D Audio Engine</string>
+    <string name="bam_modder_sounds_acid_summary">This pack includes:\nAC!D Audio Engine v7 by AC!D Team</string>
+    <string name="bam_modder_sounds_system_siii">Galaxy S3 sounds pack</string>
+    <string name="bam_modder_sounds_system_siii_summary">This pack includes:\nGalaxy S3 System, Notifications and Alarm sounds</string>
+    <string name="bam_modder_sounds_system_zelda">Zelda sounds pack</string>
+    <string name="bam_modder_sounds_system_zelda_summary">This pack includes:\nOriginal Zelda System and Notifications sounds. Provided by Kirabyte</string>
+    <string name="bam_modder_sounds_system_starwars">Star Wars sounds pack</string>
+    <string name="bam_modder_sounds_system_starwars_summary">This pack includes:\nOriginal Star Wars System and Notifications sounds. Provided by Kirabyte</string>
+    <string name="bam_modder_sounds_system_supermario">Super Mario sounds pack</string>
+    <string name="bam_modder_sounds_system_supermario_summary">This pack includes:\nOriginal Super Mario System and Notifications sounds. Provided by Kirabyte</string>
+
+    <!-- BAMModder Graphics -->
+    <string name="bam_modder_graphics_improvements">Graphics Improvements</string>
+    <string name="bam_modder_graphics_additional">Additional</string>
+    <string name="bam_modder_graphics_bravia">Bravia Engine</string>
+    <string name="bam_modder_graphics_bravia_summary">This pack includes:\nMobile BRAVIA Engine 2 is an update of Sony\'s famous image processing engine. With many improved features to get your phone to entirely new level of image processing</string>
+    <string name="bam_modder_graphics_sony_wallpapers">Xperia Z Wallpapers pack</string>
+    <string name="bam_modder_graphics_sony_wallpapers_summary">This pack includes:\nStock Sony Xperia Z wallpapers</string>
+
+    <!-- BAMModder Fonts -->
+    <string name="bam_modder_fonts_android">Android Fonts</string>
+    <string name="bam_modder_fonts_additional">Additional Fonts</string>
+    <string name="bam_modder_fonts_arial">Arial</string>
+    <string name="bam_modder_fonts_arial_summary">This pack includes:\nArial font</string>
+    <string name="bam_modder_fonts_bpreplay">BPReplay v3</string>
+    <string name="bam_modder_fonts_bpreplay_summary">This pack includes:\nBPReplay v3 font</string>
+    <string name="bam_modder_fonts_cocon">Cocon</string>
+    <string name="bam_modder_fonts_cocon_summary">This pack includes:\nCocon font</string>
+    <string name="bam_modder_fonts_robotolt">Roboto Lt v7</string>
+    <string name="bam_modder_fonts_robotolt_summary">This pack includes:\nRoboto Lt v7 font</string>
+    <string name="bam_modder_fonts_robotocl">Roboto Cleaned</string>
+    <string name="bam_modder_fonts_robotocl_summary">This pack includes:\nRoboto Cleaned font</string>
+    <string name="bam_modder_fonts_sense">Sense 5</string>
+    <string name="bam_modder_fonts_sense_summary">This pack includes:\nStock sense 5 font</string>
+    <string name="bam_modder_fonts_timesnewroman">TimesNewRoman</string>
+    <string name="bam_modder_fonts_timesnewroman_summary">This pack includes:\nTimesNewRoman font</string>
+
+    <!-- BAMModder Miscs -->
+    <string name="bam_modder_miscs_general">General Mods</string>
+    <string name="bam_modder_miscs_silentcameraon">Enable Silent Camera</string>
+    <string name="bam_modder_miscs_silentcameraon_summary">This pack includes:\nAddod.d script provided by rmkilc that will enable the silent mode for your stock camera</string>
+    <string name="bam_modder_miscs_silentcameraoff">Disable Silent Camera</string>
+    <string name="bam_modder_miscs_silentcameraoff_summary">This pack includes:\nAddod.d script provided by rmkilc that will disable the silent camera and enable the stock shutter sound</string>
 </resources>

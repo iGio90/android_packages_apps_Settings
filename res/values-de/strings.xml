@@ -2327,7 +2327,7 @@
     <string name="title_toggle_autorotate">Autom. Ausrichtung</string>
     <string name="title_toggle_airplane">Flugmodus</string>
     <string name="title_toggle_flashlight">Taschenlampe</string>
-    <string name="title_toggle_sleep">Standby</string>
+    <string name="title_toggle_power">Power Taste</string>
     <string name="title_toggle_media_play_pause">Medien: Play/Pause</string>
     <string name="title_toggle_media_previous">Medien: Vorheriger Titel</string>
     <string name="title_toggle_media_next">Medien: Nächster Titel</string>
