@@ -15,7 +15,7 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/system_interface_title"
+    android:title="@string/bam_modder_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
         <Preference
@@ -39,8 +39,8 @@
     <PreferenceScreen
         android:key="bam_modder_sounds"
         android:icon="@drawable/ic_settings_bamsound"
-        android:fragment="com.android.settings.jellybam.bammodder.BamModderLaunchers"
-        android:title="@string/bam_modder_sound_title" />
+        android:fragment="com.android.settings.jellybam.bammodder.BamModderSounds"
+        android:title="@string/bam_modder_sounds_title" />
 
     <PreferenceScreen
         android:key="bam_modder_graphics"
@@ -52,7 +52,7 @@
         android:key="bam_modder_miscs"
         android:icon="@drawable/ic_settings_bamuisettings"
         android:fragment="com.android.settings.jellybam.bammodder.BamModderLaunchers"
-        android:title="@string/bam_modder_misc_title" />
+        android:title="@string/bam_modder_miscs_title" />
 
         <PreferenceCategory
                 android:key="bam_modder_about"

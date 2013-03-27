@@ -16,7 +16,7 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/jellybam_ui_settings_title"
+    android:title="@string/bam_modder_launchers_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
         <PreferenceCategory
@@ -26,7 +26,7 @@
 
         <PreferenceScreen
             android:key="bam_modder_launchers_touchwiz_weather"
-            android:icon="@drawable/ic_settings_bamxposed"
+            android:icon="@drawable/ic_settings_launcher"
             android:title="@string/bam_modder_launchers_touchwiz_weather" 
 	    android:summary="@string/bam_modder_launchers_touchwiz_weather_summary" >
             <intent android:action="android.intent.action.MAIN"
@@ -36,7 +36,7 @@
 
         <PreferenceScreen
             android:key="bam_modder_launchers_touchwiz_noweather"
-            android:icon="@drawable/ic_settings_bamxposed"
+            android:icon="@drawable/ic_settings_launcher"
             android:title="@string/bam_modder_launchers_touchwiz_noweather" 
             android:summary="@string/bam_modder_launchers_touchwiz_noweather_summary" >
             <intent android:action="android.intent.action.MAIN"
@@ -51,7 +51,7 @@
 
         <PreferenceScreen
             android:key="bam_modder_launchers_xperia_home_launcher"
-            android:icon="@drawable/ic_settings_bamxposed"
+            android:icon="@drawable/ic_settings_launcher"
             android:title="@string/bam_modder_launchers_xperiahome" 
             android:summary="@string/bam_modder_launchers_xperiahome_summary" >
             <intent android:action="android.intent.action.MAIN"

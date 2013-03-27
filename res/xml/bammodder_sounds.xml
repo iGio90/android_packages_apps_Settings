@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2013 JellyBam
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/bam_modder_sounds_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+        <PreferenceCategory
+                android:key="bam_modder_sounds_improvements"
+                android:title="@string/bam_modder_sounds_improvements">
+        </PreferenceCategory>
+
+        <PreferenceScreen
+            android:key="bam_modder_sounds_acid"
+            android:icon="@drawable/ic_settings_bamsound"
+            android:title="@string/bam_modder_sounds_acid" 
+	    android:summary="@string/bam_modder_sounds_acid_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.Acid" />
+        </PreferenceScreen>
+
+        <PreferenceCategory
+                android:key="bam_modder_sounds_system"
+                android:title="@string/bam_modder_sounds_system">
+        </PreferenceCategory>
+
+        <PreferenceScreen
+            android:key="bam_modder_sounds_system_siii"
+            android:icon="@drawable/ic_settings_bamsound"
+            android:title="@string/bam_modder_sounds_system_siii"
+            android:summary="@string/bam_modder_sounds_system_siii_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.SIII" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="bam_modder_sounds_system_zelda"
+            android:icon="@drawable/ic_settings_bamsound"
+            android:title="@string/bam_modder_sounds_system_zelda"
+            android:summary="@string/bam_modder_sounds_system_zelda_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.Zelda" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="bam_modder_sounds_system_starwars"
+            android:icon="@drawable/ic_settings_bamsound"
+            android:title="@string/bam_modder_sounds_system_starwars"
+            android:summary="@string/bam_modder_sounds_system_starwars_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.StarWars" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="bam_modder_sounds_system_supermario"
+            android:icon="@drawable/ic_settings_bamsound"
+            android:title="@string/bam_modder_sounds_system_supermario"
+            android:summary="@string/bam_modder_sounds_system_supermario_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.SuperMario" />
+        </PreferenceScreen>
+
+</PreferenceScreen>
+
+

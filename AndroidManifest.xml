@@ -1796,9 +1796,26 @@
             </intent-filter>
         </activity>
 
-        <!-- BAM Modder Launchers-->
+        <!-- BAM Modder Launchers -->
         <activity
             android:name=".jellybam.bammodder.BamModderLaunchers"
+            android:exported="true"
+            android:icon="@drawable/ic_settings_bammodder"
+            android:label="BAM Modder"
+            android:hardwareAccelerated="true"
+            android:excludeFromRecents="false"
+            android:launchMode="singleTask"
+                android:theme="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen"
+                android:process=":ui">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.jellybam.SHORTCUT" />
+            </intent-filter>
+        </activity>
+
+        <!-- BAM Modder Sounds -->
+        <activity
+            android:name=".jellybam.bammodder.BamModderSounds"
             android:exported="true"
             android:icon="@drawable/ic_settings_bammodder"
             android:label="BAM Modder"
