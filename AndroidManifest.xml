@@ -1853,7 +1853,7 @@
             android:name=".jellybam.bammodder.BamModderGraphics"
             android:exported="true"
             android:icon="@drawable/ic_settings_bammodder"
-            android:label="@strings/bam_modder_graphics"
+            android:label="@string/bam_modder_graphics"
             android:hardwareAccelerated="true"
             android:excludeFromRecents="false"
             android:launchMode="singleTask"
