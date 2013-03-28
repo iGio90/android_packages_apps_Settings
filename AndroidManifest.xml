@@ -1787,7 +1787,6 @@
             android:label="BAM Modder"
             android:hardwareAccelerated="true"
             android:excludeFromRecents="false"
-	    android:taskAffinity="com.android.settings.jellybam.BAMModder"
             android:launchMode="singleTask"
                 android:theme="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen"
                 android:process=":ui">

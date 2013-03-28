@@ -5947,6 +5947,7 @@
     <!-- BAMModder Graphics -->
     <string name="bam_modder_graphics_improvements">Graphics Improvements</string>
     <string name="bam_modder_graphics_additional">Additional</string>
+    <string name="bam_modder_graphics_wallpapers">Wallpapers</string>
     <string name="bam_modder_graphics_bravia">Bravia Engine</string>
     <string name="bam_modder_graphics_bravia_summary">This pack includes:\nMobile BRAVIA Engine 2 is an update of Sony\'s famous image processing engine. With many improved features to get your phone to entirely new level of image processing</string>
     <string name="bam_modder_graphics_sony_wallpapers">Xperia Z Wallpapers pack</string>
