@@ -5945,6 +5945,8 @@
     <string name="bam_modder_graphics_bravia_summary">This pack includes:\nMobile BRAVIA Engine 2 is an update of Sony\'s famous image processing engine. With many improved features to get your phone to entirely new level of image processing</string>
     <string name="bam_modder_graphics_sony_wallpapers">Xperia Z Wallpapers pack</string>
     <string name="bam_modder_graphics_sony_wallpapers_summary">This pack includes:\nStock Sony Xperia Z wallpapers</string>
+    <string name="bam_modder_graphics_trebuchet">Transparent Trebuchet</string>
+    <string name="bam_modder_graphics_trebuchet_summary">This pack includes:\nTrasparent app drawer for stock trebuchet launcher</string>
 
     <!-- BAMModder Fonts -->
     <string name="bam_modder_fonts_android">Android Fonts</string>
