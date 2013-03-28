@@ -50,7 +50,7 @@
 
     <PreferenceScreen
         android:key="bam_modder_graphics"
-        android:icon="@drawable/ic_settings_themes"
+        android:icon="@drawable/ic_bammodder_graphics"
         android:fragment="com.android.settings.jellybam.bammodder.BamModderGraphics"
         android:title="@string/bam_modder_graphics_title" />
 
