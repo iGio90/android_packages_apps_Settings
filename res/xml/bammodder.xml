@@ -38,7 +38,7 @@
 
     <PreferenceScreen
         android:key="bam_modder_apps"
-        android:icon="@drawable/ic_settings_bamuisettings"
+        android:icon="@drawable/ic_bammodder_applications"
         android:fragment="com.android.settings.jellybam.bammodder.BamModderApps"
         android:title="@string/bam_modder_apps_title" />
 
