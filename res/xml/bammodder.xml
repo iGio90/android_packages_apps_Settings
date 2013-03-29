@@ -56,7 +56,7 @@
 
     <PreferenceScreen
         android:key="bam_modder_fonts"
-        android:icon="@drawable/ic_settings_bamuisettings"
+        android:icon="@drawable/ic_bammodder_fonts"
         android:fragment="com.android.settings.jellybam.bammodder.BamModderFonts"
         android:title="@string/bam_modder_fonts_title" />
 
