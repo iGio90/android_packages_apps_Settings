@@ -16,8 +16,6 @@
 
 package com.android.settings.jellybam;
 
-package com.android.settings.cyanogenmod;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
