@@ -105,7 +105,7 @@ public class BamHardwareKeysSettings extends SettingsPreferenceFragment implemen
         final boolean hasAssistKey = (deviceKeys & KEY_MASK_ASSIST) != 0;
         final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
 
-        addPreferencesFromResource(R.xml.jellybam_hardware_keys_settings.xml);
+        addPreferencesFromResource(R.xml.jellybam_hardware_keys_settings);
         PreferenceScreen prefSet = getPreferenceScreen();
 
         mPicker = new ShortcutPickerHelper(this, this);
