@@ -5890,7 +5890,7 @@
     <string name="bam_modder_welcome">Welcome to BAM Modder</string>
     <string name="bam_modder_welcome_summary">Here you can find useful mods to download and flash into your device</string>
     <string name="bam_modder_support_us">App donate</string>
-    <string name="bam_modder_support_us_summary">By tapping here you can buy the donate version of BAM Modder.\nNo additional features are provided to the donation app, but if you would like to contribute and maintain the project, just tap here!</string>
+    <string name="bam_modder_support_us_summary">By tapping here you can buy the donate version of BAM Modder.\nNo additional features are provided to the donation app, however the Play Store one will be updated before the one included in the ROM since you will need to wait till i build the ROM zip.\nIf you would like to contribute and maintain the project by buying the donate version, just tap here!</string>
     <string name="bam_modder_categories">Mod categories</string>
     <string name="bam_modder_about">About BAM Modder</string>
     <string name="bam_modder_additional">Additional</string>
