@@ -4558,6 +4558,7 @@
     <string name="title_tile_torch">Torch</string>
     <string name="title_tile_lockscreen">Lock screen</string>
     <string name="title_tile_lte">LTE</string>
+    <string name="title_tile_reboot">Reboot</string>
     <string name="title_tile_mobiledata">Mobile data</string>
     <string name="title_tile_autorotate">Orientation</string>
     <string name="title_tile_profile">Profile</string>
@@ -5128,6 +5129,9 @@
     <string name="hardware_keys_action_kill_app">Kill app</string>
     <string name="hardware_keys_action_last_app">Switch to last app</string>
     <string name="hardware_keys_action_custom_app">Custom App</string>
+    <string name="key_menu_enabled">Menu Key Enabled</string>
+    <string name="key_back_enabled">Back Key Enabled</string>
+    <string name="key_home_enabled">Home Key Enabled</string>
 
     <!-- Power Widget  -->
     <string name="power_widget_title">Power widget</string>
@@ -5146,6 +5150,7 @@
     <string name="title_toggle_gps">Toggle GPS</string>
     <string name="title_toggle_sound">Toggle Sound</string>
     <string name="title_toggle_brightness">Toggle Brightness</string>
+    <string name="title_toggle_reboot">Toggle Reboot (LongPress to Recovery)</string>
     <string name="title_toggle_sync">Toggle Sync</string>
     <string name="title_toggle_wifiap">Toggle Wi-Fi AP</string>
     <string name="title_toggle_screentimeout">Toggle Screen timeout</string>
@@ -5891,6 +5896,12 @@
     <string name="bam_modder_additional">Additional</string>
 
     <!-- BAMModder Menu -->
+    <string name="bam_modder_launchers">BAM Modder - Launchers</string>
+    <string name="bam_modder_apps">BAM Modder - Applications</string>
+    <string name="bam_modder_sounds">BAM Modder - Sounds</string>
+    <string name="bam_modder_graphics">BAM Modder - Graphics</string>
+    <string name="bam_modder_fonts">BAM Modder - Fonts</string>
+    <string name="bam_modder_miscs">BAM Modder - Miscellaneus</string>
     <string name="bam_modder_launchers_title">Launchers</string>
     <string name="bam_modder_apps_title">Applications</string>
     <string name="bam_modder_sounds_title">Sounds</string>
@@ -5916,7 +5927,7 @@
     <string name="bam_modder_apps_samsung_paperartist">Samsung Paper Artist</string>
     <string name="bam_modder_apps_samsung_paperartist_summary">This pack includes:\nStock Samsung paper artist</string>
     <string name="bam_modder_apps_samsung_svoice">Samsung S-Voice</string>
-    <string name="bam_modder_apps_samsung_svoice_summary">This pack includes:\nStock S-Voice app from Galaxy S3</string>
+    <string name="bam_modder_apps_samsung_svoice_summary">This pack includes:\nStock S-Voice app from Galaxy S4</string>
     <string name="bam_modder_apps_sony_media">Xperia Z Media pack</string>
     <string name="bam_modder_apps_sony_media_summary">This pack includes:\nStcok Sony Xperia Z Media applications like album, walkman, photo editor, all the various plugins and widgets</string>
     <string name="bam_modder_apps_sony_keyboard">Xperia Z Keyboard</string>
@@ -5929,8 +5940,10 @@
     <string name="bam_modder_sounds_system">System Sounds</string>
     <string name="bam_modder_sounds_acid">AC!D Audio Engine</string>
     <string name="bam_modder_sounds_acid_summary">This pack includes:\nAC!D Audio Engine v7 by AC!D Team</string>
-    <string name="bam_modder_sounds_system_siii">Galaxy S3 sounds pack</string>
-    <string name="bam_modder_sounds_system_siii_summary">This pack includes:\nGalaxy S3 System, Notifications and Alarm sounds</string>
+    <string name="bam_modder_sounds_clearaudio">AC!D ClearAudio Addon</string>
+    <string name="bam_modder_sounds_clearaudio_summary">This pack includes:\nAC!D ClearAudio addon. Flash it after AC!D Audio Engine. Addon by AC!D Team</string>
+    <string name="bam_modder_sounds_system_siv">Galaxy S4 sounds pack</string>
+    <string name="bam_modder_sounds_system_siv_summary">This pack includes:\nGalaxy S4 System, Ringtones, Notifications and Alarm sounds</string>
     <string name="bam_modder_sounds_system_zelda">Zelda sounds pack</string>
     <string name="bam_modder_sounds_system_zelda_summary">This pack includes:\nOriginal Zelda System and Notifications sounds. Provided by Kirabyte</string>
     <string name="bam_modder_sounds_system_starwars">Star Wars sounds pack</string>
@@ -5941,10 +5954,13 @@
     <!-- BAMModder Graphics -->
     <string name="bam_modder_graphics_improvements">Graphics Improvements</string>
     <string name="bam_modder_graphics_additional">Additional</string>
+    <string name="bam_modder_graphics_wallpapers">Wallpapers</string>
     <string name="bam_modder_graphics_bravia">Bravia Engine</string>
     <string name="bam_modder_graphics_bravia_summary">This pack includes:\nMobile BRAVIA Engine 2 is an update of Sony\'s famous image processing engine. With many improved features to get your phone to entirely new level of image processing</string>
     <string name="bam_modder_graphics_sony_wallpapers">Xperia Z Wallpapers pack</string>
     <string name="bam_modder_graphics_sony_wallpapers_summary">This pack includes:\nStock Sony Xperia Z wallpapers</string>
+    <string name="bam_modder_graphics_trebuchet">Transparent Trebuchet</string>
+    <string name="bam_modder_graphics_trebuchet_summary">This pack includes:\nTrasparent app drawer for stock trebuchet launcher</string>
 
     <!-- BAMModder Fonts -->
     <string name="bam_modder_fonts_android">Android Fonts</string>

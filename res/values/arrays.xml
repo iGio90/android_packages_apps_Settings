@@ -1276,14 +1276,22 @@
         <item>0</item>
     </string-array>
 
-    <string-array name="hardware_keys_action_entries" translatable="false">
+    <string-array name="hardware_keys_action_entries">
         <item>@string/hardware_keys_action_nothing</item>
+        <item>@string/hardware_keys_action_home</item>
+        <item>@string/hardware_keys_action_back</item>
         <item>@string/hardware_keys_action_menu</item>
         <item>@string/hardware_keys_action_app_switch</item>
         <item>@string/hardware_keys_action_search</item>
         <item>@string/hardware_keys_action_voice_search</item>
         <item>@string/hardware_keys_action_in_app_search</item>
-    </string-array>
+        <item>@string/hardware_keys_action_power</item>
+        <item>@string/hardware_keys_action_notifications</item>
+        <item>@string/hardware_keys_action_expanded</item>
+        <item>@string/hardware_keys_action_kill_app</item>
+        <item>@string/hardware_keys_action_last_app</item>
+        <item>@string/hardware_keys_action_custom_app</item>
+     </string-array>
 
     <string-array name="hardware_keys_action_values" translatable="false">
         <item>0</item>
@@ -1292,6 +1300,14 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
     </string-array>
 
     <string-array name="lockscreen_long_key_press_entries" translatable="false">
