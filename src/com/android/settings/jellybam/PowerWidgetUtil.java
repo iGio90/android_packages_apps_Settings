@@ -55,6 +55,7 @@ public class PowerWidgetUtil {
     public static final String BUTTON_MEDIA_NEXT = "toggleMediaNext";
     public static final String BUTTON_LTE = "toggleLte";
     public static final String BUTTON_WIMAX = "toggleWimax";
+    public static final String BUTTON_REBOOT = "toggleReboot";
 
     public static final HashMap<String, ButtonInfo> BUTTONS = new HashMap<String, ButtonInfo>();
     static {
@@ -81,6 +82,9 @@ public class PowerWidgetUtil {
         BUTTONS.put(BUTTON_MOBILEDATA, new PowerWidgetUtil.ButtonInfo(
                 BUTTON_MOBILEDATA, R.string.title_toggle_mobiledata,
                 "com.android.systemui:drawable/stat_data_on"));
+	BUTTONS.put(BUTTON_REBOOT, new PowerWidgetUtil.ButtonInfo(
+                BUTTON_REBOOT, R.string.title_toggle_reboot,
+                "com.android.systemui:drawable/stat_reboot"));
         BUTTONS.put(BUTTON_NETWORKMODE, new PowerWidgetUtil.ButtonInfo(
                 BUTTON_NETWORKMODE, R.string.title_toggle_networkmode,
                 "com.android.systemui:drawable/stat_2g3g_on"));

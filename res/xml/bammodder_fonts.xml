@@ -16,7 +16,7 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/bam_modder_fonts_title"
+    android:title="@string/bam_modder_fonts"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
         <PreferenceCategory
@@ -61,7 +61,7 @@
 
         <PreferenceScreen
             android:key="bam_modder_fonts_arial"
-            android:icon="@drawable/ic_settings_themes"
+            android:icon="@drawable/ic_bammodder_fonts"
             android:title="@string/bam_modder_fonts_arial"
             android:summary="@string/bam_modder_fonts_arial_summary" >
             <intent android:action="android.intent.action.MAIN"
@@ -71,7 +71,7 @@
 
         <PreferenceScreen
             android:key="bam_modder_fonts_bpreplay"
-            android:icon="@drawable/ic_settings_themes"
+            android:icon="@drawable/ic_bammodder_fonts"
             android:title="@string/bam_modder_fonts_bpreplay"
             android:summary="@string/bam_modder_fonts_bpreplay_summary" >
             <intent android:action="android.intent.action.MAIN"
@@ -81,7 +81,7 @@
 
         <PreferenceScreen
             android:key="bam_modder_fonts_cocon"
-            android:icon="@drawable/ic_settings_themes"
+            android:icon="@drawable/ic_bammodder_fonts"
             android:title="@string/bam_modder_fonts_cocon"
             android:summary="@string/bam_modder_fonts_cocon_summary" >
             <intent android:action="android.intent.action.MAIN"
@@ -91,7 +91,7 @@
 
         <PreferenceScreen
             android:key="bam_modder_fonts_timesnewroman"
-            android:icon="@drawable/ic_settings_themes"
+            android:icon="@drawable/ic_bammodder_fonts"
             android:title="@string/bam_modder_fonts_timesnewroman"
             android:summary="@string/bam_modder_fonts_timesnewroman_summary" >
             <intent android:action="android.intent.action.MAIN"
