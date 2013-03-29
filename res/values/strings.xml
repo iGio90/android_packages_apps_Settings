@@ -5147,6 +5147,7 @@
     <string name="title_toggle_gps">Toggle GPS</string>
     <string name="title_toggle_sound">Toggle Sound</string>
     <string name="title_toggle_brightness">Toggle Brightness</string>
+    <string name="title_toggle_reboot">Toggle Reboot (LongPress to Recovery)</string>
     <string name="title_toggle_sync">Toggle Sync</string>
     <string name="title_toggle_wifiap">Toggle Wi-Fi AP</string>
     <string name="title_toggle_screentimeout">Toggle Screen timeout</string>
