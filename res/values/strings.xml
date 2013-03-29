@@ -5129,6 +5129,9 @@
     <string name="hardware_keys_action_kill_app">Kill app</string>
     <string name="hardware_keys_action_last_app">Switch to last app</string>
     <string name="hardware_keys_action_custom_app">Custom App</string>
+    <string name="key_menu_enabled">Menu Key Enabled</string>
+    <string name="key_back_enabled">Back Key Enabled</string>
+    <string name="key_home_enabled">Home Key Enabled</string>
 
     <!-- Power Widget  -->
     <string name="power_widget_title">Power widget</string>
