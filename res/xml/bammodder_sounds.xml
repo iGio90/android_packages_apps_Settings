@@ -34,6 +34,16 @@
                 android:targetClass="com.bam.android.bammodder.Acid" />
         </PreferenceScreen>
 
+        <PreferenceScreen
+            android:key="bam_modder_sounds_clearaudio"
+            android:icon="@drawable/ic_settings_bamsound"
+            android:title="@string/bam_modder_sounds_clearaudio"
+            android:summary="@string/bam_modder_sounds_clearaudio_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.ClearAudio" />
+        </PreferenceScreen>
+
         <PreferenceCategory
                 android:key="bam_modder_sounds_system"
                 android:title="@string/bam_modder_sounds_system">

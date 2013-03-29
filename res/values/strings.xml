@@ -5935,6 +5935,8 @@
     <string name="bam_modder_sounds_system">System Sounds</string>
     <string name="bam_modder_sounds_acid">AC!D Audio Engine</string>
     <string name="bam_modder_sounds_acid_summary">This pack includes:\nAC!D Audio Engine v7 by AC!D Team</string>
+    <string name="bam_modder_sounds_clearaudio">AC!D ClearAudio Addon</string>
+    <string name="bam_modder_sounds_clearaudio_summary">This pack includes:\nAC!D ClearAudio addon. Flash it after AC!D Audio Engine. Addon by AC!D Team</string>
     <string name="bam_modder_sounds_system_siv">Galaxy S4 sounds pack</string>
     <string name="bam_modder_sounds_system_siv_summary">This pack includes:\nGalaxy S4 System, Notifications and Alarm sounds</string>
     <string name="bam_modder_sounds_system_zelda">Zelda sounds pack</string>
