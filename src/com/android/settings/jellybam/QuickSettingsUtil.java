@@ -19,7 +19,6 @@ package com.android.settings.jellybam;
 import static com.android.internal.util.cm.QSConstants.TILES_DEFAULT;
 import static com.android.internal.util.cm.QSConstants.TILE_AIRPLANE;
 import static com.android.internal.util.cm.QSConstants.TILE_AUTOROTATE;
-import static com.android.internal.util.cm.QSConstants.TILE_BAMCONTROL;
 import static com.android.internal.util.cm.QSConstants.TILE_BAMMODDER;
 import static com.android.internal.util.cm.QSConstants.TILE_BATTERY;
 import static com.android.internal.util.cm.QSConstants.TILE_BLUETOOTH;
@@ -69,9 +68,6 @@ public class QuickSettingsUtil {
         TILES.put(TILE_AUTOROTATE, new QuickSettingsUtil.TileInfo(
                 TILE_AUTOROTATE, R.string.title_tile_autorotate,
                 "com.android.systemui:drawable/ic_qs_auto_rotate"));
-        TILES.put(TILE_BAMCONTROL, new QuickSettingsUtil.TileInfo(
-                TILE_BAMCONTROL, R.string.title_tile_bamcontrol,
-                "com.android.systemui:drawable/ic_settings_bamcontrol"));
         TILES.put(TILE_BAMMODDER, new QuickSettingsUtil.TileInfo(
                 TILE_BAMMODDER, R.string.title_tile_bammodder,
                 "com.android.systemui:drawable/ic_settings_bammodder"));
