@@ -109,7 +109,6 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
     private static final String PREF_SHOW_OVERFLOW = "show_overflow";
     private static final CharSequence PREF_DISABLE_BOOTANIM = "disable_bootanimation";
     private static final CharSequence PREF_CUSTOM_BOOTANIM = "custom_bootanimation";
-    private static final String PREF_LONGPRESS_TO_KILL = "longpress_to_kill";
     private static final String PREF_RECENT_KILL_ALL = "recent_kill_all";
     private static final String PREF_RAM_USAGE_BAR = "ram_usage_bar";
     private static final String PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
@@ -226,10 +225,6 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
 
         mCustomBootAnimation = findPreference(PREF_CUSTOM_BOOTANIM);
 
-        mLongPressToKill = (CheckBoxPreference)findPreference(PREF_LONGPRESS_TO_KILL);
-        mLongPressToKill.setChecked(Settings.System.getInt(mContentResolver,
-                Settings.System.KILL_APP_LONGPRESS_BACK, 0) == 1);
-
         mRecentKillAll = (CheckBoxPreference) findPreference(PREF_RECENT_KILL_ALL);
         mRecentKillAll.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.RECENT_KILL_ALL_BUTTON, false));
@@ -345,11 +340,6 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
                 Toast.makeText(getActivity(), R.string.show_overflow_toast_disable,
                         Toast.LENGTH_LONG).show();
             }
-            return true;
-        } else if (preference == mLongPressToKill) {
-            boolean checked = ((TwoStatePreference) preference).isChecked();
-            Settings.System.putInt(mContentResolver,
-                    Settings.System.KILL_APP_LONGPRESS_BACK, checked ? 1 : 0);
             return true;
         } else if (preference == mRecentKillAll) {
             boolean checked = ((CheckBoxPreference)preference).isChecked();
