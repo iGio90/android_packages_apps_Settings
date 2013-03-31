@@ -61,9 +61,9 @@ public class BAMModder extends SettingsPreferenceFragment {
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mBamStore) {
                 try {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.bam.android.bammodder")));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.bam.android.bammodder.donor")));
                         } catch (android.content.ActivityNotFoundException anfe) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=com.bam.android.bammodder")));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=com.bam.android.bammodder.donor")));
                     }
             return true;
         }
