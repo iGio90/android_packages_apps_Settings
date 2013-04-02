@@ -192,13 +192,6 @@
         android:fragment="com.android.settings.jellybam.BAMModder"
         android:title="@string/bam_modder_settings_title" />
 
-    <!-- BAM Persist -->
-    <header
-        android:id="@+id/persist"
-        android:fragment="com.android.settings.jellybam.BamPersist"
-        android:title="@string/persist_options"
-        android:icon="@drawable/ic_settings_bamcontrol" />
-
     <!-- Hybrid options -->
     <header
         android:id="@+id/hybrid_settings"
@@ -215,6 +208,28 @@
         android:id="@+id/launcher_settings"
         android:title="@string/launcher_settings_title"
         android:icon="@drawable/ic_settings_launcher" />
+
+    <!-- JELLYBAM ADVANCE SETTINGS -->
+    <header android:id="@+id/advanced_customization_section"
+        android:title="@string/header_category_advanced_jellybam" />
+
+    <!-- BAM Cleaner -->
+    <header
+        android:id="@+id/cleaner"
+        android:title="@string/bam_cleaner"
+        android:icon="@drawable/ic_settings_bamcontrol">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.bam.cleaner"
+            android:targetClass="com.bam.sizer.BamCleaner" />
+    </header>
+
+    <!-- BAM Persist -->
+    <header
+        android:id="@+id/persist"
+        android:fragment="com.android.settings.jellybam.BamPersist"
+        android:title="@string/persist_options"
+        android:icon="@drawable/ic_settings_persistence" />
 
     <!-- JELLYBAM GRAPHICS SETTINGS -->
     <header android:id="@+id/graphics_customization_section"

@@ -50,12 +50,14 @@ public class BamPersist extends SettingsPreferenceFragment {
     private static final String PREF_PERSIST_ENABLE = "enable_persist";
     private static final String PREF_PERSIST_PROP_DENSITY = "persist_prop_density";
     private static final String PREF_PERSIST_FILE_HOSTS = "persist_file_hosts";
+    private static final String PREF_PERSIST_FILE_PAPREF = "persist_file_papref";
 
     private Preference mPreference;
 
     CheckBoxPreference mPrefPersistEnable;
     CheckBoxPreference mPrefPersistDensity;
     CheckBoxPreference mPrefPersistHosts;
+    CheckBoxPreference mPrefPersistPapref;
 
     boolean mPersistEnable;
     ArrayList<String> mPersistProps;
@@ -192,6 +194,8 @@ public class BamPersist extends SettingsPreferenceFragment {
         mPrefPersistDensity.setChecked(mPersistProps.contains("ro.sf.lcd_density"));
         mPrefPersistHosts = (CheckBoxPreference)findPreference(PREF_PERSIST_FILE_HOSTS);
         mPrefPersistHosts.setChecked(mPersistFiles.contains("etc/hosts"));
+        mPrefPersistPapref = (CheckBoxPreference)findPreference(PREF_PERSIST_FILE_PAPREF);
+        mPrefPersistPapref.setChecked(mPersistFiles.contains("etc/paranoid/properties.conf"));
     }
 
     @Override
@@ -223,6 +227,18 @@ public class BamPersist extends SettingsPreferenceFragment {
             }
             else {
                 mPersistFiles.remove("etc/hosts");
+            }
+            savePrefs();
+            return true;
+        }
+        if (preference == mPrefPersistPapref) {
+            if (isChecked) {
+                if (!mPersistFiles.contains("etc/paranoid/properties.conf")) {
+                    mPersistFiles.add("etc/paranoid/properties.conf");
+                }
+            }
+            else {
+                mPersistFiles.remove("etc/paranoid/properties.conf");
             }
             savePrefs();
             return true;
