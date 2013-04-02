@@ -5967,6 +5967,10 @@
     <string name="bam_modder_fonts_additional">Additional Fonts</string>
     <string name="bam_modder_fonts_arial">Arial</string>
     <string name="bam_modder_fonts_arial_summary">This pack includes:\nArial font</string>
+    <string name="bam_modder_fonts_asap">Asap Default</string>
+    <string name="bam_modder_fonts_asap_summary">This pack includes:\nAsap Default font</string>
+    <string name="bam_modder_fonts_avenir">Avenir Medium</string>
+    <string name="bam_modder_fonts_avenir_summary">This pack includes:\nAsap Default font</string>
     <string name="bam_modder_fonts_bpreplay">BPReplay v3</string>
     <string name="bam_modder_fonts_bpreplay_summary">This pack includes:\nBPReplay v3 font</string>
     <string name="bam_modder_fonts_cocon">Cocon</string>

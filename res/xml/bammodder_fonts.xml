@@ -70,6 +70,26 @@
         </PreferenceScreen>
 
         <PreferenceScreen
+            android:key="bam_modder_fonts_asap"
+            android:icon="@drawable/ic_bammodder_fonts"
+            android:title="@string/bam_modder_fonts_asap"
+            android:summary="@string/bam_modder_fonts_asap_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.Asap" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="bam_modder_fonts_arial"
+            android:icon="@drawable/ic_bammodder_fonts"
+            android:title="@string/bam_modder_fonts_avenir"
+            android:summary="@string/bam_modder_fonts_avenir_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.Avenir" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
             android:key="bam_modder_fonts_bpreplay"
             android:icon="@drawable/ic_bammodder_fonts"
             android:title="@string/bam_modder_fonts_bpreplay"
