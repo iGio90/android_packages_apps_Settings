@@ -5874,6 +5874,8 @@
     <string name="persist_prop_density_summary">Persist LCD density</string>
     <string name="persist_file_hosts">Persist Hosts</string>
     <string name="persist_file_hosts_summary">Persist hosts file</string>
+    <string name="persist_file_papref">Persist PA prefs</string>
+    <string name="persist_file_papref_summary">Persist paranoid preferences file</string>
 
     <!-- JELLYBAM CHANGELOG -->
     <string name="bam_changelog_title">Release changelog</string>

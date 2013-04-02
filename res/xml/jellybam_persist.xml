@@ -28,4 +28,10 @@
             android:title="@string/persist_file_hosts"
             android:summary="@string/persist_file_hosts_summary" />
 
+        <CheckBoxPreference
+            android:key="persist_file_papref"
+            android:dependency="enable_persist"
+            android:title="@string/persist_file_papref"
+            android:summary="@string/persist_file_papref_summary" />
+
 </PreferenceScreen>
