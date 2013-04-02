@@ -174,9 +174,9 @@
             android:action="android.settings.ADD_ACCOUNT_SETTINGS"/>
     </header>
 
-    <!-- JELLYBAM -->
-    <header android:id="@+id/customization_section"
-        android:title="@string/header_category_jellybam" />
+    <!-- JELLYBAM ROM SETTINGS -->
+    <header android:id="@+id/rom_customization_section"
+        android:title="@string/header_category_rom_jellybam" />
 
     <!-- BAM Control -->
     <header
@@ -192,6 +192,13 @@
         android:fragment="com.android.settings.jellybam.BAMModder"
         android:title="@string/bam_modder_settings_title" />
 
+    <!-- BAM Persist -->
+    <header
+        android:id="@+id/persist"
+        android:fragment="com.android.settings.jellybam.BamPersist"
+        android:title="@string/persist_options"
+        android:icon="@drawable/ic_settings_bamcontrol" />
+
     <!-- Hybrid options -->
     <header
         android:id="@+id/hybrid_settings"
@@ -203,17 +210,21 @@
             android:targetClass="com.paranoid.preferences.MainActivity" />
     </header>
 
-    <!-- Holo Bam -->
-    <header
-        android:id="@+id/holobam_settings"
-        android:icon="@drawable/ic_settings_holobam"
-        android:title="@string/holobam_settings_title" />
-
     <!-- Launcher -->
     <header
         android:id="@+id/launcher_settings"
         android:title="@string/launcher_settings_title"
         android:icon="@drawable/ic_settings_launcher" />
+
+    <!-- JELLYBAM GRAPHICS SETTINGS -->
+    <header android:id="@+id/graphics_customization_section"
+        android:title="@string/header_category_graphics_jellybam" />
+
+    <!-- Holo Bam -->
+    <header
+        android:id="@+id/holobam_settings"
+        android:icon="@drawable/ic_settings_holobam"
+        android:title="@string/holobam_settings_title" />
 
     <!-- Themes -->
     <header

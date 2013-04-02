@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <Preference
+            style="?android:preferenceInformationStyle"
+            android:title="@string/persist_options"
+            android:summary="@string/persist_summary"
+            android:selectable="false" />
+
+        <CheckBoxPreference
+           android:key="enable_persist"
+           android:title="@string/persist_enable"
+           android:summary="@string/persist_enable_summary"  />
+
+        <PreferenceCategory
+                android:key="persist_props"
+                android:title="@string/persist_header_props">
+        </PreferenceCategory>
+
+        <CheckBoxPreference
+            android:key="persist_prop_density"
+            android:dependency="enable_persist"
+            android:title="@string/persist_prop_density"
+            android:summary="@string/persist_prop_density_summary" />
+
+        <PreferenceCategory
+                android:key="persist_configs"
+                android:title="@string/persist_header_conf">
+        </PreferenceCategory>
+
+        <CheckBoxPreference
+            android:key="persist_file_hosts"
+            android:dependency="enable_persist"
+            android:title="@string/persist_file_hosts"
+            android:summary="@string/persist_file_hosts_summary" />
+
+</PreferenceScreen>

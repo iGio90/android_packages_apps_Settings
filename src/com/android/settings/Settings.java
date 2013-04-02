@@ -125,7 +125,8 @@ public class Settings extends PreferenceActivity
             R.id.date_time_settings,
             R.id.about_settings,
             R.id.accessibility_settings,
-            R.id.customization_section,
+            R.id.rom_customization_section,
+            R.id.graphics_customization_section,
             R.id.launcher_settings,
             R.id.themes_settings,
             R.id.hybrid_settings,
@@ -908,4 +909,5 @@ public class Settings extends PreferenceActivity
     public static class BamModderGraphicsSettingsActivity extends Settings { /* empty */ }
     public static class BamModderFontsSettingsActivity extends Settings { /* empty */ }
     public static class BamModderMiscsSettingsActivity extends Settings { /* empty */ }
+    public static class BamPersistSettingsActivity extends Settings { /* empty */ }
 }

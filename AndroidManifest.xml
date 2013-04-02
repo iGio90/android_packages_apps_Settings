@@ -141,6 +141,21 @@
             android:name="com.koushikdutta.superuser.SuReceiver"
             android:permission="android.permission.REPORT_SUPERUSER" />
 
+        <receiver android:name="com.koushikdutta.superuser.PackageChangeReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
         <!-- Settings -->
 
         <activity android:name="Settings"
@@ -1746,6 +1761,14 @@
         <activity android:name=".jellybam.BamLedSettings" />
 
         <activity android:name=".jellybam.BamVibrationSettings" />
+
+         <activity
+            android:name=".jellybam.BamPersist"
+            android:label="@string/title_persist">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
 
         <provider
             android:name=".jellybam.VibrationsProvider"

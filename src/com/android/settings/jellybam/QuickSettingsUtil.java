@@ -89,7 +89,7 @@ public class QuickSettingsUtil {
                 TILE_NFC, R.string.title_tile_nfc,
                 "com.android.systemui:drawable/ic_qs_nfc_off"));
         TILES.put(TILE_REBOOT, new QuickSettingsUtil.TileInfo(
-                TILE_SETTINGS, R.string.title_tile_reboot,
+                TILE_REBOOT, R.string.title_tile_reboot,
                 "com.android.systemui:drawable/ic_qs_reboot"));
         TILES.put(TILE_SETTINGS, new QuickSettingsUtil.TileInfo(
                 TILE_SETTINGS, R.string.title_tile_settings,

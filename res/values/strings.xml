@@ -5382,10 +5382,8 @@
     <string name="right">Right</string>
     <string name="left">Left</string>
     <string name="power_menu_expanded_desktop">Expanded Desktop</string>
-    <string name="header_category_cyanogenmod">CyanogenMod</string>
-    <string name="header_category_aokp">AOKP</string>
-    <string name="header_category_paranoid">ParanoidAndroid</string>
-    <string name="header_category_jellybam">Customization</string>
+    <string name="header_category_rom_jellybam">ROM Customization</string>
+    <string name="header_category_graphics_jellybam">Graphics Customization</string>
     <string name="dpi_settings">XPosed</string>
     <string name="xposed_frameworks_settings">Xposed Framework</string>
     <string name="xposed_dpi_settings">Xposed DPI</string>
@@ -5860,6 +5858,21 @@
     <string name="swap_volume_keys_title">Swap volume buttons</string>
     <string name="swap_volume_keys_summary">Swap volume buttons when the screen is rotated by 90 or 180 degrees</string>
     <string name="holobam_settings_title">HoloBam</string>
+    <string name="header_install">Install</string>
+    <string name="installer">Installer</string>
+    <string name="title_persist">BAM Persistence</string>
+
+    <!-- Persistence -->
+    <string name="persist_options">BAM Persistence</string>
+    <string name="persist_summary">Keep strings and config files saved after ROM update</string>
+    <string name="persist_header_props">Build Properties</string>
+    <string name="persist_header_conf">Configs</string>
+    <string name="persist_enable">Enable Persistence</string>
+    <string name="persist_enable_summary">Control persistence</string>
+    <string name="persist_prop_density">Persist Density</string>
+    <string name="persist_prop_density_summary">Persist LCD density</string>
+    <string name="persist_file_hosts">Persist Hosts</string>
+    <string name="persist_file_hosts_summary">Persist hosts file</string>
 
     <!-- JELLYBAM CHANGELOG -->
     <string name="bam_changelog_title">Release changelog</string>
@@ -5922,12 +5935,16 @@
     <!-- BAMModder Applications -->
     <string name="bam_modder_apps_samsung_apps">Samsung Apps</string>
     <string name="bam_modder_apps_samsung_apps_summary">This pack includes:\nStock Samsung apps store</string>
-    <string name="bam_modder_apps_samsung_smartview">Samsung Smart View</string>
-    <string name="bam_modder_apps_samsung_smartview_summary">This pack includes:\nStock Samsung smart view</string>
     <string name="bam_modder_apps_samsung_paperartist">Samsung Paper Artist</string>
     <string name="bam_modder_apps_samsung_paperartist_summary">This pack includes:\nStock Samsung paper artist</string>
+    <string name="bam_modder_apps_samsung_smartview">Samsung Smart View</string>
+    <string name="bam_modder_apps_samsung_smartview_summary">This pack includes:\nStock Samsung smart view</string>
+    <string name="bam_modder_apps_samsung_snote">Samsung S-Note</string>
+    <string name="bam_modder_apps_samsung_snote_summary">This pack includes:\nStock Samsung S-Note</string>
     <string name="bam_modder_apps_samsung_svoice">Samsung S-Voice</string>
     <string name="bam_modder_apps_samsung_svoice_summary">This pack includes:\nStock S-Voice app from Galaxy S4</string>
+    <string name="bam_modder_apps_samsung_taskmanager">Samsung Task Manager</string>
+    <string name="bam_modder_apps_samsung_taskmanager_summary">This pack includes:\nStock Samsung Task Manager</string>
     <string name="bam_modder_apps_sony_media">Xperia Z Media pack</string>
     <string name="bam_modder_apps_sony_media_summary">This pack includes:\nStcok Sony Xperia Z Media applications like album, walkman, photo editor, all the various plugins and widgets</string>
     <string name="bam_modder_apps_sony_keyboard">Xperia Z Keyboard</string>
@@ -5967,6 +5984,10 @@
     <string name="bam_modder_fonts_additional">Additional Fonts</string>
     <string name="bam_modder_fonts_arial">Arial</string>
     <string name="bam_modder_fonts_arial_summary">This pack includes:\nArial font</string>
+    <string name="bam_modder_fonts_asap">Asap Default</string>
+    <string name="bam_modder_fonts_asap_summary">This pack includes:\nAsap Default font</string>
+    <string name="bam_modder_fonts_avenir">Avenir Medium</string>
+    <string name="bam_modder_fonts_avenir_summary">This pack includes:\nAsap Default font</string>
     <string name="bam_modder_fonts_bpreplay">BPReplay v3</string>
     <string name="bam_modder_fonts_bpreplay_summary">This pack includes:\nBPReplay v3 font</string>
     <string name="bam_modder_fonts_cocon">Cocon</string>
