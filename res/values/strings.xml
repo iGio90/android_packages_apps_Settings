@@ -5384,6 +5384,8 @@
     <string name="power_menu_expanded_desktop">Expanded Desktop</string>
     <string name="header_category_rom_jellybam">ROM Customization</string>
     <string name="header_category_graphics_jellybam">Graphics Customization</string>
+    <string name="header_category_advanced_jellybam">Advanced Customization</string>
+    <string name="bam_sizer">BAM Sizer</string>
     <string name="dpi_settings">XPosed</string>
     <string name="xposed_frameworks_settings">Xposed Framework</string>
     <string name="xposed_dpi_settings">Xposed DPI</string>
@@ -5864,11 +5866,10 @@
 
     <!-- Persistence -->
     <string name="persist_options">BAM Persistence</string>
-    <string name="persist_summary">Keep strings and config files saved after ROM update</string>
     <string name="persist_header_props">Build Properties</string>
     <string name="persist_header_conf">Configs</string>
     <string name="persist_enable">Enable Persistence</string>
-    <string name="persist_enable_summary">Control persistence</string>
+    <string name="persist_enable_summary">Control persistence. Keep strings and config files saved after ROM update</string>
     <string name="persist_prop_density">Persist Density</string>
     <string name="persist_prop_density_summary">Persist LCD density</string>
     <string name="persist_file_hosts">Persist Hosts</string>
@@ -5998,8 +5999,8 @@
     <string name="bam_modder_fonts_robotocl_summary">This pack includes:\nRoboto Cleaned font</string>
     <string name="bam_modder_fonts_sense">Sense 5</string>
     <string name="bam_modder_fonts_sense_summary">This pack includes:\nStock sense 5 font</string>
-    <string name="bam_modder_fonts_timesnewroman">TimesNewRoman</string>
-    <string name="bam_modder_fonts_timesnewroman_summary">This pack includes:\nTimesNewRoman font</string>
+    <string name="bam_modder_fonts_timesnewroman">Times New Roman</string>
+    <string name="bam_modder_fonts_timesnewroman_summary">This pack includes:\nTimes New Roman font</string>
 
     <!-- BAMModder Miscs -->
     <string name="bam_modder_miscs_general">General Mods</string>

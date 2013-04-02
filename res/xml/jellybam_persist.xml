@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <Preference
-            style="?android:preferenceInformationStyle"
-            android:title="@string/persist_options"
-            android:summary="@string/persist_summary"
-            android:selectable="false" />
-
         <CheckBoxPreference
            android:key="enable_persist"
            android:title="@string/persist_enable"
