@@ -213,15 +213,15 @@
     <header android:id="@+id/advanced_customization_section"
         android:title="@string/header_category_advanced_jellybam" />
 
-    <!-- BAM Sizer -->
+    <!-- BAM Cleaner -->
     <header
-        android:id="@+id/sizer"
-        android:title="@string/bam_sizer"
+        android:id="@+id/cleaner"
+        android:title="@string/bam_cleaner"
         android:icon="@drawable/ic_settings_bamcontrol">
         <intent
             android:action="android.intent.action.MAIN"
-            android:targetPackage="com.bam.sizer"
-            android:targetClass="com.bam.sizer.BamSizer" />
+            android:targetPackage="com.bam.cleaner"
+            android:targetClass="com.bam.sizer.BamCleaner" />
     </header>
 
     <!-- BAM Persist -->

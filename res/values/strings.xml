@@ -5385,7 +5385,7 @@
     <string name="header_category_rom_jellybam">ROM Customization</string>
     <string name="header_category_graphics_jellybam">Graphics Customization</string>
     <string name="header_category_advanced_jellybam">Advanced Customization</string>
-    <string name="bam_sizer">BAM Sizer</string>
+    <string name="bam_cleaner">BAM Cleaner</string>
     <string name="dpi_settings">XPosed</string>
     <string name="xposed_frameworks_settings">Xposed Framework</string>
     <string name="xposed_dpi_settings">Xposed DPI</string>
