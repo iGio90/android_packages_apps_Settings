@@ -57,7 +57,7 @@
         <PreferenceScreen
             android:key="bam_modder_apps_samsung_snote"
             android:icon="@drawable/ic_bammodder_applications"
-            android:title="@string/bam_modder_apps_snote_smartview"
+            android:title="@string/bam_modder_apps_samsung_snote"
             android:summary="@string/bam_modder_apps_samsung_snote_summary" >
             <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="com.bam.android.bammodder"
