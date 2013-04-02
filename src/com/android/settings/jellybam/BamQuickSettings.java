@@ -80,7 +80,6 @@ import net.margaritov.preference.colorpicker.ColorPickerView;
 import com.android.settings.jellybam.CodeReceiver;
 import com.android.settings.jellybam.AbstractAsyncSuCMDProcessor;
 import com.android.settings.jellybam.CMDProcessor;
-import com.android.settings.jellybam.Executable;
 import com.android.settings.jellybam.Helpers;
 import com.android.settings.jellybam.AlphaSeekBar;
 import com.android.settings.jellybam.PowerWidgetUtil;

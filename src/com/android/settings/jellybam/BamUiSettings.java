@@ -88,7 +88,6 @@ import com.android.settings.jellybam.AbstractAsyncSuCMDProcessor;
 import com.android.settings.jellybam.CMDProcessor;
 import com.android.settings.jellybam.Helpers;
 import com.android.settings.jellybam.AlphaSeekBar;
-import com.android.settings.jellybam.Executable;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -154,7 +153,6 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
     private String mErrormsg;
     private String mBootAnimationPath;
 
-    private CMDProcessor mCMDProcessor = new CMDProcessor();
     private static ContentResolver mContentResolver;
     private Random mRandomGenerator = new SecureRandom();
 
@@ -169,8 +167,6 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.jellybam_ui_settings);
-
-	mCMDProcessor.setLogcatDebugging(DEBUG);
 
         mContentResolver = getContentResolver();
 
@@ -676,12 +672,12 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
 
     private void DisableBootAnimation() {
         resetSwaggedOutBootAnimation();
-        if (!mCMDProcessor.su.runWaitFor(
+        if (!CMDProcessor.runSuCommand(
                 "grep -q \"debug.sf.nobootanimation\" /system/build.prop")
                 .success()) {
             // if not add value
             Helpers.getMount("rw");
-            mCMDProcessor.su.runWaitFor(String.format("echo debug.sf.nobootanimation=%d >> /system/build.prop",
+            CMDProcessor.runSuCommand(String.format("echo debug.sf.nobootanimation=%d >> /system/build.prop",
                     mDisableBootAnimation.isChecked() ? 1 : 0));
             Helpers.getMount("ro");
         }
@@ -786,9 +782,9 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
     private void resetSwaggedOutBootAnimation() {
         if(new File("/data/local/bootanimation.user").exists()) {
             // we're using the alt boot animation
-            Executable moveAnimCommand = new Executable("mv /data/local/bootanimation.user /data/local/bootanimation.zip");
+            String moveAnimCommand = "mv /data/local/bootanimation.user /data/local/bootanimation.zip";
             // we must wait for this command to finish before we continue
-            mCMDProcessor.su.runWaitFor(moveAnimCommand);
+            CMDProcessor.runSuCommand(moveAnimCommand);
         }
         CodeReceiver.setSwagInitiatedPref(mContext, false);
     }
