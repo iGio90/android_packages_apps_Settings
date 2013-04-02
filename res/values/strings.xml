@@ -5860,6 +5860,18 @@
     <string name="swap_volume_keys_title">Swap volume buttons</string>
     <string name="swap_volume_keys_summary">Swap volume buttons when the screen is rotated by 90 or 180 degrees</string>
     <string name="holobam_settings_title">HoloBam</string>
+    <string name="header_install">Install</string>
+    <string name="installer">Installer</string>
+    <string name="title_persist">Persistence</string>
+
+    <!-- Persistence -->
+    <string name="persist_options">Persistence</string>
+    <string name="persist_enable">Enable Persistence</string>
+    <string name="persist_enable_summary">Control persistence</string>
+    <string name="persist_prop_density">Persist Density</string>
+    <string name="persist_prop_density_summary">Persist LCD density</string>
+    <string name="persist_file_hosts">Persist Hosts</string>
+    <string name="persist_file_hosts_summary">Persist hosts file</string>
 
     <!-- JELLYBAM CHANGELOG -->
     <string name="bam_changelog_title">Release changelog</string>

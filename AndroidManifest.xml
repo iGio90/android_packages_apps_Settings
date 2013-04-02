@@ -1762,6 +1762,14 @@
 
         <activity android:name=".jellybam.BamVibrationSettings" />
 
+         <activity
+            android:name=".jellybam.BamPersist"
+            android:label="@string/title_persist">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
         <provider
             android:name=".jellybam.VibrationsProvider"
             android:authorities="com.android.settings.jellybam.Vibrations"

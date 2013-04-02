@@ -235,6 +235,16 @@
                 android:targetClass="com.jellybam.bampapers.Wallpaper" />
     </header>
 
+    <header
+        android:id="@+id/install"
+        android:title="@string/header_install" />
+
+    <header
+        android:id="@+id/persist"
+        android:fragment="com.android.settings.jellybam.Persist"
+        android:title="@string/persist_options"
+        android:icon="@drawable/ic_settings_bamcontrol" />
+
     <!-- SYSTEM -->
     <header android:id="@+id/system_section"
         android:title="@string/header_category_system" />
