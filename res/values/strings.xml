@@ -5382,10 +5382,8 @@
     <string name="right">Right</string>
     <string name="left">Left</string>
     <string name="power_menu_expanded_desktop">Expanded Desktop</string>
-    <string name="header_category_cyanogenmod">CyanogenMod</string>
-    <string name="header_category_aokp">AOKP</string>
-    <string name="header_category_paranoid">ParanoidAndroid</string>
-    <string name="header_category_jellybam">Customization</string>
+    <string name="header_category_rom_jellybam">ROM Customization</string>
+    <string name="header_category_graphics_jellybam">Graphics Customization</string>
     <string name="dpi_settings">XPosed</string>
     <string name="xposed_frameworks_settings">Xposed Framework</string>
     <string name="xposed_dpi_settings">Xposed DPI</string>
@@ -5862,7 +5860,7 @@
     <string name="holobam_settings_title">HoloBam</string>
     <string name="header_install">Install</string>
     <string name="installer">Installer</string>
-    <string name="title_persist">Persistence</string>
+    <string name="title_persist">BAM Persistence</string>
 
     <!-- Persistence -->
     <string name="persist_options">Persistence</string>
