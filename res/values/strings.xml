@@ -5922,12 +5922,14 @@
     <!-- BAMModder Applications -->
     <string name="bam_modder_apps_samsung_apps">Samsung Apps</string>
     <string name="bam_modder_apps_samsung_apps_summary">This pack includes:\nStock Samsung apps store</string>
-    <string name="bam_modder_apps_samsung_smartview">Samsung Smart View</string>
-    <string name="bam_modder_apps_samsung_smartview_summary">This pack includes:\nStock Samsung smart view</string>
     <string name="bam_modder_apps_samsung_paperartist">Samsung Paper Artist</string>
     <string name="bam_modder_apps_samsung_paperartist_summary">This pack includes:\nStock Samsung paper artist</string>
+    <string name="bam_modder_apps_samsung_smartview">Samsung Smart View</string>
+    <string name="bam_modder_apps_samsung_smartview_summary">This pack includes:\nStock Samsung smart view</string>
     <string name="bam_modder_apps_samsung_svoice">Samsung S-Voice</string>
     <string name="bam_modder_apps_samsung_svoice_summary">This pack includes:\nStock S-Voice app from Galaxy S4</string>
+    <string name="bam_modder_apps_samsung_taskmanager">Samsung Task Manager</string>
+    <string name="bam_modder_apps_samsung_taskmanager_summary">This pack includes:\nStock Samsung Task Manager</string>
     <string name="bam_modder_apps_sony_media">Xperia Z Media pack</string>
     <string name="bam_modder_apps_sony_media_summary">This pack includes:\nStcok Sony Xperia Z Media applications like album, walkman, photo editor, all the various plugins and widgets</string>
     <string name="bam_modder_apps_sony_keyboard">Xperia Z Keyboard</string>
