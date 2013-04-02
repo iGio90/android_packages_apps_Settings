@@ -5863,7 +5863,10 @@
     <string name="title_persist">BAM Persistence</string>
 
     <!-- Persistence -->
-    <string name="persist_options">Persistence</string>
+    <string name="persist_options">BAM Persistence</string>
+    <string name="persist_summary">Keep strings and config files saved after ROM update</string>
+    <string name="persist_header_props">Build Properties</string>
+    <string name="persist_header_conf">Configs</string>
     <string name="persist_enable">Enable Persistence</string>
     <string name="persist_enable_summary">Control persistence</string>
     <string name="persist_prop_density">Persist Density</string>
