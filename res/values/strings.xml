@@ -4555,6 +4555,7 @@
     <string name="title_tile_brightness">Brightness</string>
     <string name="title_tile_power">Power</string>
     <string name="title_tile_gps">GPS</string>
+    <string name="title_tile_holobam">HoloBam</string>
     <string name="title_tile_torch">Torch</string>
     <string name="title_tile_lockscreen">Lock screen</string>
     <string name="title_tile_lte">LTE</string>

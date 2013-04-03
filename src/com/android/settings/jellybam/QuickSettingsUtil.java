@@ -24,6 +24,7 @@ import static com.android.internal.util.cm.QSConstants.TILE_BLUETOOTH;
 import static com.android.internal.util.cm.QSConstants.TILE_BRIGHTNESS;
 import static com.android.internal.util.cm.QSConstants.TILE_DELIMITER;
 import static com.android.internal.util.cm.QSConstants.TILE_GPS;
+import static com.android.internal.util.cm.QSConstants.TILE_HOLOBAM;
 import static com.android.internal.util.cm.QSConstants.TILE_LOCKSCREEN;
 import static com.android.internal.util.cm.QSConstants.TILE_MOBILEDATA;
 import static com.android.internal.util.cm.QSConstants.TILE_NETWORKMODE;
@@ -133,6 +134,9 @@ public class QuickSettingsUtil {
         TILES.put(TILE_HYBRID, new QuickSettingsUtil.TileInfo(
                 TILE_HYBRID, R.string.title_tile_hybrid,
                 "com.android.systemui:drawable/ic_qs_hybrid"));
+        TILES.put(TILE_HOLOBAM, new QuickSettingsUtil.TileInfo(
+                TILE_HOLOBAM, R.string.title_tile_holobam,
+                "com.android.systemui:drawable/ic_qs_jb_dark_off_light"));
     }
 
     public static String getCurrentTiles(Context context) {
