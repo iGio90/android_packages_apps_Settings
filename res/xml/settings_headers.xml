@@ -217,11 +217,11 @@
     <header
         android:id="@+id/cleaner"
         android:title="@string/bam_cleaner"
-        android:icon="@drawable/ic_settings_bamcontrol">
+        android:icon="@drawable/ic_settings_bamcleaner">
         <intent
             android:action="android.intent.action.MAIN"
             android:targetPackage="com.bam.cleaner"
-            android:targetClass="com.bam.sizer.BamCleaner" />
+            android:targetClass="com.bam.cleaner.BamCleaner" />
     </header>
 
     <!-- BAM Persist -->
