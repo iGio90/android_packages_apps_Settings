@@ -904,6 +904,7 @@ public class Settings extends PreferenceActivity
     public static class BamQuickSettingsActivity extends Settings { /* empty */ }
     public static class BamHardwareKeysSettingsActivity extends Settings { /* empty */ }
     public static class BamLockscreenSettingsActivity extends Settings { /* empty */ }
+    public static class BamLockscreenButtonsSettingsActivity extends Settings { /* empty */ }
     public static class BamPowerMenuSettingsActivity extends Settings { /* empty */ }
     public static class BamUiSettingsActivity extends Settings { /* empty */ }
     public static class BamBatterySettingsActivity extends Settings { /* empty */ }

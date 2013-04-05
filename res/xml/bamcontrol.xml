@@ -35,6 +35,12 @@
         android:title="@string/lock_screen_settings"
         android:fragment="com.android.settings.jellybam.BamLockscreenSettings" />
 
+    <PreferenceScreen
+        android:key="bam_lockscreen_buttons"
+        android:icon="@drawable/ic_settings_lock_screen"
+        android:title="@string/lock_screen_buttons_settings"
+        android:fragment="com.android.settings.jellybam.BamLockscreenButtonsSettings" />
+
    <PreferenceScreen
         android:key="bam_pie_settings"
         android:icon="@drawable/ic_settings_pie"

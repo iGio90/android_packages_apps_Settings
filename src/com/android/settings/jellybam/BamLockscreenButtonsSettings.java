@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.cyanogenmod;
+package com.android.settings.jellybam;
 
 import java.util.*;
 
@@ -35,7 +35,7 @@ import com.android.settings.Utils;
 /**
  * Lockscreen Buttons Settings
  */
-public class LockscreenButtons extends SettingsPreferenceFragment
+public class BamLockscreenButtonsSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "LockscreenButtons";

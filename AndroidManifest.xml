@@ -1752,6 +1752,8 @@
 
         <activity android:name=".jellybam.BamLockscreenSettings" />
 
+        <activity android:name=".jellybam.BamLockscreenButtonsSettings" />
+
         <activity android:name=".jellybam.BamNavbarSettings" />
 
         <activity android:name=".jellybam.BamSignalSettings" />
