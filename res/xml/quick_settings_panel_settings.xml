@@ -87,7 +87,7 @@
 
          <CheckBoxPreference
             android:key="dynamic_usbtether"
-            android:title="@string/title_dynamic_usbtether" />
+            android:title="@string/title_dynamic_usb_tether" />
 
         <CheckBoxPreference
             android:key="dynamic_wifi"
