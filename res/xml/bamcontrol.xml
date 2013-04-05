@@ -29,18 +29,6 @@
         android:fragment="com.android.settings.jellybam.BamUiSettings"
         android:title="@string/jellybam_ui_settings_title" />
 
-    <PreferenceScreen
-        android:key="bam_lockscreen"
-        android:icon="@drawable/ic_settings_lock_screen"
-        android:title="@string/lock_screen_settings"
-        android:fragment="com.android.settings.jellybam.BamLockscreenSettings" />
-
-    <PreferenceScreen
-        android:key="bam_lockscreen_buttons"
-        android:icon="@drawable/ic_settings_lock_screen"
-        android:title="@string/lock_screen_buttons_settings"
-        android:fragment="com.android.settings.jellybam.BamLockscreenButtonsSettings" />
-
    <PreferenceScreen
         android:key="bam_pie_settings"
         android:icon="@drawable/ic_settings_pie"
@@ -64,7 +52,30 @@
         android:icon="@drawable/ic_settings_powermenu"
         android:title="@string/power_menu_title"
         android:fragment="com.android.settings.jellybam.BamPowerMenuSettings" />
+    </PreferenceCategory>
 
+   <!-- LOCKSCREEN -->
+   <PreferenceCategory
+        android:key="bam_interface"
+        android:title="@string/bamcontrol_lockscreen" >
+
+    <PreferenceScreen
+        android:key="bam_lockscreen"
+        android:icon="@drawable/ic_settings_lock_screen"
+        android:title="@string/lock_screen_settings"
+        android:fragment="com.android.settings.jellybam.BamLockscreenSettings" />
+
+    <PreferenceScreen
+        android:key="bam_lockscreen_interface"
+        android:icon="@drawable/ic_settings_lock_screen"
+        android:title="@string/lock_screen_interface_settings"
+        android:fragment="com.android.settings.jellybam.BamLockscreenInterfaceSettings" />
+
+    <PreferenceScreen
+        android:key="bam_lockscreen_buttons"
+        android:icon="@drawable/ic_settings_lock_screen"
+        android:title="@string/lock_screen_buttons_settings"
+        android:fragment="com.android.settings.jellybam.BamLockscreenButtonsSettings" />
     </PreferenceCategory>
 
    <!-- STATUSBAR -->

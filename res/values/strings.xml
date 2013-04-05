@@ -4503,6 +4503,7 @@
 
     <!-- Lock screen sub menu [CHAR LIMIT=30] -->
     <string name="lock_screen_settings">Lockscreen</string>
+    <string name="lock_screen_interface_settings">Lockscreen Interface</string>
     <string name="lock_screen_buttons_settings">Lockscreen Buttons</string>
     <!-- Allow rotation -->
     <string name="allow_rotate_title">Allow rotation</string>
@@ -5256,6 +5257,8 @@
     <string name="lockscreen_buttons_playpause">Play/Pause music</string>
     <string name="lockscreen_buttons_toggle_sound">Toggle sound</string>
 
+    <string name="lockscreen_interface_title">Lockscreen Interface</string>
+
     <!--- Volume key cursor control -->
     <string name="volume_key_cursor_control_title">Volume key cursor control</string>
     <string name="volume_key_cursor_control_off">Disabled</string>
@@ -5333,6 +5336,7 @@
     <!-- BAMControl -->
     <string name="bamcontrol_settings_title">BAM Control</string>
     <string name="bamcontrol_interface">Interface</string>
+    <string name="bamcontrol_lockscreen">Lockscreen</string>
     <string name="bamcontrol_statusbar">Statusbar</string>
     <string name="bamcontrol_system">System</string>
     <string name="bamcontrol_navigation_bar">Navigation Bar</string>
@@ -5359,6 +5363,8 @@
     <string name="lockscreen_use_widget_container_carousel_summary">Use a carousel animation when switching between lockscreen widgets.</string>
     <string name="lockscreen_auto_rotate_title">Allow lockscreen rotation</string>
     <string name="lockscreen_auto_rotate_summary">Lockscreen will have ability to rotate via device orientation. This is independent of Auto-rotation in display</string>
+    <string name="lockscreen_seethrough">Lockscreen See through</string>
+    <string name="lockscreen_seethrough_summary">Allows you to see your homescreen behind the lock screen including apps.</string>
     <string name="volume_rocker_wake_title">Volume wake</string>
     <string name="volume_rocker_wake_summary">Wake screen with volume rockers</string>
     <string name="volume_music_controls_title">Volume music controls</string>

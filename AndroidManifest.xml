@@ -1555,8 +1555,6 @@
 
         <activity android:name=".cyanogenmod.LockscreenInterface" />
 
-        <activity android:name=".cyanogenmod.LockscreenButtons" />
-
         <activity android:name=".profiles.NFCProfile"
                 android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
@@ -1753,6 +1751,8 @@
         <activity android:name=".jellybam.BamUiSettings" />
 
         <activity android:name=".jellybam.BamLockscreenSettings" />
+
+        <activity android:name=".jellybam.BamLockscreenInterfaceSettings" />
 
         <activity android:name=".jellybam.BamLockscreenButtonsSettings" />
 
