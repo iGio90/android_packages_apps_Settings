@@ -4503,6 +4503,8 @@
 
     <!-- Lock screen sub menu [CHAR LIMIT=30] -->
     <string name="lock_screen_settings">Lockscreen</string>
+    <string name="lock_screen_interface_settings">Lockscreen Interface</string>
+    <string name="lock_screen_buttons_settings">Lockscreen Buttons</string>
     <!-- Allow rotation -->
     <string name="allow_rotate_title">Allow rotation</string>
     <string name="allow_rotate_summary">Enables landscape mode on lock screen</string>
@@ -4550,11 +4552,13 @@
     <string name="tile_picker_summary">View, select or change the layout of the displayed tiles</string>
     <string name="tile_choose_title">Choose a tile</string>
     <string name="title_tile_airplane">Airplane mode</string>
+    <string name="title_tile_bamcontrol">BAM Control</string>
     <string name="title_tile_battery">Battery stats</string>
     <string name="title_tile_bluetooth">Bluetooth</string>
     <string name="title_tile_brightness">Brightness</string>
     <string name="title_tile_power">Power</string>
     <string name="title_tile_gps">GPS</string>
+    <string name="title_tile_holobam">HoloBam</string>
     <string name="title_tile_torch">Torch</string>
     <string name="title_tile_lockscreen">Lock screen</string>
     <string name="title_tile_lte">LTE</string>
@@ -4585,6 +4589,7 @@
     <string name="title_dynamic_bugreport">Bug report</string>
     <string name="title_dynamic_ime">IME changer</string>
     <string name="title_dynamic_wifi">Wi-Fi display</string>
+    <string name="title_dynamic_usb_tether">USB Tether</string>
 
     <!-- Network modes -->
     <string name="network_mode_2g_3g2g">2G/3G+2G</string>
@@ -5042,6 +5047,9 @@
     <string name="profile_add_nfc_text">This NFC tag refers to an unknown profile. Attaching this NFC tag to an existing profile will allow for selecting the profile in the future.</string>
     <string name="profile_select">Select profile</string>
 
+    <string name="link_volume_ringtones">Link ringtone &amp; notifications volumes</string>
+    <string name="link_volume_mutes">Silent mode affects notifications</string>
+
     <!-- Display settings screen, notification light settings -->
     <string name="notification_pulse_title">Notification light</string>
     <string name="notification_light_general_title">General</string>
@@ -5249,6 +5257,8 @@
     <string name="lockscreen_buttons_playpause">Play/Pause music</string>
     <string name="lockscreen_buttons_toggle_sound">Toggle sound</string>
 
+    <string name="lockscreen_interface_title">Lockscreen Interface</string>
+
     <!--- Volume key cursor control -->
     <string name="volume_key_cursor_control_title">Volume key cursor control</string>
     <string name="volume_key_cursor_control_off">Disabled</string>
@@ -5326,6 +5336,7 @@
     <!-- BAMControl -->
     <string name="bamcontrol_settings_title">BAM Control</string>
     <string name="bamcontrol_interface">Interface</string>
+    <string name="bamcontrol_lockscreen">Lockscreen</string>
     <string name="bamcontrol_statusbar">Statusbar</string>
     <string name="bamcontrol_system">System</string>
     <string name="bamcontrol_navigation_bar">Navigation Bar</string>
@@ -5333,7 +5344,8 @@
     <string name="bamlockscreen_security">Security</string>
     <string name="bamlockscreen_style">Style</string>
     <string name="bamlockscreen_widgets">Widgets</string>
-    <string name="bamlockscreen_shortcuts">Shortcuts</string>
+    <string name="lockscreen_shortcuts_title">Shortcuts</string>
+    <string name="lockscreen_shortcuts_summary">View or change custom lock screen shortcuts</string>
     <string name="bamlockscreen_music">Music</string>
     <string name="bamlockscreen_misc">Misc</string>
     <string name="text_off">Off</string>
@@ -5352,6 +5364,25 @@
     <string name="lockscreen_use_widget_container_carousel_summary">Use a carousel animation when switching between lockscreen widgets.</string>
     <string name="lockscreen_auto_rotate_title">Allow lockscreen rotation</string>
     <string name="lockscreen_auto_rotate_summary">Lockscreen will have ability to rotate via device orientation. This is independent of Auto-rotation in display</string>
+    <string name="lockscreen_seethrough">Lockscreen See through</string>
+    <string name="lockscreen_seethrough_summary">Allows you to see your homescreen behind the lock screen including apps.</string>
+    <string name="lockscreen_alpha_title">Background transparency</string>
+    <string name="lockscreen_background_full_transparent">Full transparent</string>
+    <string name="lockscreen_camera_widget_title">Enable camera widget</string>
+    <string name="lockscreen_camera_widget_summary">Show secure camera widget on the lock screen</string>
+    <string name="lockscreen_widgets_title">Widgets</string>
+    <string name="lockscreen_widgets_summary">View or change the lock screen widget options</string>
+    <string name="lockscreen_style_options_title">Lockscreen style</string>
+    <string name="lockscreen_slider_grouptitle">Slider and shortcut options</string>
+    <string name="lockscreen_shorcuts_longpress_title">Shortcuts longpress</string>
+    <string name="lockscreen_shorcuts_longpress_summary">Open custom lock screen shortcuts on longpress</string>
+    <string name="lockscreen_additional_options_grouptitle">Additional options</string>
+    <string name="lockscreen_no_rotate_summary">System auto rotate is disabled. Enable it for this option.</string>
+    <string name="lockscreen_widgets_category">Lock screen Widgets</string>
+    <string name="lockscreen_widgets_all_title">Enable widgets</string>
+    <string name="lockscreen_widgets_all_summary">Add widgets to the lock screen</string>
+    <string name="lockscreen_disable_hints_title">Disable usability hints</string>
+    <string name="lockscreen_disable_hints_summary">Disables the glow that surrounds the widget pager on lock screen in portrait mode</string>
     <string name="volume_rocker_wake_title">Volume wake</string>
     <string name="volume_rocker_wake_summary">Wake screen with volume rockers</string>
     <string name="volume_music_controls_title">Volume music controls</string>
@@ -5382,10 +5413,10 @@
     <string name="right">Right</string>
     <string name="left">Left</string>
     <string name="power_menu_expanded_desktop">Expanded Desktop</string>
-    <string name="header_category_cyanogenmod">CyanogenMod</string>
-    <string name="header_category_aokp">AOKP</string>
-    <string name="header_category_paranoid">ParanoidAndroid</string>
-    <string name="header_category_jellybam">Customization</string>
+    <string name="header_category_rom_jellybam">ROM Customization</string>
+    <string name="header_category_graphics_jellybam">Graphics Customization</string>
+    <string name="header_category_advanced_jellybam">Advanced Customization</string>
+    <string name="bam_cleaner">BAM Cleaner</string>
     <string name="dpi_settings">XPosed</string>
     <string name="xposed_frameworks_settings">Xposed Framework</string>
     <string name="xposed_dpi_settings">Xposed DPI</string>
@@ -5860,6 +5891,22 @@
     <string name="swap_volume_keys_title">Swap volume buttons</string>
     <string name="swap_volume_keys_summary">Swap volume buttons when the screen is rotated by 90 or 180 degrees</string>
     <string name="holobam_settings_title">HoloBam</string>
+    <string name="header_install">Install</string>
+    <string name="installer">Installer</string>
+    <string name="title_persist">BAM Persistence</string>
+
+    <!-- Persistence -->
+    <string name="persist_options">BAM Persistence</string>
+    <string name="persist_header_props">Build Properties</string>
+    <string name="persist_header_conf">Configs</string>
+    <string name="persist_enable">Enable Persistence</string>
+    <string name="persist_enable_summary">Control persistence. Keep strings and config files saved after ROM update</string>
+    <string name="persist_prop_density">Persist Density</string>
+    <string name="persist_prop_density_summary">Persist LCD density</string>
+    <string name="persist_file_hosts">Persist Hosts</string>
+    <string name="persist_file_hosts_summary">Persist hosts file</string>
+    <string name="persist_file_papref">Persist PA prefs</string>
+    <string name="persist_file_papref_summary">Persist paranoid preferences file</string>
 
     <!-- JELLYBAM CHANGELOG -->
     <string name="bam_changelog_title">Release changelog</string>
@@ -5890,7 +5937,7 @@
     <string name="bam_modder_welcome">Welcome to BAM Modder</string>
     <string name="bam_modder_welcome_summary">Here you can find useful mods to download and flash into your device</string>
     <string name="bam_modder_support_us">App donate</string>
-    <string name="bam_modder_support_us_summary">By tapping here you can buy the donate version of BAM Modder.\nNo additional features are provided to the donation app, but if you would like to contribute and maintain the project, just tap here!</string>
+    <string name="bam_modder_support_us_summary">By tapping here you can buy the donate version of BAM Modder.\nNo additional features are provided to the donation app, however the Play Store one will be updated before the one included in the ROM since you will need to wait till i build the ROM zip.\nIf you would like to contribute and maintain the project by buying the donate version, just tap here!</string>
     <string name="bam_modder_categories">Mod categories</string>
     <string name="bam_modder_about">About BAM Modder</string>
     <string name="bam_modder_additional">Additional</string>
@@ -5922,12 +5969,16 @@
     <!-- BAMModder Applications -->
     <string name="bam_modder_apps_samsung_apps">Samsung Apps</string>
     <string name="bam_modder_apps_samsung_apps_summary">This pack includes:\nStock Samsung apps store</string>
-    <string name="bam_modder_apps_samsung_smartview">Samsung Smart View</string>
-    <string name="bam_modder_apps_samsung_smartview_summary">This pack includes:\nStock Samsung smart view</string>
     <string name="bam_modder_apps_samsung_paperartist">Samsung Paper Artist</string>
     <string name="bam_modder_apps_samsung_paperartist_summary">This pack includes:\nStock Samsung paper artist</string>
+    <string name="bam_modder_apps_samsung_smartview">Samsung Smart View</string>
+    <string name="bam_modder_apps_samsung_smartview_summary">This pack includes:\nStock Samsung smart view</string>
+    <string name="bam_modder_apps_samsung_snote">Samsung S-Note</string>
+    <string name="bam_modder_apps_samsung_snote_summary">This pack includes:\nStock Samsung S-Note</string>
     <string name="bam_modder_apps_samsung_svoice">Samsung S-Voice</string>
     <string name="bam_modder_apps_samsung_svoice_summary">This pack includes:\nStock S-Voice app from Galaxy S4</string>
+    <string name="bam_modder_apps_samsung_taskmanager">Samsung Task Manager</string>
+    <string name="bam_modder_apps_samsung_taskmanager_summary">This pack includes:\nStock Samsung Task Manager</string>
     <string name="bam_modder_apps_sony_media">Xperia Z Media pack</string>
     <string name="bam_modder_apps_sony_media_summary">This pack includes:\nStcok Sony Xperia Z Media applications like album, walkman, photo editor, all the various plugins and widgets</string>
     <string name="bam_modder_apps_sony_keyboard">Xperia Z Keyboard</string>
@@ -5967,6 +6018,10 @@
     <string name="bam_modder_fonts_additional">Additional Fonts</string>
     <string name="bam_modder_fonts_arial">Arial</string>
     <string name="bam_modder_fonts_arial_summary">This pack includes:\nArial font</string>
+    <string name="bam_modder_fonts_asap">Asap Default</string>
+    <string name="bam_modder_fonts_asap_summary">This pack includes:\nAsap Default font</string>
+    <string name="bam_modder_fonts_avenir">Avenir Medium</string>
+    <string name="bam_modder_fonts_avenir_summary">This pack includes:\nAsap Default font</string>
     <string name="bam_modder_fonts_bpreplay">BPReplay v3</string>
     <string name="bam_modder_fonts_bpreplay_summary">This pack includes:\nBPReplay v3 font</string>
     <string name="bam_modder_fonts_cocon">Cocon</string>
@@ -5977,8 +6032,8 @@
     <string name="bam_modder_fonts_robotocl_summary">This pack includes:\nRoboto Cleaned font</string>
     <string name="bam_modder_fonts_sense">Sense 5</string>
     <string name="bam_modder_fonts_sense_summary">This pack includes:\nStock sense 5 font</string>
-    <string name="bam_modder_fonts_timesnewroman">TimesNewRoman</string>
-    <string name="bam_modder_fonts_timesnewroman_summary">This pack includes:\nTimesNewRoman font</string>
+    <string name="bam_modder_fonts_timesnewroman">Times New Roman</string>
+    <string name="bam_modder_fonts_timesnewroman_summary">This pack includes:\nTimes New Roman font</string>
 
     <!-- BAMModder Miscs -->
     <string name="bam_modder_miscs_general">General Mods</string>
@@ -5986,4 +6041,41 @@
     <string name="bam_modder_miscs_silentcameraon_summary">This pack includes:\nAddod.d script provided by rmkilc that will enable the silent mode for your stock camera</string>
     <string name="bam_modder_miscs_silentcameraoff">Disable Silent Camera</string>
     <string name="bam_modder_miscs_silentcameraoff_summary">This pack includes:\nAddod.d script provided by rmkilc that will disable the silent camera and enable the stock shutter sound</string>
+
+    <!-- Main -->
+    <string name="main_title">Anonymous Usage Data</string>
+
+    <!-- Notification -->
+    <string name="notification_ticker">Statistics Opted-In</string>
+    <string name="notification_title">ROM Statistics</string>
+    <string name="notification_desc">Enable or Disable Anonymous Statistics</string>
+    <string name="main_link">&lt;a href=&quot;http://www.cyanogenmod.org/blog/cmstats-what-it-is-and-why-you-should-opt-in&quot;&gt;Learn More&lt;/a&gt;</string>
+    
+    <!-- Anonymous Statistics #CM -->
+    <!-- About device screen, list item title. Takes the user to the screen about opting in or out of anonymous statistics. -->
+    <string name="anonymous_statistics_title">ROM Statistics</string>
+    <string name="anonymous_statistics_summary">Help make this ROM better by opting into anonymous statistics reporting</string>
+    <string name="anonymous_statistics_warning_title">About</string>
+    <string name="anonymous_statistics_warning">Opting into ROM Statistics will allow non-personal data to be submitted to the
+        developers of the ROM to track unique installations across devices. The information submitted includes an unique identifier,
+        which does not compromise your privacy or personal data. The data is submitted during each boot.\n\nFor an example of the data that is submitted, tap on Preview Data.</string>
+    <string name="enable_reporting_title">Enable reporting</string>
+    <string name="preview_data_title">Preview data</string>
+    <string name="preview_data_summary">%s</string>
+    <string name="view_stats_title">View stats</string>
+    <string name="anonymous_learn_more">Learn more</string>
+    
+    <string name="pref_uninstall">Uninstall</string>
+    <string name="pref_uninstall_desc">Uninstall \'ROM Stats\' from the device?</string>
+    <string name="btn_yes">Yes</string>
+    <string name="btn_no">No</string>
+
+    <!-- Anonymous Statistics - Preview -->
+    <string name="preview_id_title">Unique ID</string>
+    <string name="preview_device_title">Device</string>
+    <string name="preview_version_title">Version</string>
+    <string name="preview_country_title">Country</string>
+    <string name="preview_carrier_title">Carrier</string>    
+    <string name="preview_romname_title">ROM Name</string>    
+    <string name="preview_romversion_title">ROM Version</string> 
 </resources>

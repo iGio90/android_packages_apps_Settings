@@ -39,6 +39,13 @@
             android:summary="@string/tile_picker_summary"
             android:fragment="com.android.settings.jellybam.QuickSettingsTiles" />
 
+         <ListPreference
+            android:key="pref_network_mode"
+            android:dialogTitle="@string/pref_network_mode_title"
+            android:title="@string/pref_network_mode_title"
+            android:entries="@array/entries_network_widget"
+            android:entryValues="@array/values_network_widget" />
+
         <MultiSelectListPreference
             android:key="pref_ring_mode"
             android:dialogTitle="@string/pref_ring_mode_title"
@@ -80,7 +87,7 @@
 
          <CheckBoxPreference
             android:key="dynamic_usbtether"
-            android:title="@string/title_dynamic_usbtether" />
+            android:title="@string/title_dynamic_usb_tether" />
 
         <CheckBoxPreference
             android:key="dynamic_wifi"

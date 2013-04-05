@@ -468,10 +468,6 @@ public class BamLockscreenSettings extends SettingsPreferenceFragment implements
     private void setDrawables() {
         mLongPressStatus.setChecked(mBoolLongPress);
 
-        if (mUnlockCounter() < 1) {
-            targetActivities[0] = AwesomeConstant.ACTION_UNLOCK.value();
-        }
-
         // Custom Targets
         ArrayList<TargetDrawable> storedDraw = new ArrayList<TargetDrawable>();
 
@@ -672,6 +668,10 @@ public class BamLockscreenSettings extends SettingsPreferenceFragment implements
         }
         mBoolLongPress = (Settings.System.getBoolean(cr,
                 Settings.System.LOCKSCREEN_TARGETS_LONGPRESS, false));
+
+       if (mUnlockCounter() < 1) {
+            targetActivities[0] = AwesomeConstant.ACTION_UNLOCK.value();
+        }
         setDrawables();
     }
 
@@ -790,7 +790,7 @@ public class BamLockscreenSettings extends SettingsPreferenceFragment implements
 
         final AlertDialog dialog = new AlertDialog.Builder(mContext)
                 .setTitle(title)
-                .setSingleChoiceItems(entries, -1, l)
+		.setItems(entries, l)
                 .create();
 
         dialog.show();

@@ -125,7 +125,8 @@ public class Settings extends PreferenceActivity
             R.id.date_time_settings,
             R.id.about_settings,
             R.id.accessibility_settings,
-            R.id.customization_section,
+            R.id.rom_customization_section,
+            R.id.graphics_customization_section,
             R.id.launcher_settings,
             R.id.themes_settings,
             R.id.hybrid_settings,
@@ -384,10 +385,23 @@ public class Settings extends PreferenceActivity
 
     @Override
     public Intent onBuildStartFragmentIntent(String fragmentName, Bundle args,
+            CharSequence titleText, CharSequence shortTitleText) {
+        Intent intent = super.onBuildStartFragmentIntent(fragmentName, args,
+                titleText, shortTitleText);
+        onBuildStartFragmentIntentHelper(fragmentName, intent);
+        return intent;
+    }
+
+    @Override
+    public Intent onBuildStartFragmentIntent(String fragmentName, Bundle args,
             int titleRes, int shortTitleRes) {
         Intent intent = super.onBuildStartFragmentIntent(fragmentName, args,
                 titleRes, shortTitleRes);
+        onBuildStartFragmentIntentHelper(fragmentName, intent);
+        return intent;
+    }
 
+    private void onBuildStartFragmentIntentHelper(String fragmentName, Intent intent) {
         // some fragments want to avoid split actionbar
         if (DataUsageSummary.class.getName().equals(fragmentName) ||
                 PowerUsageSummary.class.getName().equals(fragmentName) ||
@@ -409,9 +423,7 @@ public class Settings extends PreferenceActivity
                 ZonePicker.class.getName().equals(fragmentName)) {
             intent.putExtra(EXTRA_CLEAR_UI_OPTIONS, true);
         }
-
         intent.setClass(this, SubSettings.class);
-        return intent;
     }
 
     /**
@@ -892,6 +904,8 @@ public class Settings extends PreferenceActivity
     public static class BamQuickSettingsActivity extends Settings { /* empty */ }
     public static class BamHardwareKeysSettingsActivity extends Settings { /* empty */ }
     public static class BamLockscreenSettingsActivity extends Settings { /* empty */ }
+    public static class BamLockscreenInterfaceSettingsActivity extends Settings { /* empty */ }
+    public static class BamLockscreenButtonsSettingsActivity extends Settings { /* empty */ }
     public static class BamPowerMenuSettingsActivity extends Settings { /* empty */ }
     public static class BamUiSettingsActivity extends Settings { /* empty */ }
     public static class BamBatterySettingsActivity extends Settings { /* empty */ }
@@ -908,4 +922,5 @@ public class Settings extends PreferenceActivity
     public static class BamModderGraphicsSettingsActivity extends Settings { /* empty */ }
     public static class BamModderFontsSettingsActivity extends Settings { /* empty */ }
     public static class BamModderMiscsSettingsActivity extends Settings { /* empty */ }
+    public static class BamPersistSettingsActivity extends Settings { /* empty */ }
 }

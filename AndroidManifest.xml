@@ -141,6 +141,21 @@
             android:name="com.koushikdutta.superuser.SuReceiver"
             android:permission="android.permission.REPORT_SUPERUSER" />
 
+        <receiver android:name="com.koushikdutta.superuser.PackageChangeReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
         <!-- Settings -->
 
         <activity android:name="Settings"
@@ -1540,8 +1555,6 @@
 
         <activity android:name=".cyanogenmod.LockscreenInterface" />
 
-        <activity android:name=".cyanogenmod.LockscreenButtons" />
-
         <activity android:name=".profiles.NFCProfile"
                 android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
@@ -1684,22 +1697,54 @@
 
         <!-- JELLYBAM -->
 
-        <!-- BAM Control -->
+	<!-- STATISTIC -->
         <activity
-            android:name=".jellybam.BAMControl"
-            android:exported="true"
-            android:icon="@drawable/ic_settings_bamcontrol"
-            android:label="BAM Control"
-            android:hardwareAccelerated="true"
-            android:excludeFromRecents="false"
-            android:launchMode="singleTask"
-                android:theme="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen"
-                android:process=":ui">
+            android:name=".jellybam.stats.AnonymousStats"
+            android:label="@string/anonymous_statistics_title" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.android.settings.jellybam.SHORTCUT" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity android:name=".jellybam.stats.PreviewActivity" />
+
+        <receiver
+            android:name=".jellybam.stats.ReportingServiceManager"
+            android:enabled="true"
+            android:exported="false"
+            android:label="ReportingServiceManager" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".jellybam.stats.ReportingService"
+            android:enabled="true"
+            android:exported="false"
+            android:label="ReportingService" >
+        </service>
+
+        <!-- BAM Control -->
+        <activity android:name=".jellybam.BAMControl" />
+        <activity android:name="Settings$BAMControlActivity"
+                android:label="@string/bamcontrol_settings_title"
+                android:taskAffinity=""
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.settings.BAM_CONTROL" />
+                <action android:name="com.android.settings.BAM_CONTROL" />
+                <category android:name="android.intent.category.DEFAULT" />
+                </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.jellybam.BAMControl" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/bamcontrol" />
+            </activity>
+
 
          <activity
             android:name=".jellybam.NavRingTargets"
@@ -1737,6 +1782,10 @@
 
         <activity android:name=".jellybam.BamLockscreenSettings" />
 
+        <activity android:name=".jellybam.BamLockscreenInterfaceSettings" />
+
+        <activity android:name=".jellybam.BamLockscreenButtonsSettings" />
+
         <activity android:name=".jellybam.BamNavbarSettings" />
 
         <activity android:name=".jellybam.BamSignalSettings" />
@@ -1746,6 +1795,16 @@
         <activity android:name=".jellybam.BamLedSettings" />
 
         <activity android:name=".jellybam.BamVibrationSettings" />
+
+        <activity android:name=".jellybam.Shortcuts" />
+
+         <activity
+            android:name=".jellybam.BamPersist"
+            android:label="@string/title_persist">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
 
         <provider
             android:name=".jellybam.VibrationsProvider"

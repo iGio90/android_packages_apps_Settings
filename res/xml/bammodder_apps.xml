@@ -26,7 +26,7 @@
 
         <PreferenceScreen
             android:key="bam_modder_apps_samsung_apps"
-            android:icon="@drawable/ic_settings_bamuisettings"
+            android:icon="@drawable/ic_bammodder_applications"
             android:title="@string/bam_modder_apps_samsung_apps"
             android:summary="@string/bam_modder_apps_samsung_apps_summary" >
             <intent android:action="android.intent.action.MAIN"
@@ -35,8 +35,18 @@
         </PreferenceScreen>
 
         <PreferenceScreen
+            android:key="bam_modder_apps_samsung_paperartist"
+            android:icon="@drawable/ic_bammodder_applications"
+            android:title="@string/bam_modder_apps_samsung_paperartist"
+            android:summary="@string/bam_modder_apps_samsung_paperartist_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.PaperArtist" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
             android:key="bam_modder_apps_samsung_smartview"
-            android:icon="@drawable/ic_settings_bamuisettings"
+            android:icon="@drawable/ic_bammodder_applications"
             android:title="@string/bam_modder_apps_samsung_smartview"
             android:summary="@string/bam_modder_apps_samsung_smartview_summary" >
             <intent android:action="android.intent.action.MAIN"
@@ -45,8 +55,18 @@
         </PreferenceScreen>
 
         <PreferenceScreen
+            android:key="bam_modder_apps_samsung_snote"
+            android:icon="@drawable/ic_bammodder_applications"
+            android:title="@string/bam_modder_apps_samsung_snote"
+            android:summary="@string/bam_modder_apps_samsung_snote_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.bam.android.bammodder"
+                android:targetClass="com.bam.android.bammodder.SNote" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
             android:key="bam_modder_apps_samsung_svoice"
-            android:icon="@drawable/ic_settings_bamuisettings"
+            android:icon="@drawable/ic_bammodder_applications"
             android:title="@string/bam_modder_apps_samsung_svoice" 
 	    android:summary="@string/bam_modder_apps_samsung_svoice_summary" >
             <intent android:action="android.intent.action.MAIN"
@@ -55,13 +75,13 @@
         </PreferenceScreen>
 
         <PreferenceScreen
-            android:key="bam_modder_apps_samsung_paperartist"
-            android:icon="@drawable/ic_settings_bamuisettings"
-            android:title="@string/bam_modder_apps_samsung_paperartist"
-            android:summary="@string/bam_modder_apps_samsung_paperartist_summary" >
+            android:key="bam_modder_apps_samsung_taskmanager"
+            android:icon="@drawable/ic_bammodder_applications"
+            android:title="@string/bam_modder_apps_samsung_taskmanager"
+            android:summary="@string/bam_modder_apps_samsung_taskmanager_summary" >
             <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="com.bam.android.bammodder"
-                android:targetClass="com.bam.android.bammodder.PaperArtist" />
+                android:targetClass="com.bam.android.bammodder.TaskManager" />
         </PreferenceScreen>
 
         <PreferenceCategory
@@ -71,7 +91,7 @@
 
         <PreferenceScreen
             android:key="bam_modder_apps_sony_media"
-            android:icon="@drawable/ic_settings_bamuisettings"
+            android:icon="@drawable/ic_bammodder_applications"
             android:title="@string/bam_modder_apps_sony_media"
             android:summary="@string/bam_modder_apps_sony_media_summary" >
             <intent android:action="android.intent.action.MAIN"
@@ -81,7 +101,7 @@
 
         <PreferenceScreen
             android:key="bam_modder_apps_sony_widgets"
-            android:icon="@drawable/ic_settings_bamuisettings"
+            android:icon="@drawable/ic_bammodder_applications"
             android:title="@string/bam_modder_apps_sony_widgets"
             android:summary="@string/bam_modder_apps_sony_widgets_summary" >
             <intent android:action="android.intent.action.MAIN"
@@ -91,7 +111,7 @@
 
         <PreferenceScreen
             android:key="bam_modder_apps_sony_keyboard"
-            android:icon="@drawable/ic_settings_bamuisettings"
+            android:icon="@drawable/ic_bammodder_applications"
             android:title="@string/bam_modder_apps_sony_keyboard"
             android:summary="@string/bam_modder_apps_sony_keyboard_summary" >
             <intent android:action="android.intent.action.MAIN"

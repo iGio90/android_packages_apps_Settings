@@ -60,11 +60,9 @@ public class BAMModder extends SettingsPreferenceFragment {
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mBamStore) {
-                try {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.google.gmail")));
-                        } catch (android.content.ActivityNotFoundException anfe) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=com.google.gmail")));
-                    }
+		Intent intent = new Intent(Intent.ACTION_VIEW);
+		intent.setData(Uri.parse("market://details?id=com.bam.android.bammodder.donor"));
+		startActivity(intent);
             return true;
         }
 	return super.onPreferenceTreeClick(preferenceScreen, preference);
