@@ -70,7 +70,7 @@ public class QuickSettingsUtil {
                 "com.android.systemui:drawable/ic_qs_auto_rotate"));
         TILES.put(TILE_BAMCONTROL, new QuickSettingsUtil.TileInfo(
                 TILE_BAMCONTROL, R.string.title_tile_bamcontrol,
-                "com.android.systemui:drawable/ic_qs_settings"));
+                "com.android.systemui:drawable/ic_qs_jb_bamcontrol"));
         TILES.put(TILE_BATTERY, new QuickSettingsUtil.TileInfo(
                 TILE_BATTERY, R.string.title_tile_battery,
                 "com.android.systemui:drawable/ic_qs_battery_neutral"));

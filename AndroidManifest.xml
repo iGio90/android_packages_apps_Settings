@@ -1766,6 +1766,8 @@
 
         <activity android:name=".jellybam.BamVibrationSettings" />
 
+        <activity android:name=".jellybam.Shortcuts" />
+
          <activity
             android:name=".jellybam.BamPersist"
             android:label="@string/title_persist">
