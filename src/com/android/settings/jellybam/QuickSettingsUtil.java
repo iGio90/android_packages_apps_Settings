@@ -19,6 +19,7 @@ package com.android.settings.jellybam;
 import static com.android.internal.util.cm.QSConstants.TILES_DEFAULT;
 import static com.android.internal.util.cm.QSConstants.TILE_AIRPLANE;
 import static com.android.internal.util.cm.QSConstants.TILE_AUTOROTATE;
+import static com.android.internal.util.cm.QSConstants.TILE_BAMCONTROL;
 import static com.android.internal.util.cm.QSConstants.TILE_BATTERY;
 import static com.android.internal.util.cm.QSConstants.TILE_BLUETOOTH;
 import static com.android.internal.util.cm.QSConstants.TILE_BRIGHTNESS;
@@ -67,6 +68,9 @@ public class QuickSettingsUtil {
         TILES.put(TILE_AUTOROTATE, new QuickSettingsUtil.TileInfo(
                 TILE_AUTOROTATE, R.string.title_tile_autorotate,
                 "com.android.systemui:drawable/ic_qs_auto_rotate"));
+        TILES.put(TILE_BAMCONTROL, new QuickSettingsUtil.TileInfo(
+                TILE_BAMCONTROL, R.string.title_tile_bamcontrol,
+                "com.android.systemui:drawable/ic_qs_settings"));
         TILES.put(TILE_BATTERY, new QuickSettingsUtil.TileInfo(
                 TILE_BATTERY, R.string.title_tile_battery,
                 "com.android.systemui:drawable/ic_qs_battery_neutral"));

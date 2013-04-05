@@ -1700,21 +1700,23 @@
         <!-- JELLYBAM -->
 
         <!-- BAM Control -->
-        <activity
-            android:name=".jellybam.BAMControl"
-            android:exported="true"
-            android:icon="@drawable/ic_settings_bamcontrol"
-            android:label="BAM Control"
-            android:hardwareAccelerated="true"
-            android:excludeFromRecents="false"
-            android:launchMode="singleTask"
-                android:theme="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen"
-                android:process=":ui">
+        <activity android:name=".jellybam.BAMControl" />
+        <activity android:name="Settings$BAMControlActivity"
+                android:label="@string/bamcontrol_settings_title"
+                android:taskAffinity=""
+                android:excludeFromRecents="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.android.settings.jellybam.SHORTCUT" />
-            </intent-filter>
-        </activity>
+                <action android:name="android.settings.BAM_CONTROL" />
+                <action android:name="com.android.settings.BAM_CONTROL" />
+                <category android:name="android.intent.category.DEFAULT" />
+                </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.jellybam.BAMControl" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/bamcontrol" />
+            </activity>
+
 
          <activity
             android:name=".jellybam.NavRingTargets"
