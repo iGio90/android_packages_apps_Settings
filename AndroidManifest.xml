@@ -1697,6 +1697,36 @@
 
         <!-- JELLYBAM -->
 
+	<!-- STATISTIC -->
+        <activity
+            android:name=".jellybam.stats.AnonymousStats"
+            android:label="@string/anonymous_statistics_title" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name=".jellybam.stats.PreviewActivity" />
+
+        <receiver
+            android:name=".jellybam.stats.ReportingServiceManager"
+            android:enabled="true"
+            android:exported="false"
+            android:label="ReportingServiceManager" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".jellybam.stats.ReportingService"
+            android:enabled="true"
+            android:exported="false"
+            android:label="ReportingService" >
+        </service>
+
         <!-- BAM Control -->
         <activity android:name=".jellybam.BAMControl" />
         <activity android:name="Settings$BAMControlActivity"
