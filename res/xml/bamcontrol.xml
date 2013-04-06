@@ -56,7 +56,7 @@
 
    <!-- LOCKSCREEN -->
    <PreferenceCategory
-        android:key="bam_interface"
+        android:key="bam_lockscreen"
         android:title="@string/bamcontrol_lockscreen" >
 
     <PreferenceScreen
@@ -64,6 +64,12 @@
         android:icon="@drawable/ic_settings_lock_screen"
         android:title="@string/lock_screen_settings"
         android:fragment="com.android.settings.jellybam.BamLockscreenSettings" />
+
+    <PreferenceScreen
+        android:key="bam_lockscreen_shortcuts"
+        android:icon="@drawable/ic_settings_lock_screen"
+        android:title="@string/lock_screen_shortcuts_settings"
+        android:fragment="com.android.settings.jellybam.Shortcuts" />
 
     <PreferenceScreen
         android:key="bam_lockscreen_interface"
