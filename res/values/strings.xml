@@ -6053,7 +6053,7 @@
     
     <!-- Anonymous Statistics #CM -->
     <!-- About device screen, list item title. Takes the user to the screen about opting in or out of anonymous statistics. -->
-    <string name="anonymous_statistics_title">ROM Statistics</string>
+    <string name="statistics_title">ROM Statistics</string>
     <string name="anonymous_statistics_summary">Help make this ROM better by opting into anonymous statistics reporting</string>
     <string name="anonymous_statistics_warning_title">About</string>
     <string name="anonymous_statistics_warning">Opting into ROM Statistics will allow non-personal data to be submitted to the
