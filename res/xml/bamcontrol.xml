@@ -160,24 +160,6 @@
         android:fragment="com.android.settings.jellybam.BamHardwareKeysSettings" />
 
         <PreferenceScreen
-            android:key="xposed_framework_modules"
-            android:icon="@drawable/ic_settings_bamxposed"
-            android:title="@string/xposed_frameworks_settings" >
-            <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="de.robv.android.xposed.installer"
-                android:targetClass="de.robv.android.xposed.installer.XposedInstallerActivity" />
-        </PreferenceScreen>
-
-        <PreferenceScreen
-            android:key="xposed_per_app_settings"
-            android:icon="@drawable/ic_settings_notifications"
-            android:title="@string/xposed_dpi_settings" >
-            <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="de.robv.android.xposed.mods.appsettings"
-                android:targetClass="de.robv.android.xposed.mods.appsettings.XposedModActivity" />
-        </PreferenceScreen>
-
-        <PreferenceScreen
             android:key="anonymous_stats"
             android:icon="@drawable/ic_settings_romstats"
             android:title="@string/anonymous_statistics_title" >
