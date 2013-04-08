@@ -11,6 +11,8 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
 import android.util.Log;
 
+import com.android.settings.jellybam.Helpers;
+
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
@@ -75,6 +77,7 @@ public class BamSignalSettings extends SettingsPreferenceFragment implements
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_SIGNAL_TEXT, val);
+	    Helpers.restartSystemUI();
             return true;
         } else if (preference == mColorPicker) {
             String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
@@ -91,6 +94,7 @@ public class BamSignalSettings extends SettingsPreferenceFragment implements
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_WIFI_SIGNAL_TEXT, val);
+	    Helpers.restartSystemUI();
             return true;
         } else if (preference == mWifiColorPicker) {
             String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
