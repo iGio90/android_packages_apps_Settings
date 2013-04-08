@@ -28,7 +28,7 @@
         android:title="@string/preview_data_title">
         <intent
              android:action="android.intent.action.VIEW"
-             android:targetPackage="com.android.settings.jellybam.stats"
+             android:targetPackage="com.android.settings"
              android:targetClass="com.android.settings.jellybam.stats.PreviewActivity" />
     </PreferenceScreen>
 
