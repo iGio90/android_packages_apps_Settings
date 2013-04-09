@@ -74,7 +74,9 @@ public class BamLockscreenInterfaceSettings extends SettingsPreferenceFragment i
 
     private static final String KEY_BACKGROUND_PREF = "lockscreen_background";
     private static final String KEY_SEE_TRHOUGH = "see_through";
+    private static final String KEY_LOCKSCREEN_CAMERA_WIDGET = "lockscreen_camera_widget";
 
+    private CheckBoxPreference mCameraWidget;
     private CheckBoxPreference mSeeThrough;
     private ListPreference mCustomBackground;
 
@@ -96,6 +98,10 @@ public class BamLockscreenInterfaceSettings extends SettingsPreferenceFragment i
 
         addPreferencesFromResource(R.xml.jellybam_lockscreen_interface_settings);
         PreferenceScreen prefs = getPreferenceScreen();
+
+        mCameraWidget = (CheckBoxPreference) findPreference(KEY_LOCKSCREEN_CAMERA_WIDGET);
+        mCameraWidget.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.KG_CAMERA_WIDGET, 0) == 1);
 
         mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_TRHOUGH);
         mSeeThrough.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
@@ -168,6 +174,9 @@ public class BamLockscreenInterfaceSettings extends SettingsPreferenceFragment i
          if (preference == mSeeThrough) {
             Settings.System.putInt(mContext.getContentResolver(), Settings.System.LOCKSCREEN_SEE_THROUGH,
                     mSeeThrough.isChecked() ? 1 : 0);
+	 } else if (preference == mCameraWidget) {
+            Settings.System.putInt(mContext.getContentResolver(), Settings.System.KG_CAMERA_WIDGET,
+		    mCameraWidget.isChecked() ? 1 : 0);
 	 } else {
               // If not handled, let preferences handle it.
               return super.onPreferenceTreeClick(preferenceScreen, preference);
