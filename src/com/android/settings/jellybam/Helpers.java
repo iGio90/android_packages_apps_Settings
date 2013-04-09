@@ -303,6 +303,10 @@ public class Helpers {
         CMDProcessor.startSuCommand("pkill -TERM -f com.android.systemui");
     }
 
+    public static void restartTrebuchet() {
+        CMDProcessor.startSuCommand("pkill -TERM -f com.cyanogenmod.trebuchet");
+    }
+
     public static void setSystemProp(String prop, String val) {
         try {
             SystemProperties.set(prop, val);

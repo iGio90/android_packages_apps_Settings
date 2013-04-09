@@ -71,7 +71,7 @@ public class TRDSEnabler implements CompoundButton.OnCheckedChangeListener {
         Settings.Secure.putInt(mContext.getContentResolver(),
                 Settings.Secure.UI_INVERTED_MODE, isChecked ? 1 : 0);
         Helpers.restartSystemUI();
-
+        Helpers.restartTrebuchet();
         ActivityManager am = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
         List<ActivityManager.RunningAppProcessInfo> pids = am.getRunningAppProcesses();
            for(int i = 0; i < pids.size(); i++) {
