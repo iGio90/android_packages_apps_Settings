@@ -6038,6 +6038,9 @@
 
     <!-- BAMModder Miscs -->
     <string name="bam_modder_miscs_general">General Mods</string>
+    <string name="bam_modder_miscs_keyboards">Additional KeyBoards</string>
+    <string name="bam_modder_miscs_skeyboard">Samsung KeyBoard</string>
+    <string name="bam_modder_miscs_skeyboard_summary">This pack includes:\nStock Samsung Keyboard</string>
     <string name="bam_modder_miscs_silentcameraon">Enable Silent Camera</string>
     <string name="bam_modder_miscs_silentcameraon_summary">This pack includes:\nAddod.d script provided by rmkilc that will enable the silent mode for your stock camera</string>
     <string name="bam_modder_miscs_silentcameraoff">Disable Silent Camera</string>
