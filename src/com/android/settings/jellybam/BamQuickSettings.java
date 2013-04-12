@@ -1,4 +1,3 @@
-
 package com.android.settings.jellybam;
 
 import android.app.Activity;
@@ -110,7 +109,6 @@ public class BamQuickSettings extends SettingsPreferenceFragment
     private static final boolean DEBUG = false;
 
     private static final String SEPARATOR = "OV=I=XseparatorX=I=VO";
-    private static final String KEY_QUICK_PULL_DOWN = "quick_pulldown";
     private static final String STATUS_BAR_MAX_NOTIF = "status_bar_max_notifications";
     private static final String STATUS_BAR_DONOTDISTURB = "status_bar_donotdisturb";
     private static final String UI_EXP_WIDGET = "expanded_widget";
@@ -128,6 +126,10 @@ public class BamQuickSettings extends SettingsPreferenceFragment
     private static final String KEY_MMS_BREATH = "mms_breath";
     private static final String KEY_MISSED_CALL_BREATH = "missed_call_breath";
     private static final String KEY_STATUS_BAR_ICON_OPACITY = "status_bar_icon_opacity";
+    private static final String PREF_NOTIFICATION_QUICK_SETTINGS = "quick_settings_panel";
+    private static final String QUICK_PULLDOWN = "quick_pulldown";
+    private static final String NO_NOTIFICATIONS_PULLDOWN = "no_notifications_pulldown";
+    private static final String DISABLE_PANEL = "disable_quick_settings";
 
     private ListPreference mNotificationWallpaper;
     private ListPreference mNotificationWallpaperLandscape;
@@ -137,10 +139,14 @@ public class BamQuickSettings extends SettingsPreferenceFragment
     private CheckBoxPreference mPowerWidgetHideOnChange;
     private CheckBoxPreference mPowerWidgetHideScrollBar;
     private CheckBoxPreference mStatusBarDoNotDisturb;
-    private CheckBoxPreference mQuickPullDown;
     private CheckBoxPreference mMMSBreath;
     private CheckBoxPreference mMissedCallBreath;
     private ListPreference mStatusBarIconOpacity;
+
+    private Preference mQuickSettings;
+    private CheckBoxPreference mNoNotificationsPulldown;
+    private CheckBoxPreference mDisablePanel;
+    private ListPreference mQuickPulldown;
 
     Preference mCustomLabel;
 
@@ -199,9 +205,21 @@ public class BamQuickSettings extends SettingsPreferenceFragment
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
 
-        mQuickPullDown = (CheckBoxPreference) prefSet.findPreference(KEY_QUICK_PULL_DOWN);
-        mQuickPullDown.setChecked(Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.QS_QUICK_PULLDOWN, 0) == 1);
+            mQuickPulldown = (ListPreference) prefSet.findPreference(QUICK_PULLDOWN);
+            mNoNotificationsPulldown = (CheckBoxPreference) prefSet.findPreference(NO_NOTIFICATIONS_PULLDOWN);
+            mDisablePanel = (CheckBoxPreference) prefSet.findPreference(DISABLE_PANEL);
+            mQuickPulldown.setOnPreferenceChangeListener(this);
+            int quickPulldownValue = Settings.System.getInt(getActivity().getContentResolver(), Settings.System.QS_QUICK_PULLDOWN, 0);
+            mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
+            updatePulldownSummary(quickPulldownValue);
+
+
+
+            mDisablePanel.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.QS_DISABLE_PANEL, 0) == 0);
+            mNoNotificationsPulldown.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.QS_NO_NOTIFICATION_PULLDOWN, 0) == 1);
+
 
             mStatusBarMaxNotif = (ListPreference) prefSet.findPreference(STATUS_BAR_MAX_NOTIF);
             int maxNotIcons = Settings.System.getInt(mContext.getContentResolver(),
@@ -414,6 +432,12 @@ public class BamQuickSettings extends SettingsPreferenceFragment
                     Settings.System.EXPANDED_HAPTIC_FEEDBACK, intValue);
             mPowerWidgetHapticFeedback.setSummary(mPowerWidgetHapticFeedback.getEntries()[index]);
             return true;
+        } else if (preference == mQuickPulldown) {
+            int quickPulldownValue = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.QS_QUICK_PULLDOWN,
+                    quickPulldownValue);
+            updatePulldownSummary(quickPulldownValue);
+            return true;
         } else if (preference == mStatusBarIconOpacity) {
             int iconOpacity = Integer.valueOf((String) newValue);
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
@@ -557,6 +581,27 @@ public class BamQuickSettings extends SettingsPreferenceFragment
         return false;
     }
 
+	private void updateQuickSettingsDescription() {
+           if (Settings.System.getInt(getActivity().getContentResolver(),
+                   Settings.System.QS_DISABLE_PANEL, 0) == 0) {
+               mQuickSettings.setSummary(getString(R.string.quick_settings_enabled));
+           } else {
+               mQuickSettings.setSummary(getString(R.string.quick_settings_disabled));
+           }
+        }
+
+        private void updatePulldownSummary(int value) {
+          if (value == 0) {
+            /* quick pulldown deactivated */
+            mQuickPulldown.setSummary(getResources().getString(R.string.quick_pulldown_off));
+          } else {
+            String direction = getResources().getString(value == 2
+                    ? R.string.quick_pulldown_summary_left
+                    : R.string.quick_pulldown_summary_right);
+            mQuickPulldown.setSummary(getResources().getString(R.string.summary_quick_pulldown, direction));
+          }
+        }
+
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         boolean value;
@@ -565,15 +610,20 @@ public class BamQuickSettings extends SettingsPreferenceFragment
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.EXPANDED_VIEW_WIDGET,
                     value ? 1 : 0);
+        } else if (preference == mNoNotificationsPulldown) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.QS_NO_NOTIFICATION_PULLDOWN,
+                    mNoNotificationsPulldown.isChecked() ? 1 : 0);
+            return true;
+        } else if (preference == mDisablePanel) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.QS_DISABLE_PANEL,
+                    mDisablePanel.isChecked() ? 0 : 1);
         } else if (preference == mStatusbarSliderPreference) {
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_BRIGHTNESS_SLIDER,
                     isCheckBoxPrefernceChecked(preference));
             return true;
-        } else if (preference == mQuickPullDown) {
-            Settings.System.putInt(mContext.getContentResolver(),
-                    Settings.System.QS_QUICK_PULLDOWN,	mQuickPullDown.isChecked()
-                    ? 1 : 0);
         } else if (preference == mVibrateOnExpand) {
             Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.VIBRATE_NOTIF_EXPAND,
