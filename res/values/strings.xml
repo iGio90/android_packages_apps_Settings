@@ -5357,6 +5357,12 @@
     <string name="bamlockscreen_misc">Misc</string>
     <string name="text_off">Off</string>
     <string name="text_on">On</string>
+    <string name="quicksettings_tiles_style">Quick Settings style</string>
+    <string name="summary_quicksettings_tiles_style">Show or change Quick Settings style options</string>
+    <string name="quicksettings_tiles_style_additional_options">Additional options</string>
+    <string name="tiles_per_row_title">Tiles per row</string>
+    <string name="tiles_per_row_duplicate_landscape_title">Scale landscape quantity</string>
+    <string name="tiles_per_row_duplicate_landscape_summary">Landscape view doubles tiles per row quantity</string>
     <string name="lockscreen_text_color_title">Lockscreen text color</string>
     <string name="lockscreen_text_color_summary">Set the lockscreen text color</string>
     <string name="lockscreen_hide_initial_page_hints_title">Hide initial page hints</string>

@@ -1795,6 +1795,8 @@
 
         <activity android:name=".jellybam.BamVibrationSettings" />
 
+        <activity android:name=".jellybam.QuickSettingsTilesStyle" />
+
         <activity android:name=".jellybam.Shortcuts" />
 
          <activity
