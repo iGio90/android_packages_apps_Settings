@@ -1,1756 +1,346 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<resources>
-  <!--Choices for timezone picker first level.
-         These values will be used as search terms for TimeZone displayName
-         strings.-->
-  <!--The time zone picker screen has two levels.  The first level allows the user to choose a region.-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/*
+**
+** Copyright 2007 The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string-array name="timezone_filters">
-    <item>Ameryka</item>
-    <item>Europa</item>
-    <item>Afryka</item>
-    <item>Azja</item>
-    <item>Australia</item>
-    <item>Pacyfik</item>
-    <item>Wszystkie</item>
+    <item msgid="5296756001147094692">"Ameryka"</item>
+    <item msgid="3005562397632768392">"Europa"</item>
+    <item msgid="5696915123093701218">"Afryka"</item>
+    <item msgid="4439789052790868249">"Azja"</item>
+    <item msgid="956915953069815961">"Australia"</item>
+    <item msgid="5345178126174698955">"Pacyfik"</item>
+    <item msgid="8392017019801393511">"Wszystkie"</item>
   </string-array>
-  <!--The next level of the time zoner picker should show time zones from the Americas.-->
-  <!--The next level of the time zoner picker should show time zones from Europe.-->
-  <!--The next level of the time zoner picker should show time zones from Africa.-->
-  <!--The next level of the time zoner picker should show time zones from Asia.-->
-  <!--The next level of the time zoner picker should show time zones from Australia.-->
-  <!--The next level of the time zoner picker should show time zones from Pacific.-->
-  <!--The next level of the time zoner picker should show time zones from ALL regions.-->
-  <!--boot animation stuff-->
-  <string-array name="disable_bootanimation_insults" translatable="false">
-    <item>@string/insult_jerk</item>
-    <item>@string/insult_protekk</item>
-    <item>@string/insult_unicorns</item>
-  </string-array>
-  <!--There is a setting to control the format of dates displayed throughout the system.  This is in the Date & Time Settings screen.  These will be adjusted to use punctuation appropriate to the user's locale.-->
-  <string-array name="date_format_values" translatable="false">
-    <item></item>
-    <item>MM-dd-yyyy</item>
-    <item>dd-MM-yyyy</item>
-    <item>yyyy-MM-dd</item>
-  </string-array>
-  <!--The blank item means to use whatever the locale calls for.-->
-  <!--Display settings.  The delay in inactivity before the screen is turned off. These are shown in a list dialog.-->
   <string-array name="screen_timeout_entries">
-    <item>15 sekund</item>
-    <item>30 sekund</item>
-    <item>1 minuta</item>
-    <item>2 minuty</item>
-    <item>5 minut</item>
-    <item>10 minut</item>
-    <item>30 minut</item>
+    <item msgid="3342301044271143016">"15 sek."</item>
+    <item msgid="8881760709354815449">"30 sek."</item>
+    <item msgid="7589406073232279088">"1 min"</item>
+    <item msgid="7001195990902244174">"2 min"</item>
+    <item msgid="7489864775127957179">"5 min"</item>
+    <item msgid="2314124409517439288">"10 min"</item>
+    <item msgid="6864027152847611413">"30 min"</item>
   </string-array>
-  <!--Do not translate.-->
-  <string-array name="screen_timeout_values" translatable="false">
-    <item>15000</item>
-    <item>30000</item>
-    <item>60000</item>
-    <item>120000</item>
-    <item>300000</item>
-    <item>600000</item>
-    <item>1800000</item>
-  </string-array>
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Display settings.  The delay in inactivity before the dream is shown. These are shown in a list dialog.-->
   <string-array name="dream_timeout_entries">
-    <item>Nigdy</item>
-    <item>15 sekund</item>
-    <item>30 sekund</item>
-    <item>1 minuta</item>
-    <item>2 minuty</item>
-    <item>5 minut</item>
-    <item>10 minut</item>
-    <item>30 minut</item>
+    <item msgid="3149294732238283185">"Nigdy"</item>
+    <item msgid="2194151041885903260">"15 s"</item>
+    <item msgid="5892295237131074341">"30 s"</item>
+    <item msgid="3538441365970038213">"1 min"</item>
+    <item msgid="412343871668955639">"2 min"</item>
+    <item msgid="5076853889688991690">"5 min"</item>
+    <item msgid="1903860996174927898">"10 min"</item>
+    <item msgid="6415509612413178727">"30 min"</item>
   </string-array>
-  <!--Do not translate.-->
-  <string-array name="dream_timeout_values" translatable="false">
-    <item>0</item>
-    <item>15000</item>
-    <item>30000</item>
-    <item>60000</item>
-    <item>120000</item>
-    <item>300000</item>
-    <item>600000</item>
-    <item>1800000</item>
-  </string-array>
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Security settings.  The delay after screen is turned off until device locks.
-         These are shown in a list dialog.-->
   <string-array name="lock_after_timeout_entries">
-    <item>Natychmiast</item>
-    <item>5 sekund</item>
-    <item>15 sekund</item>
-    <item>30 sekund</item>
-    <item>1 minuta</item>
-    <item>2 minuty</item>
-    <item>5 minut</item>
-    <item>10 minut</item>
-    <item>30 minut</item>
+    <item msgid="8929270399652145290">"Natychmiast"</item>
+    <item msgid="6736512735606834431">"5 sek."</item>
+    <item msgid="8044619388267891375">"15 sek."</item>
+    <item msgid="1822002388249545488">"30 sek."</item>
+    <item msgid="8538071621211916519">"1 min"</item>
+    <item msgid="5663439580228932882">"2 min"</item>
+    <item msgid="49888496216106852">"5 min"</item>
+    <item msgid="9002737361305019353">"10 min"</item>
+    <item msgid="4322676235684793329">"30 min"</item>
   </string-array>
-  <!--Do not translate.-->
-  <string-array name="lock_after_timeout_values" translatable="false">
-    <item>0</item>
-    <item>5000</item>
-    <item>15000</item>
-    <item>30000</item>
-    <item>60000</item>
-    <item>120000</item>
-    <item>300000</item>
-    <item>600000</item>
-    <item>1800000</item>
-  </string-array>
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
   <string-array name="entries_font_size">
-    <item>Mała</item>
-    <item>Normalna</item>
-    <item>Duża</item>
-    <item>Ogromna</item>
+    <item msgid="8166647333858618801">"Mały"</item>
+    <item msgid="1932071435506638315">"Normalny"</item>
+    <item msgid="38373998008112077">"Duży"</item>
+    <item msgid="7786168277516233536">"Ogromny"</item>
   </string-array>
-  <string-array name="entryvalues_font_size" translatable="false">
-    <item>0.85</item>
-    <item>1.0</item>
-    <item>1.15</item>
-    <item>1.30</item>
-  </string-array>
-  <!--TTS settings-->
-  <!--Default speech rate choices-->
   <string-array name="tts_rate_entries">
-    <item>Bardzo wolno</item>
-    <item>Wolno</item>
-    <item>Normalnie</item>
-    <item>Szybko</item>
-    <item>Bardzo szybko</item>
+    <item msgid="6041212618892492920">"Bardzo wolno"</item>
+    <item msgid="2361722960903353554">"Wolno"</item>
+    <item msgid="1145554631248513562">"Normalnie"</item>
+    <item msgid="7553665153391107454">"Szybko"</item>
+    <item msgid="2538100882620724753">"Bardzo szybko"</item>
   </string-array>
-  <!--Do not translate.-->
-  <string-array name="tts_rate_values">
-    <item>60</item>
-    <item>80</item>
-    <item>100</item>
-    <item>150</item>
-    <item>200</item>
-  </string-array>
-  <!--Default pitch choices-->
   <string-array name="tts_pitch_entries">
-    <item>Bardzo niski</item>
-    <item>Niski</item>
-    <item>Domyślny</item>
-    <item>Wysoki</item>
-    <item>Bardzo wysoki</item>
+    <item msgid="7526050907652687351">"Bardzo niskie"</item>
+    <item msgid="2692137425242433765">"Niskie"</item>
+    <item msgid="3332408460740717754">"Normalne"</item>
+    <item msgid="4907380534957572531">"Wysokie"</item>
+    <item msgid="4699640516390840297">"Bardzo wysokie"</item>
   </string-array>
-  <!--Do not translate.-->
-  <string-array name="tts_pitch_values">
-    <item>50</item>
-    <item>80</item>
-    <item>100</item>
-    <item>120</item>
-    <item>150</item>
-  </string-array>
-  <!--Do not translate.-->
-  <string-array name="tts_demo_strings" translatable="false">
-    <item>This is an example of speech synthesis in English.</item>
-    <item>Voici un échantillon de synthèse vocale en français.</item>
-    <item>Dies ist ein Beispiel für Sprachsynthese in Deutsch.</item>
-    <item>Questo è un esempio di sintesi vocale in italiano.</item>
-    <item>Este es un ejemplo de síntesis de voz en español.</item>
-  </string-array>
-  <string-array name="tts_demo_string_langs" translatable="false">
-    <item>eng</item>
-    <item>fra</item>
-    <item>deu</item>
-    <item>ita</item>
-    <item>spa</item>
-  </string-array>
-  <!--Wi-Fi settings-->
-  <!--Match this with the order of NetworkInfo.DetailedState.-->
-  <!--Wi-Fi settings. The status messages when the network is unknown.-->
   <string-array name="wifi_status">
-    <item></item>
-    <item>Skanowanie\u2026</item>
-    <item>Łączenie\u2026</item>
-    <item>Uwierzytelnianie\u2026</item>
-    <item>Uzyskiwanie adresu IP\u2026</item>
-    <item>Połączony</item>
-    <item>Zawieszony</item>
-    <item>Rozłączanie\u2026</item>
-    <item>Rozłączony</item>
-    <item>Niepowodzenie</item>
-    <item>Zablokowany</item>
-    <item>Tymczasowe unikanie słabej jakości połączenia</item>
+    <item msgid="1922181315419294640"></item>
+    <item msgid="8934131797783724664">"Trwa skanowanie..."</item>
+    <item msgid="8513729475867537913">"Trwa łączenie..."</item>
+    <item msgid="515055375277271756">"Trwa uwierzytelnianie..."</item>
+    <item msgid="1943354004029184381">"Uzyskiwanie adresu IP..."</item>
+    <item msgid="4221763391123233270">"Połączono"</item>
+    <item msgid="624838831631122137">"Zawieszona"</item>
+    <item msgid="7979680559596111948">"Trwa rozłączanie..."</item>
+    <item msgid="1634960474403853625">"Rozłączona"</item>
+    <item msgid="746097431216080650">"Niepowodzenie"</item>
+    <item msgid="6367044185730295334">"Zablokowana"</item>
+    <item msgid="503942654197908005">"Tymczasowo, by uniknąć połączenia o niskiej jakości"</item>
   </string-array>
-  <!--Status message of Wi-Fi when it is idle.-->
-  <!--Status message of Wi-Fi when it is scanning.-->
-  <!--Status message of Wi-Fi when it is connecting.-->
-  <!--Status message of Wi-Fi when it is authenticating.-->
-  <!--Status message of Wi-Fi when it is obtaining IP address.-->
-  <!--Status message of Wi-Fi when it is connected.-->
-  <!--Status message of Wi-Fi when it is suspended.-->
-  <!--Status message of Wi-Fi when it is disconnecting.-->
-  <!--Status message of Wi-Fi when it is disconnected.-->
-  <!--Status message of Wi-Fi when it is a failure.-->
-  <!--Status message of Wi-Fi when it is blocked.-->
-  <!--Status message of Wi-Fi when connectiong is being verified.-->
-  <!--Match this with the order of NetworkInfo.DetailedState.-->
-  <!--Wi-Fi settings. The status messages when the network is known.-->
-  <!--Status message of Wi-Fi when it is idle.-->
-  <!--Status message of Wi-Fi when it is scanning.-->
-  <!--Status message of Wi-Fi when it is connecting to a network.-->
-  <!--Status message of Wi-Fi when it is authenticating with a network.-->
-  <!--Status message of Wi-Fi when it is obtaining IP address from a network.-->
-  <!--Status message of Wi-Fi when it is connected to a network.-->
-  <!--Status message of Wi-Fi when it is suspended.-->
-  <!--Status message of Wi-Fi when it is disconnecting from a network.-->
-  <!--Status message of Wi-Fi when it is disconnected.-->
-  <!--Status message of Wi-Fi when it is a failure.-->
-  <!--Status message of Wi-Fi when it is blocked.-->
-  <!--Status message of Wi-Fi when connectiong is being verified.-->
-  <!--Match this with the constants in AccessPoint.-->
-  <!--Wi-Fi security choices used when manually added a Wi-Fi network-->
-  <string-array name="wifi_security">
-    <item>@string/wifi_security_none</item>
-    <item>@string/wifi_security_wep</item>
-    <item>@string/wifi_security_psk_generic</item>
-    <item>@string/wifi_security_eap</item>
+  <string-array name="wifi_status_with_ssid">
+    <item msgid="7714855332363650812"></item>
+    <item msgid="8878186979715711006">"Trwa skanowanie..."</item>
+    <item msgid="355508996603873860">"Trwa łączenie z siecią <xliff:g id="NETWORK_NAME">%1$s</xliff:g>..."</item>
+    <item msgid="554971459996405634">"Trwa uwierzytelnianie w sieci <xliff:g id="NETWORK_NAME">%1$s</xliff:g>..."</item>
+    <item msgid="7928343808033020343">"Uzyskiwanie adresu IP z sieci <xliff:g id="NETWORK_NAME">%1$s</xliff:g>..."</item>
+    <item msgid="8937994881315223448">"Połączono z siecią <xliff:g id="NETWORK_NAME">%1$s</xliff:g>"</item>
+    <item msgid="1330262655415760617">"Zawieszona"</item>
+    <item msgid="7698638434317271902">"Trwa rozłączanie z siecią <xliff:g id="NETWORK_NAME">%1$s</xliff:g>..."</item>
+    <item msgid="197508606402264311">"Rozłączona"</item>
+    <item msgid="8578370891960825148">"Niepowodzenie"</item>
+    <item msgid="5660739516542454527">"Zablokowana"</item>
+    <item msgid="1805837518286731242">"Tymczasowo, by uniknąć połączenia o niskiej jakości"</item>
   </string-array>
-  <!--The Wi-Fi network does not have any security.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Match this with the constants in AccessPoint.-->
-  <!--Wi-Fi security types for New User Dialog. EAP is not configurable.-->
-  <string-array name="wifi_security_no_eap">
-    <item>@string/wifi_security_none</item>
-    <item>@string/wifi_security_wep</item>
-    <item>@string/wifi_security_psk_generic</item>
-  </string-array>
-  <!--The Wi-Fi network does not have any security.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Wi-Fi AP settings.  The type of security a Wi-Fi AP supports.-->
-  <!--Note that adding/removing/moving the items will need wifi settings code change.-->
-  <string-array name="wifi_ap_security" translatable="false">
-    <item>Otwarta</item>
-    <item>WPA PSK</item>
-    <item>WPA2 PSK</item>
-  </string-array>
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Match this with the constants in WifiDialog.-->
-  <!--Wi-Fi settings.  The type of EAP method a Wi-Fi network has.-->
+    <!-- no translation found for wifi_security:0 (8491993170197127709) -->
+    <!-- no translation found for wifi_security:1 (6524315248437318854) -->
+    <!-- no translation found for wifi_security:2 (1532568756571457140) -->
+    <!-- no translation found for wifi_security:3 (3620707702811709779) -->
+    <!-- no translation found for wifi_security_no_eap:0 (2084555984818107151) -->
+    <!-- no translation found for wifi_security_no_eap:1 (397579322683471524) -->
+    <!-- no translation found for wifi_security_no_eap:2 (1968820975358150484) -->
   <string-array name="wifi_eap_method">
-    <item>PEAP</item>
-    <item>TLS</item>
-    <item>TTLS</item>
-    <item>PWD</item>
+    <item msgid="1160193392455075561">"PEAP"</item>
+    <item msgid="7981731051382306293">"TLS"</item>
+    <item msgid="2892994535305020162">"TTLS"</item>
+    <item msgid="435667726254379514">"PWD"</item>
   </string-array>
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Wi-Fi WPS setup for p2p connections.-->
-  <!--Note that adding/removing/moving the items will need wifi settings code change.-->
   <string-array name="wifi_p2p_wps_setup">
-    <item>Wciśnij przycisk</item>
-    <item>PIN z parowanego urządzenia</item>
-    <item>Pin z tego urządzenia</item>
+    <item msgid="5085064298144493867">"Naciśnij przycisk"</item>
+    <item msgid="1624323946324499595">"Kod PIN z drugiego urządzenia"</item>
+    <item msgid="5366790421523328066">"Kod PIN z tego urządzenia"</item>
   </string-array>
-  <!--Push button based configuration involves pushing a button on two connecting devices [CHAR LIMIT=30]-->
-  <!--This involves entering a pin obtained from a peer device [CHAR LIMIT=30]-->
-  <!--This involves generating a pin from this device [CHAR LIMIT=20]-->
-  <!--Match this with the order of WifiP2pDevice.Status-->
-  <!--Wi-Fi p2p settings device status message-->
   <string-array name="wifi_p2p_status">
-    <item>Połączony</item>
-    <item>Zaproszony</item>
-    <item>Niepowodzenie</item>
-    <item>Dostępny</item>
-    <item>Poza zasięgiem</item>
+    <item msgid="1701505390737218306">"Połączono"</item>
+    <item msgid="3189211552661432651">"Zaproszono"</item>
+    <item msgid="3206450250360237549">"Niepowodzenie"</item>
+    <item msgid="7785896708926971207">"Dostępna"</item>
+    <item msgid="2330782789550628803">"Poza zasięgiem"</item>
   </string-array>
-  <!--Bluetooth Settings-->
-  <!--Discoverable mode timeout options-->
   <string-array name="bluetooth_visibility_timeout_entries">
-    <item>2 minuty</item>
-    <item>5 minut</item>
-    <item>1 godzina</item>
-    <item>Nigdy</item>
+    <item msgid="8151962652413645395">"2 min"</item>
+    <item msgid="8675215713017289017">"5 min"</item>
+    <item msgid="477015974247590543">"1 godz."</item>
+    <item msgid="5198271470953124739">"Brak limitu czasu"</item>
   </string-array>
-  <!--Match this with drawable.wifi_signal.-->
-  <!--Wi-Fi settings. The signal strength a Wi-Fi network has.-->
   <string-array name="wifi_signal">
-    <item>Słaby</item>
-    <item>Zadowalający</item>
-    <item>Dobry</item>
-    <item>Doskonały</item>
+    <item msgid="2245412278046491293">"Słaba"</item>
+    <item msgid="5615082285463430971">"Dostateczna"</item>
+    <item msgid="3565079809875324621">"Dobra"</item>
+    <item msgid="5702329417707689835">"Doskonała"</item>
   </string-array>
-  <!--Wi-Fi settings. Presented as a list dialog to the user to choose the Wi-Fi sleep policy.-->
   <string-array name="wifi_sleep_policy_entries">
-    <item>Zawsze</item>
-    <item>Tylko kiedy podłączony</item>
-    <item>Nigdy (zwiększa zużycie danych)</item>
+    <item msgid="3269131034472904310">"Zawsze"</item>
+    <item msgid="844721238536786870">"Tylko, gdy podłączony"</item>
+    <item msgid="2990218920631468642">"Nigdy (zwiększa użycie danych)"</item>
   </string-array>
-  <!--Always keep Wi-Fi on when screen turns off.-->
-  <!--Keep Wi-Fi on when screen turns off and plugged in.  When on battery, go to sleep when screen turns off.-->
-  <!--Do not keep Wi-Fi on when screen turns off.-->
-  <!--Wi-Fi settings. Presented as a list dialog to the user to choose the Wi-Fi sleep policy. Used when
-         the device is Wi-Fi-only. [CHAR LIMIT=30]-->
   <string-array name="wifi_sleep_policy_entries_wifi_only">
-    <item>Zawsze</item>
-    <item>Tylko kiedy podłączony</item>
-    <item>Nigdy</item>
+    <item msgid="2124319326282651391">"Zawsze"</item>
+    <item msgid="7433294150916905997">"Tylko, gdy podłączony"</item>
+    <item msgid="1390404486722375028">"Nigdy"</item>
   </string-array>
-  <!--Always keep Wi-Fi on when screen turns off.-->
-  <!--Keep Wi-Fi on when screen turns off and plugged in.  When on battery, go to sleep when screen turns off.-->
-  <!--Do not keep Wi-Fi on when screen turns off, for Wi-Fi-only devices, no other data connection-->
-  <!--Match with wifi_sleep_policy_entries and the values of the settings in Settings class.-->
-  <!--Do not translate.-->
-  <string-array name="wifi_sleep_policy_values">
-    <item>2</item>
-    <item>1</item>
-    <item>0</item>
-  </string-array>
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Wi-Fi settings. Presented as a list dialog to the user to choose the Wi-Fi frequency band.-->
   <string-array name="wifi_frequency_band_entries">
-    <item>Automatyczny</item>
-    <item>Tylko 5 GHz</item>
-    <item>Tylko 2.4 GHz</item>
+    <item msgid="624340809384223320">"Automatyczna"</item>
+    <item msgid="6670588712989942178">"Tylko 5 GHz"</item>
+    <item msgid="2715516524973207876">"Tylko 2,4 GHz"</item>
   </string-array>
-  <!--Operation on both 2.4 GHz and 5 GHz [CHAR LIMIT=25]-->
-  <!--Operation on 5 GHz alone [CHAR LIMIT=25]-->
-  <!--Operation on 2.4 GHz alone [CHAR LIMIT=25]-->
-  <!--Match with wifi_frequency_band_entries and the values of the settings in WifiManager.-->
-  <!--Do not translate.-->
-  <string-array name="wifi_frequency_band_values">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-  </string-array>
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Wi-Fi settings. Presented as a list dialog to the user to choose the Wi-Fi region code.-->
-  <string-array name="wifi_countrycode_entries">
-    <item>Stany Zjednoczone</item>
-    <item>Kanada, Tajwan</item>
-    <item>Niemcy</item>
-    <item>Europa</item>
-    <item>Japonia, Rosja</item>
-    <item>Australia</item>
-    <item>Chiny</item>
-    <item>Korea</item>
-    <item>Turcja</item>
-    <item>Singapur</item>
-    <item>Brazylia</item>
-  </string-array>
-  <string-array name="wifi_countrycode_values" translatable="false">
-    <item>US</item>
-    <item>CA</item>
-    <item>DE</item>
-    <item>GB</item>
-    <item>JP</item>
-    <item>AU</item>
-    <item>CN</item>
-    <item>KR</item>
-    <item>TR</item>
-    <item>SG</item>
-    <item>BR</item>
-  </string-array>
-  <!--Display options for UsageStats class-->
   <string-array name="usage_stats_display_order_types">
-    <item>Czas użycia</item>
-    <item>Ilość uruchomień</item>
-    <item>Nazwa aplikacji</item>
+    <item msgid="2100172576767439288">"Czas użycia"</item>
+    <item msgid="3703676222230317933">"Licznik uruchomień"</item>
+    <item msgid="2502754479975776899">"Nazwa aplikacji"</item>
   </string-array>
-  <!--EAP method-->
   <string-array name="wifi_eap_entries">
-    <item>PEAP</item>
-    <item>TLS</item>
-    <item>TTLS</item>
-    <item>PWD</item>
+    <item msgid="8615575908717909498">"PEAP"</item>
+    <item msgid="8667872640594311615">"TLS"</item>
+    <item msgid="7182812872984827322">"TTLS"</item>
+    <item msgid="2318274046749286642">"PWD"</item>
   </string-array>
-  <!--Phase 2 options-->
   <string-array name="wifi_phase2_entries">
-    <item>Brak</item>
-    <item>PAP</item>
-    <item>MSCHAP</item>
-    <item>MSCHAPV2</item>
-    <item>GTC</item>
+    <item msgid="1818786254010764570">"Brak"</item>
+    <item msgid="6189918678874123056">"PAP"</item>
+    <item msgid="1524112260493662517">"MSCHAP"</item>
+    <item msgid="5923246669412752932">"MSCHAPV2"</item>
+    <item msgid="8651992560135239389">"GTC"</item>
   </string-array>
-  <!--Wi-Fi IP settings.-->
-  <!--Note that adding/removing/moving the items will need wifi settings code change.-->
   <string-array name="wifi_ip_settings">
-    <item>DHCP</item>
-    <item>Statyczny</item>
+    <item msgid="3906714200993111074">"DHCP"</item>
+    <item msgid="628395202971532382">"Statyczny"</item>
   </string-array>
-  <!--Use DHCP (Dynamic Host Configuration Protocol) for obtaining IP settings [CHAR LIMIT=25]-->
-  <!--Use statically defined IP settings [CHAR LIMIT=25]-->
-  <!--Wi-Fi proxy settings.-->
-  <!--Note that adding/removing/moving the items will need wifi settings code change.-->
   <string-array name="wifi_proxy_settings">
-    <item>Brak</item>
-    <item>Ręcznie</item>
+    <item msgid="4473276491748503377">"Brak"</item>
+    <item msgid="8673874894887358090">"Własne"</item>
   </string-array>
-  <!--No HTTP proxy is used for the current wifi network [CHAR LIMIT=25]-->
-  <!--Manual HTTP proxy settings are used for the current wifi network [CHAR LIMIT=25]-->
-  <!--Sound settings for emergency tone.-->
   <string-array name="emergency_tone_entries">
-    <item>Wyłączone</item>
-    <item>Alarm</item>
-    <item>Wibruj</item>
+    <item msgid="5165439859689033665">"Wyłączony"</item>
+    <item msgid="3165868966179561687">"Alarm"</item>
+    <item msgid="6038758039030476855">"Wibracje"</item>
   </string-array>
-  <!--Do not translate.-->
-  <string-array name="emergency_tone_values">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-  </string-array>
-  <!--Locales in this list are displayed with the corresponding
-         name from special_locale_names instead of using the name
-         from Locale.getDisplayName().-->
-  <string-array translatable="false" name="special_locale_codes">
-    <item>zh_CN</item>
-    <item>zh_TW</item>
-  </string-array>
-  <string-array translatable="false" name="special_locale_names">
-    <item>中文 (简体)</item>
-    <item>中文 (繁體)</item>
-  </string-array>
-  <!--Authentication Types used in APN editor-->
   <string-array name="apn_auth_entries">
-    <item>Brak</item>
-    <item>PAP</item>
-    <item>CHAP</item>
-    <item>PAP lub CHAP</item>
+    <item msgid="3856896061242872146">"Brak"</item>
+    <item msgid="5756844015743664882">"PAP"</item>
+    <item msgid="535934025797984365">"CHAP"</item>
+    <item msgid="8383098660619805783">"PAP lub CHAP"</item>
   </string-array>
-  <string-array translatable="false" name="apn_auth_values">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-    <item>3</item>
-  </string-array>
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Authentication Types used in APN editor-->
   <string-array name="apn_protocol_entries">
-    <item>IPv4</item>
-    <item>IPv6</item>
-    <item>IPv4/IPv6</item>
+    <item msgid="4852355456199302715">"IPv4"</item>
+    <item msgid="4394161344888484571">"IPv6"</item>
+    <item msgid="8084938354605535381">"IPv4/IPv6"</item>
   </string-array>
-  <string-array translatable="false" name="apn_protocol_values">
-    <item>IP</item>
-    <item>IPV6</item>
-    <item>IPV4V6</item>
-  </string-array>
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Bearer Info used in APN editor-->
   <string-array name="bearer_entries">
-    <item>LTE</item>
-    <item>eHRPD</item>
-    <item>Nieokreślony</item>
+    <item msgid="1770285336669531300">"LTE"</item>
+    <item msgid="3044323519470167625">"eHRPD"</item>
+    <item msgid="6848428671997893147">"Nie określono"</item>
   </string-array>
-  <string-array translatable="false" name="bearer_values">
-    <item>14</item>
-    <item>13</item>
-    <item>0</item>
-  </string-array>
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Do not translate.-->
-  <!--Apps on SD instalaltion location options in ApplicationSettings-->
   <string-array name="app_install_location_entries">
-    <item>Pamięć wewnętrzna</item>
-    <item>Karta SD</item>
-    <item>Pozwól zdecydować systemowi</item>
+    <item msgid="8151497958991952759">"Wewnętrzna pamięć urządzenia"</item>
+    <item msgid="3738430123799803530">"Wymienna karta SD"</item>
+    <item msgid="4498124044785815005">"Zastosuj ustawienie systemowe"</item>
   </string-array>
-  <!--Do not translate.-->
-  <string-array name="app_install_location_values" translatable="false">
-    <item>device</item>
-    <item>sdcard</item>
-    <item>automatyczna</item>
-  </string-array>
-  <!--Titles for the list of long press timeout options.-->
   <string-array name="long_press_timeout_selector_titles">
-    <item>Krótki</item>
-    <item>Średni</item>
-    <item>Długi</item>
+    <item msgid="3511504869290423954">"Krótkie"</item>
+    <item msgid="2560532955514699713">"Średnie"</item>
+    <item msgid="2372711992605524591">"Długie"</item>
   </string-array>
-  <!--A title for the option for short long-press timeout [CHAR LIMIT=25]-->
-  <!--A title for the option for medium long-press timeout [CHAR LIMIT=25]-->
-  <!--A title for the option for long long-press timeout [CHAR LIMIT=25]-->
-  <!--Values for the list of long press timeout options.-->
-  <string-array name="long_press_timeout_selector_values" translatable="false">
-    <item>500</item>
-    <item>1000</item>
-    <item>1500</item>
-  </string-array>
-  <!--Titles for HDCP checking preference. [CHAR LIMIT=35]-->
   <string-array name="hdcp_checking_titles">
-    <item>Nigdy nie sprawdzaj</item>
-    <item>Sprawdź tylko dla materiału DRM</item>
-    <item>Zawsze sprawdzaj</item>
+    <item msgid="441827799230089869">"Nigdy nie sprawdzaj"</item>
+    <item msgid="6042769699089883931">"Sprawdzaj tylko w przypadku treści chronionych DRM"</item>
+    <item msgid="9174900380056846820">"Zawsze sprawdzaj"</item>
   </string-array>
-  <!--Values for HDCP checking preference.-->
-  <string-array name="hdcp_checking_values" translatable="false">
-    <item>nigdy</item>
-    <item>tylko drm</item>
-    <item>zawsze</item>
-  </string-array>
-  <!--Summaries for HDCP checking preference. [CHAR LIMIT=100]-->
   <string-array name="hdcp_checking_summaries">
-    <item>Nigdy nie używaj sprawdzania HDCP</item>
-    <item>Używaj HDCP tylko do sprawdzania materiału DRM</item>
-    <item>Zawsze używaj sprawdzania HDCP</item>
+    <item msgid="505558545611516707">"Nigdy nie sprawdzaj HDCP"</item>
+    <item msgid="3878793616631049349">"Użyj sprawdzania HDCP tylko w przypadku treści chronionych DRM"</item>
+    <item msgid="45075631231212732">"Zawsze używaj sprawdzania HDCP"</item>
   </string-array>
-  <!--Titles for window animation scale preference. [CHAR LIMIT=35]-->
   <string-array name="window_animation_scale_entries">
-    <item>Animacja wył.</item>
-    <item>Skala animacji .5x</item>
-    <item>Skala animacji 1x</item>
-    <item>Skala animacji 1.5x</item>
-    <item>Skala animacji 2x</item>
-    <item>Skala animacji 5x</item>
-    <item>Skala animacji 10x</item>
+    <item msgid="8134156599370824081">"Animacja wyłączona"</item>
+    <item msgid="6624864048416710414">"Skala animacji 0,5x"</item>
+    <item msgid="2219332261255416635">"Skala animacji 1x"</item>
+    <item msgid="3544428804137048509">"Skala animacji 1,5x"</item>
+    <item msgid="3110710404225974514">"Skala animacji 2x"</item>
+    <item msgid="4402738611528318731">"Skala animacji 5x"</item>
+    <item msgid="6189539267968330656">"Skala animacji 10x"</item>
   </string-array>
-  <!--Values for window animation scale preference.-->
-  <string-array name="window_animation_scale_values" translatable="false">
-    <item>0</item>
-    <item>.5</item>
-    <item>1</item>
-    <item>1.5</item>
-    <item>2</item>
-    <item>5</item>
-    <item>10</item>
-  </string-array>
-  <!--Titles for transition animation scale preference. [CHAR LIMIT=35]-->
   <string-array name="transition_animation_scale_entries">
-    <item>Animacja wył.</item>
-    <item>Skala animacji .5x</item>
-    <item>Skala animacji 1x</item>
-    <item>Skala animacji 1.5x</item>
-    <item>Skala animacji 2x</item>
-    <item>Skala animacji 5x</item>
-    <item>Skala animacji 10x</item>
+    <item msgid="8464255836173039442">"Animacja wyłączona"</item>
+    <item msgid="3375781541913316411">"Skala animacji 0,5x"</item>
+    <item msgid="1991041427801869945">"Skala animacji 1x"</item>
+    <item msgid="4012689927622382874">"Skala animacji 1,5x"</item>
+    <item msgid="3289156759925947169">"Skala animacji 2x"</item>
+    <item msgid="7705857441213621835">"Skala animacji 5x"</item>
+    <item msgid="6660750935954853365">"Skala animacji 10x"</item>
   </string-array>
-  <!--Values for transition animation scale preference.-->
-  <string-array name="transition_animation_scale_values" translatable="false">
-    <item>0</item>
-    <item>.5</item>
-    <item>1</item>
-    <item>1.5</item>
-    <item>2</item>
-    <item>5</item>
-    <item>10</item>
-  </string-array>
-  <!--Titles for animator duration scale preference. [CHAR LIMIT=35]-->
   <string-array name="animator_duration_scale_entries">
-    <item>Animacja wył.</item>
-    <item>Skala animacji .5x</item>
-    <item>Skala animacji 1x</item>
-    <item>Skala animacji 1.5x</item>
-    <item>Skala animacji 2x</item>
-    <item>Skala animacji 5x</item>
-    <item>Skala animacji 10x</item>
+    <item msgid="6039901060648228241">"Animacja wyłączona"</item>
+    <item msgid="1138649021950863198">"Skala animacji 0,5x"</item>
+    <item msgid="4394388961370833040">"Skala animacji 1x"</item>
+    <item msgid="8125427921655194973">"Skala animacji 1,5x"</item>
+    <item msgid="3334024790739189573">"Skala animacji 2x"</item>
+    <item msgid="3170120558236848008">"Skala animacji 5x"</item>
+    <item msgid="1069584980746680398">"Skala animacji 10x"</item>
   </string-array>
-  <!--Values for animator duration scale preference.-->
-  <string-array name="animator_duration_scale_values" translatable="false">
-    <item>0</item>
-    <item>.5</item>
-    <item>1</item>
-    <item>1.5</item>
-    <item>2</item>
-    <item>5</item>
-    <item>10</item>
-  </string-array>
-  <!--Titles for overlay display devices preference. [CHAR LIMIT=35]-->
   <string-array name="overlay_display_devices_entries">
-    <item>Brak</item>
-    <item>720x480 mdpi</item>
-    <item>1280x720 tvdpi</item>
-    <item>1920x1080 xhdpi</item>
-    <item>1280x720 tvdpi i 1920x1080 xhdpi</item>
+    <item msgid="1606809880904982133">"Brak"</item>
+    <item msgid="688482401508173818">"720 x 480 mdpi"</item>
+    <item msgid="1725473474827398815">"1280 x 720 tvdpi"</item>
+    <item msgid="6813511923592083251">"1920 x 1080 xhdpi"</item>
+    <item msgid="3646519549495410112">"1280 x 720 tvdpi oraz 1920 x 1080 xhdpi"</item>
   </string-array>
-  <!--Values for overlay display devices preference.-->
-  <string-array name="overlay_display_devices_values" translatable="false">
-    <item></item>
-    <item>720x480/160</item>
-    <item>1280x720/213</item>
-    <item>1920x1080/320</item>
-    <item>1280x720/213;1920x1080/320</item>
-  </string-array>
-  <!--Titles for OpenGL traces preference. [CHAR LIMIT=35]-->
   <string-array name="enable_opengl_traces_entries">
-    <item>Brak</item>
-    <item>Logcat</item>
-    <item>Systrace (graficzny)</item>
-    <item>Stos wywołań glGetError</item>
+    <item msgid="3191973083884253830">"Brak"</item>
+    <item msgid="9089630089455370183">"Logcat"</item>
+    <item msgid="5397807424362304288">"Systrace (grafika)"</item>
+    <item msgid="1340692776955662664">"Stos wywołań funkcji glGetError"</item>
   </string-array>
-  <!--Values for OpenGL traces preference.-->
-  <string-array name="enable_opengl_traces_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-    <item>systrace</item>
-    <item>error</item>
-  </string-array>
-  <!--Titles for app process limit preference. [CHAR LIMIT=35]-->
   <string-array name="app_process_limit_entries">
-    <item>Standardowy limit</item>
-    <item>Bez procesów w tle</item>
-    <item>Co najwyżej 1 proces</item>
-    <item>Co najwyżej 2 procesy</item>
-    <item>Co najwyżej 3 procesy</item>
-    <item>Co najwyżej 4 procesy</item>
+    <item msgid="3401625457385943795">"Standardowy limit"</item>
+    <item msgid="4071574792028999443">"Brak procesów w tle"</item>
+    <item msgid="4810006996171705398">"Maksymalnie 1 proces"</item>
+    <item msgid="8586370216857360863">"Maksymalnie 2 procesy"</item>
+    <item msgid="836593137872605381">"Maksymalnie 3 procesy"</item>
+    <item msgid="7899496259191969307">"Maksymalnie 4 procesy"</item>
   </string-array>
-  <!--Values for app process limit preference.-->
-  <string-array name="app_process_limit_values" translatable="false">
-    <item>-1</item>
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-    <item>3</item>
-    <item>4</item>
-  </string-array>
-  <!--Match this with the constants in VpnProfile.-->
-  <!--Short names for each VPN type, not really translatable. [CHAR LIMIT=20]-->
-  <string-array name="vpn_types" translatable="false">
-    <item>PPTP</item>
-    <item>L2TP/IPSec PSK</item>
-    <item>L2TP/IPSec RSA</item>
-    <item>IPSec Xauth PSK</item>
-    <item>IPSec Xauth RSA</item>
-    <item>IPSec Hybrid RSA</item>
-  </string-array>
-  <!--Match this with the constants in VpnProfile.-->
-  <!--Longer descriptions for each VPN type. [CHAR LIMIT=100]-->
   <string-array name="vpn_types_long">
-    <item>PPTP VPN</item>
-    <item>L2TP/IPSec VPN z kluczem współdzielonym</item>
-    <item>L2TP/IPSec VPN z certyfikatem</item>
-    <item>IPSec VPN z kluczem współdzielonym i autoryzacją Xauth</item>
-    <item>IPSec VPN z certyfikatem i autoryzacją Xauth</item>
-    <item>IPSec VPN z certyfikatem i autoryzacją hybrydową</item>
+    <item msgid="2732002039459078847">"Sieć VPN wykorzystująca protokół PPTP"</item>
+    <item msgid="3799752201662127867">"Sieć VPN wykorzystująca protokół L2TP/IPSec z kluczami wspólnymi"</item>
+    <item msgid="4725504331295252103">"Sieć VPN wykorzystująca protokół L2TP/IPSec z certyfikatami"</item>
+    <item msgid="7526551163264034377">"Sieć VPN wykorzystująca protokół IPSec z kluczami wspólnymi i uwierzytelnianiem Xauth"</item>
+    <item msgid="8064740940687465039">"Sieć VPN wykorzystująca protokół IPSec z certyfikatami i uwierzytelnianiem Xauth"</item>
+    <item msgid="4946199982372391490">"Sieć VPN wykorzystująca protokół IPSec z certyfikatami i uwierzytelnianiem hybrydowym"</item>
   </string-array>
-  <!--Match this with the constants in LegacyVpnInfo.-->
-  <!--Status for a VPN network. [CHAR LIMIT=100]-->
   <string-array name="vpn_states">
-    <item>Rozłączona</item>
-    <item>Inicjalizacja\u2026</item>
-    <item>Łączenie\u2026</item>
-    <item>Połączony</item>
-    <item>Przekroczono czas oczekiwania</item>
-    <item>Niepowodzenie</item>
+    <item msgid="8621078286418985762">"Rozłączono"</item>
+    <item msgid="6692305604213080515">"Inicjowanie…"</item>
+    <item msgid="8001704909356800092">"Łączenie…"</item>
+    <item msgid="4039737283841672166">"Połączono"</item>
+    <item msgid="4042143101664725090">"Przekroczono czas oczekiwania"</item>
+    <item msgid="7664124146786465092">"Niepowodzenie"</item>
   </string-array>
-  <!--Status message when VPN is disconnected.-->
-  <!--Status message when VPN is initializing.-->
-  <!--Status message when VPN is connecting.-->
-  <!--Status message when VPN is connected.-->
-  <!--Status message when VPN is timeout.-->
-  <!--Status message when VPN is failed.-->
-  <!--User content ratings for restricted users [CHAR LIMIT=30]-->
-  <string-array name="user_content_ratings_entries" translatable="false">
-    <item>Ascended being</item>
-    <item>Human</item>
-    <item>Neanderthal</item>
-    <item>Chimp</item>
-    <item>Monkey</item>
-  </string-array>
-  <!--Values for user content ratings for restricted users-->
-  <string-array name="user_content_ratings_values" translatable="false">
-    <item>5</item>
-    <item>4</item>
-    <item>3</item>
-    <item>2</item>
-    <item>1</item>
-  </string-array>
-  <!--Values for premium SMS permission selector [CHAR LIMIT=30]-->
   <string-array name="security_settings_premium_sms_values">
-    <item>Zapytaj</item>
-    <item>Nigdy nie zezwalaj</item>
-    <item>Zawsze zezwalaj</item>
+    <item msgid="7389829271787670252">"Zapytaj"</item>
+    <item msgid="5077768429488260031">"Nigdy nie zezwalaj"</item>
+    <item msgid="1417929597727989746">"Zawsze zezwalaj"</item>
   </string-array>
-  <!--Ask user before sending to premium SMS short code.-->
-  <!--Never allow app to send to premium SMS short code.-->
-  <!--Always allow app to send to premium SMS short code.-->
-  <!--Rotation mode options.-->
-  <string-array name="rotation_mode_entries">
-    <item>@string/rotation_0</item>
-    <item>@string/rotation_90</item>
-    <item>@string/rotation_180</item>
-    <item>@string/rotation_270</item>
-  </string-array>
-  <!--Values for rotation mode.-->
-  <string-array name="rotation_mode_values" translatable="false">
-    <item>1</item>
-    <item>2</item>
-    <item>4</item>
-    <item>8</item>
-  </string-array>
-  <!--Icon type for lockscreen targets.-->
-  <string-array name="icon_types">
-    <item>@string/icon_default</item>
-    <item>@string/icon_presets</item>
-    <item>@string/icon_custom</item>
-  </string-array>
-  <!--Entries for custom lockscreen targets icons.-->
-  <string-array name="custom_target_icons_entries">
-    <item>@string/icon_picker_alarm</item>
-    <item>@string/icon_picker_browser</item>
-    <item>@string/icon_picker_calendar</item>
-    <item>@string/icon_picker_camera</item>
-    <item>@string/icon_picker_email</item>
-    <item>@string/icon_picker_email2</item>
-    <item>@string/icon_picker_facebook</item>
-    <item>@string/icon_picker_gallery</item>
-    <item>@string/icon_picker_google_small</item>
-    <item>@string/icon_picker_googleplus</item>
-    <item>@string/icon_picker_googletalk</item>
-    <item>@string/icon_picker_maps</item>
-    <item>@string/icon_picker_movie</item>
-    <item>@string/icon_picker_music</item>
-    <item>@string/icon_picker_nav</item>
-    <item>@string/icon_picker_phone</item>
-    <item>@string/icon_picker_podcast</item>
-    <item>@string/icon_picker_rss</item>
-    <item>@string/icon_picker_sms</item>
-    <item>@string/icon_picker_twitter</item>
-  </string-array>
-  <!--Icons for custom lockscreen targets.-->
-  <string-array name="custom_target_icons" translatable="false">
-    <item>@*android:drawable/ic_lockscreen_alarm</item>
-    <item>@*android:drawable/ic_lockscreen_browser</item>
-    <item>@*android:drawable/ic_lockscreen_calendar</item>
-    <item>@*android:drawable/ic_lockscreen_camera</item>
-    <item>@*android:drawable/ic_lockscreen_email</item>
-    <item>@*android:drawable/ic_lockscreen_email2</item>
-    <item>@*android:drawable/ic_lockscreen_facebook</item>
-    <item>@*android:drawable/ic_lockscreen_gallery</item>
-    <item>@*android:drawable/ic_lockscreen_google_small</item>
-    <item>@*android:drawable/ic_lockscreen_gplus</item>
-    <item>@*android:drawable/ic_lockscreen_gtalk</item>
-    <item>@*android:drawable/ic_lockscreen_maps</item>
-    <item>@*android:drawable/ic_lockscreen_movie</item>
-    <item>@*android:drawable/ic_lockscreen_music</item>
-    <item>@*android:drawable/ic_lockscreen_nav</item>
-    <item>@*android:drawable/ic_lockscreen_phone</item>
-    <item>@*android:drawable/ic_lockscreen_podcast</item>
-    <item>@*android:drawable/ic_lockscreen_rss</item>
-    <item>@*android:drawable/ic_lockscreen_sms</item>
-    <item>@*android:drawable/ic_lockscreen_twitter</item>
-  </string-array>
-  <!--Entries and values for notification icons-->
-  <string-array name="status_bar_max_notifications">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-    <item>3</item>
-    <item>4</item>
-    <item>5</item>
-  </string-array>
-  <!--PIE PIE PIE PIE PIE-->
-  <string-array name="all_color_style_entries" translatable="false">
-    <item>@string/all_color</item>
-    <item>@string/stock_color</item>
-  </string-array>
-  <string-array name="all_color_style_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-  </string-array>
-  <string-array name="entries_pie_gravity">
-    <item>@string/pie_gravity_left</item>
-    <item>@string/pie_gravity_top</item>
-    <item>@string/pie_gravity_right</item>
-    <item>@string/pie_gravity_bottom</item>
-  </string-array>
-  <string-array name="values_pie_gravity" translatable="false">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-    <item>3</item>
-  </string-array>
-  <string-array name="entries_pie_size">
-    <item>@string/pie_size_small</item>
-    <item>@string/pie_size_default</item>
-    <item>@string/pie_size_large</item>
-    <item>@string/pie_size_gigantic</item>
-  </string-array>
-  <string-array name="values_pie_size" translatable="false">
-    <item>0.9</item>
-    <item>1.0</item>
-    <item>1.1</item>
-    <item>1.2</item>
-  </string-array>
-  <string-array name="entries_pie_mode">
-    <item>@string/pie_mode_bare</item>
-    <item>@string/pie_mode_quick</item>
-    <item>@string/pie_mode_default</item>
-    <item>@string/pie_mode_slow</item>
-  </string-array>
-  <string-array name="values_pie_mode" translatable="false">
-    <item>-1</item>
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-  </string-array>
-  <string-array name="entries_pie_gap">
-    <item>@string/pie_gap_none</item>
-    <item>@string/pie_gap_small</item>
-    <item>@string/pie_gap_big</item>
-    <item>@string/pie_gap_huge</item>
-  </string-array>
-  <string-array name="values_pie_gap" translatable="false">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-    <item>3</item>
-  </string-array>
-  <string-array name="entries_pie_trigger">
-    <item>@string/pie_trigger_small</item>
-    <item>@string/pie_trigger_normal</item>
-    <item>@string/pie_trigger_big</item>
-    <item>@string/pie_trigger_huge</item>
-  </string-array>
-  <string-array name="values_pie_trigger" translatable="false">
-    <item>0.5</item>
-    <item>1.0</item>
-    <item>2.0</item>
-    <item>3.0</item>
-  </string-array>
-  <!--**** CYANOGENMOD EDITS START ****-->
-  <!--Volume Overlay options.-->
+
+    <!-- **** CYANOGENMOD ADDITIONS START **** -->
+
+  <!-- Volume Overlay options. -->
   <string-array name="volume_overlay_entries">
-    <item>Pojedyńczy</item>
-    <item>Roszerzalny</item>
+    <item>Pojedynczy</item>
+    <item>Rozszerzalny</item>
     <item>Rozszerzony</item>
     <item>Brak</item>
   </string-array>
-  <!--Values for Volume Overlay. Do not translate.-->
-  <string-array name="volume_overlay_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-    <item>3</item>
-  </string-array>
-  <!--Ring mode options.-->
-  <string-array name="ring_mode_entries" translatable="false">
-    <item>@string/ring_mode_normal</item>
-    <item>@string/ring_mode_vibrate</item>
-    <item>@string/ring_mode_mute</item>
-  </string-array>
-  <!--Values for Ring mode. Do not translate.-->
-  <string-array name="ring_mode_values" translatable="false">
-    <item>normalny</item>
-    <item>wibracja</item>
-    <item>cisza</item>
-  </string-array>
-  <!--Arrays for root access capability-->
-  <string-array name="root_access_entries" translatable="false">
-    <item>@string/root_access_none</item>
-    <item>@string/root_access_apps</item>
-    <item>@string/root_access_adb</item>
-    <item>@string/root_access_all</item>
-  </string-array>
-  <string-array name="root_access_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-    <item>3</item>
-  </string-array>
-  <!--Performance settings-->
+
+  <!-- Performance settings -->
   <string-array name="pref_zram_size_entries">
-    <item>Wyłączone</item>
+    <item>Wyłączony</item>
     <item>10%</item>
     <item>18% (domyślnie)</item>
     <item>26%</item>
   </string-array>
-  <string-array name="pref_zram_size_values" translatable="false">
-    <item>0</item>
-    <item>10</item>
-    <item>18</item>
-    <item>26</item>
-  </string-array>
-  <string-array name="dithering_entries" translatable="false">
-    <item>@string/dithering_no_dither</item>
-    <item>@string/dithering_color_banding</item>
-    <item>@string/dithering_blur_effect</item>
-  </string-array>
-  <string-array name="dithering_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-  </string-array>
-  <string-array name="lockscreen_delay_entries" translatable="false">
-    <item>Natychmiast</item>
-    <item>1 sekunda</item>
-    <item>5 sekund</item>
-    <item>10 sekund</item>
-    <item>15 sekund</item>
-    <item>30 sekund</item>
-    <item>1 min</item>
-    <item>5 min</item>
-    <item>10 min</item>
-    <item>30 min</item>
-  </string-array>
-  <string-array name="lockscreen_delay_values" translatable="false">
-    <item>0</item>
-    <item>1000</item>
-    <item>5000</item>
-    <item>10000</item>
-    <item>15000</item>
-    <item>30000</item>
-    <item>60000</item>
-    <item>300000</item>
-    <item>600000</item>
-    <item>1800000</item>
-  </string-array>
-  <string-array name="lockscreen_icon_picker_labels" translatable="false">
-    <item>@string/icon_picker_alarm</item>
-    <item>@string/icon_picker_browser</item>
-    <item>@string/icon_picker_calendar</item>
-    <item>@string/icon_picker_camera</item>
-    <item>@string/icon_picker_chrome</item>
-    <item>@string/icon_picker_email</item>
-    <item>@string/icon_picker_email2</item>
-    <item>@string/icon_picker_facebook</item>
-    <item>@string/icon_picker_gallery</item>
-    <item>@string/icon_picker_google_small</item>
-    <item>@string/icon_picker_googleplus</item>
-    <item>@string/icon_picker_googletalk</item>
-    <item>@string/icon_picker_maps</item>
-    <item>@string/icon_picker_sms</item>
-    <item>@string/icon_picker_movie</item>
-    <item>@string/icon_picker_music</item>
-    <item>@string/icon_picker_nav_normal</item>
-    <item>@string/icon_picker_phone</item>
-    <item>@string/icon_picker_podcast</item>
-    <item>@string/icon_picker_rss</item>
-    <item>@string/icon_picker_search</item>
-    <item>@string/icon_picker_twitter</item>
-  </string-array>
-  <string-array name="lockscreen_icon_picker_icons" translatable="false">
-    <item>@*android:drawable/ic_lockscreen_alarm_normal</item>
-    <item>@*android:drawable/ic_lockscreen_browser_normal</item>
-    <item>@*android:drawable/ic_lockscreen_calendar_normal</item>
-    <item>@*android:drawable/ic_lockscreen_camera_normal</item>
-    <item>@*android:drawable/ic_lockscreen_chrome_normal</item>
-    <item>@*android:drawable/ic_lockscreen_email_normal</item>
-    <item>@*android:drawable/ic_lockscreen_email2_normal</item>
-    <item>@*android:drawable/ic_lockscreen_facebook_normal</item>
-    <item>@*android:drawable/ic_lockscreen_gallery_normal</item>
-    <item>@*android:drawable/ic_lockscreen_google_small_normal</item>
-    <item>@*android:drawable/ic_lockscreen_gplus_normal</item>
-    <item>@*android:drawable/ic_lockscreen_gtalk_normal</item>
-    <item>@*android:drawable/ic_lockscreen_maps_normal</item>
-    <item>@*android:drawable/ic_lockscreen_sms_normal</item>
-    <item>@*android:drawable/ic_lockscreen_movie_normal</item>
-    <item>@*android:drawable/ic_lockscreen_music_normal</item>
-    <item>@*android:drawable/ic_lockscreen_nav_normal</item>
-    <item>@*android:drawable/ic_lockscreen_phone_normal</item>
-    <item>@*android:drawable/ic_lockscreen_podcast_normal</item>
-    <item>@*android:drawable/ic_lockscreen_rss_normal</item>
-    <item>@*android:drawable/ic_lockscreen_google_normal</item>
-    <item>@*android:drawable/ic_lockscreen_twitter_normal</item>
-  </string-array>
-  <!--Profile mode options.-->
+
+  <!-- Profile mode options. -->
   <string-array name="profile_entries">
-    <item>Włącz</item>
-    <item>Wyłączone</item>
-    <item>Nie nadpisuj</item>
+    <item>Włączony</item>
+    <item>Wyłączony</item>
+    <item>Nie zmieniaj</item>
   </string-array>
-  <!--Values for vibrate_entries matching constants in SoundSettings. Do not translate.-->
-  <string-array name="profile_values" translatable="false">
-    <item>OVERRIDE</item>
-    <item>SUPPRESS</item>
-    <item>DEFAULT</item>
-  </string-array>
-  <!--Profile mode options.-->
+
+  <!-- Profile mode options. -->
   <string-array name="profile_connection_entries">
-    <item>Dezaktywuj</item>
-    <item>Włącz</item>
+    <item>Wyłączony</item>
+    <item>Włączony</item>
   </string-array>
-  <!--Values for profile connections. Do not translate.-->
-  <string-array name="profile_connection_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-  </string-array>
-  <!--Profile lock mode options. Do not translate.-->
-  <string-array name="profile_lockmode_entries" translatable="false">
-    <item>@string/profile_lockmode_default</item>
-    <item>@string/profile_lockmode_insecure</item>
-    <item>@string/profile_lockmode_disabled</item>
-  </string-array>
-  <!--Profile lock mode summaries. Do not translate.-->
-  <string-array name="profile_lockmode_summaries" translatable="false">
-    <item>@string/profile_lockmode_default_summary</item>
-    <item>@string/profile_lockmode_insecure_summary</item>
-    <item>@string/profile_lockmode_disabled_summary</item>
-  </string-array>
-  <!--Values for profile lock mode. Do not translate.-->
-  <string-array name="profile_lockmode_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-  </string-array>
-  <!--Values for the notification light pulse spinners-->
-  <string-array name="notification_pulse_length_entries" translatable="false">
-    <item>@string/pulse_length_always_on</item>
-    <item>@string/pulse_length_very_short</item>
-    <item>@string/pulse_length_short</item>
-    <item>@string/pulse_length_normal</item>
-    <item>@string/pulse_length_long</item>
-    <item>@string/pulse_length_very_long</item>
-  </string-array>
-  <!--Values for notification light length.-->
-  <string-array name="notification_pulse_length_values" translatable="false">
-    <item>1</item>
-    <item>250</item>
-    <item>500</item>
-    <item>1000</item>
-    <item>2500</item>
-    <item>5000</item>
-  </string-array>
-  <!--Notification light pulse speed spinners.-->
-  <string-array name="notification_pulse_speed_entries" translatable="false">
-    <item>@string/pulse_speed_very_fast</item>
-    <item>@string/pulse_speed_fast</item>
-    <item>@string/pulse_speed_normal</item>
-    <item>@string/pulse_speed_slow</item>
-    <item>@string/pulse_speed_very_slow</item>
-  </string-array>
-  <!--Values for notification light speed.-->
-  <string-array name="notification_pulse_speed_values" translatable="false">
-    <item>250</item>
-    <item>500</item>
-    <item>1000</item>
-    <item>2500</item>
-    <item>5000</item>
-  </string-array>
-  <!--Arrays required by Notification Widgets.-->
-  <string-array name="entries_brightness_widget" formatted="false" translatable="false">
-    <item>@string/cm_brightness_mode_auto</item>
-    <item>@string/cm_brightness_mode_dim</item>
-    <item>25%</item>
-    <item>50%</item>
-    <item>75%</item>
-    <item>100%</item>
-  </string-array>
-  <string-array name="values_brightness_widget" translatable="false">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-    <item>3</item>
-    <item>4</item>
-    <item>5</item>
-  </string-array>
-  <string-array name="entries_network_widget">
-    <item>2G/3G+2G</item>
-    <item>2G/Tylko 3G</item>
-    <item>2G/Tylko 3G/3G+2G</item>
-  </string-array>
-  <string-array name="values_network_widget" translatable="false">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-  </string-array>
-  <string-array name="increasing_ring_interval_entries" translatable="false">
-    <item>@string/increasing_ring_interval_eachring</item>
-    <item>@string/increasing_ring_interval_half_second</item>
-    <item>@string/increasing_ring_interval_1second</item>
-    <item>@string/increasing_ring_interval_2seconds</item>
-    <item>@string/increasing_ring_interval_3seconds</item>
-    <item>@string/increasing_ring_interval_5seconds</item>
-    <item>@string/increasing_ring_interval_10seconds</item>
-  </string-array>
-  <string-array name="entries_screentimeout_widget">
-    <item>15s | 1m | 5m</item>
-    <item>30s | 2m | 5m</item>
-  </string-array>
-  <string-array name="values_screentimeout_widget" translatable="false">
-    <item>0</item>
-    <item>1</item>
-  </string-array>
-  <string-array name="entries_ring_widget" translatable="false">
-    <item>@string/cm_sound_mode_silent</item>
-    <item>@string/cm_sound_mode_vibrate</item>
-    <item>@string/cm_sound_mode_sound</item>
-    <item>@string/cm_sound_mode_soundVibrate</item>
-  </string-array>
-  <string-array name="values_ring_widget" translatable="false">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-    <item>3</item>
-  </string-array>
+
   <string-array name="entries_flash_widget">
-    <item>Domyślny</item>
-    <item>Większy</item>
+    <item>Normalny</item>
+    <item>Wysoki</item>
   </string-array>
-  <string-array name="values_flash_widget" translatable="false">
-    <item>0</item>
-    <item>1</item>
-  </string-array>
+
   <string-array name="haptic_feedback_entries">
-    <item>Ustawienia globalne</item>
-    <item>Włącz</item>
-    <item>Wyłączone</item>
-  </string-array>
-  <string-array name="haptic_feedback_values" translatable="false">
-    <item>2</item>
-    <item>1</item>
-    <item>0</item>
-  </string-array>
-  <string-array name="hardware_keys_action_entries" translatable="false">
-    <item>@string/hardware_keys_action_nothing</item>
-    <item>@string/hardware_keys_action_menu</item>
-    <item>@string/hardware_keys_action_app_switch</item>
-    <item>@string/hardware_keys_action_search</item>
-    <item>@string/hardware_keys_action_voice_search</item>
-    <item>@string/hardware_keys_action_in_app_search</item>
-  </string-array>
-  <string-array name="hardware_keys_action_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-    <item>3</item>
-    <item>4</item>
-    <item>5</item>
-  </string-array>
-  <string-array name="lockscreen_long_key_press_entries" translatable="false">
-    <item>@string/lockscreen_buttons_no_action</item>
-    <item>@string/lockscreen_buttons_next</item>
-    <item>@string/lockscreen_buttons_previous</item>
-    <item>@string/lockscreen_buttons_playpause</item>
-    <item>@string/lockscreen_buttons_toggle_sound</item>
-  </string-array>
-  <string-array name="lockscreen_long_key_press_values" translatable="false">
-    <item></item>
-    <item>Następny</item>
-    <item>Poprzedni</item>
-    <item>Play/Pauza</item>
-    <item>Dzwięk</item>
-  </string-array>
-  <!--Volume key cursor control-->
-  <string-array name="volume_key_cursor_control_entries" translatable="false">
-    <item>@string/volume_key_cursor_control_off</item>
-    <item>@string/volume_key_cursor_control_on</item>
-    <item>@string/volume_key_cursor_control_on_reverse</item>
-  </string-array>
-  <string-array name="volume_key_cursor_control_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-  </string-array>
-  <!--Expanded desktop-->
-  <string-array name="expanded_desktop_entries" translatable="false">
-    <item>@string/expanded_desktop_disabled</item>
-    <item>@string/expanded_desktop_status_bar</item>
-    <item>@string/expanded_desktop_no_status_bar</item>
-  </string-array>
-  <string-array name="expanded_desktop_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-  </string-array>
-  <!--Sms security limit-->
-  <string-array name="sms_security_check_limit_entries" translatable="false">
-    <item>@string/sms_security_check_limit_default</item>
-    <item>50</item>
-    <item>100</item>
-    <item>200</item>
-    <item>500</item>
-  </string-array>
-  <string-array name="sms_security_check_limit_values" translatable="false">
-    <item>30</item>
-    <item>50</item>
-    <item>100</item>
-    <item>200</item>
-    <item>500</item>
-  </string-array>
-  <!--Custom lock screen background-->
-  <string-array name="lockscreen_background_entries" translatable="false">
-    <item>@string/lockscreen_background_color_fill</item>
-    <item>@string/lockscreen_background_custom_image</item>
-    <item>@string/lockscreen_background_default_wallpaper</item>
-  </string-array>
-  <string-array name="lockscreen_background_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-  </string-array>
-  <!--**** CYANOGENMOD ADDITIONS END ****-->
-  <string-array name="pref_low_battery_warning_policy_entries">
-    <item>Okno i dźwięk</item>
-    <item>Tylko okno</item>
-    <item>Tylko dźwięk</item>
-    <item>Wyłącz</item>
-  </string-array>
-  <string-array name="pref_low_battery_warning_policy_values">
-    <item>3</item>
-    <item>1</item>
-    <item>2</item>
-    <item>0</item>
-  </string-array>
-  <string-array name="choose_toggle_side_entries" translatable="false">
-    <item>@string/right</item>
-    <item>@string/left</item>
-  </string-array>
-  <string-array name="choose_toggle_side_values" translatable="false">
-    <item>1</item>
-    <item>2</item>
-  </string-array>
-  <!--Notification Shortcuts-->
-  <string-array name="notification_shortcuts_quantity_entries" translatable="false">
-    <item>4</item>
-    <item>6 (Domyślny)</item>
-    <item>8</item>
-    <item>10</item>
-    <item>12</item>
-    <item>14</item>
-    <item>16</item>
-  </string-array>
-  <string-array name="notification_shortcuts_quantity_values" translatable="false">
-    <item>4</item>
-    <item>6</item>
-    <item>8</item>
-    <item>10</item>
-    <item>12</item>
-    <item>14</item>
-    <item>16</item>
-  </string-array>
-  <string-array name="notification_shortcuts_icon_picker_labels" translatable="false">
-    <item>@string/notification_shortcuts_icon_picker_alarm</item>
-    <item>@string/notification_shortcuts_icon_picker_andy</item>
-    <item>@string/notification_shortcuts_icon_picker_battery</item>
-    <item>@string/notification_shortcuts_icon_picker_browser</item>
-    <item>@string/notification_shortcuts_icon_picker_calendar</item>
-    <item>@string/notification_shortcuts_icon_picker_camera</item>
-    <item>@string/notification_shortcuts_icon_picker_cloud</item>
-    <item>@string/notification_shortcuts_icon_picker_contact</item>
-    <item>@string/notification_shortcuts_icon_picker_directdial</item>
-    <item>@string/notification_shortcuts_icon_picker_directmessage</item>
-    <item>@string/notification_shortcuts_icon_picker_email</item>
-    <item>@string/notification_shortcuts_icon_picker_email2</item>
-    <item>@string/notification_shortcuts_icon_picker_facebook</item>
-    <item>@string/notification_shortcuts_icon_picker_favorite</item>
-    <item>@string/notification_shortcuts_icon_picker_file_browser</item>
-    <item>@string/notification_shortcuts_icon_picker_file_browser2</item>
-    <item>@string/notification_shortcuts_icon_picker_gallery</item>
-    <item>@string/notification_shortcuts_icon_picker_google_small</item>
-    <item>@string/notification_shortcuts_icon_picker_gplus</item>
-    <item>@string/notification_shortcuts_icon_picker_gtalk</item>
-    <item>@string/notification_shortcuts_icon_picker_help</item>
-    <item>@string/notification_shortcuts_icon_picker_joystick</item>
-    <item>@string/notification_shortcuts_icon_picker_key</item>
-    <item>@string/notification_shortcuts_icon_picker_laptop</item>
-    <item>@string/notification_shortcuts_icon_picker_luggage</item>
-    <item>@string/notification_shortcuts_icon_picker_maps</item>
-    <item>@string/notification_shortcuts_icon_picker_market</item>
-    <item>@string/notification_shortcuts_icon_picker_movie</item>
-    <item>@string/notification_shortcuts_icon_picker_music</item>
-    <item>@string/notification_shortcuts_icon_picker_nav</item>
-    <item>@string/notification_shortcuts_icon_picker_phone</item>
-    <item>@string/notification_shortcuts_icon_picker_pintrest</item>
-    <item>@string/notification_shortcuts_icon_picker_play</item>
-    <item>@string/notification_shortcuts_icon_picker_podcast</item>
-    <item>@string/notification_shortcuts_icon_picker_quicksettings</item>
-    <item>@string/notification_shortcuts_icon_picker_rss</item>
-    <item>@string/notification_shortcuts_icon_picker_sdcard</item>
-    <item>@string/notification_shortcuts_icon_picker_search</item>
-    <item>@string/notification_shortcuts_icon_picker_sms</item>
-    <item>@string/notification_shortcuts_icon_picker_terminal</item>
-    <item>@string/notification_shortcuts_icon_picker_twitter</item>
-    <item>@string/notification_shortcuts_icon_picker_unlock</item>
-  </string-array>
-  <string-array name="notification_shortcuts_icon_picker_icons" translatable="false">
-    <item>@*android:drawable/ic_shortcut_alarm</item>
-    <item>@*android:drawable/ic_shortcut_andy</item>
-    <item>@*android:drawable/ic_shortcut_battery</item>
-    <item>@*android:drawable/ic_shortcut_browser</item>
-    <item>@*android:drawable/ic_shortcut_calendar</item>
-    <item>@*android:drawable/ic_shortcut_camera</item>
-    <item>@*android:drawable/ic_shortcut_cloud</item>
-    <item>@*android:drawable/ic_shortcut_contact</item>
-    <item>@*android:drawable/ic_shortcut_directdial</item>
-    <item>@*android:drawable/ic_shortcut_directmessage</item>
-    <item>@*android:drawable/ic_shortcut_email</item>
-    <item>@*android:drawable/ic_shortcut_email2</item>
-    <item>@*android:drawable/ic_shortcut_facebook</item>
-    <item>@*android:drawable/ic_shortcut_favorite</item>
-    <item>@*android:drawable/ic_shortcut_file_browser</item>
-    <item>@*android:drawable/ic_shortcut_file_browser2</item>
-    <item>@*android:drawable/ic_shortcut_gallery</item>
-    <item>@*android:drawable/ic_shortcut_google_small</item>
-    <item>@*android:drawable/ic_shortcut_gplus</item>
-    <item>@*android:drawable/ic_shortcut_gtalk</item>
-    <item>@*android:drawable/ic_shortcut_help</item>
-    <item>@*android:drawable/ic_shortcut_joystick</item>
-    <item>@*android:drawable/ic_shortcut_key</item>
-    <item>@*android:drawable/ic_shortcut_laptop</item>
-    <item>@*android:drawable/ic_shortcut_luggage</item>
-    <item>@*android:drawable/ic_shortcut_maps</item>
-    <item>@*android:drawable/ic_shortcut_market</item>
-    <item>@*android:drawable/ic_shortcut_movie</item>
-    <item>@*android:drawable/ic_shortcut_music</item>
-    <item>@*android:drawable/ic_shortcut_nav</item>
-    <item>@*android:drawable/ic_shortcut_phone</item>
-    <item>@*android:drawable/ic_shortcut_pintrest</item>
-    <item>@*android:drawable/ic_shortcut_play</item>
-    <item>@*android:drawable/ic_shortcut_podcast</item>
-    <item>@*android:drawable/ic_shortcut_quicksettings</item>
-    <item>@*android:drawable/ic_shortcut_rss</item>
-    <item>@*android:drawable/ic_shortcut_sdcard</item>
-    <item>@*android:drawable/ic_shortcut_search</item>
-    <item>@*android:drawable/ic_shortcut_sms</item>
-    <item>@*android:drawable/ic_shortcut_terminal</item>
-    <item>@*android:drawable/ic_shortcut_twitter</item>
-    <item>@*android:drawable/ic_shortcut_unlock</item>
-  </string-array>
-  <!--Battery styles-->
-  <string-array name="battery_icon_entries" translatable="false">
-    <item>@string/icon_only</item>
-    <item>@string/text_only</item>
-    <item>@string/icon_with_text</item>
-    <item>@string/icon_with_centered_text</item>
-    <item>@string/rb_battery1</item>
-    <item>@string/rb_battery2</item>
-    <item>@string/rb_battery3</item>
-    <item>@string/dont_show</item>
-  </string-array>
-  <string-array name="battery_icon_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-    <item>3</item>
-    <item>4</item>
-    <item>5</item>
-    <item>6</item>
-    <item>7</item>
-  </string-array>
-  <string-array name="battery_bar_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-    <item>3</item>
-  </string-array>
-  <string-array name="battery_bar_style_entries" translatable="false">
-    <item>@string/regular</item>
-    <item>@string/center_mirrored</item>
-  </string-array>
-  <string-array name="battery_bar_style_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-  </string-array>
-  <string-array name="battery_bar_thickness_entries" translatable="false">
-    <item>@string/size_1_dp</item>
-    <item>@string/size_2_dp</item>
-    <item>@string/size_3_dp</item>
-    <item>@string/size_4_dp</item>
-  </string-array>
-  <string-array name="battery_bar_thickness_values" translatable="false">
-    <item>1</item>
-    <item>2</item>
-    <item>3</item>
-    <item>4</item>
-  </string-array>
-  <!--NavBar-->
-  <string-array name="pref_navigation_menu_entries" translatable="false">
-    <item>@string/right</item>
-    <item>@string/left</item>
-    <item>@string/both</item>
-    <item>@string/dont_show</item>
-  </string-array>
-  <!--right is the default, easier to keep 0 as first index-->
-  <string-array name="pref_navigation_menu_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-    <item>4</item>
-  </string-array>
-  <string-array name="pref_navigation_menu_display_entries" translatable="false">
-    <item>@string/default_jb_behavior</item>
-    <item>@string/always_show_invincible_icons</item>
-    <item>@string/always_show</item>
-    <item>@string/default_jb_with_invincible_icons_when_hidden</item>
-  </string-array>
-  <string-array name="pref_navigation_menu_display_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-    <item>3</item>
-  </string-array>
-  <string-array name="navigation_bar_qty_entries" translatable="false">
-    <item>1</item>
-    <item>2</item>
-    <item>3</item>
-    <item>4</item>
-    <item>5</item>
-    <item>6</item>
-    <item>7</item>
-  </string-array>
-  <string-array name="navigation_bar_qty_values" translatable="false">
-    <item>1</item>
-    <item>2</item>
-    <item>3</item>
-    <item>4</item>
-    <item>5</item>
-    <item>6</item>
-    <item>7</item>
-  </string-array>
-  <string-array name="navbar_button_entries" translatable="false">
-    <item>@string/home</item>
-    <item>@string/back</item>
-    <item>@string/recents</item>
-    <item>@string/recents_gb</item>
-    <item>@string/lastapp</item>
-    <item>@string/search</item>
-    <item>@string/menu</item>
-    <item>@string/open_ime_switcher</item>
-    <item>@string/kill_app</item>
-    <item>@string/power</item>
-    <item>@string/notifications</item>
-    <item>@string/custom_app</item>
-    <item>@string/blank</item>
-  </string-array>
-  <string-array name="navring_dialog_entries" translatable="false">
-    <item>@string/none</item>
-    <item>@string/open_ime_switcher</item>
-    <item>@string/ring_vib</item>
-    <item>@string/ring_silent</item>
-    <item>@string/ring_vib_silent</item>
-    <item>@string/kill_app</item>
-    <item>@string/lastapp</item>
-    <item>@string/screen_off</item>
-    <item>@string/google_now</item>
-    <item>@string/select_application</item>
-  </string-array>
-  <string-array name="navring_dialog_values" translatable="false"/>
-  <string-array name="pref_navring_amount_entries" translatable="false">
-    <item>@string/one_target</item>
-    <item>@string/two_targets</item>
-    <item>@string/three_targets</item>
-    <item>@string/four_targets</item>
-    <item>@string/five_targets</item>
-  </string-array>
-  <string-array name="pref_navring_amount_values" translatable="false">
-    <item>1</item>
-    <item>2</item>
-    <item>3</item>
-    <item>4</item>
-    <item>5</item>
-  </string-array>
-  <string-array name="glow_times_entries" translatable="false">
-    <item>@string/glow_times_off</item>
-    <item>@string/glow_times_superquick</item>
-    <item>@string/glow_times_quick</item>
-    <item>@string/glow_times_normal</item>
-  </string-array>
-  <string-array name="glow_times_values" translatable="false">
-    <item>0|0</item>
-    <item>100|10</item>
-    <item>250|25</item>
-    <item>500|50</item>
-  </string-array>
-  <!--clock stuff-->
-  <string-array name="clock_style_entries" translatable="false">
-    <item>@string/right_clock</item>
-    <item>@string/center_clock</item>
-    <item>@string/no_clock</item>
-  </string-array>
-  <string-array name="clock_style_values" translatable="false">
-    <item>1</item>
-    <item>2</item>
-    <item>0</item>
-  </string-array>
-  <string-array name="clock_ampm_entries" translatable="false">
-    <item>@string/dont_show</item>
-    <item>@string/small_am_pm</item>
-    <item>@string/regular_am_pm</item>
-    <item>@string/protekk_oclock</item>
-  </string-array>
-  <string-array name="clock_ampm_values" translatable="false">
-    <item>2</item>
-    <item>1</item>
-    <item>0</item>
-    <item>3</item>
-  </string-array>
-  <string-array name="clock_weekday_entries" translatable="false">
-    <item>@string/dont_show</item>
-    <item>@string/small_weekday</item>
-    <item>@string/regular_weekday</item>
-  </string-array>
-  <string-array name="clock_weekday_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-  </string-array>
-  <string-array name="notification_action_entries" translatable="false">
-    <item>@string/nothing</item>
-    <item>@string/clock_options</item>
-    <item>@string/alarm</item>
-    <item>@string/today</item>
-    <item>@string/event</item>
-    <item>@string/voiceassist</item>
-    <item>@string/custom_app</item>
-  </string-array>
-  <string-array name="less_notification_sounds_entries" translatable="false">
-    <item>@string/default_behavior</item>
-    <item>@string/time_3_seconds</item>
-    <item>@string/time_5_seconds</item>
-    <item>@string/time_10_seconds</item>
-    <item>@string/time_15_seconds</item>
-    <item>@string/time_30_seconds</item>
-    <item>@string/time_45_seconds</item>
-    <item>@string/time_1_minute</item>
-    <item>@string/time_2_minutes</item>
-  </string-array>
-  <string-array name="less_notification_sounds_values" translatable="false">
-    <item>0</item>
-    <item>3000</item>
-    <item>5000</item>
-    <item>10000</item>
-    <item>15000</item>
-    <item>30000</item>
-    <item>45000</item>
-    <item>60000</item>
-    <item>120000</item>
-  </string-array>
-  <string-array name="headphone_audio_mode_entries" translatable="false">
-    <item>@string/headphones_mode_no_action</item>
-    <item>@string/headphones_mode_vibrate</item>
-    <item>@string/headphones_mode_silent</item>
-  </string-array>
-  <string-array name="headphone_audio_mode_values" translatable="false">
-    <item>-1</item>
-    <item>1</item>
-    <item>0</item>
-  </string-array>
-  <string-array name="phone_call_flip_entries" translatable="false">
-    <item>@string/disabled</item>
-    <item>@string/enabled</item>
-  </string-array>
-  <string-array name="phone_call_flip_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-  </string-array>
-  <!--Flip up/down arrays-->
-  <string-array name="flip_entries" translatable="false">
-    <item>@string/time_0_5_seconds</item>
-    <item>@string/time_1_second</item>
-    <item>@string/time_1_5_seconds</item>
-    <item>@string/time_2_seconds</item>
-    <item>@string/time_2_5_seconds</item>
-    <item>@string/time_3_seconds</item>
-    <item>@string/time_3_5_seconds</item>
-    <item>@string/time_4_seconds</item>
-    <item>@string/time_4_5_seconds</item>
-    <item>@string/time_5_seconds</item>
-    <item>@string/time_5_5_seconds</item>
-    <item>@string/time_6_seconds</item>
-    <item>@string/time_7_seconds</item>
-    <item>@string/time_8_seconds</item>
-    <item>@string/time_9_seconds</item>
-    <item>@string/time_10_seconds</item>
-  </string-array>
-  <!--values must be in milliseconds!~@@#E!@-->
-  <string-array name="flip_values" translatable="false">
-    <item>500</item>
-    <item>1000</item>
-    <item>1500</item>
-    <item>2000</item>
-    <item>2500</item>
-    <item>3000</item>
-    <item>3500</item>
-    <item>4000</item>
-    <item>4500</item>
-    <item>5000</item>
-    <item>5500</item>
-    <item>6000</item>
-    <item>7000</item>
-    <item>8000</item>
-    <item>9000</item>
-    <item>10000</item>
-  </string-array>
-  <string-array name="flip_screenoff_entries" translatable="false">
-    <item>@string/time_0_seconds_instant_off</item>
-    <item>@string/time_5_seconds</item>
-    <item>@string/time_10_seconds</item>
-    <item>@string/time_15_seconds</item>
-    <item>@string/time_30_seconds</item>
-    <item>@string/time_45_seconds</item>
-    <item>@string/time_1_minute</item>
-    <item>@string/time_1_5_minutes</item>
-    <item>@string/time_2_minutes</item>
-    <item>@string/time_2_5_minutes</item>
-    <item>@string/time_3_minutes</item>
-    <item>@string/time_3_5_minutes</item>
-    <item>@string/time_4_minutes</item>
-    <item>@string/time_5_minutes</item>
-  </string-array>
-  <!--values must be in milliseconds!~@@#E!@-->
-  <string-array name="flip_screenoff_values" translatable="false">
-    <item>0</item>
-    <item>5000</item>
-    <item>10000</item>
-    <item>15000</item>
-    <item>30000</item>
-    <item>45000</item>
-    <item>60000</item>
-    <item>90000</item>
-    <item>120000</item>
-    <item>150000</item>
-    <item>180000</item>
-    <item>210000</item>
-    <item>240000</item>
-    <item>300000</item>
-  </string-array>
-  <string-array name="signal_style_entries" translatable="false">
-    <item>@string/show_signal_bars</item>
-    <item>@string/show_signal_text</item>
-    <item>@string/show_with_dbm</item>
-  </string-array>
-  <string-array name="signal_style_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-  </string-array>
-  <string-array name="wifi_signal_style_entries" translatable="false">
-    <item>@string/show_signal_bars</item>
-    <item>@string/show_signal_text</item>
-  </string-array>
-  <string-array name="wifi_signal_style_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-  </string-array>
-  <!--LED brightness entries-->
-  <string-array name="led_brightness_entries" translatable="false">
-    <item>@string/low</item>
-    <item>@string/medium</item>
-    <item>@string/high</item>
-    <item>@string/very_high</item>
-    <item>@string/laserbeam</item>
-  </string-array>
-  <!--LED Values-->
-  <string-array name="led_entries" translatable="false">
-    <item>@string/time_0_seconds_off</item>
-    <item>@string/time_0_2_seconds</item>
-    <item>@string/time_0_5_seconds</item>
-    <item>@string/time_1_second</item>
-    <item>@string/time_1_5_seconds</item>
-    <item>@string/time_2_seconds</item>
-    <item>@string/time_2_5_seconds</item>
-    <item>@string/time_3_seconds</item>
-    <item>@string/time_3_5_seconds</item>
-    <item>@string/time_4_seconds</item>
-    <item>@string/time_4_5_seconds</item>
-    <item>@string/time_5_seconds</item>
-    <item>@string/time_5_5_seconds</item>
-    <item>@string/time_6_seconds</item>
-    <item>@string/time_7_seconds</item>
-    <item>@string/time_8_seconds</item>
-    <item>@string/time_9_seconds</item>
-    <item>@string/time_10_seconds</item>
-  </string-array>
-  <string-array name="navring_long_dialog_entries" translatable="false">
-    <item>@string/navring_short</item>
-    <item>@string/navring_long</item>
-    <item>@string/navring_icon</item>
-  </string-array>
-  <string-array name="navring_short_dialog_entries" translatable="false">
-    <item>@string/navring_short</item>
-    <item>@string/navring_icon</item>
-  </string-array>
-  <string-array name="quick_pulldown_entries" translatable="false">
-    <item>@string/quick_pulldown_off</item>
-    <item>@string/quick_pulldown_right</item>
-    <item>@string/quick_pulldown_left</item>
-  </string-array>
-  <string-array name="quick_pulldown_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-  </string-array>
-  <!--Notification drawer background-->
-  <string-array name="notification_wallpaper_entries">
-    <item>@string/notification_background_color_fill</item>
-    <item>@string/notification_background_custom_image</item>
-    <item>@string/notification_background_default_wallpaper</item>
-  </string-array>
-  <string-array name="notification_wallpaper_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-  </string-array>
-  <string-array name="notification_wallpaper_landscape_entries">
-    <item>@string/notification_background_custom_image</item>
-    <item>@string/notification_background_default_wallpaper</item>
-  </string-array>
-  <string-array name="notification_wallpaper_landscape_values" translatable="false">
-    <item>0</item>
-    <item>1</item>
-  </string-array>
-  <string-array name="status_bar_icon_opacity_entries">
-    <item>35%</item>
-    <item>45%</item>
-    <item>55% (domyślnie)</item>
-    <item>65%</item>
-    <item>75%</item>
-    <item>85%</item>
-    <item>95%</item>
-    <item>100%</item>
-  </string-array>
-  <string-array name="status_bar_icon_opacity_values">
-    <item>89</item>
-    <item>115</item>
-    <item>140</item>
-    <item>166</item>
-    <item>191</item>
-    <item>217</item>
-    <item>242</item>
-    <item>255</item>
-  </string-array>
-  <!--Auto keyboard rotation-->
-  <string-array name="keyboard_rotation_timeout_entries" translatable="false">
-    <item>2s</item>
-    <item>5s</item>
-    <item>10s</item>
-    <item>20s</item>
-    <item>30s</item>
-    <item>60s</item>
-  </string-array>
-  <string-array name="keyboard_rotation_timeout_values" translatable="false">
-    <item>2000</item>
-    <item>5000</item>
-    <item>10000</item>
-    <item>20000</item>
-    <item>30000</item>
-    <item>60000</item>
+    <item>Użyj ustawień globalnych</item>
+    <item>Włączony</item>
+    <item>Wyłączony</item>
+  </string-array>
+
+  <string-array name="entries_status_bar_am_pm">
+    <item>Normalny</item>
+    <item>Mały</item>
+    <item>Brak</item>
   </string-array>
 </resources>
