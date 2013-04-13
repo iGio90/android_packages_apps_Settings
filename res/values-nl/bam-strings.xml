@@ -323,7 +323,6 @@
   <string name="title_navring_amount">Aantal navigatiering ring doelen</string>
   <string name="summary_navring_amount">Kies het aaantal doelen in de navigatie ring</string>
   <string name="interface_navring_settings_title">Navigatie Ring</string>
-  <string name="interface_navring_settings_summary">@nul</string>
   <string name="navring_target_info">Sleep met uw vinger naar doelen om acties toe te wijzen</string>
   <string name="navring_short">korte actie</string>
   <string name="navring_long">Lange actie</string>
