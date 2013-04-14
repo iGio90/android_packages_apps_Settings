@@ -6060,9 +6060,9 @@
     <string name="bam_modder_miscs_skeyboard">Samsung KeyBoard</string>
     <string name="bam_modder_miscs_skeyboard_summary">This pack includes:\nStock Samsung Keyboard</string>
     <string name="bam_modder_miscs_silentcameraon">Enable Silent Camera</string>
-    <string name="bam_modder_miscs_silentcameraon_summary">This pack includes:\nAddod.d script provided by rmkilc that will enable the silent mode for your stock camera</string>
+    <string name="bam_modder_miscs_silentcameraon_summary">This pack includes:\nAddon.d script provided by rmkilc that will enable the silent mode for your stock camera</string>
     <string name="bam_modder_miscs_silentcameraoff">Disable Silent Camera</string>
-    <string name="bam_modder_miscs_silentcameraoff_summary">This pack includes:\nAddod.d script provided by rmkilc that will disable the silent camera and enable the stock shutter sound</string>
+    <string name="bam_modder_miscs_silentcameraoff_summary">This pack includes:\nAddon.d script provided by rmkilc that will disable the silent camera and enable the stock shutter sound</string>
 
     <!-- Main -->
     <string name="main_title">Anonymous Usage Data</string>
