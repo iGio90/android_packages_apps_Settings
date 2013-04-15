@@ -130,15 +130,6 @@ public class QuickSettingsTilesStyle extends SettingsPreferenceFragment implemen
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             Helpers.restartSystemUI();
             return true;
-        } else if (preference == mQuickTilesTextColor) {
-            String hex = ColorPickerPreference.convertToARGB(
-                    Integer.valueOf(String.valueOf(newValue)));
-            preference.setSummary(hex);
-            int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.QUICK_TILES_TEXT_COLOR,
-                    intHex);
-            return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -156,6 +147,15 @@ public class QuickSettingsTilesStyle extends SettingsPreferenceFragment implemen
                     value);
             mTilesPerRow.setSummary(mTilesPerRow.getEntries()[index]);
             Helpers.restartSystemUI();
+            return true;
+        } else if (preference == mQuickTilesTextColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QUICK_TILES_TEXT_COLOR,
+                    intHex);
             return true;
         }
         return false;
