@@ -5606,6 +5606,12 @@
     <string name="protekk_oclock">ProTekk O\'Clock</string>
     <string name="small_weekday">Small weekday</string>
     <string name="regular_weekday">Regular weekday</string>
+    <string name="enable_clock_month">Date display</string>
+    <string name="enable_clock_month_summary">Date and short or long month before the time</string>
+    <string name="enable_clock_month_style">Date style</string>
+    <string name="enable_clock_month_style_summary">Display style of the date</string>
+    <string name="short_month">Short month</string>
+    <string name="long_month">Long month</string>
     <string name="statusbar">Statusbar</string>
     <string name="top_of_navbar">Top of navbar</string>
     <string name="bottom_of_navbar">Bottom of navbar</string>

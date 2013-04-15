@@ -2124,4 +2124,15 @@
         <item>4</item>
         <item>5</item>
     </string-array>
+
+    <string-array name="clock_month_entries" translatable="false">
+        <item>@string/dont_show</item>
+        <item>@string/short_month</item>
+        <item>@string/long_month</item>
+    </string-array>
+    <string-array name="clock_month_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 </resources>
