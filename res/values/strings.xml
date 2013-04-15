@@ -5555,6 +5555,8 @@
     <string name="misc_short">Misc</string>
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display number of pending notifications on the status bar</string>
+    <string name="auto_hide_statusbar">Auto Hide statusbar</string>
+    <string name="auto_hide_statusbar_summary">Statusbar hides itself when there are no notifications</string>
     <string name="clock">Clock</string>
     <string name="battery">Battery</string>
     <string name="signal">Signal</string>

@@ -130,6 +130,7 @@ public class BamQuickSettings extends SettingsPreferenceFragment
     private static final String QUICK_PULLDOWN = "quick_pulldown";
     private static final String NO_NOTIFICATIONS_PULLDOWN = "no_notifications_pulldown";
     private static final String DISABLE_PANEL = "disable_quick_settings";
+    private static final String STATUS_BAR_AUTO_HIDE = "status_bar_auto_hide";
 
     private ListPreference mNotificationWallpaper;
     private ListPreference mNotificationWallpaperLandscape;
@@ -142,7 +143,7 @@ public class BamQuickSettings extends SettingsPreferenceFragment
     private CheckBoxPreference mMMSBreath;
     private CheckBoxPreference mMissedCallBreath;
     private ListPreference mStatusBarIconOpacity;
-
+    private CheckBoxPreference mStatusBarAutoHide;
     private Preference mQuickSettings;
     private CheckBoxPreference mNoNotificationsPulldown;
     private CheckBoxPreference mDisablePanel;
@@ -213,13 +214,14 @@ public class BamQuickSettings extends SettingsPreferenceFragment
             mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
             updatePulldownSummary(quickPulldownValue);
 
-
+            mStatusBarAutoHide = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_AUTO_HIDE);
+            mStatusBarAutoHide.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.AUTO_HIDE_STATUSBAR, 0) == 1));
 
             mDisablePanel.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.QS_DISABLE_PANEL, 0) == 0);
             mNoNotificationsPulldown.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.QS_NO_NOTIFICATION_PULLDOWN, 0) == 1);
-
 
             mStatusBarMaxNotif = (ListPreference) prefSet.findPreference(STATUS_BAR_MAX_NOTIF);
             int maxNotIcons = Settings.System.getInt(mContext.getContentResolver(),
@@ -649,6 +651,11 @@ public class BamQuickSettings extends SettingsPreferenceFragment
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_DONOTDISTURB,
                     mStatusBarDoNotDisturb.isChecked() ? 1 : 0);
+        } else if (preference == mStatusBarAutoHide) {
+            value = mStatusBarAutoHide.isChecked();
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.AUTO_HIDE_STATUSBAR, value ? 1 : 0);
+            return true;
         } else if (preference == mCustomLabel) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
             alert.setTitle(R.string.custom_carrier_label_title);
