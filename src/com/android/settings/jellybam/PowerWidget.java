@@ -49,6 +49,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import static com.android.internal.util.cm.QSUtils.deviceSupportsMobileData;
+
 import com.android.internal.telephony.Phone;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -244,8 +246,7 @@ public class PowerWidget extends SettingsPreferenceFragment implements
             }
 
             // Don't show mobile data options if not supported
-            boolean isMobileData = pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
-            if (!isMobileData) {
+            if (!deviceSupportsMobileData(getActivity())) {
                 PowerWidgetUtil.BUTTONS.remove(PowerWidgetUtil.BUTTON_MOBILEDATA);
                 PowerWidgetUtil.BUTTONS.remove(PowerWidgetUtil.BUTTON_NETWORKMODE);
                 PowerWidgetUtil.BUTTONS.remove(PowerWidgetUtil.BUTTON_WIFIAP);
