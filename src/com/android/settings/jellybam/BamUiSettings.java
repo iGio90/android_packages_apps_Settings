@@ -729,8 +729,8 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
 	} else if (preference == mClassicRecents) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.CLASSIC_RECENTS_MENU,
-                    (Boolean) newValue ? 1 : 0);
-            mClassicRecents.setChecked((Boolean)newValue);
+                    (Boolean) Value ? 1 : 0);
+            mClassicRecents.setChecked((Boolean)Value);
          } else if (preference == mVolumeKeyCursorControl) {
             String volumeKeyCursorControl = (String) Value;
             int val = Integer.parseInt(volumeKeyCursorControl);

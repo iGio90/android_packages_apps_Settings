@@ -5926,6 +5926,15 @@
     <string name="title_persist">BAM Persistence</string>
     <string name="show_classic_recents">Classic Recents</string>
     <string name="show_classic_recents_summary">Show Gingerbread styled recents menu</string>
+    <string name="save">Save</string>
+    <string name="transparency_dialog_title">Transparency settings</string>
+    <string name="transparency_dialog_linked_transparency">Link statusbar &amp; navbar alpha</string>
+    <string name="transparency_dialog_transparency_sb_and_nv">Statusbar and navigation bar</string>
+    <string name="transparency_dialog_statusbar">Statusbar</string>
+    <string name="transparency_dialog_navbar">Navigation bar</string>
+    <string name="transparency_dialog_match_keyguard_alpha">Match lockscreen alpha</string>
+    <string name="transparency_dialog_transparency">Homescreen alpha</string>
+    <string name="transparency_dialog_transparency_keyguard">Lockscreen alpha</string>
 
     <!-- Persistence -->
     <string name="persist_options">BAM Persistence</string>
