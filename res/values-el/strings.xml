@@ -1885,35 +1885,8 @@
     <string name="build_date">Ημερομηνία έκδοσης</string>
     <string name="build_date_default">2013-01-01-0000</string>
     <!-- About device screen, Cpu info. -->
-    <string name="cpu_info">CPU</string>
-    <!-- About phone screen, Free memory info -->
-    <string name="mem_info">Μνήμη</string>
-
-    <!-- Anonymous Statistics  -->
-    <!-- About device screen, list item title. Takes the user to the screen about opting in or out of anonymous statistics. -->
-    <string name="anonymous_statistics_title">Στατιστικά CyanogenMod</string>
-    <string name="anonymous_statistics_summary">Βοηθήστε το CyanogenMod να γίνει καλύτερο ενεργοποιώντας την αποστολή ανώνυμων στατιστικών στοιχείων</string>
-    <string name="anonymous_statistics_warning_title">Σχετικά</string>
-    <string name="anonymous_statistics_warning">Ενεργοποιώντας τα στατιστικά του CyanogenMod επιτρέπετε την αποστολή
-        μη προσωπικών δεδομένων στους προγραμματιστές του CyanogenMod για παρακολούθηση του αριθμού μοναδικών εγκαταστάσεων
-        σε όλες τις συσκευές. Οι πληροφορίες που αποστέλλονται συμπεριλαμβάνουν ένα μοναδικό αναγνωριστικό, το οποίο δεν θέτει
-        σε κίνδυνο την ασφάλεια σας ή τα προσωπικά δεδομένα. Τα δεδομένα αποστέλλονται σε κάθε εκκίνηση.\n\nΓια ένα παράδειγμα
-        των δεδομένων που αποστέλλονται, πατήστε στην Προεπισκόπηση δεδομένων.</string>
-    <string name="enable_reporting_title">Ενεργοποίηση αναφοράς</string>
-    <string name="preview_data_title">Προεπισκόπηση δεδομένων</string>
-    <string name="preview_data_summary">%s</string>
-    <string name="view_stats_title">Εμφάνιση στατιστικών</string>
-    <string name="anonymous_learn_more">Μάθετε περισσότερα</string>
-
-    <!-- Anonymous Statistics - Notification -->
     <string name="anonymous_notification_desc">Ενεργοποίηση ή απενεργοποίηση των στατιστικών του CyanogenMod</string>
 
-    <!-- Anonymous Statistics - Preview -->
-    <string name="preview_id_title">Μοναδικό αναγνωριστικό</string>
-    <string name="preview_device_title">Συσκευή</string>
-    <string name="preview_version_title">Έκδοση</string>
-    <string name="preview_country_title">Χώρα</string>
-    <string name="preview_carrier_title">Εταιρία δικτύου</string>
 
     <!-- INTERFACE Settings  -->
     <!-- Settings main menu category heading. Interface (Launcher, Themes, System). [CHAR LIMIT=40] -->
@@ -2271,7 +2244,6 @@
     <string name="battery_light_full_color_title">Πλήρης φόρτιση</string>
 
     <!-- Sound settings screen -->
-    <string name="volume_overlay_title">Στυλ πάνελ έντασης</string>
     <string name="volume_ring_only_description">Ήχοι κλήσης</string>
     <string name="ring_mode_title">Λειτουργία κλήσης</string>
     <string name="ring_mode_normal">Κανονικό</string>
@@ -2360,22 +2332,11 @@
     <string name="expanded_haptic_feedback_title">Απτική ανάδραση</string>
 
     <!-- Kill app long-press back -->
-    <string name="kill_app_longpress_back">Τερμ. με πλήκτρο back</string>
     <string name="kill_app_longpress_back_summary">Το κουμπί back τερματίζει την τρέχουσα εφαρμογή</string>
-
-    <!-- Change Log strings -->
-    <string name="changelog_title">Εμφάνιση αρχείου αλλαγών</string>
-    <string name="changelog_loading">Φόρτωση αρχείου αλλαγών\u2026</string>
-    <string name="changelog_error">Δεν είναι δυνατή η φόρτωση του αρχείου αλλαγών</string>
-    <string name="changelog_unknown">Άγνωστο</string>
-    <string name="changelog_version">Έκδοση</string>
 
     <!-- Power menu enable disable -->
     <string name="power_menu_title">Power menu</string>
     <string name="power_menu_reboot_title">Επανεκκίνηση</string>
-    <string name="power_menu_screenshot_title">Στιγμιότυπο οθόνης</string>
-    <string name="power_menu_expanded_desktop">Επέκταση επιφάνειας</string>
-    <string name="power_menu_profiles_title">Προφίλ</string>
     <string name="power_menu_airplane_title">Λειτουργία πτήσης</string>
     <string name="power_menu_user_title">Εναλλαγή χρήστη</string>
     <string name="power_menu_sound_title">Πάνελ έντασης</string>
@@ -2549,10 +2510,6 @@
     <string name="lockscreen_background_color_fill">Γέμισμα με χρώμα</string>
     <string name="lockscreen_background_custom_image">Προσαρμοσμένη εικόνα</string>
     <string name="lockscreen_background_default_wallpaper">Προεπιλεγμένη ταπετσαρία</string>
-
-    <!-- Safe headset volume restore checkbox -->
-    <string name="safe_headset_volume_title">Ασφαλής ένταση ακουστικών</string>
-    <string name="safe_headset_volume_summary">Αποτροπή δυνατού επιπέδου έντασης ήχου όταν τα ακουστικά συνδέονται για πρώτη φορά</string>
 
     <!-- Waiver -->
     <string name="cyanogenmod_waiver_title">Απαλλαγή ευθυνών</string>

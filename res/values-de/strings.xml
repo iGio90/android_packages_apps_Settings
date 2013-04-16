@@ -1887,27 +1887,6 @@
     <!-- About phone screen - Free memory info -->
     <string name="mem_info">Arbeitsspeicher</string>
 
-    <!-- Anonymous statistics -->
-    <string name="anonymous_statistics_title">Anonyme Statistiken</string>
-    <string name="anonymous_statistics_summary">Durch anonyme Gerätestatistiken dabei helfen, CyanogenMod zu verbessern</string>
-    <string name="anonymous_statistics_warning_title">ACHTUNG</string>
-    <string name="anonymous_statistics_warning">Die bei jedem Neustart des Gerätes übermittelten Daten beeinträchtigen nicht die Privatsphäre, da sie keinerlei Rückschlüsse auf den Benutzer zulassen.\n\nFür ein Beispiel der gesendeten Daten bitte auf Vorschau klicken.</string>
-    <string name="enable_reporting_title">Berichte einschalten</string>
-    <string name="preview_data_title">Vorschau</string>
-    <string name="preview_data_summary">%s</string>
-    <string name="view_stats_title">Statistiken ansehen</string>
-    <string name="anonymous_learn_more">Mehr erfahren</string>
-
-    <!-- Anonymous statistics - Notification -->
-    <string name="anonymous_notification_desc">Anonyme Statistiken ein- oder ausschalten</string>
-
-    <!-- Anonymous statistics - Preview -->
-    <string name="preview_id_title">Eindeutige ID</string>
-    <string name="preview_device_title">Gerät</string>
-    <string name="preview_version_title">Version</string>
-    <string name="preview_country_title">Land</string>
-    <string name="preview_carrier_title">Anbieter</string>
-
     <!-- Settings main menu category heading -->
     <string name="header_category_interface">Benutzeroberfläche</string>
 
@@ -2268,8 +2247,6 @@
     <string name="battery_light_full_color_title">Aufgeladen</string>
 
     <!-- Sound settings screen -->
-    <string name="volume_overlay_title">Lautstärkeregler</string>
-    <string name="volume_ring_only_description">Klingelton</string>
     <string name="ring_mode_title">Klingelmodus</string>
     <string name="ring_mode_normal">Normal</string>
     <string name="ring_mode_vibrate">Vibration</string>
@@ -2353,19 +2330,10 @@
     <string name="kill_app_longpress_back">App beenden</string>
     <string name="kill_app_longpress_back_summary">Gedrückt halten der Zurück-Taste beendet die Anwendung im Vordergrund</string>
 
-    <!-- Change log strings -->
-    <string name="changelog_title">Changelog anzeigen</string>
-    <string name="changelog_summary">Changelog</string>
-    <string name="changelog_loading">Changelog wird geladen&#8230;</string>
-    <string name="changelog_error">Changelog kann nicht geladen werden</string>
-    <string name="changelog_unknown">Unbekannt</string>
-    <string name="changelog_version">Version</string>
-
     <!-- Power menu enable disable -->
     <string name="power_menu_title">Ein/Aus-Taste</string>
     <string name="power_menu_reboot_title">Neustart-Menü</string>
     <string name="power_menu_screenshot_title">Bildschirmfoto</string>
-    <string name="power_menu_expanded_desktop">Erweiterter Desktop</string>
     <string name="expanded_desktop_disabled">Deaktiviert</string>
     <string name="expanded_desktop_status_bar">Statusleiste anzeigen</string>
     <string name="expanded_desktop_no_status_bar">Statusleiste verbergen</string>
@@ -2543,7 +2511,6 @@
     <!-- Launch music player when headset is connected -->
     <string name="headset_category_title">Kopfhörer</string>
     <string name="headset_connect_player_title">Musik-App starten</string>
-    <string name="headset_connect_player_summary">Beim Verbinden eines Kopfhörers die Standard-Musik-App starten</string>
 
     <!-- Storage settings - USB mass storage -->
     <string name="usb_mass_storage_title">Massenspeicher</string>
@@ -2557,10 +2524,6 @@
     <string name="lockscreen_background_color_fill">Farbfüllung</string>
     <string name="lockscreen_background_custom_image">Benutzerdefiniertes Bild</string>
     <string name="lockscreen_background_default_wallpaper">Standardhintergrund</string>
-
-    <!-- Safe headset volume restore checkbox -->
-    <string name="safe_headset_volume_title">Lautstärkebegrenzung</string>
-    <string name="safe_headset_volume_summary">Schützt beim Einstecken eines Kopfhörers vor zu hoher Lautstärke</string>
 
     <!-- Waiver -->
     <string name="cyanogenmod_waiver_title">Verzichtserklärung</string>
