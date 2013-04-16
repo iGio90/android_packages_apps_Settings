@@ -50,6 +50,10 @@
                 android:title="@string/navbar_qty_title"
                 android:summary="@string/navbar_qty_summary" />
 
+        <com.aokp.romcontrol.widgets.SeekBarPreference
+            android:key="navigation_bar_alpha"
+            android:title="@string/navigation_bar_alpha_title" />
+
         <net.margaritov.preference.colorpicker.ColorPickerPreference
                 android:key="nav_button_color"
                 android:title="@string/navigation_bar_tint_title"
