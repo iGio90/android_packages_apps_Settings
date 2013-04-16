@@ -73,9 +73,11 @@ public class BamLockscreenInterfaceSettings extends SettingsPreferenceFragment i
     private static final int LOCKSCREEN_BACKGROUND_DEFAULT_WALLPAPER = 2;
 
     private static final String KEY_BACKGROUND_PREF = "lockscreen_background";
+    private static final String KEY_SEE_TRHOUGH = "see_through";
     private static final String KEY_LOCKSCREEN_CAMERA_WIDGET = "lockscreen_camera_widget";
 
     private CheckBoxPreference mCameraWidget;
+    private CheckBoxPreference mSeeThrough;
     private ListPreference mCustomBackground;
 
     private final Configuration mCurConfig = new Configuration();
@@ -100,6 +102,10 @@ public class BamLockscreenInterfaceSettings extends SettingsPreferenceFragment i
         mCameraWidget = (CheckBoxPreference) findPreference(KEY_LOCKSCREEN_CAMERA_WIDGET);
         mCameraWidget.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.KG_CAMERA_WIDGET, 0) == 1);
+
+        mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_TRHOUGH);
+        mSeeThrough.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
 
         mCustomBackground = (ListPreference) findPreference(KEY_BACKGROUND_PREF);
         mCustomBackground.setOnPreferenceChangeListener(this);
@@ -165,7 +171,10 @@ public class BamLockscreenInterfaceSettings extends SettingsPreferenceFragment i
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
          boolean value;
-	 if (preference == mCameraWidget) {
+         if (preference == mSeeThrough) {
+            Settings.System.putInt(mContext.getContentResolver(), Settings.System.LOCKSCREEN_SEE_THROUGH,
+                    mSeeThrough.isChecked() ? 1 : 0);
+	 } else if (preference == mCameraWidget) {
             Settings.System.putInt(mContext.getContentResolver(), Settings.System.KG_CAMERA_WIDGET,
 		    mCameraWidget.isChecked() ? 1 : 0);
 	 } else {

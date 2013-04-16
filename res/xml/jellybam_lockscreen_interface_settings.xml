@@ -22,6 +22,11 @@
             android:title="@string/lockscreen_camera_widget_title"
             android:summary="@string/lockscreen_camera_widget_summary" />
 
+  <CheckBoxPreference
+        android:key="see_through"
+        android:title="@string/lockscreen_seethrough"
+        android:summary="@string/lockscreen_seethrough_summary" />
+
         <ListPreference
             android:key="lockscreen_background"
             android:persistent="false"
