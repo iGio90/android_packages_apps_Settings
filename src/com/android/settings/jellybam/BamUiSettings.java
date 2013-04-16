@@ -114,6 +114,7 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
     private static final String KEYBOARD_ROTATION_TOGGLE = "keyboard_rotation_toggle";
     private static final String KEYBOARD_ROTATION_TIMEOUT = "keyboard_rotation_timeout";
     private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
+    private static final String KEY_CLASSIC_RECENTS = "classic_recents";
 
     private static final int REQUEST_PICK_BOOT_ANIMATION = 203;
     //private static final int REQUEST_PICK_CUSTOM_ICON = 202; //unused
@@ -122,6 +123,7 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
     private static final String BOOTANIMATION_USER_PATH = "/data/local/bootanimation.zip";
     private static final String BOOTANIMATION_SYSTEM_PATH = "/system/media/bootanimation.zip";
 
+    private CheckBoxPreference mClassicRecents;
     CheckBoxPreference mCrtOff;
     CheckBoxPreference mCrtOn;
     CheckBoxPreference mFullscreenKeyboard;
@@ -203,6 +205,12 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
         mDualPane.setChecked(Settings.System.getBoolean(mContentResolver,
                          Settings.System.FORCE_DUAL_PANEL, getResources().getBoolean(
                          com.android.internal.R.bool.preferences_prefer_dual_pane)));
+
+        mClassicRecents = (CheckBoxPreference) findPreference(KEY_CLASSIC_RECENTS);
+        boolean classicRecents = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.CLASSIC_RECENTS_MENU, 0) == 1;
+        mClassicRecents.setChecked(classicRecents);
+        mClassicRecents.setOnPreferenceChangeListener(this);
 
         mAllow180Rotation = (CheckBoxPreference) findPreference(PREF_180);
         mUserRotationAngles = Settings.System.getInt(mContentResolver,
@@ -718,7 +726,12 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
             }
             mCrtOn.setEnabled(isCrtOffChecked);
             return true;
-	} else if (preference == mVolumeKeyCursorControl) {
+	} else if (preference == mClassicRecents) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.CLASSIC_RECENTS_MENU,
+                    (Boolean) newValue ? 1 : 0);
+            mClassicRecents.setChecked((Boolean)newValue);
+         } else if (preference == mVolumeKeyCursorControl) {
             String volumeKeyCursorControl = (String) Value;
             int val = Integer.parseInt(volumeKeyCursorControl);
             Settings.System.putInt(getActivity().getContentResolver(),

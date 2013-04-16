@@ -48,6 +48,12 @@
             android:title="@string/ram_bar"
             android:summary="@string/ram_bar_summary" />
 
+        <CheckBoxPreference
+            android:key="classic_recents"
+            android:title="@string/show_classic_recents"
+            android:summary="@string/show_classic_recents_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
      <PreferenceCategory

@@ -5924,6 +5924,8 @@
     <string name="header_install">Install</string>
     <string name="installer">Installer</string>
     <string name="title_persist">BAM Persistence</string>
+    <string name="show_classic_recents">Classic Recents</string>
+    <string name="show_classic_recents_summary">Show Gingerbread styled recents menu</string>
 
     <!-- Persistence -->
     <string name="persist_options">BAM Persistence</string>
