@@ -323,12 +323,7 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
         } else if (preference == mCustomBootAnimation) {
             openBootAnimationDialog();
             return true;
-	} else if (preference.getKey().equals("transparency_dialog")) {
-            // getFragmentManager().beginTransaction().add(new
-            // TransparencyDialog(), null).commit();
-            openTransparencyDialog();
-            return true;
-        } else if (preference == mKeyboardRotationToggle) {
+         } else if (preference == mKeyboardRotationToggle) {
             boolean isAutoRotate = (Settings.System.getInt(getContentResolver(),
                         Settings.System.ACCELEROMETER_ROTATION, 0) == 1);
             if (isAutoRotate && mKeyboardRotationToggle.isChecked())

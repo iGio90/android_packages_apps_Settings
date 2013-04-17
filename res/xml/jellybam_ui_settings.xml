@@ -38,10 +38,6 @@
         android:key="bam_general_ui"
         android:title="@string/general_ui_header">
 
-        <Preference
-            android:key="transparency_dialog"
-            android:title="@string/transparency_dialog_title" />
-
         <CheckBoxPreference
             android:key="recent_kill_all"
             android:title="@string/recent_kill_all"
