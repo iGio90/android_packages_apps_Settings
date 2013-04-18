@@ -60,7 +60,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     /** If there is no setting in the provider, use this. */
     private static final int FALLBACK_SCREEN_TIMEOUT_VALUE = 30000;
 
-    private static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_ACCELEROMETER = "accelerometer";
     private static final String KEY_ROTATION = "rotation";
@@ -73,8 +72,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
     private DisplayManager mDisplayManager;
-
-    private CheckBoxPreference mStatusBarBrightnessControl;
 
     private CheckBoxPreference mAccelerometer;
     private Preference mRotation;
@@ -110,10 +107,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.display_settings);
         PreferenceScreen prefSet = getPreferenceScreen();
         mContext = getActivity();
-
-        mStatusBarBrightnessControl = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_BRIGHTNESS_CONTROL);
-        mStatusBarBrightnessControl.setChecked((Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0) == 1));
 
         mAccelerometer = (CheckBoxPreference) findPreference(KEY_ACCELEROMETER);
         mAccelerometer.setPersistent(false);
@@ -176,9 +169,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mWifiDisplayPreference = null;
         }
 
-        if (Utils.isTablet()) {
-            prefSet.removePreference(mStatusBarBrightnessControl);
-        }
     }
 
     private void updateTimeoutPreferenceDescription(long currentTimeout) {
@@ -373,12 +363,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mStatusBarBrightnessControl) {
-            Settings.System.putInt(mContext.getContentResolver(),
-                    Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL,
-                    mStatusBarBrightnessControl.isChecked() ? 1 : 0);
-            return true;
-        } else if (preference == mAccelerometer) {
+        if (preference == mAccelerometer) {
             RotationPolicy.setRotationLockForAccessibility(
                     getActivity(), !mAccelerometer.isChecked());
         } else if (preference == mNotificationPulse) {
