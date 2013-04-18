@@ -5924,8 +5924,6 @@
     <string name="header_install">Install</string>
     <string name="installer">Installer</string>
     <string name="title_persist">BAM Persistence</string>
-    <string name="show_classic_recents">Classic Recents</string>
-    <string name="show_classic_recents_summary">Show Gingerbread styled recents menu</string>
     <string name="save">Save</string>
     <string name="transparency_dialog_title">Transparency settings</string>
     <string name="transparency_dialog_linked_transparency">Link statusbar &amp; navbar alpha</string>
