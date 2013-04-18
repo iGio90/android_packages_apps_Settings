@@ -37,9 +37,12 @@
         android:layout_marginTop="4dp"
         android:orientation="horizontal" >
 
-        <com.android.settings.notificationlight.ColorPanelView
-            android:id="@+id/old_color_panel"
+        <EditText
+            android:id="@+id/hex_color_input"
             android:layout_width="0px"
+            android:maxLength="6"
+            android:digits="0123456789ABCDEFabcdef"
+            android:inputType="textNoSuggestions"
             android:layout_height="match_parent"
             android:layout_weight="0.5" />
 
@@ -54,7 +57,7 @@
             android:textSize="20sp" />
 
         <com.android.settings.notificationlight.ColorPanelView
-            android:id="@+id/new_color_panel"
+            android:id="@+id/color_panel"
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="0.5" />
