@@ -724,8 +724,6 @@ public class BamNavbarSettings extends SettingsPreferenceFragment implements
     public static class AdvancedTransparencyDialog extends DialogFragment {
 
         private static final int KEYGUARD_ALPHA = 255;
-        private static final int ALPHA_STOCK_0 = 255;
-        private static final int ALPHA_STOCK_1 = 255;
 
         private static final int STATUSBAR_ALPHA = 0;
         private static final int STATUSBAR_KG_ALPHA = 1;
@@ -777,14 +775,14 @@ public class BamNavbarSettings extends SettingsPreferenceFragment implements
                     alphas[0] = Integer.parseInt(split[0]);
                     alphas[1] = Integer.parseInt(split[1]);
 
-                    mSeekBars[STATUSBAR_ALPHA].setCurrentAlpha(ALPHA_STOCK_0);
-                    mSeekBars[STATUSBAR_KG_ALPHA].setCurrentAlpha(ALPHA_STOCK_1);
+                    mSeekBars[STATUSBAR_ALPHA].setCurrentAlpha(alphas[0]);
+                    mSeekBars[STATUSBAR_KG_ALPHA].setCurrentAlpha(alphas[1]);
 
                     mMatchStatusbarKeyguard.setChecked(alphas[1] == KEYGUARD_ALPHA);
 
                     if (linkTransparencies) {
-                        mSeekBars[NAVBAR_ALPHA].setCurrentAlpha(ALPHA_STOCK_0);
-                        mSeekBars[NAVBAR_KG_ALPHA].setCurrentAlpha(ALPHA_STOCK_1);
+                        mSeekBars[NAVBAR_ALPHA].setCurrentAlpha(alphas[0]);
+                        mSeekBars[NAVBAR_KG_ALPHA].setCurrentAlpha(alphas[1]);
                     } else {
                         final String navConfig = Settings.System.getString(getActivity()
                                 .getContentResolver(),
