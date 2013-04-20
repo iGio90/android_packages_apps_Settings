@@ -45,7 +45,7 @@ import static com.android.internal.util.cm.QSConstants.TILE_VOLUME;
 import static com.android.internal.util.cm.QSConstants.TILE_HYBRID;
 
 import static com.android.internal.util.cm.QSUtils.deviceSupportsBluetooth;
-import static com.android.internal.util.cm.QSUtils.deviceSupportsMobileData;
+import static com.android.internal.util.cm.QSUtils.deviceSupportsTelephony;
 
 import android.content.Context;
 import android.provider.Settings;
@@ -205,13 +205,13 @@ public class QuickSettingsUtil {
     public static String getDefaultTiles(Context context) {
         // Filter items not compatible with device
         boolean bluetoothSupported = deviceSupportsBluetooth();
-        boolean mobileDataSupported = deviceSupportsMobileData(context);
+        boolean telephonySupported = deviceSupportsTelephony(context);
 
         if (!bluetoothSupported) {
             TILES_DEFAULT.remove(TILE_BLUETOOTH);
         }
 
-        if (!mobileDataSupported) {
+        if (!telephonySupported) {
             TILES_DEFAULT.remove(TILE_MOBILEDATA);
         }
 
