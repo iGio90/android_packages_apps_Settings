@@ -158,6 +158,7 @@ public class DateTimeSettings extends SettingsPreferenceFragment
         getActivity().registerReceiver(mIntentReceiver, filter, null, null);
 
         updateTimeAndDateDisplay(getActivity());
+            dateUpdated();
     }
 
     @Override
@@ -310,6 +311,11 @@ public class DateTimeSettings extends SettingsPreferenceFragment
 
     private void timeUpdated() {
         Intent timeChanged = new Intent(Intent.ACTION_TIME_CHANGED);
+        getActivity().sendBroadcast(timeChanged);
+    }
+
+    private void dateUpdated() {
+        Intent timeChanged = new Intent(Intent.ACTION_DATE_CHANGED);
         getActivity().sendBroadcast(timeChanged);
     }
 
