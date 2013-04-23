@@ -28,6 +28,7 @@ import static com.android.internal.util.cm.QSConstants.TILE_GPS;
 import static com.android.internal.util.cm.QSConstants.TILE_HOLOBAM;
 import static com.android.internal.util.cm.QSConstants.TILE_LOCKSCREEN;
 import static com.android.internal.util.cm.QSConstants.TILE_MOBILEDATA;
+import static com.android.internal.util.cm.QSConstants.TILE_MUSIC;
 import static com.android.internal.util.cm.QSConstants.TILE_NETWORKMODE;
 import static com.android.internal.util.cm.QSConstants.TILE_NFC;
 import static com.android.internal.util.cm.QSConstants.TILE_REBOOT;
@@ -140,6 +141,9 @@ public class QuickSettingsUtil {
         TILES.put(TILE_HOLOBAM, new QuickSettingsUtil.TileInfo(
                 TILE_HOLOBAM, R.string.title_tile_holobam,
                 "com.android.systemui:drawable/ic_qs_jb_dark_off_light"));
+        TILES.put(TILE_MUSIC, new QuickSettingsUtil.TileInfo(
+                TILE_MUSIC, R.string.title_tile_music,
+                "@*android:drawable/ic_media_play"));
     }
 
     public static String getCurrentTiles(Context context) {
