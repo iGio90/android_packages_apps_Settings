@@ -5396,6 +5396,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="bamcontrol_settings_title">BAM Control</string>
     <string name="bamcontrol_interface">Interface</string>
     <string name="bamcontrol_lockscreen">Lockscreen</string>
+    <string name="bamcontrol_performance">Performance</string>
     <string name="bamcontrol_statusbar">Statusbar</string>
     <string name="bamcontrol_system">System</string>
     <string name="bamcontrol_navigation_bar">Navigation Bar</string>
@@ -5981,6 +5982,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="transparency_dialog_match_keyguard_alpha">Match lockscreen alpha</string>
     <string name="transparency_dialog_transparency">Homescreen alpha</string>
     <string name="transparency_dialog_transparency_keyguard">Lockscreen alpha</string>
+    <string name="media_scanner_on_boot_title">MediaScanner behavior on boot</string>
+    <string name="media_scanner_on_boot_enabled">Scan media</string>
+    <string name="media_scanner_on_boot_ask">Ask to scan (notification)</string>
+    <string name="media_scanner_on_boot_disabled">Do not scan media</string>
 
     <!-- Persistence -->
     <string name="persist_options">BAM Persistence</string>

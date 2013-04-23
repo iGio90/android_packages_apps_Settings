@@ -1797,6 +1797,8 @@
 
         <activity android:name=".jellybam.BamNavbarSettings" />
 
+        <activity android:name=".jellybam.BamPerformanceSettings" />
+
         <activity android:name=".jellybam.BamSignalSettings" />
 
         <activity android:name=".jellybam.BamSoundSettings" />

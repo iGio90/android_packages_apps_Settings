@@ -127,6 +127,11 @@
         android:title="@string/bamcontrol_system" >
 
     <PreferenceScreen
+        android:key="bam_performance"
+        android:title="@string/bamcontrol_performance"
+        android:fragment="com.android.settings.jellybam.BamPerformanceSettings" />
+
+    <PreferenceScreen
         android:key="lock_clock"
         android:title="@string/bam_chronus"
         android:icon="@drawable/ic_settings_chronus">
