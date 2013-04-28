@@ -36,6 +36,12 @@
         android:title="@string/pie_settings" />
 
     <PreferenceScreen
+        android:key="ribbon_targets"
+        android:icon="@drawable/ic_ribbon"
+        android:title="@string/ribbon_settings_title"
+        android:fragment="com.android.settings.jellybam.BamRibbon" />
+
+    <PreferenceScreen
         android:key="bam_navigatin_bar"
         android:icon="@drawable/ic_settings_navbar"
         android:title="@string/bamcontrol_navigation_bar"

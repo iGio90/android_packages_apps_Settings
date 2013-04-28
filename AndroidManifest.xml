@@ -1805,6 +1805,8 @@
 
         <activity android:name=".jellybam.BamLedSettings" />
 
+        <activity android:name=".jellybam.BamRibbon" />
+
         <activity android:name=".jellybam.BamVibrationSettings" />
 
         <activity android:name=".jellybam.QuickSettingsTilesStyle" />

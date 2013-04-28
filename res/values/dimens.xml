@@ -109,4 +109,10 @@
     <dimen name="auto_brightness_preview_stroke_width">1dip</dimen>
     <dimen name="auto_brightness_preview_marker_size">3dip</dimen>
     <dimen name="auto_brightness_dialog_more_button_size">48dp</dimen>
+
+    <dimen name="list_toggle_height">48dp</dimen>
+    <dimen name="list_toggle_width">320dp</dimen>
+    <dimen name="toggle_rearrange_dialog_title_height">68dp</dimen>
+    <dimen name="drag_grip_ridge_size">6dp</dimen>
+    <dimen name="drag_grip_ridge_gap">4dp</dimen>
 </resources>

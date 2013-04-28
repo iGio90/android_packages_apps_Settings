@@ -5572,7 +5572,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="alpha_dialog_title">Set alpha value</string>
     <string name="custom_carrier_label_title">Custom carrier label</string>
     <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty label to revert to stock label.</string>
-    <string name="menu_nav_bar_reset">Reset nav bar</string>
     <string name="menu_user_interface_reset">Reset notification wallpaper</string>
     <string name="menu_lockscreens_reset">Reset lockscreen wallpaper</string>    
     <string name="bootanimation_preview">Bootanimation preview</string>
@@ -6177,4 +6176,61 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Permissions Management -->
     <string name="permissions_settings_title">Permissions</string>
+
+    <!-- RIBBON -->
+    <string name="bamcontrol_ribbon">Ribbons</string>
+    <string name="ribbon_settings_title">Ribbons</string>
+    <string name="ribbon_settings_summary">@null</string>
+    <string name="menu_nav_bar_reset">Reset nav bar</string>
+    <string name="menu_ribbon_reset">Reset ribbon</string>
+    <string name="menu_ribbon_rearrange">Rearrange ribbon</string>
+    <string name="ribbon_dialog_arrange_title">Ribbon layout</string>
+    <string name="ribbon_icon_vibrate_title">Vibrate on target click</string>
+    <string name="ribbon_icon_space_title">Icon ribbon spacing</string>
+    <string name="ribbon_button_colorize_title">Action icons match text color</string>
+    <string name="ribbon_instructions">Press icon to select actions or delete</string>
+    <string name="ribbon_targets_cat">Ribbon options</string>
+    <string name="enable_ribbon_text_title">Show app name</string>
+    <string name="enable_ribbon_vibrate_title">Vibrate on touch of swipe area</string>
+    <string name="enable_ribbon_text_summary">Enable the app name text below the icon</string>
+    <string name="ribbon_icon_size_title">Icon size</string>
+    <string name="ribbon_icon_size_summary">Set size of your icons</string>
+    <string name="ribbon_lockscreen">Lockscreen ribbon</string>
+    <string name="ribbon_notifications">Notifications ribbon</string>
+    <string name="ribbon_quicksettings">Quick settings ribbon</string>
+    <string name="ribbon_swipe_left">Left swipe ribbon</string>
+    <string name="ribbon_swipe_right">Right swipe ribbon</string>
+    <string name="ribbon_swipe_bottom">Bottom swipe ribbon</string>
+    <string name="clone_title">Choose ribbon to clone</string>
+    <string name="icon_size_normal">Normal</string>
+    <string name="icon_size_20">Medium</string>
+    <string name="icon_size_15">Small</string>
+    <string name="ribbon_left_enable_title">Enable swipe from left</string>
+    <string name="ribbon_right_enable_title">Enable swipe from right</string>
+    <string name="ribbon_bottom_enable_title">Enable swipe from bottom</string>
+    <string name="ribbon_bottom_warning_title">You can not use swipe from bottom with Navbar enabled, must use Navbar AutoHide or manually hide the navbar.</string>
+    <string name="ribbon_color_title">Color of Swipe Ribbon</string>
+    <string name="text_color_title">Color of app label text</string>
+    <string name="ribbon_opacity_title">Opacity of Swipe Ribbon</string>
+    <string name="timeout_spinner_title">Ribbon Auto Timeout</string>
+    <string name="ribbon_drag_handle_width_title">Drag Handle Length</string>
+    <string name="ribbon_drag_handle_height_title">Drag Handle Thickness</string>
+    <string name="ribbon_insert">Insert button</string>
+    <string name="ribbon_handle_location_title">Ribbon Handle Location</string>
+    <string name="ribbon_icon_location_title">Icon gravity</string>
+    <string name="center">Centered</string>
+    <string name="top">Top</string>
+    <string name="bottom">Bottom</string>
+    <string name="aokp_ribbon">AOKP Ribbon</string>
+    <string name="nav_widgets">Nav Widgets</string>
+    <string name="toggle_swap_handle_side">Drag handle on right</string>
+    <string name="toggles_display_close">Close</string>
+    <string name="navbar_delete_menu">Delete button</string>
+    <string name="hide_navbar_timeout_never">Never</string>
+    <string name="hide_navbar_timeout_1500">1.5 Sec</string>
+    <string name="hide_navbar_timeout_3000">3 Sec</string>
+    <string name="hide_navbar_timeout_5000">5 Sec</string>
+    <string name="hide_navbar_timeout_10000">10 Sec</string>
+    <string name="hide_navbar_timeout_15000">15 Sec</string>
+    <string name="hide_navbar_timeout_30000">30 Sec</string>
 </resources>
