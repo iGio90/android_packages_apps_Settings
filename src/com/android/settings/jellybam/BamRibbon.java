@@ -977,7 +977,7 @@ public class BamRibbon extends SettingsPreferenceFragment implements
     }
 
     public class RibbonDialogReceiver extends BroadcastReceiver {
-        public static final String ACTION_RIBBON_DIALOG_DISMISS = "com.aokp.romcontrol.ACTION_RIBBON_DIALOG_DISMISS";
+        public static final String ACTION_RIBBON_DIALOG_DISMISS = "com.android.settings.ACTION_RIBBON_DIALOG_DISMISS";
 
         @Override
         public void onReceive(Context context, Intent intent) {
