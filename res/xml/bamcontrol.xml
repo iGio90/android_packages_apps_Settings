@@ -190,7 +190,8 @@
     <PreferenceScreen
         android:key="bam_performance"
         android:title="@string/bamcontrol_performance"
-        android:fragment="com.android.settings.jellybam.BamPerformanceSettings" />
+        android:fragment="com.android.settings.jellybam.BamPerformanceSettings"
+	android:icon="@drawable/ic_settings_performance" />
 
         <PreferenceScreen
             android:key="anonymous_stats"
