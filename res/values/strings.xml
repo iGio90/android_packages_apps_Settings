@@ -5952,9 +5952,15 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="mms_breath_summary">Will give your sms notifications a breathing effect on the statusbar.</string>
     <string name="missed_call_breath">Breathing Missed Call</string>
     <string name="missed_call_breath_summary">Will give your missed call notifications a breathing effect on the statusbar.</string>
-    <string name="rb_battery1">CircleMod</string>
     <string name="rb_battery2">SquareMod</string>
     <string name="rb_battery3">SpeedoMeter</string>
+    <string name="full_circle">CM CircleMOD</string>
+    <string name="gauge">Gauge</string>
+    <string name="axiom_honeycomb">Axiom Honeycomb</string>
+    <string name="axiom_droid">Axiom Droid</string>
+    <string name="axiom_sphere">Axiom Sphere</string>
+    <string name="numbers">Numbers</string>
+    <string name="digital_numbers">Digital Numbers</string>
     <string name="spen_extras_cat">S Pen Extras</string>
     <string name="spen_gestures_cat">S Pen Gestures</string>
     <string name="enable_stylus_pointer_title">Enable S Pen pointer</string>

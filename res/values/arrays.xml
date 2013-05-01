@@ -1575,9 +1575,15 @@
         <item>@string/text_only</item>
         <item>@string/icon_with_text</item>
         <item>@string/icon_with_centered_text</item>
-        <item>@string/rb_battery1</item>
         <item>@string/rb_battery2</item>
         <item>@string/rb_battery3</item>
+        <item>@string/full_circle</item>
+        <item>@string/gauge</item>
+        <item>@string/axiom_honeycomb</item>
+        <item>@string/axiom_droid</item>
+        <item>@string/axiom_sphere</item>
+        <item>@string/numbers</item>
+        <item>@string/digital_numbers</item>
         <item>@string/dont_show</item>
     </string-array>
     <string-array name="battery_icon_values" translatable="false">
@@ -1589,6 +1595,13 @@
         <item>5</item>
         <item>6</item>
         <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
     </string-array>
 
     <string-array name="battery_bar_entries" translatable="false">
