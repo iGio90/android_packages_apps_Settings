@@ -37,7 +37,7 @@
 
     <PreferenceScreen
         android:key="ribbon_targets"
-        android:icon="@drawable/ic_ribbon"
+        android:icon="@drawable/ic_bamcontrol_ribbons"
         android:title="@string/ribbon_settings_title"
         android:fragment="com.android.settings.jellybam.BamRibbon" />
 
@@ -179,7 +179,7 @@
 
     <PreferenceScreen
         android:id="@+id/permissions_settings"
-        android:icon="@drawable/ic_settings_permissions"
+        android:icon="@drawable/ic_bamcontrol_permissions"
         android:title="@string/permissions_settings_title">
         <intent
             android:action="android.intent.action.MAIN"
