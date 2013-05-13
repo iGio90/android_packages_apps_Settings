@@ -50,7 +50,7 @@ public class About extends SettingsPreferenceFragment {
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mSiteUrl) {
-            launchUrl("http://www.igio90.net");
+            launchUrl("http://www.bam-android.com");
         } else if (preference == mSourceUrl) {
             launchUrl("http://github.com/iGio90");
         } else if (preference == mFacebookUrl) {

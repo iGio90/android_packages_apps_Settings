@@ -36,6 +36,12 @@
         android:title="@string/pie_settings" />
 
     <PreferenceScreen
+        android:key="ribbon_targets"
+        android:icon="@drawable/ic_bamcontrol_ribbons"
+        android:title="@string/ribbon_settings_title"
+        android:fragment="com.android.settings.jellybam.BamRibbon" />
+
+    <PreferenceScreen
         android:key="bam_navigatin_bar"
         android:icon="@drawable/ic_settings_navbar"
         android:title="@string/bamcontrol_navigation_bar"
@@ -56,7 +62,7 @@
 
    <!-- LOCKSCREEN -->
    <PreferenceCategory
-        android:key="bam_interface"
+        android:key="bam_lockscreen"
         android:title="@string/bamcontrol_lockscreen" >
 
     <PreferenceScreen
@@ -64,6 +70,12 @@
         android:icon="@drawable/ic_settings_lock_screen"
         android:title="@string/lock_screen_settings"
         android:fragment="com.android.settings.jellybam.BamLockscreenSettings" />
+
+    <PreferenceScreen
+        android:key="bam_lockscreen_shortcuts"
+        android:icon="@drawable/ic_settings_lock_screen"
+        android:title="@string/lock_screen_shortcuts_settings"
+        android:fragment="com.android.settings.jellybam.Shortcuts" />
 
     <PreferenceScreen
         android:key="bam_lockscreen_interface"
@@ -158,34 +170,37 @@
         android:icon="@drawable/ic_settings_hardwarekeys"
         android:title="@string/jellybam_hardwarekeys_settings_title"
         android:fragment="com.android.settings.jellybam.BamHardwareKeysSettings" />
+   </PreferenceCategory>
 
-        <PreferenceScreen
-            android:key="xposed_framework_modules"
-            android:icon="@drawable/ic_settings_bamxposed"
-            android:title="@string/xposed_frameworks_settings" >
-            <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="de.robv.android.xposed.installer"
-                android:targetClass="de.robv.android.xposed.installer.XposedInstallerActivity" />
-        </PreferenceScreen>
+   <!-- ADVANCED -->
+   <PreferenceCategory
+        android:key="bam_advanced"
+        android:title="@string/bamcontrol_advanced" >
 
-        <PreferenceScreen
-            android:key="xposed_per_app_settings"
-            android:icon="@drawable/ic_settings_notifications"
-            android:title="@string/xposed_dpi_settings" >
-            <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="de.robv.android.xposed.mods.appsettings"
-                android:targetClass="de.robv.android.xposed.mods.appsettings.XposedModActivity" />
-        </PreferenceScreen>
+    <PreferenceScreen
+        android:id="@+id/permissions_settings"
+        android:icon="@drawable/ic_bamcontrol_permissions"
+        android:title="@string/permissions_settings_title">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="org.chameleonos.permissionsmanager"
+            android:targetClass="org.chameleonos.permissionsmanager.activity.PermissionManagerActivity" />
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:key="bam_performance"
+        android:title="@string/bamcontrol_performance"
+        android:fragment="com.android.settings.jellybam.BamPerformanceSettings"
+	android:icon="@drawable/ic_settings_performance" />
 
         <PreferenceScreen
             android:key="anonymous_stats"
-            android:icon="@drawable/ic_settings_notifications"
-            android:title="@string/anonymous_statistics_title" >
+            android:icon="@drawable/ic_settings_romstats"
+            android:title="@string/statistics_title" >
             <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="com.android.settings"
                 android:targetClass="com.android.settings.jellybam.stats.AnonymousStats" />
         </PreferenceScreen>
 
    </PreferenceCategory>
-
 </PreferenceScreen>

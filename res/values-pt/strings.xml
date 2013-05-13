@@ -1877,23 +1877,6 @@
     <string name="build_date_default">2012-01-01-0000</string>
     <string name="cpu_info">CPU</string>
     <string name="mem_info">Memória</string>
-    <string name="anonymous_statistics_title">Estatísticas CyanogenMod</string>
-    <string name="anonymous_statistics_summary">Ajude a melhorar o CyanogenMod optando por enviar estatísticas anonimas</string>
-    <string name="anonymous_statistics_warning_title">Sobre</string>
-    <string name="anonymous_statistics_warning">Optar por enviar estatísticas anonimas do CyanogenMod permitirá que dados não-pessoais sejam enviados para os
-        desenvolvedores do CyanogenMod para rastrear instalações únicas em dispositivos. As informações enviadas incluem um identificador unico,
-        que não compromete sua privacidade ou dados pessoais. Os dados são enviados durante cada inicialização.\n\nPara um exemplo de dados que são enviados, toque em Pré-visualizar Dados.</string>
-    <string name="enable_reporting_title">Habilitar relatório</string>
-    <string name="preview_data_title">Pré-visualizar dados</string>
-    <string name="preview_data_summary">%s</string>
-    <string name="view_stats_title">Ver estatísticas</string>
-    <string name="anonymous_learn_more">Saiba mais</string>
-    <string name="anonymous_notification_desc">Habilitar ou desabilitar estatísticas CyanogenMod</string>
-    <string name="preview_id_title">ID unico</string>
-    <string name="preview_device_title">Dispositivo</string>
-    <string name="preview_version_title">Versão</string>
-    <string name="preview_country_title">País</string>
-    <string name="preview_carrier_title">Operadora</string>
     <string name="header_category_interface">INTERFACE</string>
     <string name="launcher_settings_title">Launcher</string>
     <string name="themes_settings_title">Temas</string>
@@ -2151,7 +2134,6 @@
     <string name="battery_light_low_color_title">Bateria baixa</string>
     <string name="battery_light_medium_color_title">Carregando</string>
     <string name="battery_light_full_color_title">Totalmente carregada</string>
-    <string name="volume_overlay_title">Estilo do painel de volume</string>
     <string name="volume_ring_only_description">Toques de celular</string>
     <string name="hardware_keys_title">Teclas físicas</string>
     <string name="hardware_keys_bindings_title">Ações da tecla</string>
@@ -2220,15 +2202,9 @@
     <string name="expanded_haptic_feedback_title">Vibrar ao tocar</string>
     <string name="kill_app_longpress_back">Matar app com botão voltar</string>
     <string name="kill_app_longpress_back_summary">Matar o aplicativo mantendo pressionado o botão voltar</string>
-    <string name="changelog_title">Visualizar alterações</string>
-    <string name="changelog_loading">Carregando registro de mudanças\u2026</string>
-    <string name="changelog_error">Não foi possível carregar as mudanças</string>
-    <string name="changelog_unknown">Desconhecido</string>
-    <string name="changelog_version">Versão</string>
     <string name="power_menu_title">Menu de energia</string>
     <string name="power_menu_reboot_title">Menu de reinicialização</string>
     <string name="power_menu_screenshot_title">Captura de tela</string>
-    <string name="power_menu_expanded_desktop">Área de trabalho expandida</string>
     <string name="power_menu_profiles_title">Alternador de perfil</string>
     <string name="power_menu_airplane_title">Modo avião</string>
     <string name="cmupdate_settings_title">Atualizações CyanogenMod</string>
@@ -2370,8 +2346,6 @@
     <string name="lockscreen_background_default_wallpaper">Papel de parede padrão</string>
     <string name="notification_convert_sound_to_vibration_title">Vibrar em todas notificações</string>
     <string name="notification_convert_sound_to_vibration_summary">Em modo de vibração, todas as notificações irão vibrar independente das configurações individuais dos aplicativos</string>
-    <string name="safe_headset_volume_title">Volume seguro do fone de ouvido</string>
-    <string name="safe_headset_volume_summary">Previne volume alto quando o fone de ouvido é inserido pela primeira vez</string>
     <string name="cyanogenmod_waiver_title">Garantia</string>
     <string name="cyanogenmod_waiver_body">Alterar esta configuração pode ser contra as leis do seu local.\n\nAo selecionar abaixo \'OK\', você reconhece este aviso e garantia, proteção e isenção ao CyanogenMod e seus contribuintes de todas responsabilidades legais.</string>
     <string name="expanded_desktop_disabled">Desligado</string>

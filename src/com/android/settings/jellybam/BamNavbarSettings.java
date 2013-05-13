@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.DialogFragment;
 import android.app.FragmentTransaction;
 import android.app.ListFragment;
 import android.content.BroadcastReceiver;
@@ -48,11 +49,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.settings.R;
+import com.android.settings.jellybam.AlphaSeekBar;
 import com.android.settings.jellybam.Helpers;
 import com.android.settings.jellybam.ShortcutPickerHelper;
 import com.android.settings.jellybam.NavBarItemPreference;
@@ -149,11 +153,11 @@ public class BamNavbarSettings extends SettingsPreferenceFragment implements
         mGlowTimes = (ListPreference) findPreference(PREF_GLOW_TIMES);
         mGlowTimes.setOnPreferenceChangeListener(this);
 
-        float defaultAlpha = Settings.System.getFloat(getActivity()
+        final float defaultButtonAlpha = Settings.System.getFloat(getActivity()
                 .getContentResolver(), Settings.System.NAVIGATION_BAR_BUTTON_ALPHA,
                 0.6f);
         mButtonAlpha = (SeekBarPreference) findPreference("button_transparency");
-        mButtonAlpha.setInitValue((int) (defaultAlpha * 100));
+        mButtonAlpha.setInitValue((int) (defaultButtonAlpha * 100));
         mButtonAlpha.setOnPreferenceChangeListener(this);
 
         mConfigureWidgets = findPreference(NAVIGATION_BAR_WIDGETS);
@@ -231,7 +235,6 @@ public class BamNavbarSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-
         if (preference == menuDisplayLocation) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.MENU_LOCATION, Integer.parseInt((String) newValue));
@@ -277,7 +280,6 @@ public class BamNavbarSettings extends SettingsPreferenceFragment implements
             return true;
         } else if (preference == mButtonAlpha) {
             float val = Float.parseFloat((String) newValue);
-            Log.e("R", "value: " + val * 0.01f);
             Settings.System.putFloat(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_BUTTON_ALPHA,
                     val * 0.01f);
@@ -708,5 +710,4 @@ public class BamNavbarSettings extends SettingsPreferenceFragment implements
             super.onResume();
         }
     }
-
 }

@@ -1455,6 +1455,10 @@
     <string name="wifi_mode_ibss">Ad-Hoc (IBSS) Network</string>
     <string name="wifi_mode_ibss_short">Ad-Hoc</string>
 
+    <string name="wifi_ibss_freq_title">Channel / Frequency</string>
+    <string name="wifi_channel">Channel</string>
+    <string name="wifi_mhz">MHz</string>
+
     <!-- Button label to connect to a Wi-Fi network -->
     <string name="wifi_connect">Connect</string>
     <!-- Failured notification for connect -->
@@ -1841,6 +1845,53 @@
     <string name="summary_font_size" translatable="false">%1$s</string>
     <!-- [CHAR LIMIT=40] Sound & display settings screen, title of dialog for picking font size -->
     <string name="dialog_title_font_size">Font size</string>
+
+    <!-- Automatic brightness customization -->
+    <string name="light_sensor_current_value">Current light sensor value: <xliff:g id="light_level">%d</xliff:g> lux</string>
+    <string name="auto_brightness_dialog_title">Automatic brightness levels</string>
+    <string name="auto_brightness_level_format"><xliff:g id="level">%1$d</xliff:g> lux</string>
+    <string name="auto_brightness_last_level_format"><xliff:g id="level">%1$d</xliff:g> -\n\u221e lux</string>
+    <string name="auto_brightness_brightness_format"><xliff:g id="percent">%s</xliff:g>%%</string>
+    <string name="auto_brightness_adjust_button">Adjust</string>
+    <string name="auto_brightness_close_button">Close</string>
+    <string name="auto_brightness_reset_button">Reset</string>
+    <string name="auto_brightness_split_dialog_title">Split brightness level</string>
+    <string name="auto_brightness_level_dialog_title">Light level setup</string>
+    <string name="auto_brightness_lux">Ambient brightness (lux)</string>
+    <string name="auto_brightness_backlight">Screen brightness (%)</string>
+    <string name="auto_brightness_reset_dialog_title">Reset levels?</string>
+    <string name="auto_brightness_reset_confirmation">All brightness levels will be reset to their default settings.</string>
+    <string name="auto_brightness_split_lux_format">Split position (between <xliff:g id="min">%1$d</xliff:g> and <xliff:g id="max">%2$d</xliff:g> lux)</string>
+    <string name="auto_brightness_level_options">Light level options</string>
+    <string name="auto_brightness_menu_edit_lux">Ambient brightness range</string>
+    <string name="auto_brightness_menu_split">Split</string>
+    <string name="auto_brightness_menu_remove">Remove</string>
+    <string name="auto_brightness_preview">Preview</string>
+    <string name="auto_brightness_preview_dialog_title">Brightness curve preview</string>
+    <string name="auto_brightness_help_dialog_title">Help</string>
+    <string name="auto_brightness_help_text"><b>How is brightness calculated?</b>
+\n\n
+The brightness curve is calculated by performing a <i>cubic spline interpolation</i>
+on a given number of <i>control points</i>. It\'s not a \'bucket-type\' calculation where
+screen brightness will stay constant for a specific range of ambient brightness. That way,
+small changes in ambient brightness do not cause a large jump in screen brightness; however,
+it can be a little hard to predict the exact consequences of changing control points.\n
+To help with that, a preview of the calculated curve can be examined. Please note that the
+preview shows the curve in <i>logarithmic</i> scale, so that all control points can be shown
+distinctively. When using a linear scale, it wouldn\'t be possible to distinguish the tendentially
+more important control points in the lower range of ambient brightness.
+\n\n
+<b>How to edit the brightness curve?</b>
+\n\n
+Each line in the brightness list corresponds to one <i>control point</i> of the
+brightness curve. To edit the brightness level of the point, you can use the slider
+present in each line. The screen brightness will be changed accordingly while touching
+the slider to give a preview of the light level.\n
+Additional options are available by long-pressing a line. By selecting \'Adjust\', you can
+both edit the ambient brightness level of the control point as well as manually input the
+desired screen brightness. Selecting \'Split\' allows you to to duplicate one line into
+two in order to insert additional control points. \'Remove\' deletes the selected line.
+    </string>
 
     <!-- SIM lock settings title -->
     <string name="sim_lock_settings">SIM card lock settings</string>
@@ -4502,9 +4553,10 @@
     <string name="header_category_customization">Customization</string>
 
     <!-- Lock screen sub menu [CHAR LIMIT=30] -->
-    <string name="lock_screen_settings">Lockscreen</string>
-    <string name="lock_screen_interface_settings">Lockscreen Interface</string>
-    <string name="lock_screen_buttons_settings">Lockscreen Buttons</string>
+    <string name="lock_screen_settings">Slider and behaviors</string>
+    <string name="lock_screen_shortcuts_settings">Shortcuts</string>
+    <string name="lock_screen_interface_settings">Style</string>
+    <string name="lock_screen_buttons_settings">Button actions</string>
     <!-- Allow rotation -->
     <string name="allow_rotate_title">Allow rotation</string>
     <string name="allow_rotate_summary">Enables landscape mode on lock screen</string>
@@ -4562,6 +4614,7 @@
     <string name="title_tile_torch">Torch</string>
     <string name="title_tile_lockscreen">Lock screen</string>
     <string name="title_tile_lte">LTE</string>
+    <string name="title_tile_music">Music</string>
     <string name="title_tile_reboot">Reboot</string>
     <string name="title_tile_mobiledata">Mobile data</string>
     <string name="title_tile_autorotate">Orientation</string>
@@ -5049,6 +5102,7 @@
 
     <string name="link_volume_ringtones">Link ringtone &amp; notifications volumes</string>
     <string name="link_volume_mutes">Silent mode affects notifications</string>
+    <string name="volume_keys_control_ring_stream">Volume keys control ringtone volume</string>
 
     <!-- Display settings screen, notification light settings -->
     <string name="notification_pulse_title">Notification light</string>
@@ -5199,6 +5253,12 @@
     <string name="quick_pulldown_right">Right</string>
     <string name="title_collapse_panel">Auto close panel</string>
     <string name="summary_collapse_panel">Close the Quick Settings panel upon toggle</string>
+    <string name="disable_quick_settings_panel">Quick Settings</string>
+    <string name="disable_quick_settings_panel_summary">Enable or disable Quick Settings</string>
+    <string name="quick_settings_enabled">Enabled</string>
+    <string name="quick_settings_disabled">Disabled</string>
+    <string name="title_no_notifications_pulldown">Quick pulldown without notifications</string>
+    <string name="summary_no_notifications_pulldown">Pulldown quick settings if no notifications are present</string>
 
     <!-- Kill app long-press back -->
     <string name="kill_app_longpress_back">Kill app back button</string>
@@ -5337,8 +5397,10 @@
     <string name="bamcontrol_settings_title">BAM Control</string>
     <string name="bamcontrol_interface">Interface</string>
     <string name="bamcontrol_lockscreen">Lockscreen</string>
+    <string name="bamcontrol_performance">Performance</string>
     <string name="bamcontrol_statusbar">Statusbar</string>
     <string name="bamcontrol_system">System</string>
+    <string name="bamcontrol_advanced">Advanced</string>
     <string name="bamcontrol_navigation_bar">Navigation Bar</string>
     <string name="bamcontrol_tiles">Notification Tiles</string>
     <string name="bamlockscreen_security">Security</string>
@@ -5350,6 +5412,17 @@
     <string name="bamlockscreen_misc">Misc</string>
     <string name="text_off">Off</string>
     <string name="text_on">On</string>
+    <string name="quicksettings_tiles_style">Quick Settings style</string>
+    <string name="summary_quicksettings_tiles_style">Show or change Quick Settings style options</string>
+    <string name="quicksettings_tiles_style_additional_options">Additional options</string>
+    <string name="tiles_per_row_title">Tiles per row</string>
+    <string name="tiles_per_row_duplicate_landscape_title">Scale landscape quantity</string>
+    <string name="tiles_per_row_duplicate_landscape_summary">Landscape view doubles tiles per row quantity</string>
+    <string name="quick_tiles_text_color_title">Tiles text color</string>
+    <string name="quick_settings_style_reset">Reset colors</string>
+    <string name="none">None</string>
+    <string name="lockscreen_quick_unlock_control_title">Quick pin unlock</string>
+    <string name="lockscreen_quick_unlock_control_summary">Unlock password/pin lockscreen without pressing enter button</string>
     <string name="lockscreen_text_color_title">Lockscreen text color</string>
     <string name="lockscreen_text_color_summary">Set the lockscreen text color</string>
     <string name="lockscreen_hide_initial_page_hints_title">Hide initial page hints</string>
@@ -5500,7 +5573,6 @@
     <string name="alpha_dialog_title">Set alpha value</string>
     <string name="custom_carrier_label_title">Custom carrier label</string>
     <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty label to revert to stock label.</string>
-    <string name="menu_nav_bar_reset">Reset nav bar</string>
     <string name="menu_user_interface_reset">Reset notification wallpaper</string>
     <string name="menu_lockscreens_reset">Reset lockscreen wallpaper</string>    
     <string name="bootanimation_preview">Bootanimation preview</string>
@@ -5536,6 +5608,8 @@
     <string name="misc_short">Misc</string>
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display number of pending notifications on the status bar</string>
+    <string name="auto_hide_statusbar">Auto Hide statusbar</string>
+    <string name="auto_hide_statusbar_summary">Statusbar hides itself when there are no notifications</string>
     <string name="clock">Clock</string>
     <string name="battery">Battery</string>
     <string name="signal">Signal</string>
@@ -5587,6 +5661,12 @@
     <string name="protekk_oclock">ProTekk O\'Clock</string>
     <string name="small_weekday">Small weekday</string>
     <string name="regular_weekday">Regular weekday</string>
+    <string name="enable_clock_month">Date display</string>
+    <string name="enable_clock_month_summary">Date and short or long month before the time</string>
+    <string name="enable_clock_month_style">Date style</string>
+    <string name="enable_clock_month_style_summary">Display style of the date</string>
+    <string name="short_month">Short month</string>
+    <string name="long_month">Long month</string>
     <string name="statusbar">Statusbar</string>
     <string name="top_of_navbar">Top of navbar</string>
     <string name="bottom_of_navbar">Bottom of navbar</string>
@@ -5618,7 +5698,6 @@
     <string name="custom_app">Custom app</string>
     <string name="menu_power">Power menu</string>
     <string name="blank">Blank</string>
-    <string name="none">None</string>
     <string name="take_screenshot">Take Screenshot</string>
     <string name="ring_vib">Ring/Vib</string>
     <string name="ring_silent">Ring/Silent</string>
@@ -5708,6 +5787,7 @@
     <string name="navbar_widgets_delete">Delete widget</string>
     <string name="navigation_bar_menu_arrow_keys_title">Menu arrow keys</string>
     <string name="navigation_bar_menu_arrow_keys_summary">Show arrow keys in the navigation bar while typing</string>
+    <string name="navigation_bar_alpha_title">Statusbar and navigation bar opacity</string>
     <string name="custom_app_icon_successfully">"'s icon set successfully!"</string>
     <string name="title_navbar">Navigation Bar</string>
     <string name="enable_navbar">How to enable Navbar</string>
@@ -5873,9 +5953,15 @@
     <string name="mms_breath_summary">Will give your sms notifications a breathing effect on the statusbar.</string>
     <string name="missed_call_breath">Breathing Missed Call</string>
     <string name="missed_call_breath_summary">Will give your missed call notifications a breathing effect on the statusbar.</string>
-    <string name="rb_battery1">CircleMod</string>
     <string name="rb_battery2">SquareMod</string>
     <string name="rb_battery3">SpeedoMeter</string>
+    <string name="full_circle">CM CircleMOD</string>
+    <string name="gauge">Gauge</string>
+    <string name="axiom_honeycomb">Axiom Honeycomb</string>
+    <string name="axiom_droid">Axiom Droid</string>
+    <string name="axiom_sphere">Axiom Sphere</string>
+    <string name="numbers">Numbers</string>
+    <string name="digital_numbers">Digital Numbers</string>
     <string name="spen_extras_cat">S Pen Extras</string>
     <string name="spen_gestures_cat">S Pen Gestures</string>
     <string name="enable_stylus_pointer_title">Enable S Pen pointer</string>
@@ -5894,6 +5980,19 @@
     <string name="header_install">Install</string>
     <string name="installer">Installer</string>
     <string name="title_persist">BAM Persistence</string>
+    <string name="save">Save</string>
+    <string name="transparency_dialog_title">Transparency settings</string>
+    <string name="transparency_dialog_linked_transparency">Link statusbar &amp; navbar alpha</string>
+    <string name="transparency_dialog_transparency_sb_and_nv">Statusbar and navigation bar</string>
+    <string name="transparency_dialog_statusbar">Statusbar</string>
+    <string name="transparency_dialog_navbar">Navigation bar</string>
+    <string name="transparency_dialog_match_keyguard_alpha">Match lockscreen alpha</string>
+    <string name="transparency_dialog_transparency">Homescreen alpha</string>
+    <string name="transparency_dialog_transparency_keyguard">Lockscreen alpha</string>
+    <string name="media_scanner_on_boot_title">MediaScanner behavior on boot</string>
+    <string name="media_scanner_on_boot_enabled">Scan media</string>
+    <string name="media_scanner_on_boot_ask">Ask to scan (notification)</string>
+    <string name="media_scanner_on_boot_disabled">Do not scan media</string>
 
     <!-- Persistence -->
     <string name="persist_options">BAM Persistence</string>
@@ -5973,8 +6072,8 @@
     <string name="bam_modder_apps_samsung_paperartist_summary">This pack includes:\nStock Samsung paper artist</string>
     <string name="bam_modder_apps_samsung_smartview">Samsung Smart View</string>
     <string name="bam_modder_apps_samsung_smartview_summary">This pack includes:\nStock Samsung smart view</string>
-    <string name="bam_modder_apps_samsung_snote">Samsung S-Note</string>
-    <string name="bam_modder_apps_samsung_snote_summary">This pack includes:\nStock Samsung S-Note</string>
+    <string name="bam_modder_apps_samsung_smemo">Samsung S-Memo</string>
+    <string name="bam_modder_apps_samsung_smemo_summary">This pack includes:\nStock Samsung S-Memo</string>
     <string name="bam_modder_apps_samsung_svoice">Samsung S-Voice</string>
     <string name="bam_modder_apps_samsung_svoice_summary">This pack includes:\nStock S-Voice app from Galaxy S4</string>
     <string name="bam_modder_apps_samsung_taskmanager">Samsung Task Manager</string>
@@ -6037,10 +6136,13 @@
 
     <!-- BAMModder Miscs -->
     <string name="bam_modder_miscs_general">General Mods</string>
+    <string name="bam_modder_miscs_keyboards">Additional KeyBoards</string>
+    <string name="bam_modder_miscs_skeyboard">Samsung KeyBoard</string>
+    <string name="bam_modder_miscs_skeyboard_summary">This pack includes:\nStock Samsung Keyboard</string>
     <string name="bam_modder_miscs_silentcameraon">Enable Silent Camera</string>
-    <string name="bam_modder_miscs_silentcameraon_summary">This pack includes:\nAddod.d script provided by rmkilc that will enable the silent mode for your stock camera</string>
+    <string name="bam_modder_miscs_silentcameraon_summary">This pack includes:\nAddon.d script provided by rmkilc that will enable the silent mode for your stock camera</string>
     <string name="bam_modder_miscs_silentcameraoff">Disable Silent Camera</string>
-    <string name="bam_modder_miscs_silentcameraoff_summary">This pack includes:\nAddod.d script provided by rmkilc that will disable the silent camera and enable the stock shutter sound</string>
+    <string name="bam_modder_miscs_silentcameraoff_summary">This pack includes:\nAddon.d script provided by rmkilc that will disable the silent camera and enable the stock shutter sound</string>
 
     <!-- Main -->
     <string name="main_title">Anonymous Usage Data</string>
@@ -6053,7 +6155,7 @@
     
     <!-- Anonymous Statistics #CM -->
     <!-- About device screen, list item title. Takes the user to the screen about opting in or out of anonymous statistics. -->
-    <string name="anonymous_statistics_title">ROM Statistics</string>
+    <string name="statistics_title">ROM Statistics</string>
     <string name="anonymous_statistics_summary">Help make this ROM better by opting into anonymous statistics reporting</string>
     <string name="anonymous_statistics_warning_title">About</string>
     <string name="anonymous_statistics_warning">Opting into ROM Statistics will allow non-personal data to be submitted to the
@@ -6078,4 +6180,64 @@
     <string name="preview_carrier_title">Carrier</string>    
     <string name="preview_romname_title">ROM Name</string>    
     <string name="preview_romversion_title">ROM Version</string> 
+
+    <!-- Permissions Management -->
+    <string name="permissions_settings_title">Permissions</string>
+
+    <!-- RIBBON -->
+    <string name="bamcontrol_ribbon">Ribbons</string>
+    <string name="ribbon_settings_title">Ribbons</string>
+    <string name="ribbon_settings_summary">@null</string>
+    <string name="menu_nav_bar_reset">Reset nav bar</string>
+    <string name="menu_ribbon_reset">Reset ribbon</string>
+    <string name="menu_ribbon_rearrange">Rearrange ribbon</string>
+    <string name="ribbon_dialog_arrange_title">Ribbon layout</string>
+    <string name="ribbon_icon_vibrate_title">Vibrate on target click</string>
+    <string name="ribbon_icon_space_title">Icon ribbon spacing</string>
+    <string name="ribbon_button_colorize_title">Action icons match text color</string>
+    <string name="ribbon_instructions">Press icon to select actions or delete</string>
+    <string name="ribbon_targets_cat">Ribbon options</string>
+    <string name="enable_ribbon_text_title">Show app name</string>
+    <string name="enable_ribbon_vibrate_title">Vibrate on touch of swipe area</string>
+    <string name="enable_ribbon_text_summary">Enable the app name text below the icon</string>
+    <string name="ribbon_icon_size_title">Icon size</string>
+    <string name="ribbon_icon_size_summary">Set size of your icons</string>
+    <string name="ribbon_lockscreen">Lockscreen ribbon</string>
+    <string name="ribbon_notifications">Notifications ribbon</string>
+    <string name="ribbon_quicksettings">Quick settings ribbon</string>
+    <string name="ribbon_swipe_left">Left swipe ribbon</string>
+    <string name="ribbon_swipe_right">Right swipe ribbon</string>
+    <string name="ribbon_swipe_bottom">Bottom swipe ribbon</string>
+    <string name="clone_title">Choose ribbon to clone</string>
+    <string name="icon_size_normal">Normal</string>
+    <string name="icon_size_20">Medium</string>
+    <string name="icon_size_15">Small</string>
+    <string name="ribbon_left_enable_title">Enable swipe from left</string>
+    <string name="ribbon_right_enable_title">Enable swipe from right</string>
+    <string name="ribbon_bottom_enable_title">Enable swipe from bottom</string>
+    <string name="ribbon_bottom_warning_title">You can not use swipe from bottom with Navbar enabled, must use Navbar AutoHide or manually hide the navbar.</string>
+    <string name="ribbon_color_title">Color of Swipe Ribbon</string>
+    <string name="text_color_title">Color of app label text</string>
+    <string name="ribbon_opacity_title">Opacity of Swipe Ribbon</string>
+    <string name="timeout_spinner_title">Ribbon Auto Timeout</string>
+    <string name="ribbon_drag_handle_width_title">Drag Handle Length</string>
+    <string name="ribbon_drag_handle_height_title">Drag Handle Thickness</string>
+    <string name="ribbon_insert">Insert button</string>
+    <string name="ribbon_handle_location_title">Ribbon Handle Location</string>
+    <string name="ribbon_icon_location_title">Icon gravity</string>
+    <string name="center">Centered</string>
+    <string name="top">Top</string>
+    <string name="bottom">Bottom</string>
+    <string name="aokp_ribbon">AOKP Ribbon</string>
+    <string name="nav_widgets">Nav Widgets</string>
+    <string name="toggle_swap_handle_side">Drag handle on right</string>
+    <string name="toggles_display_close">Close</string>
+    <string name="navbar_delete_menu">Delete button</string>
+    <string name="hide_navbar_timeout_never">Never</string>
+    <string name="hide_navbar_timeout_1500">1.5 Sec</string>
+    <string name="hide_navbar_timeout_3000">3 Sec</string>
+    <string name="hide_navbar_timeout_5000">5 Sec</string>
+    <string name="hide_navbar_timeout_10000">10 Sec</string>
+    <string name="hide_navbar_timeout_15000">15 Sec</string>
+    <string name="hide_navbar_timeout_30000">30 Sec</string>
 </resources>

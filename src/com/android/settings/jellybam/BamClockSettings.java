@@ -27,6 +27,7 @@ public class BamClockSettings extends SettingsPreferenceFragment implements
     private static final String PREF_AM_PM_STYLE = "clock_am_pm_style";
     private static final String PREF_COLOR_PICKER = "clock_color";
     private static final String PREF_CLOCK_WEEKDAY = "clock_weekday";
+    private static final String PREF_CLOCK_MONTH = "clock_month";
     private static final String PREF_CLOCK_SHORTCLICK = "clock_shortclick";
     private static final String PREF_CLOCK_LONGCLICK = "clock_longclick";
     private static final String PREF_CLOCK_DOUBLECLICK = "clock_doubleclick";
@@ -43,6 +44,7 @@ public class BamClockSettings extends SettingsPreferenceFragment implements
     ListPreference mClockAmPmstyle;
     ColorPickerPreference mColorPicker;
     ListPreference mClockWeekday;
+    ListPreference mClockMonth;
     ListPreference mClockShortClick;
     ListPreference mClockLongClick;
     ListPreference mClockDoubleClick;
@@ -77,6 +79,12 @@ public class BamClockSettings extends SettingsPreferenceFragment implements
         mClockWeekday.setOnPreferenceChangeListener(this);
         mClockWeekday.setValue(Integer.toString(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.STATUSBAR_CLOCK_WEEKDAY,
+                0)));
+
+        mClockMonth = (ListPreference) findPreference(PREF_CLOCK_MONTH);
+        mClockMonth.setOnPreferenceChangeListener(this);
+        mClockMonth.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.STATUSBAR_CLOCK_MONTH_DISPLAY,
                 0)));
 
         mClockShortClick = (ListPreference) findPreference(PREF_CLOCK_SHORTCLICK);
@@ -121,6 +129,10 @@ public class BamClockSettings extends SettingsPreferenceFragment implements
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_WEEKDAY, val);
+        } else if (preference == mClockMonth) {
+            int val = Integer.parseInt((String) newValue);
+            result = Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_CLOCK_MONTH_DISPLAY, val);
         } else if (preference == mClockShortClick) {
             mPreference = preference;
             mString = Settings.System.NOTIFICATION_CLOCK[shortClick];

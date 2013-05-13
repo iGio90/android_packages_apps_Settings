@@ -17,9 +17,10 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/lockscreen_interface_title" >
 
-    <PreferenceCategory
-        android:key="lockscreen_style_options"
-        android:title="@string/lockscreen_style_options_title">
+         <CheckBoxPreference
+            android:key="lockscreen_camera_widget"
+            android:title="@string/lockscreen_camera_widget_title"
+            android:summary="@string/lockscreen_camera_widget_summary" />
 
   <CheckBoxPreference
         android:key="see_through"
@@ -33,30 +34,5 @@
             android:title="@string/lockscreen_custom_background_title"
             android:entries="@array/lockscreen_background_entries"
             android:entryValues="@array/lockscreen_background_values"/>
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-       android:key="slider_group"
-       android:title="@string/lockscreen_slider_grouptitle">
-
-         <Preference
-            android:fragment="com.android.settings.jellybam.Shortcuts"
-            android:key="lockscreen_shortcuts"
-            android:summary="@string/lockscreen_shortcuts_summary"
-            android:title="@string/lockscreen_shortcuts_title" />
-
-   </PreferenceCategory>
-
-    <PreferenceCategory
-       android:key="options_group"
-       android:title="@string/lockscreen_additional_options_grouptitle">
-
-        <CheckBoxPreference
-            android:key="lockscreen_auto_rotate"
-            android:title="@string/lockscreen_auto_rotate_title"
-            android:summary="@string/lockscreen_auto_rotate_summary" />
-
-   </PreferenceCategory>
 
 </PreferenceScreen>

@@ -28,6 +28,7 @@ import static com.android.internal.util.cm.QSConstants.TILE_GPS;
 import static com.android.internal.util.cm.QSConstants.TILE_HOLOBAM;
 import static com.android.internal.util.cm.QSConstants.TILE_LOCKSCREEN;
 import static com.android.internal.util.cm.QSConstants.TILE_MOBILEDATA;
+import static com.android.internal.util.cm.QSConstants.TILE_MUSIC;
 import static com.android.internal.util.cm.QSConstants.TILE_NETWORKMODE;
 import static com.android.internal.util.cm.QSConstants.TILE_NFC;
 import static com.android.internal.util.cm.QSConstants.TILE_REBOOT;
@@ -45,7 +46,7 @@ import static com.android.internal.util.cm.QSConstants.TILE_VOLUME;
 import static com.android.internal.util.cm.QSConstants.TILE_HYBRID;
 
 import static com.android.internal.util.cm.QSUtils.deviceSupportsBluetooth;
-import static com.android.internal.util.cm.QSUtils.deviceSupportsTelephony;
+import static com.android.internal.util.cm.QSUtils.deviceSupportsMobileData;
 
 import android.content.Context;
 import android.provider.Settings;
@@ -140,6 +141,9 @@ public class QuickSettingsUtil {
         TILES.put(TILE_HOLOBAM, new QuickSettingsUtil.TileInfo(
                 TILE_HOLOBAM, R.string.title_tile_holobam,
                 "com.android.systemui:drawable/ic_qs_jb_dark_off_light"));
+        TILES.put(TILE_MUSIC, new QuickSettingsUtil.TileInfo(
+                TILE_MUSIC, R.string.title_tile_music,
+                "@*android:drawable/ic_media_play"));
     }
 
     public static String getCurrentTiles(Context context) {
@@ -205,13 +209,13 @@ public class QuickSettingsUtil {
     public static String getDefaultTiles(Context context) {
         // Filter items not compatible with device
         boolean bluetoothSupported = deviceSupportsBluetooth();
-        boolean telephonySupported = deviceSupportsTelephony(context);
+        boolean mobileDataSupported = deviceSupportsMobileData(context);
 
         if (!bluetoothSupported) {
             TILES_DEFAULT.remove(TILE_BLUETOOTH);
         }
 
-        if (!telephonySupported) {
+        if (!mobileDataSupported) {
             TILES_DEFAULT.remove(TILE_MOBILEDATA);
         }
 

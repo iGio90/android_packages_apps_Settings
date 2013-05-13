@@ -39,6 +39,13 @@
         android:entryValues="@array/clock_weekday_values" />
 
     <ListPreference
+        android:key="clock_month"
+        android:title="@string/enable_clock_month"
+        android:summary="@string/enable_clock_month_summary"
+        android:entries="@array/clock_month_entries"
+        android:entryValues="@array/clock_month_values" />
+
+    <ListPreference
         android:entries="@array/notification_action_entries"
         android:entryValues="@array/notification_action_values"
         android:key="clock_shortclick"

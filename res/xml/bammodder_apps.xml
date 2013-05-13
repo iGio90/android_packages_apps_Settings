@@ -55,13 +55,13 @@
         </PreferenceScreen>
 
         <PreferenceScreen
-            android:key="bam_modder_apps_samsung_snote"
+            android:key="bam_modder_apps_samsung_smemo"
             android:icon="@drawable/ic_bammodder_applications"
-            android:title="@string/bam_modder_apps_samsung_snote"
-            android:summary="@string/bam_modder_apps_samsung_snote_summary" >
+            android:title="@string/bam_modder_apps_samsung_smemo"
+            android:summary="@string/bam_modder_apps_samsung_smemo_summary" >
             <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="com.bam.android.bammodder"
-                android:targetClass="com.bam.android.bammodder.SNote" />
+                android:targetClass="com.bam.android.bammodder.SMemo" />
         </PreferenceScreen>
 
         <PreferenceScreen

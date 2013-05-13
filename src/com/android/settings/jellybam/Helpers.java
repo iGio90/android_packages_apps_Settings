@@ -303,12 +303,12 @@ public class Helpers {
         CMDProcessor.startSuCommand("pkill -TERM -f com.android.systemui");
     }
 
+    public static void restartTrebuchet() {
+        CMDProcessor.startSuCommand("pkill -TERM -f com.cyanogenmod.trebuchet");
+    }
+
     public static void setSystemProp(String prop, String val) {
-        try {
-            SystemProperties.set(prop, val);
-        } catch (IllegalArgumentException iae) {
-            Log.e(TAG, "Failed to set prop: " + prop);
-        }
+        CMDProcessor.startSuCommand("setprop " + prop + " " + val);
     }
 
     public static String getSystemProp(String prop, String def) {

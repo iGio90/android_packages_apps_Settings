@@ -24,6 +24,7 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -33,8 +34,10 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import static com.android.internal.util.cm.QSConstants.TILE_USER;
 import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.jellybam.QuickSettingsUtil.TileInfo;
@@ -50,6 +53,8 @@ public class QuickSettingsTiles extends Fragment {
     Resources mSystemUiResources;
     TileAdapter mTileAdapter;
 
+    private int mTileTextSize;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mDragView = new DraggableGridView(getActivity(), null);
@@ -64,6 +69,9 @@ public class QuickSettingsTiles extends Fragment {
             }
         }
         mTileAdapter = new TileAdapter(getActivity(), 0);
+        int colCount = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.QUICK_TILES_PER_ROW, 3);
+        updateTileTextSize(colCount);
         return mDragView;
     }
 
@@ -87,23 +95,40 @@ public class QuickSettingsTiles extends Fragment {
      * @param newTile - whether a new tile is being added by user
      */
     void addTile(int titleId, String iconSysId, int iconRegId, boolean newTile) {
-        View v = (View) mInflater.inflate(R.layout.qs_tile, null, false);
-        final TextView name = (TextView) v.findViewById(R.id.qs_text);
-        name.setText(titleId);
-        if (mSystemUiResources != null && iconSysId != null) {
-            int resId = mSystemUiResources.getIdentifier(iconSysId, null, null);
-            if (resId > 0) {
-                try {
-                    Drawable d = mSystemUiResources.getDrawable(resId);
-                    name.setCompoundDrawablesRelativeWithIntrinsicBounds(null, d, null, null);
-                } catch (Exception e) {
-                    e.printStackTrace();
+        View tileView = null;
+        if (iconRegId != 0) {
+            tileView = (View) mInflater.inflate(R.layout.quick_settings_tile_generic, null, false);
+            TextView name = (TextView) tileView.findViewById(R.id.tile_textview);
+            name.setText(titleId);
+            name.setTextSize(1, mTileTextSize);
+            name.setCompoundDrawablesRelativeWithIntrinsicBounds(0, iconRegId, 0, 0);
+        } else {
+            final boolean isUserTile = titleId == QuickSettingsUtil.TILES.get(TILE_USER).getTitleResId();
+            if (mSystemUiResources != null && iconSysId != null) {
+                int resId = mSystemUiResources.getIdentifier(iconSysId, null, null);
+                if (resId > 0) {
+                    try {
+                        Drawable d = mSystemUiResources.getDrawable(resId);
+                        tileView = null;
+                        if (isUserTile) {
+                            tileView = (View) mInflater.inflate(R.layout.quick_settings_tile_user, null, false);
+                            ImageView iv = (ImageView) tileView.findViewById(R.id.user_imageview);
+                            TextView tv = (TextView) tileView.findViewById(R.id.tile_textview);
+                            tv.setText(titleId);
+                            iv.setImageDrawable(d);
+                        } else {
+                            tileView = (View) mInflater.inflate(R.layout.quick_settings_tile_generic, null, false);
+                            final TextView name = (TextView) tileView.findViewById(R.id.tile_textview);
+                            name.setText(titleId);
+                            name.setCompoundDrawablesRelativeWithIntrinsicBounds(null, d, null, null);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
             }
-        } else {
-            name.setCompoundDrawablesRelativeWithIntrinsicBounds(0, iconRegId, 0, 0);
         }
-        mDragView.addView(v, newTile ? mDragView.getChildCount() - 1 : mDragView.getChildCount());
+        mDragView.addView(tileView, newTile ? mDragView.getChildCount() - 1 : mDragView.getChildCount());
     }
 
     @Override
@@ -193,6 +218,22 @@ public class QuickSettingsTiles extends Fragment {
         });
         alert.setNegativeButton(R.string.cancel, null);
         alert.create().show();
+    }
+
+    private void updateTileTextSize(int column) {
+        // adjust the tile text size based on column count
+        switch (column) {
+            case 5:
+                mTileTextSize = 7;
+                break;
+            case 4:
+                mTileTextSize = 10;
+                break;
+            case 3:
+            default:
+                mTileTextSize = 12;
+                break;
+        }
     }
 
     @SuppressWarnings("rawtypes")

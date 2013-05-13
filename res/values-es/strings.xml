@@ -1998,21 +1998,6 @@
     <string name="build_date">Fecha de compilación</string>
     <string name="cpu_info">CPU</string>
     <string name="mem_info">Memoria</string>
-    <string name="anonymous_statistics_title">Estadísticas CyanogenMod</string>
-    <string name="anonymous_statistics_summary">Ayude a mejorar CyanogenMod mediante el envío anónimo de estadísticas</string>
-    <string name="anonymous_statistics_warning_title">Aviso</string>
-    <string name="anonymous_statistics_warning">Permitiendo la recopilación y envío de estadísticas de CyanogenMod, autoriza el envío de información de carácter no personal a los desarrolladores de CyanogenMod para realizar un seguimiento de las instalaciones que realice en los dispositivos. La información enviada incluye un identificador único que no compromete su privacidad o su información personal. Esta información es enviada durante el arranque.\n\nPara ver un ejemplo de la información enviada, pulse en \'Previsualizar datos\'</string>
-    <string name="enable_reporting_title">Activar envío estadísticas</string>
-    <string name="preview_data_title">Previsualizar datos</string>
-    <string name="view_stats_title">Ver estadísticas</string>
-    <string name="anonymous_learn_more">Leer más</string>
-    <string name="anonymous_notification_desc">Activar o desactivar estadísticas de CyanogenMod</string>
-    <string name="preview_id_title">Identificador único</string>
-    <string name="preview_device_title">Dispositivo</string>
-    <string name="preview_version_title">Versión</string>
-    <string name="preview_country_title">País</string>
-    <string name="preview_carrier_title">Operadora móvil</string>
-    <string name="header_category_interface">Interfaz gráfica</string>
     <string name="launcher_settings_title">Inicio</string>
     <string name="themes_settings_title">Temas</string>
     <string name="system_settings_title">Sistema</string>
@@ -2269,7 +2254,6 @@
     <string name="battery_light_low_color_title">Batería baja</string>
     <string name="battery_light_medium_color_title">Cargando</string>
     <string name="battery_light_full_color_title">Cargada</string>
-    <string name="volume_overlay_title">Panel de volumen</string>
     <string name="volume_ring_only_description">Tonos del teléfono</string>
     <string name="ring_mode_title">Modo de sonido</string>
     <string name="ring_mode_normal">Normal</string>
@@ -2336,16 +2320,9 @@
     <string name="expanded_haptic_feedback_title">Respuesta háptica</string>
     <string name="kill_app_longpress_back">Botón Volver</string>
     <string name="kill_app_longpress_back_summary">Cerrar aplicaciones mediante la pulsación prolongada del botón Volver</string>
-    <string name="changelog_title">Mostrar registro de cambios</string>
-    <string name="changelog_summary">Registro de cambios</string>
-    <string name="changelog_loading">Cargando registro de cambios\u2026</string>
-    <string name="changelog_error">Imposible cargar el registro de cambios</string>
-    <string name="changelog_unknown">Desconocido</string>
-    <string name="changelog_version">Versión</string>
     <string name="power_menu_title">Menú de apagado</string>
     <string name="power_menu_reboot_title">Reiniciar</string>
     <string name="power_menu_screenshot_title">Capturar pantalla</string>
-    <string name="power_menu_expanded_desktop">Extender escritorio</string>
     <string name="expanded_desktop_disabled">Desactivado</string>
     <string name="expanded_desktop_status_bar">Barra de estado visible</string>
     <string name="expanded_desktop_no_status_bar">Barra de estado oculta</string>
@@ -2443,10 +2420,6 @@
     <string name="lockscreen_background_color_fill">Color de relleno</string>
     <string name="lockscreen_background_custom_image">Imagen personalizada</string>
     <string name="lockscreen_background_default_wallpaper">Fondo por defecto</string>
-    <string name="headset_connect_player_title">Iniciar reproductor</string>
-    <string name="headset_connect_player_summary">Iniciar el reproductor de música por defecto al conectar los auriculares</string>
-    <string name="safe_headset_volume_title">Volumen seguro</string>
-    <string name="safe_headset_volume_summary">Prevenir un volumen alto en los auriculares cuando sean conectados por primera vez</string>
     <string name="cyanogenmod_waiver_title">Renuncia</string>
     <string name="cyanogenmod_waiver_body">Cambiar este ajuste puede ir en contra de la leyes de su estado o país.\n\nPulsando \'Aceptar\', usted reconoce esta advertencia y exime de cualquier responsabilidad legal a CyanogenMod y sus colaboradores, renunciando así a cualquier reclamación por daños y perjuicios.</string>
     <string name="light_sensor_current_value">Valor actual del sensor: <xliff:g id="light_level">%d</xliff:g> lux</string>
