@@ -114,6 +114,12 @@
         android:entryValues="@array/keyboard_rotation_timeout_values"
         android:dependency="keyboard_rotation_toggle" />
 
+    <CheckBoxPreference
+        android:key="show_enter_key"
+        android:title="@string/show_enter_key_title"
+        android:summary="@string/show_enter_key_summary"
+        android:persistent="false" />
+
     <ListPreference
             android:key="volume_key_cursor_control"
             android:persistent="false"

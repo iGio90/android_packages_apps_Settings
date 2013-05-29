@@ -114,6 +114,7 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
     private static final String KEYBOARD_ROTATION_TOGGLE = "keyboard_rotation_toggle";
     private static final String KEYBOARD_ROTATION_TIMEOUT = "keyboard_rotation_timeout";
     private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
+    private static final String SHOW_ENTER_KEY = "show_enter_key";
 
     private static final int REQUEST_PICK_BOOT_ANIMATION = 203;
     //private static final int REQUEST_PICK_CUSTOM_ICON = 202; //unused
@@ -145,6 +146,7 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
     CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
 
     private CheckBoxPreference mKeyboardRotationToggle;
+    private CheckBoxPreference mShowEnterKey;
     private ListPreference mKeyboardRotationTimeout;
     private ListPreference mVolumeKeyCursorControl;
 
@@ -237,9 +239,13 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
         mWakeUpWhenPluggedOrUnplugged.setChecked(Settings.System.getBoolean(mContentResolver,
                         Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED, true));
 
-       mKeyboardRotationToggle = (CheckBoxPreference) findPreference(KEYBOARD_ROTATION_TOGGLE);
+        mKeyboardRotationToggle = (CheckBoxPreference) findPreference(KEYBOARD_ROTATION_TOGGLE);
         mKeyboardRotationToggle.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.KEYBOARD_ROTATION_TIMEOUT, 0) > 0);
+
+        mShowEnterKey = (CheckBoxPreference) findPreference(SHOW_ENTER_KEY);
+        mShowEnterKey.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.FORMAL_TEXT_INPUT, 0) == 1);
 
         mKeyboardRotationTimeout = (ListPreference) findPreference(KEYBOARD_ROTATION_TIMEOUT);
         mKeyboardRotationTimeout.setOnPreferenceChangeListener(this);
@@ -360,7 +366,11 @@ public class BamUiSettings extends SettingsPreferenceFragment implements
                     Settings.System.FORCE_DUAL_PANEL,
                     ((TwoStatePreference) preference).isChecked());
             return true;
-         }
+        } else if (preference == mShowEnterKey) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.FORMAL_TEXT_INPUT, mShowEnterKey.isChecked() ? 1 : 0);
+            return true;
+	}
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
