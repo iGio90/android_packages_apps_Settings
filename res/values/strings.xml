@@ -5996,19 +5996,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="media_scanner_on_boot_ask">Ask to scan (notification)</string>
     <string name="media_scanner_on_boot_disabled">Do not scan media</string>
 
-    <!-- Category title for power sound notification specific Settings.
-         [CHAR LIMIT=40] -->
-    <string name="power_notifications_category_title">Power sounds</string>
-
-    <!-- Sound settings, power notifications enable/disable, setting check box label -->
-    <string name="power_notifications_enable_title">Enable</string>
-    <!-- Sound settings, power notifications vibrate enable/disable, setting check box label -->
-    <string name="power_notifications_vibrate_title">Vibrate</string>
-    <!-- Sound settings, power notifications ringtone selection, preference label -->
-    <string name="power_notifications_ringtone_title">Notification sound</string>
-    <!-- Sound settings, power notifications label for ringtone == none -->
-    <string name="power_notifications_ringtone_silent">Silent</string>
-
     <!-- Persistence -->
     <string name="persist_options">BAM Persistence</string>
     <string name="persist_header_props">Build Properties</string>

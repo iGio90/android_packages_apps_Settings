@@ -28,27 +28,4 @@
         android:key="phone_ring_silence"
         android:summary="@string/summary_phone_flip_mode"
         android:title="@string/title_phone_flip_mode" />
-
-    <PreferenceCategory
-        android:title="@string/power_notifications_category_title" />
-
-        <CheckBoxPreference
-            android:key="power_notifications"
-            android:title="@string/power_notifications_enable_title"
-            android:defaultValue="false"
-            android:persistent="false" />
-
-        <CheckBoxPreference
-            android:key="power_notifications_vibrate"
-            android:title="@string/power_notifications_vibrate_title"
-            android:defaultValue="false"
-            android:dependency="power_notifications"
-            android:persistent="false" />
-
-        <Preference
-            android:key="power_notifications_ringtone"
-            android:title="@string/power_notifications_ringtone_title"
-            android:dependency="power_notifications"
-            android:persistent="false" />
-
 </PreferenceScreen>
