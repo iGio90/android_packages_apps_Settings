@@ -134,7 +134,7 @@ public class Pie extends SettingsPreferenceFragment
 
         mPieAngle = (ListPreference) prefSet.findPreference(PIE_ANGLE);
         int pieAngle = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.PIE_ANGLE, 0);
+                Settings.System.PIE_ANGLE, 12);
         mPieAngle.setValue(String.valueOf(pieAngle));
         mPieAngle.setOnPreferenceChangeListener(this);
 
