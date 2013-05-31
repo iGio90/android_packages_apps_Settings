@@ -4680,11 +4680,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_size_large">Large</string>
     <string name="pie_size_gigantic">Gigantic</string>
     <string name="pie_angle_title">Pie angle</string>
-    <string name="pie_angle_summary">Adjust the angle of pie bords from pie attach</string>
+    <string name="pie_angle_summary">Adjust the angle of pie\'s egdes from the attachment</string>
     <string name="pie_angle_none">None (old)</string>
     <string name="pie_angle_small">Small</string>
     <string name="pie_angle_big">Normal (default)</string>
     <string name="pie_angle_huge">Big</string>
+    <string name="pie_angle_super">Huge</string>
     <string name="pie_color_title">Pie color settings</string>
     <string name="pie_color_style_title">Pie color style</string>
     <string name="pie_background_title">Background color</string>
