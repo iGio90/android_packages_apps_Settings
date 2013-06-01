@@ -162,7 +162,6 @@ public class ApplicationLightPreference extends DialogPreference {
         });
     }
 
-    @Override
     protected Dialog createDialog() {
         final LightSettingsDialog d = new LightSettingsDialog(getContext(),
                 0xFF000000 + mColorValue, mOnValue, mOffValue, mOnOffChangeable);
