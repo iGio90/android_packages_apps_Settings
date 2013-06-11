@@ -923,4 +923,5 @@ public class Settings extends PreferenceActivity
     public static class BamModderFontsSettingsActivity extends Settings { /* empty */ }
     public static class BamModderMiscsSettingsActivity extends Settings { /* empty */ }
     public static class BamPersistSettingsActivity extends Settings { /* empty */ }
+    public static class BamHaloSettingsActivity extends Settings { /* empty */ }
 }

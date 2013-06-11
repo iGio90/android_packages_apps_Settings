@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+        <CheckBoxPreference
+            android:key="halo_hide"
+            android:title="@string/halo_hide_title"
+            android:summary="@string/halo_hide_summary"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="halo_reversed"
+            android:title="@string/halo_reversed_title"
+            android:summary="@string/halo_reversed_summary"
+            android:defaultValue="true" />
+
+</PreferenceScreen>

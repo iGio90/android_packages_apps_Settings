@@ -1791,6 +1791,8 @@
 
         <activity android:name=".jellybam.BamUiSettings" />
 
+        <activity android:name=".jellybam.BamHaloSettings" />
+
         <activity android:name=".jellybam.BamLockscreenSettings" />
 
         <activity android:name=".jellybam.BamLockscreenInterfaceSettings" />
