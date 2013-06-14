@@ -14,6 +14,11 @@
             android:summary="@string/halo_reversed_summary"
             android:defaultValue="true" />
 
+         <CheckBoxPreference
+            android:key="halo_pause"
+            android:title="@string/halo_pause_title"
+            android:summary="@string/halo_pause_summary" />
+
         <ListPreference
             android:key="halo_state"
             android:dialogTitle="@string/halo_state_title"

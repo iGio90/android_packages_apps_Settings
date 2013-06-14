@@ -28,10 +28,12 @@ public class BamHaloSettings extends SettingsPreferenceFragment implements
 
     private static final String KEY_HALO_STATE = "halo_state";
     private static final String KEY_HALO_HIDE = "halo_hide";
+    private static final String KEY_HALO_PAUSE = "halo_pause";
     private static final String KEY_HALO_REVERSED = "halo_reversed";
 
     private ListPreference mHaloState;
     private CheckBoxPreference mHaloHide;
+    private CheckBoxPreference mHaloPause;
     private CheckBoxPreference mHaloReversed;
 
     private INotificationManager mNotificationManager;
@@ -60,6 +62,11 @@ public class BamHaloSettings extends SettingsPreferenceFragment implements
         mHaloReversed.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.HALO_REVERSED, 1) == 1);
 
+        int isLowRAM = (ActivityManager.isLargeRAM()) ? 0 : 1;
+        mHaloPause = (CheckBoxPreference) prefSet.findPreference(KEY_HALO_PAUSE);
+        mHaloPause.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.HALO_PAUSE, isLowRAM) == 1);
+
     }
 
    private boolean isHaloPolicyBlack() {
@@ -76,6 +83,10 @@ public class BamHaloSettings extends SettingsPreferenceFragment implements
 	if (preference == mHaloHide) {
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.HALO_HIDE, mHaloHide.isChecked()
+                    ? 1 : 0);
+        } else if (preference == mHaloPause) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.HALO_PAUSE, mHaloPause.isChecked()
                     ? 1 : 0);
         } else if (preference == mHaloReversed) {
             Settings.System.putInt(mContext.getContentResolver(),
