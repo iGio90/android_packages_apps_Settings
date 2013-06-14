@@ -1,5 +1,6 @@
 package com.android.settings.jellybam;
 
+import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.app.INotificationManager;
 import android.content.Context;
