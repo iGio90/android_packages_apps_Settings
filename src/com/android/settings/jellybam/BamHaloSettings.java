@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.paranoid;
+package com.android.settings.jellybam;
 
 import android.app.ActivityManager;
 import android.app.AlertDialog;
