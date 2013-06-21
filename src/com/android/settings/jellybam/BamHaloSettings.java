@@ -139,7 +139,7 @@ public class BamHaloSettings extends SettingsPreferenceFragment
             }
             return true;
         } else if (preference == mHaloStyle) {
-            int val = Integer.valueOf((String) Value);
+            int val = Integer.valueOf((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.HALO_STYLE, val);
             Helpers.restartSystemUI();
