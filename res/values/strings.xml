@@ -6276,6 +6276,16 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="halo_state_white">White list</string>
     <string name="halo_pause_title">HALO pause active app</string>
     <string name="halo_pause_summary">When opening an app with HALO the underlying app will get paused (enabled by default on low memory devices)</string>
+    <string name="halo_style_title">HALO style</string>
+    <string name="halo_style_summary">Different style of HALO bubbles</string>
+    <string name="halo_blue">Blue (default)</string>
+    <string name="halo_green">Green</string>
+    <string name="halo_white">White</string>
+    <string name="halo_purple">Purple</string>
+    <string name="halo_red">Red</string>
+    <string name="halo_pink">Pink</string>
+    <string name="halo_yellow">Yellow</string>
+    <string name="halo_black">Black</string>
 
     <!-- Delete apn confirmation dialog message -->
     <string name="confirm_delete_apn">The APN will be deleted.</string>

@@ -7,6 +7,14 @@
             android:title="@string/halo_enabled_title"
             android:summary="@string/halo_enabled_summary" />
 
+     <ListPreference
+         android:key="halo_style"
+         android:title="@string/halo_style_title"
+         android:dependency="halo_enabled"
+         android:summary="@string/halo_style_summary"
+         android:entries="@array/entries_halo_style"
+         android:entryValues="@array/values_halo_style" />
+
         <ListPreference
             android:key="halo_state"
             android:dialogTitle="@string/halo_state_title"

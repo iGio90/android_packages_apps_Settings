@@ -48,8 +48,10 @@ public class BamHaloSettings extends SettingsPreferenceFragment
     private static final String KEY_HALO_HIDE = "halo_hide";
     private static final String KEY_HALO_REVERSED = "halo_reversed";
     private static final String KEY_HALO_PAUSE = "halo_pause";
+    private static final String PREF_HALO_STYLE = "halo_style";
 
     private ListPreference mHaloState;
+    private ListPreference mHaloStyle;
     private CheckBoxPreference mHaloEnabled;
     private CheckBoxPreference mHaloHide;
     private CheckBoxPreference mHaloReversed;
@@ -81,6 +83,9 @@ public class BamHaloSettings extends SettingsPreferenceFragment
         mHaloHide = (CheckBoxPreference) prefSet.findPreference(KEY_HALO_HIDE);
         mHaloHide.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.HALO_HIDE, 0) == 1);
+
+        mHaloStyle = (ListPreference) findPreference(PREF_HALO_STYLE);
+        mHaloStyle.setOnPreferenceChangeListener(this);
 
         mHaloReversed = (CheckBoxPreference) prefSet.findPreference(KEY_HALO_REVERSED);
         mHaloReversed.setChecked(Settings.System.getInt(mContext.getContentResolver(),
@@ -132,6 +137,12 @@ public class BamHaloSettings extends SettingsPreferenceFragment
             } catch (android.os.RemoteException ex) {
                 // System dead
             }
+            return true;
+        } else if (preference == mHaloStyle) {
+            int val = Integer.valueOf((String) Value);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.HALO_STYLE, val);
+            Helpers.restartSystemUI();
             return true;
         }
         return false;
