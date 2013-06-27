@@ -15,7 +15,7 @@
 --> 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/halo_settings_title"
+    android:title="@string/title_halo"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
         <CheckBoxPreference
