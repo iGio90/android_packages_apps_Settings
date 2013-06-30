@@ -272,6 +272,12 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             removePreference(KEY_VIBRATE);
             removePreference(KEY_VIBRATION);
         }
+      
+        if (!Utils.isVoiceCapable(getActivity())) {
+           removePreference(KEY_VIBRATE);
+           removePreference(KEY_VIBRATION);
+           removePreference(KEY_CONVERT_SOUND_TO_VIBRATE);
+        }
 
         if (TelephonyManager.PHONE_TYPE_CDMA == activePhoneType) {
             ListPreference emergencyTonePreference =
