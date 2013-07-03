@@ -75,8 +75,10 @@ public class BamLockscreenInterfaceSettings extends SettingsPreferenceFragment i
     private static final String KEY_BACKGROUND_PREF = "lockscreen_background";
     private static final String KEY_SEE_TRHOUGH = "see_through";
     private static final String KEY_LOCKSCREEN_CAMERA_WIDGET = "lockscreen_camera_widget";
+    private static final String KEY_LOCKSCREEN_MUSIC_CONTROLS = "lockscreen_music_controls";
 
     private CheckBoxPreference mCameraWidget;
+    private CheckBoxPreference mMusicControls;
     private CheckBoxPreference mSeeThrough;
     private ListPreference mCustomBackground;
 
@@ -114,6 +116,9 @@ public class BamLockscreenInterfaceSettings extends SettingsPreferenceFragment i
         mWallpaperImage = new File(getActivity().getFilesDir() + "/lockwallpaper");
         mWallpaperTemporary = new File(getActivity().getCacheDir() + "/lockwallpaper.tmp");
 
+            mMusicControls = (CheckBoxPreference) findPreference(KEY_LOCKSCREEN_MUSIC_CONTROLS);
+            mMusicControls.setOnPreferenceChangeListener(this);
+
     }
 
     private void updateCustomBackgroundSummary() {
@@ -136,6 +141,10 @@ public class BamLockscreenInterfaceSettings extends SettingsPreferenceFragment i
     @Override
     public void onResume() {
         super.onResume();
+            if (mMusicControls != null) {
+                mMusicControls.setChecked(Settings.System.getInt(cr,
+                        Settings.System.LOCKSCREEN_MUSIC_CONTROLS, 1) == 1);
+            }
     }
 
     @Override
@@ -189,6 +198,10 @@ public class BamLockscreenInterfaceSettings extends SettingsPreferenceFragment i
         if (preference == mCustomBackground) {
             int selection = mCustomBackground.findIndexOfValue((String) Value);
             return handleBackgroundSelection(selection);
+        } else if (preference == mMusicControls) {
+            boolean value = (Boolean) Value;
+            Settings.System.putInt(cr, Settings.System.LOCKSCREEN_MUSIC_CONTROLS, value ? 1 : 0);
+            return true;
         }
         return false;
     }
