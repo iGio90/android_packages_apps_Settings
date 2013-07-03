@@ -142,7 +142,7 @@ public class BamLockscreenInterfaceSettings extends SettingsPreferenceFragment i
     public void onResume() {
         super.onResume();
             if (mMusicControls != null) {
-                mMusicControls.setChecked(Settings.System.getInt(cr,
+                mMusicControls.setChecked(Settings.System.getInt(getContentResolver(),
                         Settings.System.LOCKSCREEN_MUSIC_CONTROLS, 1) == 1);
             }
     }
@@ -200,7 +200,7 @@ public class BamLockscreenInterfaceSettings extends SettingsPreferenceFragment i
             return handleBackgroundSelection(selection);
         } else if (preference == mMusicControls) {
             boolean value = (Boolean) Value;
-            Settings.System.putInt(cr, Settings.System.LOCKSCREEN_MUSIC_CONTROLS, value ? 1 : 0);
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCKSCREEN_MUSIC_CONTROLS, value ? 1 : 0);
             return true;
         }
         return false;
