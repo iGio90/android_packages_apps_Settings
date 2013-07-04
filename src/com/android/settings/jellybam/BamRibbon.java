@@ -838,6 +838,7 @@ public class BamRibbon extends SettingsPreferenceFragment implements
                     break;
                 case R.id.save_button:
                     saveButtons();
+		    Helpers.restartSystemUI();
                     break;
                 case R.id.clone_button:
                     cloneDialog(getResources().getString(R.string.clone_title),
